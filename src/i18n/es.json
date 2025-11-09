@@ -1,0 +1,118 @@
+{
+  "site": {
+    "name": "Dra. Eugenia Vila",
+    "title": "Dra. Eugenia Vila - Clínica Dental en Málaga",
+    "description": "Clínica dental en El Palo, Málaga. Más de 30 años de experiencia en implantes dentales, cirugía oral, alineadores y odontología estética."
+  },
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre Mí",
+    "services": "Servicios",
+    "reviews": "Reseñas",
+    "gallery": "Galería",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": "Sonrisas Perfectas con Más de 30 Años de Experiencia",
+    "subtitle": "Especialista en implantes dentales, alineadores y odontología estética. Dentista galardonada con materiales de alta calidad y precios competitivos.",
+    "cta": "Reservar Cita por WhatsApp",
+    "cta_secondary": "Más Información"
+  },
+  "about": {
+    "title": "Sobre la Dra. Eugenia Vila",
+    "headline": "Experiencia, Calidad y Dedicación",
+    "description": "Con más de 30 años de experiencia clínica, ofrezco un enfoque holístico en el cuidado dental. Poseo Másters en Implantología Dental de la UIC Barcelona y Estética de la Universidad de Córdoba.",
+    "awards": "Dentista del Año 2024",
+    "experience": "Más de 30 Años de Experiencia",
+    "patients": "Más de 20,000 Pacientes Tratados",
+    "specialties": "Especialidades"
+  },
+  "services": {
+    "title": "Nuestros Servicios",
+    "subtitle": "Tratamientos dentales especializados con tecnología de vanguardia",
+    "implants": {
+      "title": "Implantes Dentales",
+      "description": "Rehabilitación completa con flujo de trabajo digital. Especialista en colocación de implantes, injertos óseos y elevaciones de seno maxilar."
+    },
+    "surgery": {
+      "title": "Cirugía Oral",
+      "description": "Extracciones complejas, muelas del juicio y procedimientos quirúrgicos avanzados con atención especializada."
+    },
+    "aligners": {
+      "title": "Alineadores",
+      "description": "Tratamiento con alineadores transparentes para corrección de sonrisa sin brackets tradicionales."
+    },
+    "cosmetic": {
+      "title": "Odontología Estética",
+      "description": "Carillas de porcelana, bonding y diseño de sonrisa personalizado para resultados naturales y hermosos."
+    },
+    "learn_more": "Más Información",
+    "view_all": "Ver Todos los Servicios"
+  },
+  "reviews": {
+    "title": "Lo Que Dicen Nuestros Pacientes",
+    "subtitle": "Más de 60 reseñas de 5 estrellas en Google y Trustpilot",
+    "view_all": "Ver Todas las Reseñas",
+    "rating": "Calificación",
+    "stars": "estrellas"
+  },
+  "stats": {
+    "experience": "Años de Experiencia",
+    "patients": "Pacientes Tratados",
+    "implants": "Implantes Colocados",
+    "reviews": "Reseñas 5 Estrellas"
+  },
+  "cta": {
+    "title": "¿Lista/o para Tu Mejor Sonrisa?",
+    "subtitle": "Contáctanos por WhatsApp para reservar tu consulta. Clínica abierta fines de semana selectos cuando la Dra. Vila está en Málaga.",
+    "button": "Reservar por WhatsApp"
+  },
+  "footer": {
+    "clinic_name": "Clínica Dental Dra. Eugenia Vila",
+    "tagline": "Más de 30 años de experiencia dental en Málaga",
+    "hours": "Horarios",
+    "hours_note": "Clínica abierta fines de semana selectos. Contáctenos para disponibilidad.",
+    "contact": "Contacto",
+    "phone": "Teléfono",
+    "whatsapp": "WhatsApp",
+    "email": "Correo",
+    "address": "Dirección",
+    "location": "El Palo, Málaga, España",
+    "registration": "Número de Registro GDC",
+    "copyright": "Todos los derechos reservados."
+  },
+  "contact": {
+    "title": "Contáctanos",
+    "subtitle": "Estamos aquí para ayudarte con tu salud dental",
+    "form": {
+      "name": "Nombre",
+      "email": "Correo Electrónico",
+      "phone": "Teléfono",
+      "message": "Mensaje",
+      "send": "Enviar Mensaje",
+      "success": "¡Mensaje enviado! Nos pondremos en contacto pronto.",
+      "error": "Error al enviar el mensaje. Por favor, intenta de nuevo."
+    },
+    "info": {
+      "title": "Información de Contacto",
+      "preferred": "Preferimos contacto por WhatsApp para programar citas",
+      "address_title": "Dirección de la Clínica",
+      "hours_title": "Horarios"
+    }
+  },
+  "gallery": {
+    "title": "Galería de Casos",
+    "subtitle": "Transformaciones reales de nuestros pacientes",
+    "before": "Antes",
+    "after": "Después",
+    "view_more": "Ver Más Casos"
+  },
+  "common": {
+    "read_more": "Leer Más",
+    "learn_more": "Más Información",
+    "back": "Volver",
+    "close": "Cerrar",
+    "loading": "Cargando..."
+  }
+}
+

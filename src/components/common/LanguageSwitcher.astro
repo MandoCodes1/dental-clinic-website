@@ -1,0 +1,27 @@
+---
+import { getLanguageFromURL, switchLanguagePath, languages } from '~/utils/i18n';
+
+const { pathname } = Astro.url;
+const currentLang = getLanguageFromURL(pathname);
+const otherLang = currentLang === 'es' ? 'en' : 'es';
+const switchPath = switchLanguagePath(pathname);
+---
+
+<div class="language-switcher">
+  <a
+    href={switchPath}
+    class="flex items-center gap-2 px-3 py-2 text-sm font-medium rounded-lg transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
+    aria-label={`Switch to ${languages[otherLang].name}`}
+  >
+    <span class="text-lg">{languages[otherLang].flag}</span>
+    <span class="hidden sm:inline">{languages[otherLang].code.toUpperCase()}</span>
+  </a>
+</div>
+
+<style>
+  .language-switcher {
+    display: flex;
+    align-items: center;
+  }
+</style>
+

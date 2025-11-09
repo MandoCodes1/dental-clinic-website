@@ -1,0 +1,245 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Timeline from '~/components/ui/Timeline.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+import { headerDataEN, footerDataEN } from '~/navigation';
+
+const metadata = {
+  title: 'About - Dr. Eugenia Vila',
+  description: 'Meet Dr. Eugenia Vila. Over 30 years of experience in dentistry, specializing in dental implants and cosmetic dentistry. Dentist of the Year 2024.',
+};
+---
+
+<Layout metadata={metadata} headerData={headerDataEN} footerData={footerDataEN}>
+  <!-- Hero -->
+  <Hero2
+    tagline="About Me"
+    title="Dr. Eugenia Vila García"
+    subtitle="Highly qualified Dentist with over 30 years of clinical experience. Master's in Dental Implants from UIC Barcelona and a Master's in Aesthetics from the University of Córdoba, with a special interest in Oral Surgery and Aligner Treatment."
+    image={{ src: '~/assets/images/full_body_hero.png', alt: 'Dr. Eugenia Vila' }}
+  />
+
+  <!-- Professional Overview -->
+  <Content
+    isReversed
+    items={[
+      {
+        title: 'Dual Degrees in Medicine and Dentistry',
+        description:
+          'Holding degrees in both Medicine and Dentistry allows me to provide a holistic approach to treating all my patients.',
+      },
+      {
+        title: 'Specialized Training',
+        description:
+          'Master\'s in Implantology from UIC Barcelona and Master\'s in Aesthetic Medicine from the University of Córdoba. Continuous training in advanced surgery and aligners.',
+      },
+      {
+        title: 'Dentist of the Year 2024',
+        description:
+          'Awarded by Dental Art Implant Clinic for exceptional clinical outcomes and patient satisfaction.',
+      },
+      {
+        title: 'Over 20,000 Patients Treated',
+        description:
+          'With 30 years of practice, I have had the privilege of treating over 20,000 patients and performing thousands of dental implants.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/full_body_hero.png',
+      alt: 'Dr. Eugenia Vila at her clinic',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        A Holistic Approach to Dental Care
+      </h3>
+      <p class="text-muted">
+        My dual training in Medicine and Dentistry provides me with a unique perspective in dental care. I enjoy working
+        in a team-oriented environment that shares the same values as me: always putting the patient's interests first.
+      </p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Education Timeline -->
+  <section class="px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold mb-4">Academic Training</h2>
+      <p class="text-muted max-w-2xl mx-auto">
+        A solid foundation of medical and dental education, complemented by continuous specialization.
+      </p>
+    </div>
+    <Timeline
+      items={[
+        {
+          title: 'Master\'s in Aesthetic Medicine',
+          description: 'Universidad de Córdoba, Córdoba, Spain',
+          date: '2008-2009',
+        },
+        {
+          title: 'Master\'s in Implantology',
+          description: 'Universitat Internacional de Catalunya, Barcelona, Spain',
+          date: '2002-2003',
+        },
+        {
+          title: 'Postgraduate Certificate, Dental Degree Validation',
+          description: 'Universidad de Murcia, Murcia, Spain. Validated my UNIBE dental degree to practice in the EU.',
+          date: '1993-1994',
+        },
+        {
+          title: 'Bachelor of Dental Surgery (BDS)',
+          description: 'Universidad Iberoamericana (UNIBE), Santo Domingo, Dominican Republic',
+          date: '1989-1991',
+        },
+        {
+          title: 'Bachelor of Medicine (MBBS)',
+          description: 'Universidad de Málaga, Málaga, Spain',
+          date: '1982-1989',
+        },
+      ]}
+    />
+  </section>
+
+  <!-- Experience -->
+  <section class="px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8 bg-blue-50 dark:bg-slate-800">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold mb-4">Professional Experience</h2>
+    </div>
+    <div class="space-y-8 max-w-4xl mx-auto">
+      <div class="bg-white dark:bg-slate-900 p-6 rounded-lg shadow">
+        <div class="flex justify-between items-start mb-4">
+          <div>
+            <h3 class="text-xl font-bold">Implantologist</h3>
+            <p class="text-muted">Dental Art Implant Clinics, London, UK</p>
+          </div>
+          <span class="text-sm font-semibold text-primary">Sep 2022 - Present</span>
+        </div>
+        <ul class="list-disc list-inside space-y-2 text-muted">
+          <li>Lead complex implant treatments and full-mouth rehabilitations</li>
+          <li>Fully digital workflow with CBCT imaging and intraoral scanning (3Shape & Medit)</li>
+          <li>Comprehensive care: initial assessment, surgical placement, and long-term maintenance</li>
+          <li>Dentist of the Year 2024, recognized by patients and peers</li>
+        </ul>
+      </div>
+
+      <div class="bg-white dark:bg-slate-900 p-6 rounded-lg shadow">
+        <div class="flex justify-between items-start mb-4">
+          <div>
+            <h3 class="text-xl font-bold">General Dentist & Implantologist</h3>
+            <p class="text-muted">Clinica Dental Dra. Eugenia Vila, Málaga, Spain</p>
+          </div>
+          <span class="text-sm font-semibold text-primary">1994 - Sep 2022</span>
+        </div>
+        <ul class="list-disc list-inside space-y-2 text-muted">
+          <li>Performed implant surgery and full-mouth rehabilitation for 28 years</li>
+          <li>Treated more than 20,000 patients with continuous full-scope private care</li>
+          <li>Thousands of dental implant placements, bone grafts, and periodontal treatments</li>
+          <li>Managed day-to-day clinic operations and mentored staff</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills & Specializations -->
+  <Features3
+    title="Areas of Specialization"
+    subtitle="Comprehensive dental services with specialized expertise"
+    columns={3}
+    items={[
+      {
+        title: 'Dental Implants',
+        description: 'Specialization in complex implants, bone grafting and full rehabilitations',
+        icon: 'tabler:dental',
+      },
+      {
+        title: 'Oral Surgery',
+        description: 'Advanced surgical procedures with over 30 years of experience',
+        icon: 'tabler:medical-cross',
+      },
+      {
+        title: 'Aligners',
+        description: 'Level II certification in aligner therapy for smile correction',
+        icon: 'tabler:dental-off',
+      },
+      {
+        title: 'Cosmetic Dentistry',
+        description: 'Smile design, veneers and bonding with an artistic approach',
+        icon: 'tabler:sparkles',
+      },
+      {
+        title: 'Prosthetics',
+        description: 'Complete and personalized prosthetic restorations',
+        icon: 'tabler:building-hospital',
+      },
+      {
+        title: 'Digital Tools',
+        description: 'CBCT, 3Shape, Medit, CareStack, DentalPlus',
+        icon: 'tabler:device-laptop',
+      },
+    ]}
+  />
+
+  <!-- Professional Memberships -->
+  <section class="px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold mb-4">Professional Memberships and Licenses</h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <div class="bg-white dark:bg-slate-900 p-6 rounded-lg shadow text-center">
+        <h3 class="text-xl font-semibold mb-2">GDC Registration Number</h3>
+        <p class="text-3xl font-bold text-primary">287705</p>
+      </div>
+      <div class="bg-white dark:bg-slate-900 p-6 rounded-lg shadow">
+        <h3 class="text-xl font-semibold mb-4">Affiliations</h3>
+        <ul class="space-y-2 text-muted">
+          <li>• Royal College of Surgeons Ireland (RCSI) - Affiliate since 2021</li>
+          <li>• Colegio Oficial de Dentistas de Málaga - Member since 1994</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Personal Life -->
+  <section class="px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8 bg-blue-50 dark:bg-slate-800">
+    <div class="text-center mb-8">
+      <h2 class="text-3xl font-bold mb-4">Personal Life</h2>
+    </div>
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="text-lg text-muted mb-4">
+        Family is my biggest priority in life. I have two sons and I love spending time together.
+      </p>
+      <p class="text-lg text-muted mb-4">
+        I love playing tennis, traveling with my family, cooking, and living a sporty lifestyle (swimming, cycling,
+        walking/jogging).
+      </p>
+      <p class="text-lg text-muted">I'm passionate about healthy food and holistic wellness.</p>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Book Appointment',
+        href: 'https://wa.me/34679975580?text=Hello,%20I%20would%20like%20to%20book%20an%20appointment',
+        target: '_blank',
+        icon: 'tabler:brand-whatsapp',
+      },
+    ]}
+  >
+    <Fragment slot="title">Ready to Experience Exceptional Care?</Fragment>
+
+    <Fragment slot="subtitle">
+      Contact me today to begin your journey to a healthy and beautiful smile.
+    </Fragment>
+  </CallToAction>
+</Layout>
+

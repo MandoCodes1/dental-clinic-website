@@ -1,0 +1,283 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+import { headerDataEN, footerDataEN } from '~/navigation';
+
+const metadata = {
+  title: 'Services - Dr. Eugenia Vila',
+  description: 'Specialized dental services: dental implants, oral surgery, aligners and cosmetic dentistry. Cutting-edge technology and high-quality materials.',
+};
+---
+
+<Layout metadata={metadata} headerData={headerDataEN} footerData={footerDataEN}>
+  <!-- Hero -->
+  <Hero2
+    tagline="Our Services"
+    title="Specialized Dental Treatments"
+    subtitle="With over 30 years of experience and cutting-edge technology, we offer the highest quality dental treatments. Each procedure is specifically designed for your individual needs."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Book Consultation',
+        href: 'https://wa.me/34679975580?text=Hello,%20I%20would%20like%20to%20book%20a%20consultation',
+        target: '_blank',
+        icon: 'tabler:brand-whatsapp',
+      },
+    ]}
+  />
+
+  <!-- Dental Implants -->
+  <Content
+    id="implants"
+    isReversed
+    tagline="Dental Implants"
+    title="Restore Your Smile Completely"
+    items={[
+      {
+        title: 'Digital Workflow',
+        description:
+          'We use CBCT technology, 3Shape and Medit intraoral scanners for precise planning and predictable results.',
+      },
+      {
+        title: 'Full Mouth Rehabilitation',
+        description:
+          'Specialized in full-mouth rehabilitations with implants, from simple to complex cases.',
+      },
+      {
+        title: 'Bone Grafting and Sinus Lifts',
+        description:
+          'Advanced techniques to create the proper foundation for successful implants, even in cases with bone loss.',
+      },
+      {
+        title: 'Thousands of Implants Placed',
+        description:
+          'Extensive experience with thousands of successfully placed implants over more than 20 years.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/dental_after_example.png',
+      alt: 'Dental implants',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Long-Lasting Dental Implants
+      </h3>
+      <p class="text-muted">
+        Dental implants are the most durable and natural solution for replacing missing teeth. With a fully digital
+        workflow, we plan each case with millimeter precision to ensure optimal functional and aesthetic results.
+      </p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Oral Surgery -->
+  <Content
+    id="surgery"
+    isAfterContent
+    tagline="Oral Surgery"
+    title="Specialized Surgical Procedures"
+    items={[
+      {
+        title: 'Complex Extractions',
+        description:
+          'Experience in difficult extractions, including impacted teeth and complicated cases.',
+      },
+      {
+        title: 'Wisdom Teeth',
+        description:
+          'Safe and efficient wisdom tooth extraction with minimal post-operative discomfort.',
+      },
+      {
+        title: 'Pre-Prosthetic Surgery',
+        description:
+          'Surgical preparation of oral tissue to optimize the outcome of dental prosthetics and implants.',
+      },
+      {
+        title: 'Complete Post-Operative Care',
+        description:
+          'Close follow-up and dedicated attention throughout the recovery process.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/full_body_hero.png',
+      alt: 'Oral surgery',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Surgery with Experience and Care
+      </h3>
+      <p class="text-muted">
+        With over 30 years performing surgical procedures, I offer oral surgery with the highest precision and care. My
+        medical training allows me to approach complex cases with confidence and exceptional results.
+      </p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-white dark:bg-slate-900"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Aligners -->
+  <Content
+    id="aligners"
+    isReversed
+    tagline="Aligners"
+    title="Perfect Smile Without Braces"
+    items={[
+      {
+        title: 'Clear Aligners',
+        description:
+          'Discreet treatment with virtually invisible aligners that no one will notice.',
+      },
+      {
+        title: 'Digital Planning',
+        description:
+          'Visualize your new smile before starting treatment with advanced 3D technology.',
+      },
+      {
+        title: 'Comfort and Convenience',
+        description:
+          'Removable for eating and brushing, with no food restrictions or metal wires.',
+      },
+      {
+        title: 'Predictable Results',
+        description:
+          'Precise planning with consistent results and optimized treatment times.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/dental_before_example.png',
+      alt: 'Aligner treatment',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Modern Smile Correction
+      </h3>
+      <p class="text-muted">
+        Clear aligners offer a comfortable and discreet way to straighten your teeth. Level II certified in aligner
+        therapy, I can correct a wide range of alignment issues.
+      </p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Cosmetic Dentistry -->
+  <Content
+    id="cosmetic"
+    isAfterContent
+    tagline="Cosmetic Dentistry"
+    title="Transform Your Smile"
+    items={[
+      {
+        title: 'Porcelain Veneers',
+        description:
+          'Custom veneers that create natural and beautiful smiles with lasting results.',
+      },
+      {
+        title: 'Cosmetic Bonding',
+        description:
+          'Repair and enhancement of teeth with high-quality composite for immediate results.',
+      },
+      {
+        title: 'Smile Design',
+        description:
+          'Complete facial analysis and planning to create the perfect smile for your unique features.',
+      },
+      {
+        title: 'Teeth Whitening',
+        description:
+          'Professional whitening treatments for a brighter and more youthful smile.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/dental_after_example.png',
+      alt: 'Cosmetic dentistry',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Art and Science in Every Smile
+      </h3>
+      <p class="text-muted">
+        Cosmetic dentistry is both art and science. With my Master's in Aesthetic Medicine and decades of experience, I
+        create beautiful and natural smiles that enhance your unique facial features.
+      </p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-white dark:bg-slate-900"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Additional Features -->
+  <Features3
+    title="Our Commitment to Excellence"
+    subtitle="What sets us apart in every treatment"
+    columns={3}
+    items={[
+      {
+        title: 'High-Quality Materials',
+        description: 'We use only the highest quality and most durable materials for results that last.',
+        icon: 'tabler:award',
+      },
+      {
+        title: 'Digital Technology',
+        description: 'Fully digital workflow for precision and predictability in every treatment.',
+        icon: 'tabler:device-laptop',
+      },
+      {
+        title: 'Competitive Prices',
+        description: 'Exceptional quality at fair and transparent prices, with no surprises.',
+        icon: 'tabler:coin',
+      },
+      {
+        title: 'Personalized Care',
+        description: 'Each treatment is specifically designed for your unique needs and goals.',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'Proven Experience',
+        description: 'Over 30 years of experience and thousands of satisfied patients.',
+        icon: 'tabler:certificate',
+      },
+      {
+        title: 'Holistic Approach',
+        description: 'Medical training allows for a comprehensive approach to your oral health.',
+        icon: 'tabler:heartbeat',
+      },
+    ]}
+  />
+
+  <!-- Call to Action -->
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Book Free Consultation',
+        href: 'https://wa.me/34679975580?text=Hello,%20I%20would%20like%20a%20free%20consultation',
+        target: '_blank',
+        icon: 'tabler:brand-whatsapp',
+      },
+    ]}
+  >
+    <Fragment slot="title">Ready to Start Your Treatment?</Fragment>
+
+    <Fragment slot="subtitle">
+      Contact us today for a free consultation and discover how we can transform your smile.
+    </Fragment>
+  </CallToAction>
+</Layout>
+

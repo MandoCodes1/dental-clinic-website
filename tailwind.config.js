@@ -12,6 +12,19 @@ export default {
         accent: 'var(--aw-color-accent)',
         default: 'var(--aw-color-text-default)',
         muted: 'var(--aw-color-text-muted)',
+        // Australian Open inspired dental clinic colors
+        'ao-blue': {
+          light: '#0094D3',
+          DEFAULT: '#0072BB',
+          dark: '#003366',
+        },
+        'dental': {
+          blue: '#0072BB',
+          'light-blue': '#0094D3',
+          'dark-blue': '#003366',
+          gray: '#F5F5F5',
+          white: '#FFFFFF',
+        },
       },
       fontFamily: {
         sans: ['var(--aw-font-sans, ui-sans-serif)', ...defaultTheme.fontFamily.sans],

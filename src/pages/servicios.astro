@@ -1,0 +1,284 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+import { headerData, footerData } from '~/navigation';
+
+const metadata = {
+  title: 'Servicios - Dra. Eugenia Vila',
+  description: 'Servicios dentales especializados: implantes dentales, cirugía oral, alineadores y odontología estética. Tecnología de vanguardia y materiales de alta calidad.',
+};
+---
+
+<Layout metadata={metadata} headerData={headerData} footerData={footerData}>
+  <!-- Hero -->
+  <Hero2
+    tagline="Nuestros Servicios"
+    title="Tratamientos Dentales Especializados"
+    subtitle="Con más de 30 años de experiencia y tecnología de vanguardia, ofrecemos tratamientos dentales de la más alta calidad. Cada procedimiento está diseñado específicamente para sus necesidades individuales."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Reservar Consulta',
+        href: 'https://wa.me/34679975580?text=Hola,%20me%20gustaría%20reservar%20una%20consulta',
+        target: '_blank',
+        icon: 'tabler:brand-whatsapp',
+      },
+    ]}
+  />
+
+  <!-- Implantes Dentales -->
+  <Content
+    id="implantes"
+    isReversed
+    tagline="Implantes Dentales"
+    title="Restaure Su Sonrisa Completamente"
+    items={[
+      {
+        title: 'Flujo de Trabajo Digital',
+        description:
+          'Utilizamos tecnología CBCT, escáneres intraorales 3Shape y Medit para planificación precisa y resultados predecibles.',
+      },
+      {
+        title: 'Rehabilitación Completa',
+        description:
+          'Especializada en rehabilitaciones de boca completa con implantes, desde casos simples hasta complejos.',
+      },
+      {
+        title: 'Injertos Óseos y Elevaciones de Seno',
+        description:
+          'Técnicas avanzadas para crear la base adecuada para implantes exitosos, incluso en casos con pérdida ósea.',
+      },
+      {
+        title: 'Miles de Implantes Colocados',
+        description:
+          'Experiencia extensa con miles de implantes colocados exitosamente a lo largo de más de 20 años.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/dental_after_example.png',
+      alt: 'Implantes dentales',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Implantes Dentales de Larga Duración
+      </h3>
+      <p class="text-muted">
+        Los implantes dentales son la solución más duradera y natural para reemplazar dientes perdidos. Con un flujo de
+        trabajo completamente digital, planificamos cada caso con precisión milimétrica para garantizar resultados
+        óptimos tanto funcionales como estéticos.
+      </p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Cirugía Oral -->
+  <Content
+    id="cirugia"
+    isAfterContent
+    tagline="Cirugía Oral"
+    title="Procedimientos Quirúrgicos Especializados"
+    items={[
+      {
+        title: 'Extracciones Complejas',
+        description:
+          'Experiencia en extracciones difíciles, incluyendo dientes impactados y casos complicados.',
+      },
+      {
+        title: 'Muelas del Juicio',
+        description:
+          'Extracción segura y eficiente de muelas del juicio con mínimas molestias postoperatorias.',
+      },
+      {
+        title: 'Cirugía Preprotésica',
+        description:
+          'Preparación quirúrgica del tejido oral para optimizar el resultado de prótesis dentales e implantes.',
+      },
+      {
+        title: 'Atención Postoperatoria Completa',
+        description:
+          'Seguimiento cercano y atención dedicada durante todo el proceso de recuperación.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/full_body_hero.png',
+      alt: 'Cirugía oral',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Cirugía con Experiencia y Cuidado
+      </h3>
+      <p class="text-muted">
+        Con más de 30 años realizando procedimientos quirúrgicos, ofrezco cirugía oral con la más alta precisión y
+        cuidado. Mi formación médica me permite abordar casos complejos con confianza y resultados excepcionales.
+      </p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-white dark:bg-slate-900"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Alineadores -->
+  <Content
+    id="alineadores"
+    isReversed
+    tagline="Alineadores"
+    title="Sonrisa Perfecta Sin Brackets"
+    items={[
+      {
+        title: 'Alineadores Transparentes',
+        description:
+          'Tratamiento discreto con alineadores prácticamente invisibles que nadie notará.',
+      },
+      {
+        title: 'Planificación Digital',
+        description:
+          'Visualice su nueva sonrisa antes de comenzar el tratamiento con tecnología 3D avanzada.',
+      },
+      {
+        title: 'Comodidad y Conveniencia',
+        description:
+          'Removibles para comer y cepillarse, sin restricciones alimenticias ni alambres metálicos.',
+      },
+      {
+        title: 'Resultados Predecibles',
+        description:
+          'Planificación precisa con resultados consistentes y tiempos de tratamiento optimizados.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/dental_before_example.png',
+      alt: 'Tratamiento con alineadores',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Corrección de Sonrisa Moderna
+      </h3>
+      <p class="text-muted">
+        Los alineadores transparentes ofrecen una forma cómoda y discreta de enderezar sus dientes. Nivel II certificada
+        en terapia con alineadores, puedo corregir una amplia gama de problemas de alineación.
+      </p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Odontología Estética -->
+  <Content
+    id="estetica"
+    isAfterContent
+    tagline="Odontología Estética"
+    title="Transforme Su Sonrisa"
+    items={[
+      {
+        title: 'Carillas de Porcelana',
+        description:
+          'Carillas personalizadas que crean sonrisas naturales y hermosas con resultados duraderos.',
+      },
+      {
+        title: 'Bonding Cosmético',
+        description:
+          'Reparación y mejora de dientes con composite de alta calidad para resultados inmediatos.',
+      },
+      {
+        title: 'Diseño de Sonrisa',
+        description:
+          'Análisis facial completo y planificación para crear la sonrisa perfecta para sus características únicas.',
+      },
+      {
+        title: 'Blanqueamiento Dental',
+        description:
+          'Tratamientos profesionales de blanqueamiento para una sonrisa más brillante y juvenil.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/dental_after_example.png',
+      alt: 'Odontología estética',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Arte y Ciencia en Cada Sonrisa
+      </h3>
+      <p class="text-muted">
+        La odontología estética es tanto arte como ciencia. Con mi Máster en Medicina Estética y décadas de experiencia,
+        creo sonrisas hermosas y naturales que realzan sus características faciales únicas.
+      </p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-white dark:bg-slate-900"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Additional Features -->
+  <Features3
+    title="Nuestro Compromiso con la Excelencia"
+    subtitle="Lo que nos distingue en cada tratamiento"
+    columns={3}
+    items={[
+      {
+        title: 'Materiales de Alta Calidad',
+        description: 'Utilizamos solo materiales de la más alta calidad y durabilidad para resultados que duran.',
+        icon: 'tabler:award',
+      },
+      {
+        title: 'Tecnología Digital',
+        description: 'Flujo de trabajo completamente digital para precisión y predictibilidad en cada tratamiento.',
+        icon: 'tabler:device-laptop',
+      },
+      {
+        title: 'Precios Competitivos',
+        description: 'Calidad excepcional a precios justos y transparentes, sin sorpresas.',
+        icon: 'tabler:coin',
+      },
+      {
+        title: 'Atención Personalizada',
+        description: 'Cada tratamiento se diseña específicamente para sus necesidades y objetivos únicos.',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'Experiencia Comprobada',
+        description: 'Más de 30 años de experiencia y miles de pacientes satisfechos.',
+        icon: 'tabler:certificate',
+      },
+      {
+        title: 'Enfoque Holístico',
+        description: 'Formación en medicina permite un enfoque integral de su salud oral.',
+        icon: 'tabler:heartbeat',
+      },
+    ]}
+  />
+
+  <!-- Call to Action -->
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Reservar Consulta Gratuita',
+        href: 'https://wa.me/34679975580?text=Hola,%20me%20gustaría%20una%20consulta%20gratuita',
+        target: '_blank',
+        icon: 'tabler:brand-whatsapp',
+      },
+    ]}
+  >
+    <Fragment slot="title">¿Listo para Comenzar Su Tratamiento?</Fragment>
+
+    <Fragment slot="subtitle">
+      Contáctenos hoy para una consulta gratuita y descubra cómo podemos transformar su sonrisa.
+    </Fragment>
+  </CallToAction>
+</Layout>
+

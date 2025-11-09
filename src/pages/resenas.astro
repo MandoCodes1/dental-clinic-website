@@ -1,0 +1,71 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import ReviewsGrid from '~/components/widgets/ReviewsGrid.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Stats from '~/components/widgets/Stats.astro';
+
+import { headerData, footerData } from '~/navigation';
+import { getAllReviews } from '~/utils/reviews';
+
+const metadata = {
+  title: 'Reseñas - Dra. Eugenia Vila',
+  description: 'Lee las opiniones de nuestros pacientes. Más de 60 reseñas de 5 estrellas en Google y Trustpilot. Pacientes satisfechos de Málaga y Londres.',
+};
+
+const reviews = getAllReviews();
+const googleReviews = reviews.filter((r) => r.source === 'Google').length;
+const trustpilotReviews = reviews.filter((r) => r.source === 'Trustpilot').length;
+---
+
+<Layout metadata={metadata} headerData={headerData} footerData={footerData}>
+  <!-- Hero -->
+  <Hero2
+    tagline="Reseñas de Pacientes"
+    title="Lo Que Dicen Nuestros Pacientes"
+    subtitle="La satisfacción de nuestros pacientes es nuestra mayor prioridad. Lee las experiencias reales de personas que han confiado en nosotros para su cuidado dental."
+  />
+
+  <!-- Stats -->
+  <Stats
+    stats={[
+      { title: 'Reseñas Totales', amount: `${reviews.length}` },
+      { title: 'Calificación Promedio', amount: '5.0★' },
+      { title: 'Google Reviews', amount: `${googleReviews}` },
+      { title: 'Trustpilot Reviews', amount: `${trustpilotReviews}` },
+    ]}
+  />
+
+  <!-- Reviews Grid -->
+  <section class="px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
+    <div class="mb-8">
+      <h2 class="text-3xl font-bold text-center mb-4">Todas las Reseñas</h2>
+      <p class="text-center text-muted max-w-2xl mx-auto">
+        Reseñas verificadas de pacientes reales de nuestra clínica en Málaga y de las clínicas en Londres donde la Dra.
+        Vila trabaja.
+      </p>
+    </div>
+    <ReviewsGrid reviews={reviews} language="es" />
+  </section>
+
+  <!-- Call to Action -->
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Reservar Cita',
+        href: 'https://wa.me/34679975580?text=Hola,%20me%20gustaría%20reservar%20una%20cita',
+        target: '_blank',
+        icon: 'tabler:brand-whatsapp',
+      },
+    ]}
+  >
+    <Fragment slot="title">¿Listo para Unirse a Nuestros Pacientes Satisfechos?</Fragment>
+
+    <Fragment slot="subtitle">
+      Experimente el mismo cuidado excepcional que han recibido más de 20,000 pacientes. <br />Contáctenos hoy para
+      comenzar su viaje hacia una sonrisa perfecta.
+    </Fragment>
+  </CallToAction>
+</Layout>
+

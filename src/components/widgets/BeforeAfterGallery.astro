@@ -1,0 +1,93 @@
+---
+export interface BeforeAfterCase {
+  title?: string;
+  description?: string;
+  beforeImage: string;
+  afterImage: string;
+  beforeAlt?: string;
+  afterAlt?: string;
+}
+
+export interface Props {
+  cases: BeforeAfterCase[];
+  language?: 'es' | 'en';
+}
+
+const { cases, language = 'es' } = Astro.props;
+
+const beforeLabel = language === 'es' ? 'Antes' : 'Before';
+const afterLabel = language === 'es' ? 'Después' : 'After';
+---
+
+<div class="grid gap-8 md:grid-cols-2">
+  {
+    cases.map((caseItem, index) => (
+      <div class="bg-white dark:bg-slate-900 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+        {caseItem.title && (
+          <div class="p-4 bg-gradient-to-r from-blue-500 to-blue-600">
+            <h3 class="text-xl font-bold text-white">{caseItem.title}</h3>
+            {caseItem.description && <p class="text-sm text-blue-100 mt-1">{caseItem.description}</p>}
+          </div>
+        )}
+
+        <div class="p-4">
+          {/* Before Image */}
+          <div class="mb-4">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-sm font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wide">
+                {beforeLabel}
+              </span>
+              <span class="text-xs bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded">{language === 'es' ? 'Estado Inicial' : 'Initial State'}</span>
+            </div>
+            <div class="relative rounded-lg overflow-hidden">
+              <img
+                src={caseItem.beforeImage}
+                alt={caseItem.beforeAlt || `${beforeLabel} ${index + 1}`}
+                class="w-full h-auto"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          {/* Arrow Separator */}
+          <div class="flex justify-center my-4">
+            <div class="flex items-center gap-2">
+              <div class="h-px w-12 bg-gradient-to-r from-transparent to-blue-500" />
+              <svg
+                class="w-6 h-6 text-blue-500"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              </svg>
+              <div class="h-px w-12 bg-gradient-to-l from-transparent to-blue-500" />
+            </div>
+          </div>
+
+          {/* After Image */}
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-sm font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wide">
+                {afterLabel}
+              </span>
+              <span class="text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-1 rounded">
+                {language === 'es' ? 'Resultado Final' : 'Final Result'}
+              </span>
+            </div>
+            <div class="relative rounded-lg overflow-hidden">
+              <img
+                src={caseItem.afterImage}
+                alt={caseItem.afterAlt || `${afterLabel} ${index + 1}`}
+                class="w-full h-auto"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    ))
+  }
+</div>
+

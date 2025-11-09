@@ -1,0 +1,118 @@
+{
+  "site": {
+    "name": "Dr. Eugenia Vila",
+    "title": "Dr. Eugenia Vila - Dental Clinic in Málaga",
+    "description": "Dental clinic in El Palo, Málaga. Over 30 years of experience in dental implants, oral surgery, aligners and cosmetic dentistry."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "reviews": "Reviews",
+    "gallery": "Gallery",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Perfect Smiles with Over 30 Years of Experience",
+    "subtitle": "Specialist in dental implants, aligners and cosmetic dentistry. Award-winning dentist with high-quality materials and competitive prices.",
+    "cta": "Book via WhatsApp",
+    "cta_secondary": "Learn More"
+  },
+  "about": {
+    "title": "About Dr. Eugenia Vila",
+    "headline": "Experience, Quality and Dedication",
+    "description": "With over 30 years of clinical experience, I offer a holistic approach to dental care. I hold Master's degrees in Dental Implantology from UIC Barcelona and Aesthetics from the University of Córdoba.",
+    "awards": "Dentist of the Year 2024",
+    "experience": "Over 30 Years of Experience",
+    "patients": "Over 20,000 Patients Treated",
+    "specialties": "Specialties"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Specialized dental treatments with cutting-edge technology",
+    "implants": {
+      "title": "Dental Implants",
+      "description": "Full-mouth rehabilitation with digital workflow. Specialist in implant placement, bone grafting and sinus lift procedures."
+    },
+    "surgery": {
+      "title": "Oral Surgery",
+      "description": "Complex extractions, wisdom teeth removal and advanced surgical procedures with specialized care."
+    },
+    "aligners": {
+      "title": "Aligners",
+      "description": "Clear aligner treatment for smile correction without traditional braces."
+    },
+    "cosmetic": {
+      "title": "Cosmetic Dentistry",
+      "description": "Porcelain veneers, bonding and personalized smile design for natural and beautiful results."
+    },
+    "learn_more": "Learn More",
+    "view_all": "View All Services"
+  },
+  "reviews": {
+    "title": "What Our Patients Say",
+    "subtitle": "Over 60 five-star reviews on Google and Trustpilot",
+    "view_all": "View All Reviews",
+    "rating": "Rating",
+    "stars": "stars"
+  },
+  "stats": {
+    "experience": "Years of Experience",
+    "patients": "Patients Treated",
+    "implants": "Implants Placed",
+    "reviews": "5-Star Reviews"
+  },
+  "cta": {
+    "title": "Ready for Your Best Smile?",
+    "subtitle": "Contact us via WhatsApp to book your consultation. Clinic open select weekends when Dr. Vila is in Málaga.",
+    "button": "Book via WhatsApp"
+  },
+  "footer": {
+    "clinic_name": "Dr. Eugenia Vila Dental Clinic",
+    "tagline": "Over 30 years of dental experience in Málaga",
+    "hours": "Hours",
+    "hours_note": "Clinic open select weekends. Contact us for availability.",
+    "contact": "Contact",
+    "phone": "Phone",
+    "whatsapp": "WhatsApp",
+    "email": "Email",
+    "address": "Address",
+    "location": "El Palo, Málaga, Spain",
+    "registration": "GDC Registration Number",
+    "copyright": "All rights reserved."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We're here to help you with your dental health",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "Message",
+      "send": "Send Message",
+      "success": "Message sent! We'll be in touch soon.",
+      "error": "Error sending message. Please try again."
+    },
+    "info": {
+      "title": "Contact Information",
+      "preferred": "We prefer WhatsApp contact for scheduling appointments",
+      "address_title": "Clinic Address",
+      "hours_title": "Hours"
+    }
+  },
+  "gallery": {
+    "title": "Case Gallery",
+    "subtitle": "Real transformations from our patients",
+    "before": "Before",
+    "after": "After",
+    "view_more": "View More Cases"
+  },
+  "common": {
+    "read_more": "Read More",
+    "learn_more": "Learn More",
+    "back": "Back",
+    "close": "Close",
+    "loading": "Loading..."
+  }
+}
+

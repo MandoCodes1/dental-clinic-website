@@ -1,0 +1,70 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import ReviewsGrid from '~/components/widgets/ReviewsGrid.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Stats from '~/components/widgets/Stats.astro';
+
+import { headerDataEN, footerDataEN } from '~/navigation';
+import { getAllReviews } from '~/utils/reviews';
+
+const metadata = {
+  title: 'Reviews - Dr. Eugenia Vila',
+  description: 'Read reviews from our patients. Over 60 five-star reviews on Google and Trustpilot. Satisfied patients from Málaga and London.',
+};
+
+const reviews = getAllReviews();
+const googleReviews = reviews.filter((r) => r.source === 'Google').length;
+const trustpilotReviews = reviews.filter((r) => r.source === 'Trustpilot').length;
+---
+
+<Layout metadata={metadata} headerData={headerDataEN} footerData={footerDataEN}>
+  <!-- Hero -->
+  <Hero2
+    tagline="Patient Reviews"
+    title="What Our Patients Say"
+    subtitle="The satisfaction of our patients is our top priority. Read real experiences from people who have trusted us for their dental care."
+  />
+
+  <!-- Stats -->
+  <Stats
+    stats={[
+      { title: 'Total Reviews', amount: `${reviews.length}` },
+      { title: 'Average Rating', amount: '5.0★' },
+      { title: 'Google Reviews', amount: `${googleReviews}` },
+      { title: 'Trustpilot Reviews', amount: `${trustpilotReviews}` },
+    ]}
+  />
+
+  <!-- Reviews Grid -->
+  <section class="px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
+    <div class="mb-8">
+      <h2 class="text-3xl font-bold text-center mb-4">All Reviews</h2>
+      <p class="text-center text-muted max-w-2xl mx-auto">
+        Verified reviews from real patients at our clinic in Málaga and at the London clinics where Dr. Vila works.
+      </p>
+    </div>
+    <ReviewsGrid reviews={reviews} language="en" />
+  </section>
+
+  <!-- Call to Action -->
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Book Appointment',
+        href: 'https://wa.me/34679975580?text=Hello,%20I%20would%20like%20to%20book%20an%20appointment',
+        target: '_blank',
+        icon: 'tabler:brand-whatsapp',
+      },
+    ]}
+  >
+    <Fragment slot="title">Ready to Join Our Satisfied Patients?</Fragment>
+
+    <Fragment slot="subtitle">
+      Experience the same exceptional care that over 20,000 patients have received. <br />Contact us today to begin your
+      journey to a perfect smile.
+    </Fragment>
+  </CallToAction>
+</Layout>
+

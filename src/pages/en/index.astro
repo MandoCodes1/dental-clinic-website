@@ -1,0 +1,189 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Content from '~/components/widgets/Content.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+import { headerDataEN, footerDataEN } from '~/navigation';
+import { getFeaturedReviews } from '~/utils/reviews';
+
+const metadata = {
+  title: 'Dr. Eugenia Vila - Dental Clinic in Málaga',
+  description: 'Dental clinic in El Palo, Málaga. Over 30 years of experience in dental implants, oral surgery, aligners and cosmetic dentistry. Award-winning dentist with high-quality materials and competitive prices.',
+  ignoreTitleTemplate: true,
+};
+
+const featuredReviews = getFeaturedReviews(6);
+const testimonials = featuredReviews.map(review => ({
+  testimonial: review.text_en,
+  name: review.name,
+  job: review.clinic === 'malaga' ? 'Málaga' : review.clinic === 'balham' ? 'London (Balham)' : 'London (Finchley)',
+  image: {
+    src: review.avatar.startsWith('http') ? review.avatar : undefined,
+    alt: review.name,
+  },
+  rating: review.rating,
+}));
+---
+
+<Layout metadata={metadata} headerData={headerDataEN} footerData={footerDataEN}>
+  <!-- Hero Section -->
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Book via WhatsApp',
+        href: 'https://wa.me/34679975580?text=Hello,%20I%20would%20like%20to%20book%20an%20appointment',
+        target: '_blank',
+        icon: 'tabler:brand-whatsapp',
+      },
+      { text: 'Learn More', href: '#about' },
+    ]}
+    image={{ src: '~/assets/images/full_body_hero.png', alt: 'Dr. Eugenia Vila' }}
+  >
+    <Fragment slot="title">
+      <span class="text-accent dark:text-white">Perfect Smiles</span> with Over
+      <span class="text-accent dark:text-white">30 Years of Experience</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="block mb-2">
+        Specialist in <span class="font-semibold">dental implants, aligners and cosmetic dentistry</span>.
+      </span>
+      <span class="block">
+        Award-winning dentist with high-quality materials and competitive prices. Dental clinic in El Palo, Málaga.
+      </span>
+    </Fragment>
+  </Hero>
+
+  <!-- About Section -->
+  <Content
+    id="about"
+    tagline="About Dr. Vila"
+    title="Experience, Quality and Dedication"
+    items={[
+      {
+        title: 'Over 30 Years of Experience',
+        description:
+          'With over three decades of clinical practice, I have treated more than 20,000 patients with dedication and personalized care.',
+      },
+      {
+        title: 'Elite Training',
+        description:
+          'Master\'s in Dental Implantology (UIC Barcelona) and Master\'s in Aesthetics (University of Córdoba). Licensed in both Medicine and Dentistry.',
+      },
+      {
+        title: 'Dentist of the Year 2024',
+        description:
+          'Awarded by Dental Art Implant Clinic for exceptional clinical outcomes and patient satisfaction.',
+      },
+      {
+        title: 'Holistic Approach',
+        description:
+          'My medical training allows me to offer a comprehensive approach to dental care, always putting the patient\'s interests first.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/full_body_hero.png',
+      alt: 'Dr. Eugenia Vila at her clinic',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        A Dentist Who Truly Cares
+      </h3>
+      <p class="text-lg text-muted mb-4">
+        With degrees in both Medicine and Dentistry, I offer a holistic and personalized approach for every patient. My passion is creating beautiful, healthy smiles that last a lifetime.
+      </p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Services Preview -->
+  <Features
+    id="services"
+    tagline="Our Services"
+    title="Specialized Dental Treatments"
+    subtitle="With cutting-edge technology and the highest quality materials"
+    items={[
+      {
+        title: 'Dental Implants',
+        description:
+          'Full-mouth rehabilitation with digital workflow (CBCT, 3Shape, Medit). Specialist in implant placement, bone grafting and sinus lift procedures.',
+        icon: 'tabler:dental',
+      },
+      {
+        title: 'Oral Surgery',
+        description:
+          'Complex extractions, wisdom teeth removal and advanced surgical procedures. Specialized care with over 30 years of experience.',
+        icon: 'tabler:medical-cross',
+      },
+      {
+        title: 'Aligners',
+        description:
+          'Clear aligner treatment for smile correction without traditional braces. Predictable and comfortable results.',
+        icon: 'tabler:dental-off',
+      },
+      {
+        title: 'Cosmetic Dentistry',
+        description:
+          'Porcelain veneers, bonding and personalized smile design. Natural and beautiful results that transform your smile.',
+        icon: 'tabler:sparkles',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-white dark:bg-slate-900"></div>
+    </Fragment>
+  </Features>
+
+  <!-- Stats Section -->
+  <Stats
+    stats={[
+      { title: 'Years of Experience', amount: '30+' },
+      { title: 'Patients Treated', amount: '20,000+' },
+      { title: 'Implants Placed', amount: 'Thousands' },
+      { title: '5-Star Reviews', amount: '60+' },
+    ]}
+  />
+
+  <!-- Testimonials Section -->
+  <Testimonials
+    title="What Our Patients Say"
+    subtitle="Over 60 five-star reviews on Google and Trustpilot"
+    testimonials={testimonials}
+    callToAction={{
+      text: 'View All Reviews',
+      href: '/en/reviews',
+    }}
+  />
+
+  <!-- Call to Action -->
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Book via WhatsApp',
+        href: 'https://wa.me/34679975580?text=Hello,%20I%20would%20like%20to%20book%20an%20appointment',
+        target: '_blank',
+        icon: 'tabler:brand-whatsapp',
+      },
+    ]}
+  >
+    <Fragment slot="title">Ready for Your Best Smile?</Fragment>
+
+    <Fragment slot="subtitle">
+      Contact us via WhatsApp to book your consultation.<br />
+      <span class="text-sm text-muted">
+        Clinic open select weekends when Dr. Vila is in Málaga.
+      </span>
+    </Fragment>
+  </CallToAction>
+</Layout>
+
