@@ -12,8 +12,6 @@ const metadata = {
 };
 
 const reviews = getAllReviews();
-const googleReviews = reviews.filter((r) => r.source === 'Google').length;
-const trustpilotReviews = reviews.filter((r) => r.source === 'Trustpilot').length;
 ---
 
 <Layout metadata={metadata}>
@@ -29,8 +27,6 @@ const trustpilotReviews = reviews.filter((r) => r.source === 'Trustpilot').lengt
     stats={[
       { title: 'Total Reviews', amount: `${reviews.length}` },
       { title: 'Average Rating', amount: '5.0★' },
-      { title: 'Google Reviews', amount: `${googleReviews}` },
-      { title: 'Trustpilot Reviews', amount: `${trustpilotReviews}` },
     ]}
   />
 
@@ -43,6 +39,55 @@ const trustpilotReviews = reviews.filter((r) => r.source === 'Trustpilot').lengt
       </p>
     </div>
     <ReviewsGrid reviews={reviews} language="en" />
+  </section>
+
+  <!-- Review Request Section -->
+  <section class="px-4 py-16 mx-auto max-w-4xl sm:px-6 lg:px-8">
+    <div class="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-slate-800 dark:to-slate-900 rounded-lg p-8 md:p-12 text-center border border-blue-100 dark:border-slate-700">
+      <div class="mb-6">
+        <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
+            ></path>
+          </svg>
+        </div>
+        <h2 class="text-3xl font-bold mb-4">Were You a Patient?</h2>
+        <p class="text-lg text-muted dark:text-slate-300 mb-6 max-w-2xl mx-auto">
+          If you've been a patient at our clinic, we'd love to hear about your experience! Your feedback helps us continue
+          to provide exceptional care and helps other patients make informed decisions.
+        </p>
+      </div>
+      <a
+        href="https://g.page/r/CaQGrzr7SlRIEAE/review"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl"
+      >
+        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+          <path
+            d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+            fill="#4285F4"
+          ></path>
+          <path
+            d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+            fill="#34A853"
+          ></path>
+          <path
+            d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+            fill="#FBBC05"
+          ></path>
+          <path
+            d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+            fill="#EA4335"
+          ></path>
+        </svg>
+        Leave a Google Review
+      </a>
+    </div>
   </section>
 
   <!-- Call to Action -->
