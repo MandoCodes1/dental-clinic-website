@@ -1,7 +1,26 @@
 ---
-import favIconLogo from '~/assets/images/favicon_logo.png';
+// Import favicon files
+import faviconSvg from '~/assets/favicons/favicon.svg';
+import faviconIco from '~/assets/favicons/favicon.ico';
+import faviconPng32 from '~/assets/favicons/favicon32x32.png';
+import faviconPng192 from '~/assets/favicons/favicon192x192.png';
+import faviconPng512 from '~/assets/favicons/favicon512x512.png';
+import appleTouchIcon from '~/assets/favicons/apple-touch-icon.png';
 ---
 
-<link rel="shortcut icon" href={favIconLogo.src} />
-<link rel="icon" type="image/png" href={favIconLogo.src} />
-<link rel="apple-touch-icon" sizes="180x180" href={favIconLogo.src} />
+<!-- Modern SVG favicon (preferred by modern browsers) -->
+<link rel="icon" type="image/svg+xml" href={faviconSvg.src} />
+
+<!-- Fallback ICO for older browsers (especially Windows) -->
+<link rel="icon" type="image/x-icon" href={faviconIco.src} />
+
+<!-- PNG fallbacks for various sizes -->
+<link rel="icon" type="image/png" sizes="32x32" href={faviconPng32.src} />
+<link rel="icon" type="image/png" sizes="192x192" href={faviconPng192.src} />
+<link rel="icon" type="image/png" sizes="512x512" href={faviconPng512.src} />
+
+<!-- Apple Touch Icon for iOS devices -->
+<link rel="apple-touch-icon" sizes="180x180" href={appleTouchIcon.src} />
+
+<!-- Legacy shortcut icon -->
+<link rel="shortcut icon" href={faviconIco.src} />
