@@ -80,3 +80,9 @@ Built a professional website as a side project for a dental clinic in Málaga, S
 ├── package.json
 └── ...
 ```
+
+---
+
+## Acknowledgements
+
+This project is built on the [AstroWind](https://github.com/arthelokyo/astrowind) template by [André B](https://github.com/prototypa). 
