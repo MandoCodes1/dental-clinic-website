@@ -79,4 +79,4 @@ Built a professional website as a side project for a dental clinic in Málaga, S
 
 ## Acknowledgements
 
-Built on the [AstroWind](https://github.com/arthelokyo/astrowind) template. 
+Built on the [AstroWind](https://github.com/arthelokyo/astrowind) template.
