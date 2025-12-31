@@ -1,4 +1,4 @@
-# Fully Functional Dental Clinic Website
+# High-Performance Dental Clinic Website
 
 **Live Site**: [dreugeniavila.com](https://www.dreugeniavila.com/en/)
 
