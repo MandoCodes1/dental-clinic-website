@@ -2,7 +2,7 @@
 
 **Live Site**: [dreugeniavila.com](https://www.dreugeniavila.com/en/)
 
-Built a professional website for a dental clinic in Málaga, Spain, using Astro, TypeScript, and Tailwind CSS.
+Professional website for a dental clinic in Málaga, Spain.
 
 ## Tech Stack
 
