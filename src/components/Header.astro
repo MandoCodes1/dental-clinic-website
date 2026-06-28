@@ -1,0 +1,103 @@
+---
+import { Icon } from 'astro-icon/components';
+import { Image } from 'astro:assets';
+import logo from '~/assets/images/brand/logo2.png';
+import LanguageToggle from '~/components/LanguageToggle.astro';
+import { content } from '~/content/site';
+import { ROUTES, NAV_KEYS, type Lang, type RouteKey } from '~/i18n';
+import { waLink } from '~/config';
+
+interface Props {
+  lang: Lang;
+  page: RouteKey;
+}
+const { lang, page } = Astro.props;
+const t = content[lang];
+const homeHref = ROUTES.home[lang];
+const nav = NAV_KEYS.map((key) => ({ label: t.nav[key], href: ROUTES[key][lang], active: key === page }));
+---
+
+<header class="sticky top-0 z-40 border-b border-brand-teal/10 bg-cream/90 backdrop-blur">
+  <div class="container-page flex h-16 items-center justify-between gap-4">
+    <a href={homeHref} class="flex items-center gap-2.5" aria-label="Dra. Eugenia Vila">
+      <Image src={logo} alt="" width={40} height={40} class="h-9 w-9 rounded-md" />
+      <span class="font-heading text-lg font-semibold text-brand-deep">Dra. Eugenia Vila</span>
+    </a>
+
+    <nav class="hidden items-center gap-6 lg:flex" aria-label={t.nav.home}>
+      {
+        nav.map((item) => (
+          <a
+            href={item.href}
+            class:list={[
+              'text-sm font-medium transition hover:text-brand-teal',
+              item.active ? 'text-brand-teal' : 'text-ink/80',
+            ]}
+            aria-current={item.active ? 'page' : undefined}
+          >
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <LanguageToggle lang={lang} />
+      <a
+        href={waLink()}
+        target="_blank"
+        rel="noopener"
+        class="hidden items-center gap-2 rounded-full bg-brand-green px-4 py-2 text-sm font-semibold text-white transition hover:brightness-95 sm:inline-flex"
+      >
+        <Icon name="tabler:brand-whatsapp" class="h-5 w-5" />
+        {t.nav.book}
+      </a>
+      <button
+        type="button"
+        id="menu-toggle"
+        class="inline-flex h-10 w-10 items-center justify-center rounded-md text-brand-deep hover:bg-brand-light lg:hidden"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        aria-label={t.a11y.openMenu}
+      >
+        <Icon name="tabler:menu-2" class="h-6 w-6" />
+      </button>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="hidden border-t border-brand-teal/10 bg-cream lg:hidden">
+    <nav class="container-page flex flex-col py-3" aria-label={t.nav.home}>
+      {
+        nav.map((item) => (
+          <a
+            href={item.href}
+            class:list={[
+              'rounded-md px-2 py-2.5 text-base font-medium',
+              item.active ? 'text-brand-teal' : 'text-ink/80',
+            ]}
+            aria-current={item.active ? 'page' : undefined}
+          >
+            {item.label}
+          </a>
+        ))
+      }
+      <a href={waLink()} target="_blank" rel="noopener" class="btn-whatsapp mt-2">
+        <Icon name="tabler:brand-whatsapp" class="h-5 w-5" />
+        {t.nav.book}
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  function initMenu() {
+    const btn = document.getElementById('menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+    if (!btn || !menu) return;
+    btn.addEventListener('click', () => {
+      const isOpen = menu.classList.toggle('hidden') === false;
+      btn.setAttribute('aria-expanded', String(isOpen));
+    });
+  }
+  document.addEventListener('astro:page-load', initMenu);
+</script>

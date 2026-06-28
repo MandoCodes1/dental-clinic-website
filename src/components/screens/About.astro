@@ -1,0 +1,94 @@
+---
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Timeline from '~/components/Timeline.astro';
+import ContactCTA from '~/components/ContactCTA.astro';
+import profile from '~/assets/images/brand/profile.png';
+import { content } from '~/content/site';
+import type { Lang } from '~/i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const a = content[lang].about;
+---
+
+<BaseLayout lang={lang} page="about">
+  <section class="bg-brand-light/40">
+    <div class="container-page flex flex-col items-start gap-8 py-12 sm:flex-row sm:items-center sm:py-16">
+      <Image
+        src={profile}
+        alt="Dra. Eugenia Vila"
+        width={128}
+        height={128}
+        class="h-28 w-28 shrink-0 rounded-full object-cover shadow-sm ring-4 ring-white"
+      />
+      <div>
+        <p class="eyebrow">{a.eyebrow}</p>
+        <h1 class="mt-2 font-heading text-4xl text-brand-deep sm:text-5xl">{a.title}</h1>
+        <p class="mt-4 max-w-2xl text-lg leading-relaxed text-ink/80">{a.lead}</p>
+        <a href="/documents/cv.pdf" target="_blank" rel="noopener" class="btn-outline mt-5">
+          <Icon name="tabler:download" class="h-5 w-5" />
+          {a.cvCta}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-cream">
+    <div class="container-page grid gap-12 lg:grid-cols-2">
+      <div>
+        <h2 class="font-heading text-2xl text-brand-deep">{a.educationTitle}</h2>
+        <div class="mt-6"><Timeline items={a.education} /></div>
+      </div>
+      <div>
+        <h2 class="font-heading text-2xl text-brand-deep">{a.experienceTitle}</h2>
+        <div class="mt-6 space-y-6">
+          {
+            a.experience.map((e) => (
+              <div class="card">
+                <p class="font-heading text-lg text-brand-deep">{e.role}</p>
+                <p class="text-sm text-ink/70">{e.org}</p>
+                <p class="text-xs text-sage">{e.period}</p>
+                <ul class="mt-3 space-y-1.5">
+                  {e.bullets.map((b) => (
+                    <li class="flex gap-2 text-sm text-ink/80">
+                      <Icon name="tabler:point-filled" class="mt-1 h-3.5 w-3.5 shrink-0 text-brand-green" />
+                      <span>{b}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-white">
+    <div class="container-page grid gap-12 lg:grid-cols-2">
+      <div>
+        <h2 class="font-heading text-2xl text-brand-deep">{a.credsTitle}</h2>
+        <ul class="mt-5 space-y-2.5">
+          {
+            a.memberships.map((m) => (
+              <li class="flex gap-2.5 text-ink/80">
+                <Icon name="tabler:certificate" class="mt-0.5 h-5 w-5 shrink-0 text-brand-teal" />
+                <span>{m}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <div>
+        <h2 class="font-heading text-2xl text-brand-deep">{a.personalTitle}</h2>
+        <p class="mt-5 leading-relaxed text-ink/80">{a.personal}</p>
+      </div>
+    </div>
+  </section>
+
+  <ContactCTA lang={lang} />
+</BaseLayout>

@@ -1,0 +1,45 @@
+---
+import { Icon } from 'astro-icon/components';
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import PageHeader from '~/components/PageHeader.astro';
+import BeforeAfter from '~/components/BeforeAfter.astro';
+import ContactCTA from '~/components/ContactCTA.astro';
+import { content } from '~/content/site';
+import { ROUTES, type Lang } from '~/i18n';
+import before1 from '~/assets/images/gallery/1_before.png';
+import after1 from '~/assets/images/gallery/1_after.png';
+import before2 from '~/assets/images/gallery/2_before.png';
+import after2 from '~/assets/images/gallery/2_after.png';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = content[lang];
+const g = t.gallery;
+const cases = [
+  { before: before1, after: after1, title: `${g.caseLabel} 1` },
+  { before: before2, after: after2, title: `${g.caseLabel} 2` },
+];
+---
+
+<BaseLayout lang={lang} page="gallery">
+  <PageHeader title={t.nav.gallery} lead={g.lead} />
+  <section class="section bg-cream">
+    <div class="container-page">
+      <BeforeAfter cases={cases} beforeLabel={g.before} afterLabel={g.after} />
+      <div class="mt-10 rounded-2xl border border-dashed border-brand-teal/30 bg-white p-6 text-center">
+        <h2 class="font-heading text-lg text-brand-deep">{g.comingSoonTitle}</h2>
+        <p class="mx-auto mt-2 max-w-xl text-sm text-ink/70">{g.comingSoon}</p>
+        <a
+          href={ROUTES.reviews[lang]}
+          class="mt-4 inline-flex items-center gap-1 text-sm font-medium text-brand-teal hover:underline"
+        >
+          {t.featuredReviews.viewAll}
+          <Icon name="tabler:arrow-right" class="h-4 w-4" />
+        </a>
+      </div>
+    </div>
+  </section>
+  <ContactCTA lang={lang} />
+</BaseLayout>

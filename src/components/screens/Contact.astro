@@ -1,0 +1,91 @@
+---
+import { Icon } from 'astro-icon/components';
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import PageHeader from '~/components/PageHeader.astro';
+import Map from '~/components/Map.astro';
+import { content } from '~/content/site';
+import { CLINIC, waLink } from '~/config';
+import type { Lang } from '~/i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const c = content[lang].contact;
+---
+
+<BaseLayout lang={lang} page="contact">
+  <PageHeader title={content[lang].nav.contact} lead={c.lead} />
+  <section class="section bg-cream">
+    <div class="container-page grid gap-10 lg:grid-cols-2">
+      <div class="space-y-5">
+        <a
+          href={waLink()}
+          target="_blank"
+          rel="noopener"
+          class="card flex items-start gap-4 transition hover:border-brand-teal/30 hover:shadow-md"
+        >
+          <span
+            class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-green/10 text-brand-green"
+          >
+            <Icon name="tabler:brand-whatsapp" class="h-6 w-6" />
+          </span>
+          <div>
+            <p class="font-heading text-lg text-brand-deep">{c.whatsappTitle}</p>
+            <p class="text-sm text-ink/70">{c.whatsappBody}</p>
+            <p class="mt-1 font-medium text-brand-teal">{CLINIC.phoneDisplay}</p>
+          </div>
+        </a>
+
+        <a
+          href={`mailto:${CLINIC.email}`}
+          class="card flex items-start gap-4 transition hover:border-brand-teal/30 hover:shadow-md"
+        >
+          <span
+            class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-teal/10 text-brand-teal"
+          >
+            <Icon name="tabler:mail" class="h-6 w-6" />
+          </span>
+          <div>
+            <p class="font-heading text-lg text-brand-deep">{c.emailTitle}</p>
+            <p class="mt-1 break-all font-medium text-brand-teal">{CLINIC.email}</p>
+          </div>
+        </a>
+
+        <div class="card flex items-start gap-4">
+          <span
+            class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-teal/10 text-brand-teal"
+          >
+            <Icon name="tabler:map-pin" class="h-6 w-6" />
+          </span>
+          <div>
+            <p class="font-heading text-lg text-brand-deep">{c.locationTitle}</p>
+            <p class="mt-1 text-sm text-ink/70">{CLINIC.addressLine}, {CLINIC.addressCity}</p>
+            <a
+              href={CLINIC.mapsPlaceUrl}
+              target="_blank"
+              rel="noopener"
+              class="mt-1 inline-block text-sm font-medium text-brand-teal hover:underline"
+            >
+              {c.directions}
+            </a>
+          </div>
+        </div>
+
+        <div class="card flex items-start gap-4">
+          <span
+            class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-teal/10 text-brand-teal"
+          >
+            <Icon name="tabler:clock-hour-4" class="h-6 w-6" />
+          </span>
+          <div>
+            <p class="font-heading text-lg text-brand-deep">{c.hoursTitle}</p>
+            <p class="mt-1 text-sm leading-relaxed text-ink/70">{c.hoursBody}</p>
+          </div>
+        </div>
+      </div>
+
+      <div><Map lang={lang} /></div>
+    </div>
+  </section>
+</BaseLayout>

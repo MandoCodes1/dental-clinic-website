@@ -1,0 +1,88 @@
+---
+import '~/assets/styles/global.css';
+import '@fontsource-variable/inter';
+import '@fontsource-variable/fraunces';
+import { ClientRouter } from 'astro:transitions';
+
+import Header from '~/components/Header.astro';
+import Footer from '~/components/Footer.astro';
+import { content } from '~/content/site';
+import { SITE } from '~/config';
+import { ROUTES, LANG_META, type Lang, type RouteKey } from '~/i18n';
+
+import faviconSvg from '~/assets/favicons/favicon.svg';
+import faviconIco from '~/assets/favicons/favicon.ico';
+import faviconPng32 from '~/assets/favicons/favicon32x32.png';
+import appleTouchIcon from '~/assets/favicons/apple-touch-icon.png';
+
+interface Props {
+  lang: Lang;
+  page: RouteKey;
+  title?: string;
+  description?: string;
+  image?: string;
+}
+const { lang, page, title, description, image } = Astro.props;
+const t = content[lang];
+
+const metaKeys = ['home', 'about', 'services', 'gallery', 'reviews', 'contact'] as const;
+const fallback = (metaKeys as readonly string[]).includes(page) ? t.meta[page as (typeof metaKeys)[number]] : undefined;
+const pageTitle = title ?? fallback?.title ?? SITE.name;
+const pageDesc = description ?? fallback?.description ?? '';
+
+const abs = (p: string) => SITE.domain + (p === '/' ? '' : p);
+const canonical = abs(ROUTES[page][lang]);
+const ogImage = (image ?? SITE.ogImage).startsWith('http')
+  ? (image ?? SITE.ogImage)
+  : SITE.domain + (image ?? SITE.ogImage);
+
+const alternates = [
+  { hreflang: 'es', href: abs(ROUTES[page].es) },
+  { hreflang: 'en', href: abs(ROUTES[page].en) },
+  { hreflang: 'x-default', href: abs(ROUTES[page].es) },
+];
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDesc} />
+    <link rel="canonical" href={canonical} />
+    {alternates.map((a) => <link rel="alternate" hreflang={a.hreflang} href={a.href} />)}
+    <meta name="generator" content={Astro.generator} />
+
+    <link rel="icon" type="image/svg+xml" href={faviconSvg.src} />
+    <link rel="icon" type="image/x-icon" href={faviconIco} />
+    <link rel="icon" type="image/png" sizes="32x32" href={faviconPng32.src} />
+    <link rel="apple-touch-icon" sizes="180x180" href={appleTouchIcon.src} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Dra. Eugenia Vila" />
+    <meta property="og:locale" content={LANG_META[lang].ogLocale} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDesc} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    {SITE.googleSiteVerificationId && <meta name="google-site-verification" content={SITE.googleSiteVerificationId} />}
+
+    <ClientRouter fallback="swap" />
+  </head>
+
+  <body>
+    <a
+      href="#main"
+      class="sr-only rounded bg-brand-teal px-4 py-2 text-white focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50"
+    >
+      {t.a11y.skip}
+    </a>
+    <Header lang={lang} page={page} />
+    <main id="main"><slot /></main>
+    <Footer lang={lang} />
+  </body>
+</html>
