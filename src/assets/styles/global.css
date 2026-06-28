@@ -40,30 +40,30 @@
   }
 
   .eyebrow {
-    @apply text-sm font-semibold uppercase tracking-wider text-brand-teal;
+    @apply text-sm font-semibold uppercase tracking-wider text-brand-blue;
   }
 
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-base font-semibold leading-snug transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-teal focus-visible:ring-offset-2;
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-base font-semibold leading-snug transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2;
   }
 
   .btn-primary {
-    @apply btn bg-brand-teal text-white hover:bg-brand-deep;
+    @apply btn bg-brand-blue text-white hover:bg-brand-deep;
   }
 
   .btn-whatsapp {
-    @apply btn bg-brand-green text-white hover:brightness-95;
+    @apply btn bg-brand-deep text-white hover:brightness-95;
   }
 
   .btn-outline {
-    @apply btn border border-brand-teal/30 bg-white/60 text-brand-deep hover:bg-brand-light;
+    @apply btn border border-brand-blue/30 bg-white/60 text-brand-deep hover:bg-brand-light;
   }
 
   .card {
-    @apply rounded-2xl border border-brand-teal/10 bg-white p-6 shadow-sm;
+    @apply rounded-2xl border border-brand-blue/10 bg-white p-6 shadow-sm;
   }
 
   .link-quiet {
-    @apply text-brand-teal underline-offset-4 hover:underline;
+    @apply text-brand-blue underline-offset-4 hover:underline;
   }
 }
