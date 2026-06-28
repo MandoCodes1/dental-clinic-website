@@ -27,14 +27,14 @@ const itemsById = new Map(s.items.map((i) => [i.id, i]));
           return (
             <a
               href={`${servicesHref}#${svc.anchor}`}
-              class="card group flex flex-col transition hover:border-brand-teal/30 hover:shadow-md"
+              class="card group flex flex-col transition hover:border-brand-blue/30 hover:shadow-md"
             >
-              <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-light text-brand-teal">
+              <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-light text-brand-blue">
                 <Icon name={svc.icon} class="h-6 w-6" />
               </span>
               <h3 class="mt-4 font-heading text-lg text-brand-deep">{item.title}</h3>
               <p class="mt-2 grow text-sm leading-relaxed text-ink/75">{item.description}</p>
-              <span class="mt-4 inline-flex items-center gap-1 text-sm font-medium text-brand-teal">
+              <span class="mt-4 inline-flex items-center gap-1 text-sm font-medium text-brand-blue">
                 {s.learnMore}
                 <Icon name="tabler:arrow-right" class="h-4 w-4 transition group-hover:translate-x-0.5" />
               </span>

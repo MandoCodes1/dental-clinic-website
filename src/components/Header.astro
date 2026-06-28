@@ -17,10 +17,10 @@ const homeHref = ROUTES.home[lang];
 const nav = NAV_KEYS.map((key) => ({ label: t.nav[key], href: ROUTES[key][lang], active: key === page }));
 ---
 
-<header class="sticky top-0 z-40 border-b border-brand-teal/10 bg-cream/90 backdrop-blur">
+<header class="sticky top-0 z-40 border-b border-brand-blue/10 bg-cream/90 backdrop-blur">
   <div class="container-page flex h-16 items-center justify-between gap-4">
     <a href={homeHref} class="flex items-center gap-2.5" aria-label="Dra. Eugenia Vila">
-      <Image src={logo} alt="" width={40} height={40} class="h-9 w-9 rounded-md" />
+      <Image src={logo} alt="" width={435} height={316} class="h-10 w-auto" />
       <span class="font-heading text-lg font-semibold text-brand-deep">Dra. Eugenia Vila</span>
     </a>
 
@@ -30,8 +30,8 @@ const nav = NAV_KEYS.map((key) => ({ label: t.nav[key], href: ROUTES[key][lang],
           <a
             href={item.href}
             class:list={[
-              'text-sm font-medium transition hover:text-brand-teal',
-              item.active ? 'text-brand-teal' : 'text-ink/80',
+              'text-sm font-medium transition hover:text-brand-blue',
+              item.active ? 'text-brand-blue' : 'text-ink/80',
             ]}
             aria-current={item.active ? 'page' : undefined}
           >
@@ -47,7 +47,7 @@ const nav = NAV_KEYS.map((key) => ({ label: t.nav[key], href: ROUTES[key][lang],
         href={waLink()}
         target="_blank"
         rel="noopener"
-        class="hidden items-center gap-2 rounded-full bg-brand-green px-4 py-2 text-sm font-semibold text-white transition hover:brightness-95 sm:inline-flex"
+        class="hidden items-center gap-2 rounded-full bg-brand-deep px-4 py-2 text-sm font-semibold text-white transition hover:brightness-95 sm:inline-flex"
       >
         <Icon name="tabler:brand-whatsapp" class="h-5 w-5" />
         {t.nav.book}
@@ -65,7 +65,7 @@ const nav = NAV_KEYS.map((key) => ({ label: t.nav[key], href: ROUTES[key][lang],
     </div>
   </div>
 
-  <div id="mobile-menu" class="hidden border-t border-brand-teal/10 bg-cream lg:hidden">
+  <div id="mobile-menu" class="hidden border-t border-brand-blue/10 bg-cream lg:hidden">
     <nav class="container-page flex flex-col py-3" aria-label={t.nav.home}>
       {
         nav.map((item) => (
@@ -73,7 +73,7 @@ const nav = NAV_KEYS.map((key) => ({ label: t.nav[key], href: ROUTES[key][lang],
             href={item.href}
             class:list={[
               'rounded-md px-2 py-2.5 text-base font-medium',
-              item.active ? 'text-brand-teal' : 'text-ink/80',
+              item.active ? 'text-brand-blue' : 'text-ink/80',
             ]}
             aria-current={item.active ? 'page' : undefined}
           >

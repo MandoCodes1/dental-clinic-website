@@ -8,22 +8,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        // New brand palette (the redesign).
+        // Brand palette: blue, matched to the EV logo mark.
         brand: {
-          teal: '#0F6E6E',
-          deep: '#0B4F4A',
-          green: '#5E8C61',
-          light: '#E8F1EE',
+          blue: '#0F6BA8', // primary: buttons, links, eyebrows, active nav
+          deep: '#0B3A5C', // deep navy: headings, hovers, filled CTAs
+          sky: '#2E8BC4', // bright accent: icons, stars, dots, tints
+          light: '#E5F0F8', // pale tint: chips, hover surfaces, rings
         },
         cream: '#FBF8F3',
         ink: '#1E2A28',
         sage: '#5B6B69',
-        // Legacy AstroWind tokens, kept only until the old components are purged.
-        primary: 'var(--aw-color-primary)',
-        secondary: 'var(--aw-color-secondary)',
-        accent: 'var(--aw-color-accent)',
-        default: 'var(--aw-color-text-default)',
-        muted: 'var(--aw-color-text-muted)',
       },
       fontFamily: {
         sans: ['Inter Variable', ...defaultTheme.fontFamily.sans],

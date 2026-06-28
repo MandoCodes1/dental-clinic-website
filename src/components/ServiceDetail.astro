@@ -15,7 +15,7 @@ const { detail, image, anchor, reversed = false } = Astro.props;
 
 <div id={anchor} class="grid scroll-mt-24 items-center gap-8 lg:grid-cols-2 lg:gap-12">
   <div class={reversed ? 'lg:order-2' : ''}>
-    <div class="mx-auto max-w-md rounded-2xl bg-brand-light p-4 ring-1 ring-brand-teal/10 lg:max-w-none">
+    <div class="mx-auto max-w-md rounded-2xl bg-brand-light p-4 ring-1 ring-brand-blue/10 lg:max-w-none">
       <Image
         src={image}
         alt={detail.title}
@@ -32,7 +32,7 @@ const { detail, image, anchor, reversed = false } = Astro.props;
       {
         detail.points.map((p) => (
           <li class="flex gap-2.5 text-ink/80">
-            <Icon name="tabler:check" class="mt-1 h-4 w-4 shrink-0 text-brand-green" />
+            <Icon name="tabler:check" class="mt-1 h-4 w-4 shrink-0 text-brand-sky" />
             <span>{p}</span>
           </li>
         ))
