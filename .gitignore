@@ -25,3 +25,6 @@ pnpm-debug.log*
 pnpm-lock.yaml
 
 .astro
+
+# personal notes (local only, not committed)
+TODO.md
