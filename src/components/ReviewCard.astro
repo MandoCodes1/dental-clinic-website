@@ -1,0 +1,60 @@
+---
+import { Icon } from 'astro-icon/components';
+import { getAvatarDisplay, type Review } from '~/utils/reviews';
+import { content } from '~/content/site';
+import type { Lang } from '~/i18n';
+
+interface Props {
+  review: Review;
+  lang: Lang;
+}
+const { review, lang } = Astro.props;
+const t = content[lang];
+const text = lang === 'es' ? review.text_es : review.text_en;
+const labels: Record<string, string> = { malaga: 'Málaga', balham: 'Londres · Balham', finchley: 'Londres · Finchley' };
+const location = labels[review.clinic] ?? '';
+const avatar = getAvatarDisplay(review.avatar);
+const sourceIcon = review.source === 'Trustpilot' ? 'tabler:star' : 'tabler:brand-google';
+---
+
+<figure class="card flex h-full flex-col">
+  <div class="flex items-center gap-3">
+    {
+      avatar.type === 'image' ? (
+        <img
+          src={avatar.value}
+          alt=""
+          width="40"
+          height="40"
+          loading="lazy"
+          referrerpolicy="no-referrer"
+          class="h-10 w-10 rounded-full object-cover"
+        />
+      ) : (
+        <span class="flex h-10 w-10 items-center justify-center rounded-full bg-brand-light text-sm font-semibold text-brand-deep">
+          {avatar.value}
+        </span>
+      )
+    }
+    <div class="min-w-0">
+      <figcaption class="truncate font-semibold text-ink">{review.name}</figcaption>
+      {location && <p class="text-xs text-sage">{location}</p>}
+    </div>
+  </div>
+
+  <div class="mt-3 flex gap-0.5 text-brand-green" role="img" aria-label="5/5">
+    {Array.from({ length: 5 }).map(() => <Icon name="tabler:star-filled" class="h-4 w-4" />)}
+  </div>
+
+  <blockquote class="mt-3 line-clamp-6 grow text-sm leading-relaxed text-ink/80">{text}</blockquote>
+
+  <a
+    href={review.link}
+    target="_blank"
+    rel="noopener"
+    class="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-brand-teal hover:underline"
+  >
+    <Icon name={sourceIcon} class="h-4 w-4" />
+    {t.common.viewReview}
+  </a>
+</figure>

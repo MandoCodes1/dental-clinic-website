@@ -1,6 +1,6 @@
 ---
 title: 'Política de Privacidad'
-layout: '~/layouts/MarkdownLayout.astro'
+layout: '~/layouts/LegalLayout.astro'
 ---
 
 _Última actualización_: 15 de enero de 2025
@@ -154,7 +154,7 @@ La Clínica también retendrá Datos de Uso para fines de análisis interno. Los
 
 ## Transferencia de sus Datos Personales
 
-Su información, incluyendo Datos Personales, se procesa en las oficinas operativas de la Clínica y en cualquier otro lugar donde se encuentren las partes involucradas en el procesamiento. Esto significa que esta información puede transferirse a — y mantenerse en — computadoras ubicadas fuera de su estado, provincia, país u otra jurisdicción gubernamental donde las leyes de protección de datos pueden diferir de las de su jurisdicción.
+Su información, incluyendo Datos Personales, se procesa en las oficinas operativas de la Clínica y en cualquier otro lugar donde se encuentren las partes involucradas en el procesamiento. Esto significa que esta información puede transferirse a, y mantenerse en, computadoras ubicadas fuera de su estado, provincia, país u otra jurisdicción gubernamental donde las leyes de protección de datos pueden diferir de las de su jurisdicción.
 
 Su consentimiento a esta Política de Privacidad seguido de su envío de dicha información representa su acuerdo con esa transferencia.
 

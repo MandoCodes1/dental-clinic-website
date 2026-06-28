@@ -1,0 +1,30 @@
+---
+import { Icon } from 'astro-icon/components';
+import { content } from '~/content/site';
+import { waLink } from '~/config';
+import type { Lang } from '~/i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const c = content[lang].contactCta;
+---
+
+<section class="section">
+  <div class="container-page">
+    <div class="rounded-3xl bg-brand-teal px-6 py-12 text-center sm:px-12">
+      <h2 class="mx-auto max-w-2xl font-heading text-3xl text-white sm:text-4xl">{c.title}</h2>
+      <p class="mx-auto mt-3 max-w-xl text-cream/90">{c.body}</p>
+      <a
+        href={waLink()}
+        target="_blank"
+        rel="noopener"
+        class="mt-7 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 font-semibold text-brand-deep transition hover:bg-cream"
+      >
+        <Icon name="tabler:brand-whatsapp" class="h-5 w-5 text-brand-green" />
+        {c.button}
+      </a>
+    </div>
+  </div>
+</section>

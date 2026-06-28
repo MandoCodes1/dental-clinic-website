@@ -1,0 +1,24 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import Hero from '~/components/Hero.astro';
+import CredentialsBand from '~/components/CredentialsBand.astro';
+import ServicesOverview from '~/components/ServicesOverview.astro';
+import Values from '~/components/Values.astro';
+import FeaturedReviews from '~/components/FeaturedReviews.astro';
+import ContactCTA from '~/components/ContactCTA.astro';
+import type { Lang } from '~/i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+---
+
+<BaseLayout lang={lang} page="home">
+  <Hero lang={lang} />
+  <CredentialsBand lang={lang} />
+  <ServicesOverview lang={lang} />
+  <Values lang={lang} />
+  <FeaturedReviews lang={lang} />
+  <ContactCTA lang={lang} />
+</BaseLayout>

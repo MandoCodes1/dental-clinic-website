@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    /* offset anchored sections below the sticky header */
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    @apply bg-cream font-sans text-ink antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-heading text-brand-deep;
+    font-optical-sizing: auto;
+  }
+
+  ::selection {
+    @apply bg-brand-light text-brand-deep;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-content px-5 sm:px-6 lg:px-8;
+  }
+
+  .section {
+    @apply py-16 sm:py-20;
+  }
+
+  .eyebrow {
+    @apply text-sm font-semibold uppercase tracking-wider text-brand-teal;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-base font-semibold leading-snug transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-teal focus-visible:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply btn bg-brand-teal text-white hover:bg-brand-deep;
+  }
+
+  .btn-whatsapp {
+    @apply btn bg-brand-green text-white hover:brightness-95;
+  }
+
+  .btn-outline {
+    @apply btn border border-brand-teal/30 bg-white/60 text-brand-deep hover:bg-brand-light;
+  }
+
+  .card {
+    @apply rounded-2xl border border-brand-teal/10 bg-white p-6 shadow-sm;
+  }
+
+  .link-quiet {
+    @apply text-brand-teal underline-offset-4 hover:underline;
+  }
+}

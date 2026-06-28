@@ -1,0 +1,29 @@
+---
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import { getLangFromUrl, type RouteKey } from '~/i18n';
+
+interface Props {
+  frontmatter: { title: string; description?: string };
+}
+const { frontmatter } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const page: RouteKey = Astro.url.pathname.includes('terms') ? 'terms' : 'privacy';
+---
+
+<BaseLayout
+  lang={lang}
+  page={page}
+  title={`${frontmatter.title} - Dra. Eugenia Vila`}
+  description={frontmatter.description}
+>
+  <section class="section">
+    <div class="container-page max-w-3xl">
+      <h1 class="font-heading text-3xl text-brand-deep sm:text-4xl">{frontmatter.title}</h1>
+      <div
+        class="prose prose-slate mt-6 max-w-none prose-headings:font-heading prose-headings:text-brand-deep prose-a:text-brand-teal"
+      >
+        <slot />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

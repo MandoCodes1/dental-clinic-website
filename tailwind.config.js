@@ -1,54 +1,39 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
-import plugin from 'tailwindcss/plugin';
 import typographyPlugin from '@tailwindcss/typography';
 
+/** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,json,md,mdx,svelte,ts,tsx,vue}'],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
+        // New brand palette (the redesign).
+        brand: {
+          teal: '#0F6E6E',
+          deep: '#0B4F4A',
+          green: '#5E8C61',
+          light: '#E8F1EE',
+        },
+        cream: '#FBF8F3',
+        ink: '#1E2A28',
+        sage: '#5B6B69',
+        // Legacy AstroWind tokens, kept only until the old components are purged.
         primary: 'var(--aw-color-primary)',
         secondary: 'var(--aw-color-secondary)',
         accent: 'var(--aw-color-accent)',
         default: 'var(--aw-color-text-default)',
         muted: 'var(--aw-color-text-muted)',
-        // Australian Open inspired dental clinic colors
-        'ao-blue': {
-          light: '#0094D3',
-          DEFAULT: '#0072BB',
-          dark: '#003366',
-        },
-        dental: {
-          blue: '#0072BB',
-          'light-blue': '#0094D3',
-          'dark-blue': '#003366',
-          gray: '#F5F5F5',
-          white: '#FFFFFF',
-        },
       },
       fontFamily: {
-        sans: ['var(--aw-font-sans, ui-sans-serif)', ...defaultTheme.fontFamily.sans],
-        serif: ['var(--aw-font-serif, ui-serif)', ...defaultTheme.fontFamily.serif],
-        heading: ['var(--aw-font-heading, ui-sans-serif)', ...defaultTheme.fontFamily.sans],
+        sans: ['Inter Variable', ...defaultTheme.fontFamily.sans],
+        heading: ['Fraunces Variable', ...defaultTheme.fontFamily.serif],
+        serif: ['Fraunces Variable', ...defaultTheme.fontFamily.serif],
       },
-
-      animation: {
-        fade: 'fadeInUp 1s both',
-      },
-
-      keyframes: {
-        fadeInUp: {
-          '0%': { opacity: 0, transform: 'translateY(2rem)' },
-          '100%': { opacity: 1, transform: 'translateY(0)' },
-        },
+      maxWidth: {
+        content: '70rem',
       },
     },
   },
-  plugins: [
-    typographyPlugin,
-    plugin(({ addVariant }) => {
-      addVariant('intersect', '&:not([no-intersect])');
-    }),
-  ],
-  darkMode: 'class',
+  plugins: [typographyPlugin],
 };

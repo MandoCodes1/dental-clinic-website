@@ -1,0 +1,52 @@
+---
+import { Icon } from 'astro-icon/components';
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import PageHeader from '~/components/PageHeader.astro';
+import ReviewCard from '~/components/ReviewCard.astro';
+import ContactCTA from '~/components/ContactCTA.astro';
+import { content } from '~/content/site';
+import { getReviewsByClinic, getAllReviews } from '~/utils/reviews';
+import { CLINIC } from '~/config';
+import type { Lang } from '~/i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const r = content[lang].reviewsPage;
+const malaga = getReviewsByClinic('malaga');
+const london = [...getReviewsByClinic('balham'), ...getReviewsByClinic('finchley')];
+const total = getAllReviews().length;
+---
+
+<BaseLayout lang={lang} page="reviews">
+  <PageHeader title={content[lang].nav.reviews} lead={r.lead} />
+  <section class="section bg-cream">
+    <div class="container-page">
+      <div class="flex flex-wrap items-center justify-between gap-4 rounded-2xl bg-white p-5 shadow-sm">
+        <div class="flex items-center gap-2 text-brand-deep">
+          <span class="flex text-brand-green">
+            {Array.from({ length: 5 }).map(() => <Icon name="tabler:star-filled" class="h-5 w-5" />)}
+          </span>
+          <span class="font-semibold">5.0</span>
+          <span class="text-sm text-ink/60">· {total} {content[lang].credentials.reviewsLabel.toLowerCase()}</span>
+        </div>
+        <a href={CLINIC.reviewUrl} target="_blank" rel="noopener" class="btn-outline">
+          <Icon name="tabler:brand-google" class="h-5 w-5" />
+          {r.cta}
+        </a>
+      </div>
+
+      <h2 class="mt-10 font-heading text-2xl text-brand-deep">{r.malagaTitle}</h2>
+      <div class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {malaga.map((rev) => <ReviewCard review={rev} lang={lang} />)}
+      </div>
+
+      <h2 class="mt-12 font-heading text-2xl text-brand-deep">{r.londonTitle}</h2>
+      <div class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {london.map((rev) => <ReviewCard review={rev} lang={lang} />)}
+      </div>
+    </div>
+  </section>
+  <ContactCTA lang={lang} />
+</BaseLayout>

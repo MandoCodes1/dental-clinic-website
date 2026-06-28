@@ -1,0 +1,34 @@
+---
+import { Icon } from 'astro-icon/components';
+import { content } from '~/content/site';
+import type { Lang } from '~/i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const v = content[lang].values;
+const icons = ['tabler:user-heart', 'tabler:coins', 'tabler:diamond', 'tabler:clock-hour-4'];
+---
+
+<section class="section bg-cream">
+  <div class="container-page">
+    <p class="eyebrow text-center">{v.eyebrow}</p>
+    <h2 class="mx-auto mt-2 max-w-2xl text-center font-heading text-3xl text-brand-deep sm:text-4xl">{v.title}</h2>
+    <div class="mt-10 grid gap-x-8 gap-y-7 sm:grid-cols-2">
+      {
+        v.items.map((item, i) => (
+          <div class="flex gap-4">
+            <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-light text-brand-teal">
+              <Icon name={icons[i] ?? 'tabler:heart-handshake'} class="h-5 w-5" />
+            </span>
+            <div>
+              <h3 class="font-heading text-lg text-brand-deep">{item.title}</h3>
+              <p class="mt-1 text-sm leading-relaxed text-ink/75">{item.description}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

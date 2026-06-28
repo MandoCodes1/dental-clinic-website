@@ -1,0 +1,42 @@
+---
+import type { ImageMetadata } from 'astro';
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import PageHeader from '~/components/PageHeader.astro';
+import ServiceDetail from '~/components/ServiceDetail.astro';
+import Values from '~/components/Values.astro';
+import ContactCTA from '~/components/ContactCTA.astro';
+import { content } from '~/content/site';
+import { SERVICES, type ServiceId } from '~/config';
+import type { Lang } from '~/i18n';
+import implant from '~/assets/images/implant.png';
+import oral from '~/assets/images/oral_surgery.png';
+import aligner from '~/assets/images/aligner.png';
+import cosmetic from '~/assets/images/cosmetic_dentistry.png';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = content[lang];
+const images: Record<ServiceId, ImageMetadata> = { implants: implant, oral, aligners: aligner, cosmetic };
+---
+
+<BaseLayout lang={lang} page="services">
+  <PageHeader title={t.nav.services} lead={t.servicesPage.lead} />
+  <section class="section bg-cream">
+    <div class="container-page space-y-16 sm:space-y-20">
+      {
+        t.servicesPage.details.map((d, i) => (
+          <ServiceDetail
+            detail={d}
+            image={images[d.id]}
+            anchor={SERVICES.find((s) => s.id === d.id)?.anchor ?? d.id}
+            reversed={i % 2 === 1}
+          />
+        ))
+      }
+    </div>
+  </section>
+  <Values lang={lang} />
+  <ContactCTA lang={lang} />
+</BaseLayout>

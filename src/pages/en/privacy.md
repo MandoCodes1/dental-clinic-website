@@ -1,6 +1,6 @@
 ---
 title: 'Privacy Policy'
-layout: '~/layouts/MarkdownLayout.astro'
+layout: '~/layouts/LegalLayout.astro'
 ---
 
 _Last updated_: January 15, 2025
@@ -154,7 +154,7 @@ The Clinic will also retain Usage Data for internal analysis purposes. Usage Dat
 
 ## Transfer of Your Personal Data
 
-Your information, including Personal Data, is processed at the Clinic's operating offices and in any other places where the parties involved in the processing are located. It means that this information may be transferred to — and maintained on — computers located outside of Your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from Your jurisdiction.
+Your information, including Personal Data, is processed at the Clinic's operating offices and in any other places where the parties involved in the processing are located. It means that this information may be transferred to, and maintained on, computers located outside of Your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from Your jurisdiction.
 
 Your consent to this Privacy Policy followed by Your submission of such information represents Your agreement to that transfer.
 

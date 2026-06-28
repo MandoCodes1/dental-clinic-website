@@ -1,0 +1,46 @@
+---
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
+import heroImg from '~/assets/images/full_body.jpg';
+import { content } from '~/content/site';
+import { ROUTES, type Lang } from '~/i18n';
+import { waLink } from '~/config';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = content[lang];
+const h = t.hero;
+---
+
+<section class="bg-cream">
+  <div class="container-page grid items-center gap-10 py-12 sm:py-16 lg:grid-cols-2 lg:gap-14 lg:py-20">
+    <div>
+      <p class="eyebrow">{h.eyebrow}</p>
+      <h1 class="mt-3 text-4xl font-semibold leading-tight text-brand-deep sm:text-5xl">{h.title}</h1>
+      <p class="mt-5 max-w-xl text-lg leading-relaxed text-ink/80">{h.subtitle}</p>
+      <div class="mt-7 flex flex-col gap-3 sm:flex-row">
+        <a href={waLink()} target="_blank" rel="noopener" class="btn-whatsapp">
+          <Icon name="tabler:brand-whatsapp" class="h-5 w-5" />
+          {h.ctaBook}
+        </a>
+        <a href={ROUTES.reviews[lang]} class="btn-outline">
+          <Icon name="tabler:star-filled" class="h-5 w-5 text-brand-green" />
+          {h.ctaReviews}
+        </a>
+      </div>
+      <p class="mt-4 text-sm text-sage">{h.availability}</p>
+    </div>
+
+    <div class="order-first lg:order-none">
+      <Image
+        src={heroImg}
+        alt="Dra. Eugenia Vila en su clínica"
+        widths={[400, 600, 800]}
+        sizes="(max-width: 1024px) 90vw, 520px"
+        class="mx-auto w-full max-w-md rounded-3xl object-cover shadow-lg lg:max-w-none"
+      />
+    </div>
+  </div>
+</section>
