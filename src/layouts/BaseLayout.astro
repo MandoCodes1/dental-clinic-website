@@ -6,6 +6,7 @@ import { ClientRouter } from 'astro:transitions';
 
 import Header from '~/components/Header.astro';
 import Footer from '~/components/Footer.astro';
+import LangSuggestBanner from '~/components/LangSuggestBanner.astro';
 import { content } from '~/content/site';
 import { SITE } from '~/config';
 import { ROUTES, LANG_META, type Lang, type RouteKey } from '~/i18n';
@@ -81,6 +82,7 @@ const alternates = [
     >
       {t.a11y.skip}
     </a>
+    <LangSuggestBanner lang={lang} />
     <Header lang={lang} page={page} />
     <main id="main"><slot /></main>
     <Footer lang={lang} />
