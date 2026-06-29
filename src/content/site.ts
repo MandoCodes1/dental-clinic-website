@@ -105,6 +105,7 @@ export interface SiteCopy {
   };
   footer: { tagline: string; servicesTitle: string; navTitle: string; contactTitle: string; rights: string };
   common: { readMore: string; readLess: string; viewReview: string; whatsapp: string; backHome: string };
+  langSuggest: { message: string; cta: string; dismiss: string };
 }
 
 const es: SiteCopy = {
@@ -386,6 +387,11 @@ const es: SiteCopy = {
     whatsapp: 'WhatsApp',
     backHome: 'Volver al inicio',
   },
+  langSuggest: {
+    message: 'Esta web también está disponible en español.',
+    cta: 'Ver en español',
+    dismiss: 'Cerrar',
+  },
 };
 
 const en: SiteCopy = {
@@ -666,6 +672,11 @@ const en: SiteCopy = {
     viewReview: 'View review',
     whatsapp: 'WhatsApp',
     backHome: 'Back to home',
+  },
+  langSuggest: {
+    message: 'This site is also available in English.',
+    cta: 'View in English',
+    dismiss: 'Dismiss',
   },
 };
 

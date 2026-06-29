@@ -13,6 +13,9 @@ export default defineConfig({
   base: '/',
   output: 'static',
   trailingSlash: 'never',
+  // Pair 'file' with trailingSlash 'never' so routes build as `en.html` (served at
+  // /en with no redirect), instead of `en/index.html` (which the host 301s to /en/).
+  build: { format: 'file' },
 
   i18n: {
     defaultLocale: 'es',
