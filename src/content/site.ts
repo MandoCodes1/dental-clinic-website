@@ -95,7 +95,14 @@ export interface SiteCopy {
     hoursBody: string;
     directions: string;
   };
-  contactCta: { title: string; body: string; button: string };
+  contactCta: {
+    button: string;
+    home: { title: string; body: string };
+    about: { title: string; body: string };
+    services: { title: string; body: string };
+    reviews: { title: string; body: string };
+    gallery: { title: string; body: string };
+  };
   footer: { tagline: string; servicesTitle: string; navTitle: string; contactTitle: string; rights: string };
   common: { readMore: string; readLess: string; viewReview: string; whatsapp: string; backHome: string };
 }
@@ -343,9 +350,27 @@ const es: SiteCopy = {
     directions: 'Cómo llegar',
   },
   contactCta: {
-    title: '¿Damos el primer paso hacia tu sonrisa?',
-    body: 'Escríbeme por WhatsApp y te respondo yo misma, sin compromiso.',
     button: 'Escribir por WhatsApp',
+    home: {
+      title: '¿Damos el primer paso hacia tu sonrisa?',
+      body: 'Escríbeme por WhatsApp y te respondo yo misma, sin compromiso.',
+    },
+    about: {
+      title: 'Ahora que me conoces un poco, ¿hablamos?',
+      body: 'Escríbeme por WhatsApp y te respondo yo misma, igual que en la consulta.',
+    },
+    services: {
+      title: '¿Tienes dudas sobre qué tratamiento necesitas?',
+      body: 'Cuéntame qué te preocupa por WhatsApp y te respondo yo misma, sin compromiso.',
+    },
+    reviews: {
+      title: '¿Quieres el trato que cuentan mis pacientes?',
+      body: 'Escríbeme por WhatsApp y te respondo yo misma, sin compromiso.',
+    },
+    gallery: {
+      title: '¿Te imaginas tu propio antes y después?',
+      body: 'Escríbeme por WhatsApp y te respondo yo misma, sin compromiso.',
+    },
   },
   footer: {
     tagline: 'Clínica dental en El Palo, Málaga. Cuidado cercano y honesto desde 1994.',
@@ -606,9 +631,27 @@ const en: SiteCopy = {
     directions: 'Get directions',
   },
   contactCta: {
-    title: 'Ready to take the first step toward your smile?',
-    body: 'Message me on WhatsApp and I’ll reply personally, with no obligation.',
     button: 'Message on WhatsApp',
+    home: {
+      title: 'Ready to take the first step toward your smile?',
+      body: 'Message me on WhatsApp and I’ll reply personally, with no obligation.',
+    },
+    about: {
+      title: 'Now that you know me a little, let’s talk.',
+      body: 'Message me on WhatsApp and I’ll reply personally, just as I would in the clinic.',
+    },
+    services: {
+      title: 'Not sure which treatment is right for you?',
+      body: 'Tell me what you’re considering on WhatsApp and I’ll reply personally, with no obligation.',
+    },
+    reviews: {
+      title: 'Want the kind of care these patients describe?',
+      body: 'Message me on WhatsApp and I’ll reply personally, with no obligation.',
+    },
+    gallery: {
+      title: 'Ready for a before and after of your own?',
+      body: 'Message me on WhatsApp and I’ll reply personally, with no obligation.',
+    },
   },
   footer: {
     tagline: 'Dental clinic in El Palo, Málaga. Warm, honest care since 1994.',
