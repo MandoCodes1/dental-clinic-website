@@ -21,6 +21,8 @@ export const CLINIC = {
   mapsPlaceUrl:
     'https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Dental%20Dra.%20Eugenia%20Vila%2C%20Av.%20Juan%20Sebasti%C3%A1n%20Elcano%20191%2C%2029017%20M%C3%A1laga',
   reviewUrl: 'https://g.page/r/CaQGrzr7SlRIEAE/review',
+  linkedin: 'https://www.linkedin.com/in/eugenia-vila-garcia/',
+  doctoralia: 'https://www.doctoralia.es/maria-eugenia-vila-garcia/dentista/malaga',
   gdc: '287705',
   awardYear: 2024,
   years: 30,

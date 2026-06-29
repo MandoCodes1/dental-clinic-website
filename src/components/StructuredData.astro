@@ -1,0 +1,52 @@
+---
+import { SITE, CLINIC } from '~/config';
+
+// LocalBusiness/Dentist structured data for the practice and the dentist.
+// Intentionally omits aggregateRating/review (Google restricts that markup to
+// sites reviewing OTHER businesses) and openingHours (the clinic is by
+// appointment with variable Málaga periods, so fixed hours would be inaccurate).
+const clinicId = `${SITE.domain}/#clinic`;
+const personId = `${SITE.domain}/#dentist`;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Dentist',
+      '@id': clinicId,
+      name: 'Clínica Dental Dra. Eugenia Vila',
+      url: SITE.domain,
+      image: `${SITE.domain}${SITE.ogImage}`,
+      telephone: CLINIC.phoneDisplay,
+      email: CLINIC.email,
+      priceRange: '$$',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: CLINIC.addressLine,
+        addressLocality: 'Málaga',
+        postalCode: '29017',
+        addressCountry: 'ES',
+      },
+      areaServed: { '@type': 'City', name: 'Málaga' },
+      sameAs: [CLINIC.mapsPlaceUrl],
+      founder: { '@id': personId },
+    },
+    {
+      '@type': 'Person',
+      '@id': personId,
+      name: 'Dra. Eugenia Vila',
+      jobTitle: 'Dentista',
+      worksFor: { '@id': clinicId },
+      url: SITE.domain,
+      sameAs: [CLINIC.linkedin, CLINIC.doctoralia],
+      identifier: {
+        '@type': 'PropertyValue',
+        propertyID: 'GDC',
+        value: CLINIC.gdc,
+      },
+    },
+  ],
+};
+---
+
+<script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
