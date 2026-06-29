@@ -769,4 +769,361 @@ export default [
     clinic: 'balham',
     avatar: 'MO, green',
   },
+  {
+    name: 'Larisa Grice',
+    source: 'Google',
+    rating: 5,
+    text_en:
+      'I received an outstanding dental treatment carried out by clinician Eugenia Vila. The new cap was made quickly with the use of cutting edge technology and fitted perfectly in my implant. I recommend to anyone to visit Dental Art Implant clinic for getting good quality dental service.',
+    text_es:
+      'Recibí un tratamiento dental excepcional realizado por la doctora Eugenia Vila. La nueva corona se fabricó rápidamente con tecnología de vanguardia y encajó a la perfección en mi implante. Recomiendo a cualquiera visitar la clínica Dental Art Implant para recibir un servicio dental de gran calidad.',
+    date: 'Jun 2026',
+    link: 'https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xwbmVHTTJaMVV5Y1ROYWRFRkpibTgyWmtOWU5tYxAB!2m1!1s0x0:0x90860a666266ed85!3m1!1s2@1:CAIQACodChtycF9oOlpneGM2Z1UycTNadEFJbm82ZkNYNmc%7C%7C?hl=en',
+    clinic: 'balham',
+    avatar:
+      'https://lh3.googleusercontent.com/a/ACg8ocI7O_36oqRBeCdGAlPKa3cAofayv9p2byltFYQerJmCEffIvw=s64-c-rp-mo-br100',
+  },
+  {
+    name: 'Sue Harte',
+    source: 'Google',
+    rating: 5,
+    text_en:
+      'Dr Eugenia and Evelina are the most professional, kind, wonderful team who are so passionate about their job. They have completely cured my fear of dentists! And Ahmad is the most welcoming and efficient person on reception. Plans are carefully tailored and affordable. This place is the absolute best!',
+    text_es:
+      'La Dra. Eugenia y Evelina forman el equipo más profesional, amable y maravilloso, y sienten verdadera pasión por su trabajo. ¡Han curado por completo mi miedo al dentista! Y Ahmad es la persona más acogedora y eficiente en recepción. Los planes están cuidadosamente personalizados y son asequibles. ¡Este sitio es sencillamente el mejor!',
+    date: 'May 2026',
+    link: 'https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25NMWVXNDRRbmxmT0haSVRtdFNSR2hxTFhsVU1FRRAB!2m1!1s0x0:0x90860a666266ed85!3m1!1s2@1:CAIQACodChtycF9oOnM1eW44QnlfOHZITmtSRGhqLXlUMEE%7C%7C?hl=en',
+    clinic: 'balham',
+    avatar:
+      'https://lh3.googleusercontent.com/a/ACg8ocIx6KqNhaXt3qViJWxkINpn9gCkKviHAZ-ZSH8TidBoULglmw=s64-c-rp-mo-ba12-br100',
+  },
+  {
+    name: 'Lauryn McGrath',
+    source: 'Google',
+    rating: 5,
+    text_en: 'fantastic, eugenia is so lovely',
+    text_es: 'Fantástico, Eugenia es encantadora.',
+    date: 'May 2026',
+    link: 'https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pnM2FWWm9kMVYwTlhSbWVHNU1VbFF4V1VSemMzYxAB!2m1!1s0x0:0x90860a666266ed85!3m1!1s2@1:CAIQACodChtycF9oOjg3aVZod1V0NXRmeG5MUlQxWURzc3c%7C%7C?hl=en',
+    clinic: 'balham',
+    avatar:
+      'https://lh3.googleusercontent.com/a/ACg8ocL09YKLV1gRQkbZM5Y4htniDruB0a0mIu6aF_fKWPSLH6xvdw=s64-c-rp-mo-br100',
+  },
+  {
+    name: 'Ana',
+    source: 'Google',
+    rating: 5,
+    text_en:
+      'Dental Art Implant Clinic gave me back the dignity and health, after having a very bad experience in another clinic. Special thanks for Dr. Nuria for her dedication, professionalism and perfect work. Also Dr. Eugenia, all assistants, receptionist for their high standards. and professionalism. I really recommend them! I have to add also the professionalism and Kindness of Luis. He is exceptional!!',
+    text_es:
+      'La clínica Dental Art Implant me devolvió la dignidad y la salud, después de haber tenido una experiencia muy mala en otra clínica. Un agradecimiento especial a la Dra. Nuria por su dedicación, profesionalidad y trabajo perfecto. También a la Dra. Eugenia, a todos los asistentes y a la recepcionista por sus altos estándares y su profesionalidad. ¡Los recomiendo de verdad! Tengo que añadir también la profesionalidad y amabilidad de Luis. ¡Es excepcional!',
+    date: 'Apr 2026',
+    link: 'https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnTURnaTRYMERnEAE!2m1!1s0x0:0x90860a666266ed85!3m1!1s2@1:CIHM0ogKEICAgMDgi4X0Dg%7C%7C?hl=en',
+    clinic: 'balham',
+    avatar:
+      'https://lh3.googleusercontent.com/a/ACg8ocIfJggSyvJnmCZQO4o1lbiPOaNzyV0gy_agbpfoqx5HFwY92A=s64-c-rp-mo-br100',
+  },
+  {
+    name: 'Larrissa',
+    source: 'Google',
+    rating: 5,
+    text_en:
+      'Eugenia and team were lovely! They really make an effort to keep you comfortable. We played Beyoncé songs so I wouldn’t hear the drilling. Amazing team',
+    text_es:
+      '¡Eugenia y su equipo fueron encantadores! Se esfuerzan de verdad por que te sientas cómoda. Pusimos canciones de Beyoncé para que no oyera el torno. Un equipo increíble.',
+    date: 'Apr 2026',
+    link: 'https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25OeFlrTm1aM0pOZDJ4Qk5WcG9WR1EwZW5WR1lVRRAB!2m1!1s0x0:0x90860a666266ed85!3m1!1s2@1:CAIQACodChtycF9oOnNxYkNmZ3JNd2xBNVpoVGQ0enVGYUE%7C%7C?hl=en',
+    clinic: 'balham',
+    avatar:
+      'https://lh3.googleusercontent.com/a/ACg8ocK0b5zHu7iChoyLLbSkvDu90xyR0_1YEdVjuzE3lM7w_aVpNg=s64-c-rp-mo-br100',
+  },
+  {
+    name: 'anthony scully',
+    source: 'Google',
+    rating: 5,
+    text_en:
+      'My 1st treament took longer than anticipated. Eugenia and Evelina took time to make sure I was ok during. A few kind words helped me to manage the session',
+    text_es:
+      'Mi primer tratamiento duró más de lo previsto. Eugenia y Evelina se tomaron su tiempo para asegurarse de que yo estuviera bien durante la sesión. Unas palabras amables me ayudaron a sobrellevarla.',
+    date: 'Apr 2026',
+    link: 'https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pkTE9UbHNabk5FVmkxa1IybFVRVU0wYzNsQ1pFRRAB!2m1!1s0x0:0x90860a666266ed85!3m1!1s2@1:CAIQACodChtycF9oOjdLOTlsZnNEVi1kR2lUQUM0c3lCZEE%7C%7C?hl=en',
+    clinic: 'balham',
+    avatar:
+      'https://lh3.googleusercontent.com/a/ACg8ocJk9KRvT3hmlN4tnnDmsoM39rixJblwtLFre69V0xnhQni3kg=s64-c-rp-mo-br100',
+  },
+  {
+    name: 'Ms Pauline',
+    source: 'Google',
+    rating: 5,
+    text_en:
+      "Dr Eugenia Vila and her trusted assistant Edina I think her name is, sorry if I am in correct. They are a formidable team, Eugenia Vila is amazing and always makes me feel at ease, with her/their personal care and kindness to me, her/their understanding and of course her dental implant skills. Magic ! I always feel my confidence restored when I leave her and a wow and lots of hugs after my treatment. Can't thank her/them enough for restoring my smile.",
+    text_es:
+      "La Dra. Eugenia Vila y su asistente de confianza, Edina, creo que se llama así, perdón si me equivoco. Son un equipo formidable; Eugenia Vila es increíble y siempre me hace sentir tranquila, con su trato y amabilidad personales, su comprensión y, por supuesto, su destreza con los implantes dentales. ¡Magia! Siempre recupero la confianza cuando salgo de su consulta, y termino con un '¡guau!' y muchos abrazos tras el tratamiento. No puedo agradecerles lo suficiente que me hayan devuelto la sonrisa.",
+    date: 'Mar 2026',
+    link: 'https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT20xa2NWTnNaakZ6VUV0WVdVZDBkMlZTYkV4U1JVRRAB!2m1!1s0x0:0x90860a666266ed85!3m1!1s2@1:CAIQACodChtycF9oOm1kcVNsZjFzUEtYWUd0d2VSbExSRUE%7C%7C?hl=en',
+    clinic: 'balham',
+    avatar:
+      'https://lh3.googleusercontent.com/a/ACg8ocLqETdWqmqCPDoSND-8O6qDi5uarKvfJakKVzGvVksH89Hong=s64-c-rp-mo-ba12-br100',
+  },
+  {
+    name: 'Atanas Georgiev',
+    source: 'Google',
+    rating: 5,
+    text_en:
+      'I had my first implants at Dental Art Clinic. At first I was a little worried and a little afraid of the whole procedure, but after Dr. Eugenia Vila explained everything to me, I was sure that I was in good hands. Excellent professionalism from her and her team. Very clean and tidy clinic. Pleasant atmosphere. You almost forget that you are at the dentist. I would recommend it to anyone who is afraid of the word dentist. Take this step and you will be pleasantly surprised. All the best.',
+    text_es:
+      "Me puse mis primeros implantes en Dental Art Clinic. Al principio estaba un poco preocupado y algo asustado por todo el procedimiento, pero después de que la Dra. Eugenia Vila me lo explicara todo, tuve la certeza de estar en buenas manos. Una profesionalidad excelente por su parte y la de su equipo. Clínica muy limpia y ordenada. Ambiente agradable. Casi olvidas que estás en el dentista. Se lo recomendaría a cualquiera que tenga miedo de la palabra 'dentista'. Da el paso y te llevarás una grata sorpresa. Un saludo.",
+    date: 'Mar 2026',
+    link: 'https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xGeVoyNWhRbmxRY0dRME4xbHFRMlpUYm5RMFVXYxAB!2m1!1s0x0:0x90860a666266ed85!3m1!1s2@1:CAIQACodChtycF9oOlFyZ25hQnlQcGQ0N1lqQ2ZTbnQ0UWc%7C%7C?hl=en',
+    clinic: 'balham',
+    avatar:
+      'https://lh3.googleusercontent.com/a/ACg8ocJLTvjga7Z-w5SbwQKnVa8s6AmYG4ccyL8vZgS9ImBH8yiDZA=s64-c-rp-mo-br100',
+  },
+  {
+    name: 'Shirley James',
+    source: 'Google',
+    rating: 5,
+    text_en:
+      'From the moment you enter the clinic, patients are met with the warm, welcoming smile and assistance of Victoria on reception. All the staff have been very pleasant and helpful. My treatment is provided by Dr Eugenia Vila and dental nurse Ivelina, who together are a great team. They deliver an extremely professional, friendly and caring service. I have been made to feel welcome and totally at ease during every visit. With no hesitation, I deem it a pleasure to recommend them both to anyone thinking of seeking dental treatment.',
+    text_es:
+      'Desde el momento en que entras en la clínica, a los pacientes los recibe la sonrisa cálida y acogedora y la ayuda de Victoria en recepción. Todo el personal ha sido muy agradable y servicial. Mi tratamiento lo realiza la Dra. Eugenia Vila junto con la enfermera Ivelina, que forman un gran equipo. Ofrecen un servicio sumamente profesional, cercano y atento. Me han hecho sentir bienvenida y completamente cómoda en cada visita. Sin ninguna duda, es un placer recomendarlas a quien esté pensando en buscar tratamiento dental.',
+    date: 'Mar 2026',
+    link: 'https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21KNmFpMDFObUZ4YmxkRU5UaG9TbWQ1TFV4Q1VVRRAB!2m1!1s0x0:0x90860a666266ed85!3m1!1s2@1:CAIQACodChtycF9oOmJ6ai01NmFxbldENThoSmd5LUxCUUE%7C%7C?hl=en',
+    clinic: 'balham',
+    avatar:
+      'https://lh3.googleusercontent.com/a/ACg8ocIaY_rWPJX6j-A2d-4MjIV9GHTkTWS2io3PNd4MDJC3J82Jxw=s64-c-rp-mo-br100',
+  },
+  {
+    name: 'Sylvia Lockyer',
+    source: 'Google',
+    rating: 5,
+    text_en:
+      'I want to share a review about this dental art implant centre. My partner attended the clinic yesterday and was treated by a wonderful and highly skilled dentist called Dr Evgenia Vila. She went above and beyond. She did an excellent job on a temporary three-tooth bridge WOW !!! 10/10 my partner and I were amazed with the work she did, also she was genuinely a lovely person so if you need a good and caring dentist look no further. X',
+    text_es:
+      'Quiero compartir una reseña sobre este centro de implantes Dental Art. Mi pareja acudió ayer a la clínica y la atendió una dentista maravillosa y muy capacitada, la Dra. Evgenia Vila. Hizo mucho más de lo esperado. Realizó un trabajo excelente con un puente temporal de tres dientes. ¡GUAU! 10/10. Mi pareja y yo quedamos asombrados con su trabajo; además, es una persona genuinamente encantadora. Así que, si necesitas una dentista buena y atenta, no busques más. X',
+    date: 'Mar 2026',
+    link: 'https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25VNGFUQnhaWFZsYldSa09UQXpTekZqTWxCVFRuYxAB!2m1!1s0x0:0x90860a666266ed85!3m1!1s2@1:CAIQACodChtycF9oOnU4aTBxZXVlbWRkOTAzSzFjMlBTTnc%7C%7C?hl=en',
+    clinic: 'balham',
+    avatar:
+      'https://lh3.googleusercontent.com/a-/ALV-UjWS5r4RQM8Rowx9dGkX38ybTbkyhT6alY3hERGjS4erOSgLPrue=s64-c-rp-mo-br100',
+  },
+  {
+    name: 'Yohanes Asfha',
+    source: 'Google',
+    rating: 5,
+    text_en:
+      'I had an outstanding experience with Dr. Eugenia Vila. She is an exceptional dentist-highly professional, incredibly kind, and very attentive to every detail. From the moment I arrived, she made me feel comfortable and at ease. She clearly explained every step of the treatment, which gave me a lot of confidence and peace of mind. The quality of care I received was truly excellent. Dr. Vila works with great precision and genuine care for her patients. The clinic is spotless, modern, and very well organized, and the staff are welcoming and professional.',
+    text_es:
+      'Tuve una experiencia excepcional con la Dra. Eugenia Vila. Es una dentista excepcional: muy profesional, increíblemente amable y muy atenta a cada detalle. Desde el momento en que llegué, hizo que me sintiera cómodo y tranquilo. Me explicó con claridad cada paso del tratamiento, lo que me dio mucha confianza y tranquilidad. La calidad de la atención que recibí fue realmente excelente. La Dra. Vila trabaja con gran precisión y un cuidado sincero por sus pacientes. La clínica está impecable, es moderna y está muy bien organizada, y el personal es acogedor y profesional.',
+    date: 'Mar 2026',
+    link: 'https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2w5cFlsRmhXR2hUZUVodE5ITmtibXcwVlZWUVNtYxAB!2m1!1s0x0:0x90860a666266ed85!3m1!1s2@1:CAIQACodChtycF9oOl9pYlFhWGhTeEhtNHNkbmw0VVVQSmc%7C%7C?hl=en',
+    clinic: 'balham',
+    avatar:
+      'https://lh3.googleusercontent.com/a/ACg8ocKo7gurMfw0466QR0xEKVGiiBkqS2TAict714gjIuTU6bolYQ=s64-c-rp-mo-br100',
+  },
+  {
+    name: 'Anahita Rad',
+    source: 'Google',
+    rating: 5,
+    text_en:
+      'Thank you Dr. Eugenia Vila for the most wonderful, caring and always kind treatments. I have been to many many dentists all my life and can honestly say that Dental AI Clinic is one of the only places that I felt I was dealing with actual heath care practitioners rather than sales people. It had been all about my health and comfort and there has been zero “upselling “ or imposed treatment like I have received before here in London. I trust Dr. Vila and appreciate her smile and kindness and genuine compassion and feel so lucky to have met her and her team. Can’t recommend her enough',
+    text_es:
+      "Gracias, Dra. Eugenia Vila, por los tratamientos más maravillosos, atentos y siempre amables. He ido a muchísimos dentistas a lo largo de mi vida y puedo decir con sinceridad que Dental Art Clinic es uno de los pocos sitios donde he sentido que trataba con auténticos profesionales de la salud y no con vendedores. Todo ha girado en torno a mi salud y mi comodidad, y no ha habido ninguna 'venta añadida' ni tratamientos impuestos como los que me habían ofrecido antes aquí en Londres. Confío en la Dra. Vila y agradezco su sonrisa, su amabilidad y su compasión genuina; me siento muy afortunada de haberla conocido a ella y a su equipo. No puedo recomendarla lo suficiente.",
+    date: 'Feb 2026',
+    link: 'https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2tOU2RrbHFORkIxWjBsQmVsVkNNV2xyYlVRNGNsRRAB!2m1!1s0x0:0x90860a666266ed85!3m1!1s2@1:CAIQACodChtycF9oOkNSdklqNFB1Z0lBelVCMWlrbUQ4clE%7C%7C?hl=en',
+    clinic: 'balham',
+    avatar:
+      'https://lh3.googleusercontent.com/a/ACg8ocLz7n8RrB5r0_IFXTZvG5z_by_gDY0lRdNvOVC2qvQkOJ_cGw=s64-c-rp-mo-br100',
+  },
+  {
+    name: 'Angela Leung',
+    source: 'Google',
+    rating: 5,
+    text_en:
+      'I had my first dental implant treatment at Dental Art Clinic by Dr Eugenia Vila. It was an incredibly amazing experience with Dr Eugenia helping me through each step with great professionalism, caring attitude and clear explanations. She conducted the treatment with great care, always seeking the perfect solution for an issue and checking out every detail to ensure that things are properly done. She is also friendly, and she made the whole process very comfortable for me. I really feel I am in the safe hands with Dr Eugenia and her team. The clinic itself is also very clean and modern, and the reception is very helpful in organising appointments. I have no reservation in recommending Dr Eugenia for any dental issue as she is experienced, professional, caring and honest in recommendations.',
+    text_es:
+      'Recibí mi primer tratamiento de implante dental en Dental Art Clinic con la Dra. Eugenia Vila. Fue una experiencia increíblemente buena; la Dra. Eugenia me acompañó en cada paso con gran profesionalidad, una actitud atenta y explicaciones claras. Realizó el tratamiento con mucho cuidado, buscando siempre la solución perfecta para cada problema y revisando cada detalle para asegurarse de que todo se hiciera correctamente. Además es cercana e hizo que todo el proceso fuera muy cómodo para mí. Siento de verdad que estoy en buenas manos con la Dra. Eugenia y su equipo. La clínica también es muy limpia y moderna, y la recepción es muy servicial a la hora de organizar las citas. No tengo ninguna reserva en recomendar a la Dra. Eugenia para cualquier problema dental, ya que es experimentada, profesional, atenta y honesta en sus recomendaciones.',
+    date: 'Feb 2026',
+    link: 'https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT21wbmRYTTVaRVpqY2tSWVQzRmhZMkZLV25CWlgwRRAB!2m1!1s0x0:0x90860a666266ed85!3m1!1s2@1:CAIQACodChtycF9oOmpndXM5ZEZjckRYT3FhY2FKWnBZX0E%7C%7C?hl=en',
+    clinic: 'balham',
+    avatar:
+      'https://lh3.googleusercontent.com/a-/ALV-UjXbZdyGBznvpOMvl16Mlw5vNljKaZUhegLmdqA4zZLJt8aDR-S_=s64-c-rp-mo-br100',
+  },
+  {
+    name: 'Charles Xahi',
+    source: 'Google',
+    rating: 5,
+    text_en:
+      "I had a very good experience today with the very friendly and skilled Dr Eugenia Vila, I had some bonding performed in two areas as part of a larger package of treatment, I'm very happy and confident with the results. Everyone at the practice is extremely friendly, helpful and able to answer all your questions. Highly recommend",
+    text_es:
+      'Hoy tuve una experiencia muy buena con la simpática y hábil Dra. Eugenia Vila. Me realizó una reconstrucción estética en dos zonas como parte de un tratamiento más amplio; estoy muy contento y seguro con los resultados. Todo el personal de la clínica es muy amable y servicial, y sabe responder a todas tus preguntas. Muy recomendable.',
+    date: 'Feb 2026',
+    link: 'https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pJNE5tVldhbkZmWjFnNFNWZHVaMG81Y1dnM1VsRRAB!2m1!1s0x0:0x90860a666266ed85!3m1!1s2@1:CAIQACodChtycF9oOjI4NmVWanFfZ1g4SVduZ0o5cWg3UlE%7C%7C?hl=en',
+    clinic: 'balham',
+    avatar:
+      'https://lh3.googleusercontent.com/a-/ALV-UjUajhTI8Kkl5G-jbjqmtcA7eNeL-lWeo1ldc7NAXhs1_Ke5ygnqxA=s64-c-rp-mo-br100',
+  },
+  {
+    name: 'Family Hay',
+    source: 'Google',
+    rating: 5,
+    text_en:
+      'I have a couple of dental implants. Dr.Eugenia Vila is very professional,give me excellent advice about my treatment plan. She make sure everything is complete correctly. I felt very well look after. The whole Balham Team are always helpful and attentive. Thanks Myriam',
+    text_es:
+      'Tengo un par de implantes dentales. La Dra. Eugenia Vila es muy profesional y me da excelentes consejos sobre mi plan de tratamiento. Se asegura de que todo se haga correctamente. Me sentí muy bien atendida. Todo el equipo de Balham es siempre servicial y atento. Gracias, Myriam.',
+    date: 'Jan 2026',
+    link: 'https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xjdFMyNHlNRVZYTmpWelZUUnNVRXMyYTIxU1NWRRAB!2m1!1s0x0:0x90860a666266ed85!3m1!1s2@1:CAIQACodChtycF9oOlctS24yMEVXNjVzVTRsUEs2a21SSVE%7C%7C?hl=en',
+    clinic: 'balham',
+    avatar:
+      'https://lh3.googleusercontent.com/a/ACg8ocL_VHBaGdcmjJ6Czfpiyg0i9SGVkB5i4nRh_YiC6fHGSyppHnk=s64-c-rp-mo-br100',
+  },
+  {
+    name: 'Agnes Sithole',
+    source: 'Google',
+    rating: 5,
+    text_en: 'Doctor Eugenia Vila and Evelina are Very caring and professional. Friendly. Makes you feel comfortable.',
+    text_es:
+      'La doctora Eugenia Vila y Evelina son muy atentas y profesionales. Cercanas. Hacen que te sientas cómoda.',
+    date: 'Dec 2025',
+    link: 'https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2t0WWNHdDVVelY1UlhBdExVMUNNbWRJUTNWdE1YYxAB!2m1!1s0x0:0x90860a666266ed85!3m1!1s2@1:CAIQACodChtycF9oOktYcGt5UzV5RXAtLU1CMmdIQ3VtMXc%7C%7C?hl=en',
+    clinic: 'balham',
+    avatar:
+      'https://lh3.googleusercontent.com/a/ACg8ocLTtgEhUcQO882fXx-MBQuB0CXC0bYd0mZl4I_M5AkHVX9KkQ=s64-c-rp-mo-br100',
+  },
+  {
+    name: 'Victoria Dixon',
+    source: 'Google',
+    rating: 5,
+    text_en:
+      'Dr Eugenia is hands down the BEST dentist you could visit for dental surgery. I have been on a very complicated joinery with my own implants and correction and could have wished for a more caring Dr to ensure I’m comfortable and have the best results. She is a perfectionist in the details, never rushes to make sure every detail is complete correctly and above and beyond caring when it comes to making sure I felt very looked after and cared for through the whole process. She always goes above and beyond and would recommend over and over. The whole team are always very attentive and a pleasure to visit.',
+    text_es:
+      'La Dra. Eugenia es, sin lugar a dudas, la mejor dentista a la que podrías acudir para una cirugía dental. He pasado por un proceso muy complicado con mis propios implantes y su corrección, y no podría haber deseado una doctora más atenta para asegurarse de que estuviera cómoda y obtuviera los mejores resultados. Es perfeccionista en los detalles, nunca tiene prisa y se asegura de que cada detalle quede perfecto, y va más allá de lo esperado para que me sintiera muy bien cuidada durante todo el proceso. Siempre hace más de lo necesario y la recomendaría una y otra vez. Todo el equipo es siempre muy atento y un placer visitarlo.',
+    date: 'Nov 2025',
+    link: 'https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25OcVluVldUVTFEY3pSUVZIZDNOSEpyWldsSmVGRRAB!2m1!1s0x0:0x90860a666266ed85!3m1!1s2@1:CAIQACodChtycF9oOnNqYnVWTU1DczRQVHd3NHJrZWlJeFE%7C%7C?hl=en',
+    clinic: 'balham',
+    avatar:
+      'https://lh3.googleusercontent.com/a/ACg8ocLY-w9oD24mWuRjlXjOWKU-EuBjlF3NsLlCytEBw5sEfcHJrA=s64-c-rp-mo-br100',
+  },
+  {
+    name: 'Suleman Syed',
+    source: 'Google',
+    rating: 5,
+    text_en:
+      'An absolutely fantastic experience! Dr. Eugenia Vila provided exceptional care from start to finish. She is professional, welcoming, and truly attentive to her patients’ needs. The treatment was smooth, comfortable, and delivered with great skill. I’m extremely happy with the results and felt completely supported throughout the whole process. I highly recommend her to anyone looking for high-quality care and an outstanding overall experience.',
+    text_es:
+      '¡Una experiencia absolutamente fantástica! La Dra. Eugenia Vila me brindó una atención excepcional de principio a fin. Es profesional, acogedora y verdaderamente atenta a las necesidades de sus pacientes. El tratamiento fue cómodo y sin complicaciones, realizado con gran destreza. Estoy enormemente contento con los resultados y me sentí totalmente acompañado durante todo el proceso. La recomiendo encarecidamente a cualquiera que busque una atención de alta calidad y una experiencia excelente en conjunto.',
+    date: 'Nov 2025',
+    link: 'https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2pBeFFWTkZZMHhxWnpaRll6SlRYelkwT0hkdmExRRAB!2m1!1s0x0:0x90860a666266ed85!3m1!1s2@1:CAIQACodChtycF9oOjAxQVNFY0xqZzZFYzJTXzY0OHdva1E%7C%7C?hl=en',
+    clinic: 'balham',
+    avatar:
+      'https://lh3.googleusercontent.com/a/ACg8ocK0FrMOTLkr_ZZFMxyWsiKCxUlrZ_POC7LjBdg9w8kQXMRW3Q=s64-c-rp-mo-br100',
+  },
+  {
+    name: 'Elena Katsarova',
+    source: 'Google',
+    rating: 5,
+    text_en:
+      'I live in the Borough of Kensington and Chelsea, and my journey to Art Dental Balham happened completely by chance, through a random YouTube video. What caught my attention was that the people in the video weren’t models or actors, but real people honestly talking about their dental problems. They mentioned that Art Dental offers a free orthodontic consultation. At first, I thought it might be too good to be true, but something about the video felt genuine. I filled out the form and forgot about it, as I was already dealing with pain and disappointment from another dental practice that had seen me twice without any real improvement. Then, unexpectedly, I received a phone call from Ben, the receptionist at Art Dental. His voice was warm, polite, and full of respect. He took time to explain everything clearly, how the clinic works, what the costs are, and what to expect. When I asked if they offered same-day emergency appointments, he said yes, and I went immediately. To my surprise, the emergency visit wasn’t £150 like other clinics, it was £100, and I was seen by Dr. Vila Evgenia, a highly experienced and compassionate specialist. From the moment she examined me, I could tell I was finally in the right hands. She carefully checked everything and quickly discovered a deep inflammation and an old gum pocket that had likely been there for six months, something four other dentists had completely missed. Together with her wonderful nurse Ivelina Georgieva, Dr. Evgenia acted immediately. They made the right decision on the spot and performed the extraction that ultimately saved me from unbearable pain and infection. My face and scalp were swollen and in agony, and it took 10 days just to start recovering. I truly believe their professionalism and speed of care saved my health, and my peace of mind. What makes Art Dental different is not just their skill, but their humanity. They treat you with honesty, empathy, and genuine care, not like a number or a profit. There’s something artistic about the way they work: precise, attentive, and beautifully balanced between science and heart. Thank you deeply to Dr. Vila Evgenia, nurse Ivelina Georgieva, and Ben at reception for their kindness, integrity, and professionalism. You are true artists in your craft, and proof that art truly attracts art. With gratitude, Elena Katsarova',
+    text_es:
+      'Vivo en el distrito de Kensington y Chelsea, y mi camino hasta Art Dental Balham se dio completamente por casualidad, a través de un vídeo cualquiera de YouTube. Lo que me llamó la atención fue que las personas del vídeo no eran modelos ni actores, sino gente real hablando con sinceridad sobre sus problemas dentales. Mencionaban que Art Dental ofrece una consulta de ortodoncia gratuita. Al principio pensé que sonaba demasiado bueno para ser verdad, pero algo en el vídeo me pareció genuino. Rellené el formulario y me olvidé del tema, ya que arrastraba dolor y decepción por otra clínica que me había atendido dos veces sin ninguna mejora real. Entonces, de forma inesperada, recibí una llamada de Ben, el recepcionista de Art Dental. Su voz era cálida, educada y muy respetuosa. Se tomó su tiempo para explicármelo todo con claridad: cómo funciona la clínica, cuáles son los costes y qué esperar. Cuando pregunté si ofrecían citas de urgencia el mismo día, dijo que sí, y fui de inmediato. Para mi sorpresa, la visita de urgencia no costó 150 libras como en otras clínicas, sino 100, y me atendió la Dra. Vila Evgenia, una especialista con gran experiencia y compasión. Desde el momento en que me examinó, supe que por fin estaba en las manos adecuadas. Lo revisó todo con cuidado y enseguida descubrió una inflamación profunda y una antigua bolsa periodontal que probablemente llevaba ahí seis meses, algo que otros cuatro dentistas habían pasado por completo por alto. Junto con su maravillosa enfermera Ivelina Georgieva, la Dra. Evgenia actuó de inmediato. Tomaron la decisión correcta en el momento y realizaron la extracción que, en última instancia, me salvó de un dolor y una infección insoportables. Tenía la cara y el cuero cabelludo hinchados y con un dolor terrible, y tardé 10 días solo en empezar a recuperarme. Creo de verdad que su profesionalidad y su rapidez salvaron mi salud y mi tranquilidad. Lo que hace diferente a Art Dental no es solo su destreza, sino su humanidad. Te tratan con honestidad, empatía y un cuidado genuino, no como un número ni como un beneficio. Hay algo artístico en su forma de trabajar: precisa, atenta y bellamente equilibrada entre la ciencia y el corazón. Muchísimas gracias a la Dra. Vila Evgenia, a la enfermera Ivelina Georgieva y a Ben, en recepción, por su amabilidad, integridad y profesionalidad. Sois verdaderos artistas en vuestro oficio, y la prueba de que el arte, de verdad, atrae al arte. Con gratitud, Elena Katsarova.',
+    date: 'Nov 2025',
+    link: 'https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xWSWVGcGZXbkpqT0RoTFNHeHNkVkUwYUhGTWFuYxAB!2m1!1s0x0:0x90860a666266ed85!3m1!1s2@1:CAIQACodChtycF9oOlVIeFpfWnJjODhLSGxsdVE0aHFManc%7C%7C?hl=en',
+    clinic: 'balham',
+    avatar:
+      'https://lh3.googleusercontent.com/a-/ALV-UjUX2u6NfTiF0e9uXipHzXIdn2eskF2HXueDAj0FQm4PxAcHhzbD=s64-c-rp-mo-ba12-br100',
+  },
+  {
+    name: 'andreea ruxandra chira',
+    source: 'Google',
+    rating: 5,
+    text_en:
+      'Dr. Eugenia Vila is an absolute angel, so compassionate and also an outstanding professional. She gave me excellent advice and a clear treatment plan. I’m a patient with many dental issues, and this is the first time in years that I’ve found such an amazing doctor. The reception team was also very helpful and professional. Steliana assisted me with the booking and everything else, she was wonderful!',
+    text_es:
+      'La Dra. Eugenia Vila es un auténtico ángel, muy compasiva y además una profesional excepcional. Me dio excelentes consejos y un plan de tratamiento claro. Soy una paciente con muchos problemas dentales, y es la primera vez en años que encuentro una doctora tan maravillosa. El equipo de recepción también fue muy servicial y profesional. Steliana me ayudó con la cita y con todo lo demás; ¡fue maravillosa!',
+    date: 'Nov 2025',
+    link: 'https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25CeVpWRlJlR0YzU1VjeFlXZENkV1kyU2xwNWFGRRAB!2m1!1s0x0:0x90860a666266ed85!3m1!1s2@1:CAIQACodChtycF9oOnByZVFReGF3SUcxYWdCdWY2Slp5aFE%7C%7C?hl=en',
+    clinic: 'balham',
+    avatar:
+      'https://lh3.googleusercontent.com/a-/ALV-UjUC1kHfHvDqyNfwAOPt3lz8e46jqPMb9tHWFbyoV-leJW-0kLY=s64-c-rp-mo-br100',
+  },
+  {
+    name: 'Ramzy Bimo',
+    source: 'Google',
+    rating: 5,
+    text_en:
+      'thanks for Dra Eugenia Vila, she gave me the best services in this dental clinic! she’s so kind and professional! i love her work so much! so lucky to have dentist like her',
+    text_es:
+      'Gracias a la Dra. Eugenia Vila, me ofreció el mejor servicio de esta clínica dental. ¡Es muy amable y profesional! ¡Me encanta su trabajo! Qué suerte tener una dentista como ella.',
+    date: 'Feb 2026',
+    link: 'https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT20xTVV5MDBWVVp6T0Uxa1FpMUpaMG81Tm1WalFrRRAB!2m1!1s0x0:0x4bdc913940e59a6c!3m1!1s2@1:CAIQACodChtycF9oOm1MUy00VUZzOE1kQi1JZ0o5NmVjQkE%7C%7C?hl=en',
+    clinic: 'finchley',
+    avatar:
+      'https://lh3.googleusercontent.com/a-/ALV-UjXBTKH9U7OpoAMNt2802V0xmhBgh7QUDlaYJMasqgkGSurDfzMt=s64-c-rp-mo-br100',
+  },
+  {
+    name: 'Jay Hussain',
+    source: 'Google',
+    rating: 5,
+    text_en:
+      'Dr evgenia vila Was absolutely amazing so kind and so reassuring everyone has been very kind throughout my treatment ❤️',
+    text_es:
+      'La Dra. Evgenia Vila fue absolutamente increíble, muy amable y tranquilizadora; todos han sido muy amables a lo largo de mi tratamiento ❤️',
+    date: 'Jan 2026',
+    link: 'https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT205ek9IQXplVFUzTWxwMGFuSnNWakZVTTJOeFNtYxAB!2m1!1s0x0:0x4bdc913940e59a6c!3m1!1s2@1:CAIQACodChtycF9oOm9zOHAzeTU3Mlp0anJsVjFUM2NxSmc%7C%7C?hl=en',
+    clinic: 'finchley',
+    avatar:
+      'https://lh3.googleusercontent.com/a/ACg8ocIFRjk7iO0Wwae1sLWjXX6tUwgAOlzY7GwJIWhxQGNw8Q24jA=s64-c-rp-mo-br100',
+  },
+  {
+    name: 'D Blackz',
+    source: 'Google',
+    rating: 5,
+    text_en:
+      'Dr Eugenia Vila and nurse Lazar are fantastic with the practice and very accommodating. Well experienced team. Thank you very much',
+    text_es:
+      'La Dra. Eugenia Vila y el enfermero Lazar son fantásticos en la consulta y muy flexibles. Un equipo con mucha experiencia. Muchísimas gracias.',
+    date: 'Jan 2026',
+    link: 'https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xrMUxYWTVlR2xUYjJscVlVTlpjR2RNYjAxSVVGRRAB!2m1!1s0x0:0x4bdc913940e59a6c!3m1!1s2@1:CAIQACodChtycF9oOlk1LXY5eGlTb2lqYUNZcGdMb01IUFE%7C%7C?hl=en',
+    clinic: 'finchley',
+    avatar:
+      'https://lh3.googleusercontent.com/a/ACg8ocK8h5OAPH_v5VbFwACp05maYVTuGycx_2oRDFmRpn-QeScQ-w=s64-c-rp-mo-br100',
+  },
+  {
+    name: 'Luís Marcial',
+    source: 'Google',
+    rating: 5,
+    text_en:
+      'This is my favorite dental clinic in London. In terms of quality of the treatment. The doctors are very experienced and make you feel comfortable. Special thanks to Dr. Eugenia and Dr. Andre for their professionalism. Also a big plus is that they speak Spanish and Portuguese.',
+    text_es:
+      'Esta es mi clínica dental favorita de Londres en cuanto a la calidad del tratamiento. Los doctores tienen mucha experiencia y hacen que te sientas cómodo. Un agradecimiento especial a la Dra. Eugenia y al Dr. Andre por su profesionalidad. Otro gran punto a favor es que hablan español y portugués.',
+    date: 'Jan 2026',
+    link: 'https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2paVFUyTkpZamR3TkROVVpEaEVMVE5aVG1Gd05IYxAB!2m1!1s0x0:0x4bdc913940e59a6c!3m1!1s2@1:CAIQACodChtycF9oOjZTU2NJYjdwNDNUZDhELTNZTmFwNHc%7C%7C?hl=en',
+    clinic: 'finchley',
+    avatar:
+      'https://lh3.googleusercontent.com/a-/ALV-UjVjfFADotSjgyH86x0IFs03yIdB4Pd2q7Fifc3qdXtcD_KavGtA=s64-c-rp-mo-ba12-br100',
+  },
+  {
+    name: 'Marta Carvia Salmerón',
+    source: 'Google',
+    rating: 5,
+    text_en: 'An excellent professional; you can tell she is someone truly committed to her work. Thank you so much.',
+    text_es: 'Excelente profesional, se nota que es una persona implicada con su trabajo. Muchísimas gracias.',
+    date: 'Dec 2025',
+    link: 'https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT25WMVJreHhRM3BNTUc1RFdqaENiSFJ5Ympsa1kxRRAB!2m1!1s0x0:0x48544afb3aaf06a4!3m1!1s2@1:CAIQACodChtycF9oOnV1RkxxQ3pMMG5DWjhCbHRybjlkY1E%7C%7C?hl=es',
+    clinic: 'malaga',
+    avatar:
+      'https://lh3.googleusercontent.com/a/ACg8ocIs4_Rnxb-cuiNcdBEBlpaBP76ehgAhAic4_Ze0evFAyQpQe2hX=s64-c-rp-mo-br100',
+  },
+  {
+    name: '武居隼也人',
+    source: 'Google',
+    rating: 5,
+    text_en: 'Highly recommend!',
+    text_es: '¡Muy recomendable!',
+    date: 'Nov 2025',
+    link: 'https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2toT1kxQXpVa2hKTTNWWVNFVlJOWHBCUTFSaFUzYxAB!2m1!1s0x0:0x48544afb3aaf06a4!3m1!1s2@1:CAIQACodChtycF9oOkhOY1AzUkhJM3VYSEVRNXpBQ1RhU3c%7C%7C?hl=es',
+    clinic: 'malaga',
+    avatar:
+      'https://lh3.googleusercontent.com/a/ACg8ocJziiAjZbvFuMqmiBfwP6fw1SF_ibzGn-h2Vfs-vilk91-05Fw=s64-c-rp-mo-br100',
+  },
 ];
