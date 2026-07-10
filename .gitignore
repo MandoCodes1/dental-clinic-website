@@ -28,3 +28,6 @@ pnpm-lock.yaml
 
 # personal notes (local only, not committed)
 TODO.md
+
+# raw review scrapes (local working material, not for the public repo)
+src/data/source/products/

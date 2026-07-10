@@ -1,0 +1,54 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import PageHeader from '~/components/PageHeader.astro';
+import ProductCard from '~/components/ProductCard.astro';
+import ContactCTA from '~/components/ContactCTA.astro';
+import portrait from '~/assets/images/close_up_square.jpg';
+import { content } from '~/content/site';
+import { getProductsByCategory, getProductCategories } from '~/utils/products';
+import type { Lang } from '~/i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = content[lang];
+const r = t.productsPage;
+const categories = getProductCategories();
+---
+
+<BaseLayout lang={lang} page="products">
+  <PageHeader title={r.title} lead={r.lead} />
+  <section class="section bg-cream">
+    <div class="container-page">
+      <div class="flex flex-col items-start gap-5 rounded-2xl bg-white p-5 shadow-sm sm:flex-row sm:items-center">
+        <Image
+          src={portrait}
+          alt="Dra. Eugenia Vila"
+          width={96}
+          height={96}
+          class="h-20 w-20 shrink-0 rounded-full object-cover ring-4 ring-brand-light"
+        />
+        <div class="text-sm leading-relaxed text-ink/70">
+          <p>{r.disclosure}</p>
+          <p class="mt-2 text-xs text-ink/50">{r.amazonStatement}</p>
+        </div>
+      </div>
+
+      {
+        categories.map((cat) => (
+          <div>
+            <h2 class="mt-10 font-heading text-2xl text-brand-deep">{r.categories[cat] ?? cat}</h2>
+            <div class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {getProductsByCategory(cat).map((product) => (
+                <ProductCard product={product} lang={lang} />
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+  <ContactCTA lang={lang} page="products" />
+</BaseLayout>

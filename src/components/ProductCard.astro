@@ -1,0 +1,39 @@
+---
+import { Icon } from 'astro-icon/components';
+import { amazonLink } from '~/config';
+import { content } from '~/content/site';
+import type { Product } from '~/utils/products';
+import type { Lang } from '~/i18n';
+
+interface Props {
+  product: Product;
+  lang: Lang;
+}
+const { product, lang } = Astro.props;
+const t = content[lang];
+const name = lang === 'es' ? product.name_es : product.name_en;
+const rationale = lang === 'es' ? product.rationale_es : product.rationale_en;
+---
+
+<article class="card flex h-full flex-col">
+  {
+    product.image && (
+      <img
+        src={product.image}
+        alt=""
+        width="320"
+        height="200"
+        loading="lazy"
+        class="mb-4 h-40 w-full rounded-lg object-cover"
+      />
+    )
+  }
+
+  <h3 class="font-semibold text-ink">{name}</h3>
+  <p class="mt-2 grow text-sm leading-relaxed text-ink/70">{rationale}</p>
+
+  <a href={amazonLink(product.asin, name)} target="_blank" rel="sponsored noopener" class="btn-primary mt-4">
+    <Icon name="tabler:brand-amazon" class="h-5 w-5" />
+    {t.productsPage.buyLabel}
+  </a>
+</article>

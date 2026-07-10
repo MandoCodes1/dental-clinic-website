@@ -43,10 +43,11 @@ export interface SiteCopy {
     services: string;
     reviews: string;
     gallery: string;
+    products: string;
     contact: string;
     book: string;
   };
-  meta: Record<'home' | 'about' | 'services' | 'gallery' | 'reviews' | 'contact', MetaEntry>;
+  meta: Record<'home' | 'about' | 'services' | 'gallery' | 'reviews' | 'contact' | 'products', MetaEntry>;
   a11y: { skip: string; openMenu: string; closeMenu: string; switchLang: string };
   hero: { eyebrow: string; title: string; subtitle: string; ctaBook: string; ctaReviews: string; availability: string };
   credentials: {
@@ -77,6 +78,15 @@ export interface SiteCopy {
     cvCta: string;
   };
   reviewsPage: { lead: string; malagaTitle: string; londonTitle: string; cta: string };
+  productsPage: {
+    eyebrow: string;
+    title: string;
+    lead: string;
+    disclosure: string;
+    amazonStatement: string;
+    buyLabel: string;
+    categories: Record<string, string>;
+  };
   gallery: {
     lead: string;
     before: string;
@@ -102,6 +112,7 @@ export interface SiteCopy {
     services: { title: string; body: string };
     reviews: { title: string; body: string };
     gallery: { title: string; body: string };
+    products: { title: string; body: string };
   };
   footer: { tagline: string; servicesTitle: string; navTitle: string; contactTitle: string; rights: string };
   common: { readMore: string; readLess: string; viewReview: string; whatsapp: string; backHome: string };
@@ -115,6 +126,7 @@ const es: SiteCopy = {
     services: 'Servicios',
     reviews: 'Reseñas',
     gallery: 'Galería',
+    products: 'Productos',
     contact: 'Contacto',
     book: 'Pedir cita',
   },
@@ -148,6 +160,11 @@ const es: SiteCopy = {
       title: 'Contacto - Dra. Eugenia Vila',
       description:
         'Pide tu cita en la clínica dental de la Dra. Eugenia Vila en El Palo, Málaga. WhatsApp +34 679 975 580.',
+    },
+    products: {
+      title: 'Productos recomendados - Dra. Eugenia Vila',
+      description:
+        'Productos de cuidado bucal recomendados por la Dra. Eugenia Vila: cepillado, limpieza interdental y más, seleccionados por criterio clínico.',
     },
   },
   a11y: { skip: 'Saltar al contenido', openMenu: 'Abrir menú', closeMenu: 'Cerrar menú', switchLang: 'Ver en inglés' },
@@ -330,6 +347,20 @@ const es: SiteCopy = {
     londonTitle: 'En Londres, donde la Dra. Vila también ejerce',
     cta: 'Deja tu reseña en Google',
   },
+  productsPage: {
+    eyebrow: 'Recomendaciones',
+    title: 'Productos que recomiendo',
+    lead: 'Estos son algunos de los productos de cuidado bucal que recomiendo a mis pacientes. Los elijo por criterio clínico; tú decides si te encajan.',
+    disclosure:
+      'Algunos enlaces de esta página son enlaces de afiliado de Amazon: si compras a través de ellos, recibo una pequeña comisión sin coste adicional para ti. Recomiendo estos productos por su utilidad clínica, no por la comisión.',
+    amazonStatement:
+      'En calidad de Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables.',
+    buyLabel: 'Ver en Amazon',
+    categories: {
+      brushing: 'Cepillado',
+      interdental: 'Limpieza interdental',
+    },
+  },
   gallery: {
     lead: 'Casos reales tratados por la Dra. Vila. Cada sonrisa cuenta una historia.',
     before: 'Antes',
@@ -372,6 +403,10 @@ const es: SiteCopy = {
       title: '¿Te imaginas tu propio antes y después?',
       body: 'Escríbeme por WhatsApp y te respondo yo misma, sin compromiso.',
     },
+    products: {
+      title: '¿No sabes cuál es el mejor para tu caso?',
+      body: 'Escríbeme por WhatsApp y te oriento yo misma, sin compromiso.',
+    },
   },
   footer: {
     tagline: 'Clínica dental en El Palo, Málaga. Cuidado cercano y honesto desde 1994.',
@@ -401,6 +436,7 @@ const en: SiteCopy = {
     services: 'Services',
     reviews: 'Reviews',
     gallery: 'Gallery',
+    products: 'Products',
     contact: 'Contact',
     book: 'Book a visit',
   },
@@ -434,6 +470,11 @@ const en: SiteCopy = {
       title: 'Contact - Dr. Eugenia Vila',
       description:
         'Book an appointment at Dr. Eugenia Vila’s dental clinic in El Palo, Málaga. WhatsApp +34 679 975 580.',
+    },
+    products: {
+      title: 'Recommended products - Dr. Eugenia Vila',
+      description:
+        'Oral-care products recommended by Dr. Eugenia Vila: brushing, interdental cleaning and more, chosen on clinical grounds.',
     },
   },
   a11y: { skip: 'Skip to content', openMenu: 'Open menu', closeMenu: 'Close menu', switchLang: 'View in Spanish' },
@@ -616,6 +657,19 @@ const en: SiteCopy = {
     londonTitle: 'In London, where Dr. Vila also practises',
     cta: 'Leave your review on Google',
   },
+  productsPage: {
+    eyebrow: 'Recommendations',
+    title: 'Products I recommend',
+    lead: 'These are some of the oral-care products I recommend to my patients. I choose them on clinical grounds; it is up to you whether they suit you.',
+    disclosure:
+      'Some links on this page are Amazon affiliate links: if you buy through them, I receive a small commission at no extra cost to you. I recommend these products for their clinical usefulness, not for the commission.',
+    amazonStatement: 'As an Amazon Associate I earn from qualifying purchases.',
+    buyLabel: 'View on Amazon',
+    categories: {
+      brushing: 'Brushing',
+      interdental: 'Interdental cleaning',
+    },
+  },
   gallery: {
     lead: 'Real cases treated by Dr. Vila. Every smile tells a story.',
     before: 'Before',
@@ -657,6 +711,10 @@ const en: SiteCopy = {
     gallery: {
       title: 'Ready for a before and after of your own?',
       body: 'Message me on WhatsApp and I’ll reply personally, with no obligation.',
+    },
+    products: {
+      title: 'Not sure which one is right for your case?',
+      body: 'Message me on WhatsApp and I’ll guide you personally, with no obligation.',
     },
   },
   footer: {
