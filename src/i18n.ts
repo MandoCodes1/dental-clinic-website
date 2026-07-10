@@ -11,6 +11,7 @@ export const ROUTES = {
   services: { es: '/servicios', en: '/en/services' },
   reviews: { es: '/resenas', en: '/en/reviews' },
   gallery: { es: '/galeria', en: '/en/gallery' },
+  products: { es: '/productos', en: '/en/products' },
   contact: { es: '/contacto', en: '/en/contact' },
   privacy: { es: '/privacy', en: '/en/privacy' },
   terms: { es: '/terms', en: '/en/terms' },
@@ -19,7 +20,7 @@ export const ROUTES = {
 export type RouteKey = keyof typeof ROUTES;
 
 // Page keys that appear in the main navigation, in order.
-export const NAV_KEYS = ['home', 'about', 'services', 'reviews', 'gallery', 'contact'] as const;
+export const NAV_KEYS = ['home', 'about', 'services', 'reviews', 'gallery', 'products', 'contact'] as const;
 
 export const LANG_META = {
   es: { label: 'ES', name: 'Español', ogLocale: 'es_ES' },

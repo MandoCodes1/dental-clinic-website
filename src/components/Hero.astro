@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon/components';
-import heroImg from '~/assets/images/full_body.jpg';
+import heroImg from '~/assets/images/close_up.jpg';
 import { content } from '~/content/site';
 import { ROUTES, type Lang } from '~/i18n';
 import { waLink } from '~/config';
@@ -22,7 +22,7 @@ const h = t.hero;
       <p class="mt-5 max-w-xl text-lg leading-relaxed text-ink/80">{h.subtitle}</p>
       <div class="mt-7 flex flex-col gap-3 sm:flex-row">
         <a href={waLink()} target="_blank" rel="noopener" class="btn-whatsapp">
-          <Icon name="tabler:brand-whatsapp" class="h-5 w-5" />
+          <Icon name="tabler:brand-whatsapp" class="h-6 w-6" />
           {h.ctaBook}
         </a>
         <a href={ROUTES.reviews[lang]} class="btn-outline">

@@ -45,3 +45,18 @@ export function waLink(message?: string): string {
   const base = `https://wa.me/${CLINIC.whatsapp}`;
   return message ? `${base}?text=${encodeURIComponent(message)}` : base;
 }
+
+// Affiliate program ids. Dr. Vila's amazon.es Associates tracking id goes here
+// once her account is approved; the placeholder keeps links valid until then.
+export const AFFILIATE = {
+  amazonTagEs: 'REPLACE-21',
+} as const;
+
+// Build an amazon.es link carrying the affiliate tag. With an ASIN it points at
+// the product page; without one (e.g. a placeholder entry) it falls back to a
+// tagged search so a link is never broken.
+export function amazonLink(asin?: string, name?: string): string {
+  const tag = `tag=${AFFILIATE.amazonTagEs}`;
+  if (asin) return `https://www.amazon.es/dp/${asin}?${tag}`;
+  return `https://www.amazon.es/s?k=${encodeURIComponent(name ?? '')}&${tag}`;
+}
