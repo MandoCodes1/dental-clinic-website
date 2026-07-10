@@ -27,13 +27,21 @@ export const LANG_META = {
   en: { label: 'EN', name: 'English', ogLocale: 'en_GB' },
 } as const;
 
+// With `build.format: 'file'`, Astro.url.pathname at build time carries the on-disk
+// name (`/en.html`, `/en/about.html`, `/index.html`), not the clean route it is
+// served at. Reduce any of those forms to the ROUTES shape before comparing.
+export function normalizePath(pathname: string): string {
+  const clean = pathname.replace(/\.html$/, '').replace(/\/+$/, '');
+  return clean === '' || clean === '/index' ? '/' : clean;
+}
+
 export function getLangFromUrl(url: URL): Lang {
-  return /^\/en(\/|$)/.test(url.pathname) ? 'en' : 'es';
+  return /^\/en(\/|$)/.test(normalizePath(url.pathname)) ? 'en' : 'es';
 }
 
 // Given the current path, return its counterpart in the other language.
 export function switchLangPath(pathname: string): string {
-  const clean = pathname.replace(/\/+$/, '') || '/';
+  const clean = normalizePath(pathname);
   const current: Lang = /^\/en(\/|$)/.test(clean) ? 'en' : 'es';
   const other: Lang = current === 'es' ? 'en' : 'es';
   for (const key of Object.keys(ROUTES) as RouteKey[]) {
