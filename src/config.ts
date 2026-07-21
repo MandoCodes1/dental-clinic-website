@@ -49,7 +49,7 @@ export function waLink(message?: string): string {
 // Umami Cloud analytics. The website id is public (it ships in the page source),
 // so it lives here rather than in an env var. Empty means the tag is not rendered.
 export const ANALYTICS = {
-  umamiWebsiteId: '',
+  umamiWebsiteId: 'd7017335-3ab7-4991-9dbf-30e172ebaf62',
   umamiScriptUrl: 'https://cloud.umami.is/script.js',
   // Restricting to the live host keeps dev and preview traffic out of the stats.
   umamiDomains: 'www.dreugeniavila.com',
