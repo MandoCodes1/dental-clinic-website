@@ -24,6 +24,8 @@ const c = content[lang].contact;
           target="_blank"
           rel="noopener"
           class="card flex items-start gap-4 transition hover:border-brand-blue/30 hover:shadow-md"
+          data-umami-event="whatsapp"
+          data-umami-event-location="contact"
         >
           <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-sky/10 text-brand-sky">
             <Icon name="tabler:brand-whatsapp" class="h-7 w-7" />
@@ -38,6 +40,8 @@ const c = content[lang].contact;
         <a
           href={`mailto:${CLINIC.email}`}
           class="card flex items-start gap-4 transition hover:border-brand-blue/30 hover:shadow-md"
+          data-umami-event="email"
+          data-umami-event-location="contact"
         >
           <span
             class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-blue/10 text-brand-blue"
@@ -64,6 +68,8 @@ const c = content[lang].contact;
               target="_blank"
               rel="noopener"
               class="mt-1 inline-block text-sm font-medium text-brand-blue hover:underline"
+              data-umami-event="directions"
+              data-umami-event-location="contact"
             >
               {c.directions}
             </a>

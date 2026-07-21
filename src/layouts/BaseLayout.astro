@@ -9,7 +9,7 @@ import Footer from '~/components/Footer.astro';
 import LangSuggestBanner from '~/components/LangSuggestBanner.astro';
 import StructuredData from '~/components/StructuredData.astro';
 import { content } from '~/content/site';
-import { SITE } from '~/config';
+import { ANALYTICS, SITE } from '~/config';
 import { ROUTES, LANG_META, type Lang, type RouteKey } from '~/i18n';
 
 import faviconSvg from '~/assets/favicons/favicon.svg';
@@ -76,6 +76,22 @@ const alternates = [
 
     <link rel="sitemap" href="/sitemap-index.xml" />
     {SITE.googleSiteVerificationId && <meta name="google-site-verification" content={SITE.googleSiteVerificationId} />}
+
+    {
+      /* Umami needs is:inline (it reads config off document.currentScript) and loads
+         once across view transitions; its pushState hook tracks soft navigations.
+         exclude-hash keeps service-anchor jumps from counting as extra pageviews. */
+      ANALYTICS.umamiWebsiteId && (
+        <script
+          is:inline
+          defer
+          src={ANALYTICS.umamiScriptUrl}
+          data-website-id={ANALYTICS.umamiWebsiteId}
+          data-domains={ANALYTICS.umamiDomains}
+          data-exclude-hash="true"
+        />
+      )
+    }
 
     <StructuredData />
 

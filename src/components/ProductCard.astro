@@ -32,7 +32,14 @@ const rationale = lang === 'es' ? product.rationale_es : product.rationale_en;
   <h3 class="font-semibold text-ink">{name}</h3>
   <p class="mt-2 grow text-sm leading-relaxed text-ink/70">{rationale}</p>
 
-  <a href={amazonLink(product.asin, name)} target="_blank" rel="sponsored noopener" class="btn-primary mt-4">
+  <a
+    href={amazonLink(product.asin, name)}
+    target="_blank"
+    rel="sponsored noopener"
+    class="btn-primary mt-4"
+    data-umami-event="amazon"
+    data-umami-event-product={product.id}
+  >
     <Icon name="tabler:brand-amazon" class="h-5 w-5" />
     {t.productsPage.buyLabel}
   </a>

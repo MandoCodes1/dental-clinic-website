@@ -19,7 +19,14 @@ const c = cta[page];
   <div class="container-page">
     <h2 class="mx-auto max-w-2xl font-heading text-3xl text-brand-deep sm:text-4xl">{c.title}</h2>
     <p class="mx-auto mt-3 max-w-xl text-ink/75">{c.body}</p>
-    <a href={waLink()} target="_blank" rel="noopener" class="btn-whatsapp mt-7">
+    <a
+      href={waLink()}
+      target="_blank"
+      rel="noopener"
+      class="btn-whatsapp mt-7"
+      data-umami-event="whatsapp"
+      data-umami-event-location="cta"
+    >
       <Icon name="tabler:brand-whatsapp" class="h-6 w-6" />
       {cta.button}
     </a>
