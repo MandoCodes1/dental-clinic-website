@@ -46,6 +46,15 @@ export function waLink(message?: string): string {
   return message ? `${base}?text=${encodeURIComponent(message)}` : base;
 }
 
+// Umami Cloud analytics. The website id is public (it ships in the page source),
+// so it lives here rather than in an env var. Empty means the tag is not rendered.
+export const ANALYTICS = {
+  umamiWebsiteId: '',
+  umamiScriptUrl: 'https://cloud.umami.is/script.js',
+  // Restricting to the live host keeps dev and preview traffic out of the stats.
+  umamiDomains: 'www.dreugeniavila.com',
+} as const;
+
 // Affiliate program ids. Dr. Vila's amazon.es Associates tracking id goes here
 // once her account is approved; the placeholder keeps links valid until then.
 export const AFFILIATE = {

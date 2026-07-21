@@ -48,6 +48,8 @@ const nav = NAV_KEYS.map((key) => ({ label: t.nav[key], href: ROUTES[key][lang],
         target="_blank"
         rel="noopener"
         class="hidden items-center gap-2 rounded-full bg-brand-deep px-4 py-2 text-sm font-semibold text-white transition hover:brightness-95 sm:inline-flex"
+        data-umami-event="whatsapp"
+        data-umami-event-location="header"
       >
         <Icon name="tabler:brand-whatsapp" class="h-6 w-6" />
         {t.nav.book}
@@ -81,7 +83,14 @@ const nav = NAV_KEYS.map((key) => ({ label: t.nav[key], href: ROUTES[key][lang],
           </a>
         ))
       }
-      <a href={waLink()} target="_blank" rel="noopener" class="btn-whatsapp mt-2">
+      <a
+        href={waLink()}
+        target="_blank"
+        rel="noopener"
+        class="btn-whatsapp mt-2"
+        data-umami-event="whatsapp"
+        data-umami-event-location="header-mobile"
+      >
         <Icon name="tabler:brand-whatsapp" class="h-6 w-6" />
         {t.nav.book}
       </a>

@@ -114,6 +114,17 @@ Utilizamos tanto Cookies de Sesión como Persistentes para los fines establecido
 
 Para obtener más información sobre las cookies que utilizamos y sus opciones con respecto a las cookies, visite nuestra Política de Cookies o la sección de Cookies de nuestra Política de Privacidad.
 
+#### Medición de Audiencia sin Cookies
+
+Para conocer de forma agregada cómo se utiliza el Sitio Web (número de visitas, páginas consultadas y país de origen), utilizamos Umami, una herramienta de analítica respetuosa con la privacidad. Esta herramienta:
+
+- No instala cookies ni ningún otro identificador en su Dispositivo.
+- No almacena su dirección IP ni ningún dato que permita identificarle.
+- No realiza seguimiento de su navegación en otros sitios web ni comparte datos con terceros con fines publicitarios.
+- Genera únicamente estadísticas agregadas y anónimas.
+
+Al tratarse de una medición de audiencia estrictamente anónima y limitada al propio Sitio Web, esta herramienta no requiere su consentimiento previo conforme a los criterios de la Agencia Española de Protección de Datos sobre cookies y tecnologías de medición de audiencia.
+
 ## Uso de sus Datos Personales
 
 La Clínica puede usar Datos Personales para los siguientes propósitos:

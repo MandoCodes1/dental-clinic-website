@@ -62,13 +62,20 @@ const servicesHref = ROUTES.services[lang];
             target="_blank"
             rel="noopener"
             class="inline-flex items-center gap-2 transition hover:text-white"
+            data-umami-event="whatsapp"
+            data-umami-event-location="footer"
           >
             <Icon name="tabler:brand-whatsapp" class="h-5 w-5" />
             {CLINIC.phoneDisplay}
           </a>
         </li>
         <li>
-          <a href={`mailto:${CLINIC.email}`} class="inline-flex items-center gap-2 transition hover:text-white">
+          <a
+            href={`mailto:${CLINIC.email}`}
+            class="inline-flex items-center gap-2 transition hover:text-white"
+            data-umami-event="email"
+            data-umami-event-location="footer"
+          >
             <Icon name="tabler:mail" class="h-4 w-4" />
             {CLINIC.email}
           </a>
@@ -79,6 +86,8 @@ const servicesHref = ROUTES.services[lang];
             target="_blank"
             rel="noopener"
             class="inline-flex items-start gap-2 transition hover:text-white"
+            data-umami-event="directions"
+            data-umami-event-location="footer"
           >
             <Icon name="tabler:map-pin" class="mt-0.5 h-4 w-4 shrink-0" />
             <span>{CLINIC.addressLine}, {CLINIC.addressCity}</span>

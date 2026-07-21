@@ -114,6 +114,17 @@ We use both Session and Persistent Cookies for the purposes set out below:
 
 For more information about the cookies we use and your choices regarding cookies, please visit our Cookies Policy or the Cookies section of our Privacy Policy.
 
+#### Cookieless Audience Measurement
+
+To understand in aggregate how the Website is used (number of visits, pages viewed and country of origin), we use Umami, a privacy-friendly analytics tool. This tool:
+
+- Does not place cookies or any other identifier on Your Device.
+- Does not store your IP address or any data that could identify you.
+- Does not track your browsing on other websites and does not share data with third parties for advertising purposes.
+- Produces only aggregated, anonymous statistics.
+
+Because this is strictly anonymous audience measurement limited to the Website itself, this tool does not require your prior consent under the criteria of the Spanish Data Protection Agency (AEPD) on cookies and audience measurement technologies.
+
 ## Use of Your Personal Data
 
 The Clinic may use Personal Data for the following purposes:
