@@ -33,7 +33,7 @@ const p = t.pricesPage;
               <h2 class="font-heading text-2xl text-brand-deep">{group.title}</h2>
               <dl class="mt-2 divide-y divide-brand-blue/10">
                 {group.items.map((item) => (
-                  <div class="flex items-baseline justify-between gap-6 py-3">
+                  <div class="flex items-baseline justify-between gap-4 py-3 sm:gap-6">
                     <dt>
                       <span class="font-medium text-ink">{item.label}</span>
                       {item.note && <span class="mt-0.5 block text-sm text-ink/60">{item.note}</span>}
