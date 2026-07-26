@@ -80,7 +80,6 @@ export interface SiteCopy {
     groups: PriceGroup[];
     cbctNote: string;
     askQuote: string;
-    askQuoteCta: string;
   };
   featuredReviews: { eyebrow: string; title: string; subtitle: string; viewAll: string };
   about: {
@@ -358,7 +357,6 @@ const es: SiteCopy = {
     cbctNote:
       'La colocación de implantes requiere un TAC 3D (CBCT), que se realiza en un centro radiológico externo. La Dra. Vila lee y valora la prueba personalmente, como hace a diario en su consulta de Londres, y esa valoración está incluida en tu plan de tratamiento.',
     askQuote: '¿Buscas otro tratamiento? Escríbeme y te digo el precio sin compromiso.',
-    askQuoteCta: 'Pedir presupuesto por WhatsApp',
   },
   featuredReviews: {
     eyebrow: 'Opiniones reales',
@@ -726,7 +724,6 @@ const en: SiteCopy = {
     cbctNote:
       'Implant placement requires a 3D scan (CBCT), taken at an external radiology centre. Dr. Vila reads and assesses the scan personally, as she does daily in her London practice, and that assessment is included in your treatment plan.',
     askQuote: 'Looking for another treatment? Message me and I will tell you the price, no obligation.',
-    askQuoteCta: 'Ask for a quote on WhatsApp',
   },
   featuredReviews: {
     eyebrow: 'Real opinions',

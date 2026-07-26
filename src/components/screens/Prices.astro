@@ -4,7 +4,7 @@ import BaseLayout from '~/layouts/BaseLayout.astro';
 import PageHeader from '~/components/PageHeader.astro';
 import ContactCTA from '~/components/ContactCTA.astro';
 import { content } from '~/content/site';
-import { PRICES, waLink } from '~/config';
+import { PRICES } from '~/config';
 import { formatPrice } from '~/utils/prices';
 import type { Lang } from '~/i18n';
 
@@ -54,20 +54,8 @@ const p = t.pricesPage;
         }
       </div>
 
-      <div class="mx-auto mt-10 max-w-3xl text-center">
-        <p class="text-ink/75">{p.askQuote}</p>
-        <a
-          href={waLink()}
-          target="_blank"
-          rel="noopener"
-          class="btn-whatsapp mt-5"
-          data-umami-event="whatsapp"
-          data-umami-event-location="prices"
-        >
-          <Icon name="tabler:brand-whatsapp" class="h-6 w-6" />
-          {p.askQuoteCta}
-        </a>
-      </div>
+      {/* The WhatsApp button lives in the ContactCTA below, so this is text only. */}
+      <p class="mx-auto mt-8 max-w-3xl text-center text-ink/75">{p.askQuote}</p>
     </div>
   </section>
   <ContactCTA lang={lang} page="prices" />
