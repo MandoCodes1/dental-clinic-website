@@ -18,7 +18,8 @@ const p = t.pricesPage;
 
 <BaseLayout lang={lang} page="prices">
   <PageHeader title={p.title} lead={p.lead} />
-  <section class="section bg-cream">
+  {/* No bottom padding: the body is cream too, so it would only stack with the CTA's own. */}
+  <section class="section bg-cream pb-0">
     <div class="container-page">
       <div class="card mx-auto flex max-w-3xl items-start gap-4">
         <Icon name="tabler:info-circle" class="h-6 w-6 shrink-0 text-brand-blue" />
