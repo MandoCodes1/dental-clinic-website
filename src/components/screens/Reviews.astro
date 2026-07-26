@@ -31,7 +31,14 @@ const total = getAllReviews().length;
           <span class="font-semibold">5.0</span>
           <span class="text-sm text-ink/70">· {total} {content[lang].credentials.reviewsLabel.toLowerCase()}</span>
         </div>
-        <a href={CLINIC.reviewUrl} target="_blank" rel="noopener" class="btn-outline">
+        <a
+          href={CLINIC.reviewUrl}
+          target="_blank"
+          rel="noopener"
+          class="btn-outline"
+          data-umami-event="review"
+          data-umami-event-location="reviews"
+        >
           <Icon name="tabler:brand-google" class="h-5 w-5" />
           {r.cta}
         </a>
