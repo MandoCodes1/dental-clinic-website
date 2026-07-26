@@ -1,0 +1,139 @@
+---
+import { Icon } from 'astro-icon/components';
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import PageHeader from '~/components/PageHeader.astro';
+import ContactCTA from '~/components/ContactCTA.astro';
+import { content } from '~/content/site';
+import { PRICES, waLink } from '~/config';
+import type { Lang } from '~/i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = content[lang];
+const p = t.pricesPage;
+
+// Intl skips the thousands separator on 4-digit numbers in es-ES ("1100"),
+// but price convention here wants "1.100 €", so group digits by hand.
+const group = (n: number, sep: string) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, sep);
+const fmt = (n: number) => (lang === 'es' ? `${group(n, '.')} €` : `€${group(n, ',')}`);
+---
+
+<BaseLayout lang={lang} page="prices">
+  <PageHeader title={p.title} lead={p.lead} />
+  <section class="section bg-cream">
+    <div class="container-page">
+      {/* Temporary variant switcher to compare the two layouts; remove before release. */}
+      <div class="mb-8 inline-flex rounded-full border border-brand-blue/20 bg-white p-1">
+        <button
+          type="button"
+          class="price-tab rounded-full bg-brand-deep px-4 py-2 text-sm font-medium text-white"
+          data-target="price-list-full"
+          aria-selected="true"
+        >
+          Lista completa
+        </button>
+        <button
+          type="button"
+          class="price-tab rounded-full px-4 py-2 text-sm font-medium"
+          data-target="price-list-key"
+          aria-selected="false"
+        >
+          Solo precios clave
+        </button>
+      </div>
+
+      <div class="card flex max-w-3xl items-start gap-4">
+        <Icon name="tabler:info-circle" class="h-6 w-6 shrink-0 text-brand-blue" />
+        <p class="text-sm leading-relaxed text-ink/70">{p.disclaimer}</p>
+      </div>
+
+      <div id="price-list-full" class="mt-8 max-w-3xl space-y-6">
+        {
+          p.groups.map((group) => (
+            <div class="card">
+              <h2 class="font-heading text-2xl text-brand-deep">{group.title}</h2>
+              <dl class="mt-2 divide-y divide-brand-blue/10">
+                {group.items.map((item) => (
+                  <div class="flex items-baseline justify-between gap-6 py-3">
+                    <dt>
+                      <span class="font-medium text-ink">{item.label}</span>
+                      {item.note && <span class="mt-0.5 block text-sm text-ink/60">{item.note}</span>}
+                    </dt>
+                    <dd class="whitespace-nowrap text-right">
+                      <span class="text-sm text-ink/60">{p.from}</span>
+                      <span class="ml-1 font-heading text-xl font-semibold text-brand-deep">
+                        {fmt(PRICES[item.id])}
+                      </span>
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+              {group.items.some((item) => item.id === 'implantCrown') && (
+                <p class="mt-2 border-t border-brand-blue/10 pt-4 text-sm leading-relaxed text-ink/60">{p.cbctNote}</p>
+              )}
+            </div>
+          ))
+        }
+      </div>
+
+      <div id="price-list-key" class="mt-8 hidden">
+        <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {
+            p.keyItems.map((item) => (
+              <div class="card">
+                <h2 class="font-heading text-xl text-brand-deep">{item.title}</h2>
+                <p class="mt-3">
+                  <span class="text-sm text-ink/60">{p.from}</span>
+                  <span class="ml-1 font-heading text-3xl font-semibold text-brand-deep">{fmt(PRICES[item.id])}</span>
+                </p>
+                <p class="mt-3 text-sm leading-relaxed text-ink/70">{item.body}</p>
+                {item.id === 'implantCrown' && (
+                  <p class="mt-3 border-t border-brand-blue/10 pt-3 text-xs leading-relaxed text-ink/60">
+                    {p.cbctNote}
+                  </p>
+                )}
+              </div>
+            ))
+          }
+        </div>
+        <div class="mt-10 text-center">
+          <p class="text-ink/75">{p.askQuote}</p>
+          <a
+            href={waLink()}
+            target="_blank"
+            rel="noopener"
+            class="btn-whatsapp mt-5"
+            data-umami-event="whatsapp"
+            data-umami-event-location="prices"
+          >
+            <Icon name="tabler:brand-whatsapp" class="h-6 w-6" />
+            {p.askQuoteCta}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <ContactCTA lang={lang} page="prices" />
+</BaseLayout>
+
+<script>
+  function initPriceTabs() {
+    const tabs = document.querySelectorAll<HTMLButtonElement>('.price-tab');
+    if (!tabs.length) return;
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        tabs.forEach((btn) => {
+          const active = btn === tab;
+          const panel = document.getElementById(btn.dataset.target ?? '');
+          btn.setAttribute('aria-selected', String(active));
+          btn.classList.toggle('bg-brand-deep', active);
+          btn.classList.toggle('text-white', active);
+          panel?.classList.toggle('hidden', !active);
+        });
+      });
+    });
+  }
+  document.addEventListener('astro:page-load', initPriceTabs);
+</script>

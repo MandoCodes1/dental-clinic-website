@@ -42,6 +42,23 @@ export const SERVICES = [
 
 export type ServiceId = (typeof SERVICES)[number]['id'];
 
+// Starting-from treatment prices in euros. Single source for the prices page
+// and any "desde" tags elsewhere, so the numbers cannot drift between pages.
+// Provisional until Dra. Vila confirms the final list.
+export const PRICES = {
+  implantCrown: 1100,
+  filling: 50,
+  extraction: 50,
+  reconstruction: 100,
+  cleaning: 50,
+  zirconiaCrown: 400,
+  whitening: 300,
+  aligners: 1500,
+  compositeVeneer: 200,
+} as const;
+
+export type PriceId = keyof typeof PRICES;
+
 export function waLink(message?: string): string {
   const base = `https://wa.me/${CLINIC.whatsapp}`;
   return message ? `${base}?text=${encodeURIComponent(message)}` : base;

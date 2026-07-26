@@ -9,6 +9,7 @@ export const ROUTES = {
   home: { es: '/', en: '/en' },
   about: { es: '/sobre-mi', en: '/en/about' },
   services: { es: '/servicios', en: '/en/services' },
+  prices: { es: '/precios', en: '/en/prices' },
   reviews: { es: '/resenas', en: '/en/reviews' },
   gallery: { es: '/galeria', en: '/en/gallery' },
   products: { es: '/productos', en: '/en/products' },

@@ -27,7 +27,7 @@ interface Props {
 const { lang, page, title, description, image } = Astro.props;
 const t = content[lang];
 
-const metaKeys = ['home', 'about', 'services', 'gallery', 'reviews', 'contact', 'products'] as const;
+const metaKeys = ['home', 'about', 'services', 'prices', 'gallery', 'reviews', 'contact', 'products'] as const;
 const fallback = (metaKeys as readonly string[]).includes(page) ? t.meta[page as (typeof metaKeys)[number]] : undefined;
 const pageTitle = title ?? fallback?.title ?? SITE.name;
 const pageDesc = description ?? fallback?.description ?? '';

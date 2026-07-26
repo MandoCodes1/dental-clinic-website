@@ -1,5 +1,5 @@
 import type { Lang } from '~/i18n';
-import type { ServiceId } from '~/config';
+import type { PriceId, ServiceId } from '~/config';
 
 // All translatable copy lives here once per locale. The shared SiteCopy type
 // forces Spanish and English to stay structurally identical (a missing field is
@@ -35,19 +35,34 @@ export interface ValueItem {
   title: string;
   description: string;
 }
+export interface PriceItem {
+  id: PriceId;
+  label: string;
+  note?: string;
+}
+export interface PriceGroup {
+  title: string;
+  items: PriceItem[];
+}
+export interface PriceHighlight {
+  id: PriceId;
+  title: string;
+  body: string;
+}
 
 export interface SiteCopy {
   nav: {
     home: string;
     about: string;
     services: string;
+    prices: string;
     reviews: string;
     gallery: string;
     products: string;
     contact: string;
     book: string;
   };
-  meta: Record<'home' | 'about' | 'services' | 'gallery' | 'reviews' | 'contact' | 'products', MetaEntry>;
+  meta: Record<'home' | 'about' | 'services' | 'prices' | 'gallery' | 'reviews' | 'contact' | 'products', MetaEntry>;
   a11y: { skip: string; openMenu: string; closeMenu: string; switchLang: string };
   hero: { eyebrow: string; title: string; subtitle: string; ctaBook: string; ctaReviews: string; availability: string };
   credentials: {
@@ -62,6 +77,17 @@ export interface SiteCopy {
   values: { eyebrow: string; title: string; items: ValueItem[] };
   services: { eyebrow: string; title: string; subtitle: string; learnMore: string; items: ServiceItem[] };
   servicesPage: { lead: string; details: ServiceDetail[] };
+  pricesPage: {
+    title: string;
+    lead: string;
+    from: string;
+    disclaimer: string;
+    groups: PriceGroup[];
+    cbctNote: string;
+    keyItems: PriceHighlight[];
+    askQuote: string;
+    askQuoteCta: string;
+  };
   featuredReviews: { eyebrow: string; title: string; subtitle: string; viewAll: string };
   about: {
     eyebrow: string;
@@ -110,6 +136,7 @@ export interface SiteCopy {
     home: { title: string; body: string };
     about: { title: string; body: string };
     services: { title: string; body: string };
+    prices: { title: string; body: string };
     reviews: { title: string; body: string };
     gallery: { title: string; body: string };
     products: { title: string; body: string };
@@ -124,6 +151,7 @@ const es: SiteCopy = {
     home: 'Inicio',
     about: 'Sobre mí',
     services: 'Servicios',
+    prices: 'Precios',
     reviews: 'Reseñas',
     gallery: 'Galería',
     products: 'Productos',
@@ -145,6 +173,11 @@ const es: SiteCopy = {
       title: 'Servicios - Dra. Eugenia Vila',
       description:
         'Implantes dentales, cirugía oral, alineadores y odontología estética en El Palo, Málaga. Tratamientos de calidad con materiales de primera y precios justos.',
+    },
+    prices: {
+      title: 'Precios - Dra. Eugenia Vila',
+      description:
+        'Precios de la clínica dental de la Dra. Eugenia Vila en El Palo, Málaga: implantes, empastes, limpieza, blanqueamiento, alineadores y más. Precios claros y cerrados, sin sorpresas.',
     },
     gallery: {
       title: 'Antes y después - Dra. Eugenia Vila',
@@ -285,6 +318,67 @@ const es: SiteCopy = {
       },
     ],
   },
+  pricesPage: {
+    title: 'Precios claros, sin sorpresas',
+    lead: 'Creo que debes saber lo que cuesta tu tratamiento antes de sentarte en el sillón. Estos son mis precios de partida, sin letra pequeña.',
+    from: 'desde',
+    disclaimer:
+      'Precios orientativos para casos de complejidad baja. Tras la primera valoración recibirás un presupuesto cerrado y por escrito, sin compromiso: el precio acordado es el que pagas.',
+    groups: [
+      {
+        title: 'Implantes',
+        items: [{ id: 'implantCrown', label: 'Implante + corona de porcelana', note: 'Corona incluida en el precio' }],
+      },
+      {
+        title: 'Odontología general',
+        items: [
+          { id: 'cleaning', label: 'Limpieza dental' },
+          { id: 'filling', label: 'Empaste de composite' },
+          { id: 'reconstruction', label: 'Reconstrucción' },
+          { id: 'extraction', label: 'Extracción simple' },
+        ],
+      },
+      {
+        title: 'Estética y coronas',
+        items: [
+          { id: 'zirconiaCrown', label: 'Corona de zirconio' },
+          { id: 'compositeVeneer', label: 'Carilla de composite', note: 'Por unidad' },
+          { id: 'whitening', label: 'Blanqueamiento con férulas a medida' },
+        ],
+      },
+      {
+        title: 'Ortodoncia',
+        items: [
+          {
+            id: 'aligners',
+            label: 'Ortodoncia con alineadores Ordoline',
+            note: 'Una arcada. El precio final depende de la complejidad del caso y del número de arcadas',
+          },
+        ],
+      },
+    ],
+    cbctNote:
+      'La colocación de implantes requiere un TAC 3D (CBCT), que se realiza en un centro radiológico externo. La Dra. Vila lee y valora la prueba personalmente, como hace a diario en su consulta de Londres, y esa valoración está incluida en tu plan de tratamiento.',
+    keyItems: [
+      {
+        id: 'implantCrown',
+        title: 'Implante + corona de porcelana',
+        body: 'Precio cerrado con la corona incluida. Sin extras ocultos ni precios por piezas sueltas.',
+      },
+      {
+        id: 'aligners',
+        title: 'Ortodoncia con alineadores',
+        body: 'Una arcada. El precio final depende de la complejidad del caso y del número de arcadas.',
+      },
+      {
+        id: 'cleaning',
+        title: 'Limpieza dental',
+        body: 'Higiene profesional completa, con revisión y consejos para cuidarte en casa.',
+      },
+    ],
+    askQuote: '¿Buscas otro tratamiento? Escríbeme y te digo el precio sin compromiso.',
+    askQuoteCta: 'Pedir presupuesto por WhatsApp',
+  },
   featuredReviews: {
     eyebrow: 'Opiniones reales',
     title: 'Lo que dicen sus pacientes',
@@ -395,6 +489,10 @@ const es: SiteCopy = {
       title: '¿Tienes dudas sobre qué tratamiento necesitas?',
       body: 'Cuéntame qué te preocupa por WhatsApp y te respondo yo misma, sin compromiso.',
     },
+    prices: {
+      title: '¿Quieres un presupuesto cerrado para tu caso?',
+      body: 'Escríbeme por WhatsApp, cuéntame qué necesitas y te doy un presupuesto por escrito, sin compromiso.',
+    },
     reviews: {
       title: '¿Quieres el trato que cuentan mis pacientes?',
       body: 'Escríbeme por WhatsApp y te respondo yo misma, sin compromiso.',
@@ -434,6 +532,7 @@ const en: SiteCopy = {
     home: 'Home',
     about: 'About',
     services: 'Services',
+    prices: 'Prices',
     reviews: 'Reviews',
     gallery: 'Gallery',
     products: 'Products',
@@ -455,6 +554,11 @@ const en: SiteCopy = {
       title: 'Services - Dr. Eugenia Vila',
       description:
         'Dental implants, oral surgery, aligners and cosmetic dentistry in El Palo, Málaga. Quality treatment with premium materials at fair prices.',
+    },
+    prices: {
+      title: 'Prices - Dr. Eugenia Vila',
+      description:
+        'Prices at Dr. Eugenia Vila’s dental clinic in El Palo, Málaga: implants, fillings, cleaning, whitening, aligners and more. Clear, fixed prices with no surprises.',
     },
     gallery: {
       title: 'Before & after - Dr. Eugenia Vila',
@@ -595,6 +699,67 @@ const en: SiteCopy = {
       },
     ],
   },
+  pricesPage: {
+    title: 'Clear prices, no surprises',
+    lead: 'I believe you should know what your treatment costs before you sit in the chair. These are my starting prices, with no small print.',
+    from: 'from',
+    disclaimer:
+      'Guide prices for straightforward cases. After your first assessment you will receive a fixed, written quote with no obligation: the price we agree is the price you pay.',
+    groups: [
+      {
+        title: 'Implants',
+        items: [{ id: 'implantCrown', label: 'Implant + porcelain crown', note: 'Crown included in the price' }],
+      },
+      {
+        title: 'General dentistry',
+        items: [
+          { id: 'cleaning', label: 'Dental cleaning' },
+          { id: 'filling', label: 'Composite filling' },
+          { id: 'reconstruction', label: 'Tooth build-up (reconstruction)' },
+          { id: 'extraction', label: 'Simple extraction' },
+        ],
+      },
+      {
+        title: 'Cosmetic & crowns',
+        items: [
+          { id: 'zirconiaCrown', label: 'Zirconia crown' },
+          { id: 'compositeVeneer', label: 'Composite veneer', note: 'Per tooth' },
+          { id: 'whitening', label: 'Whitening with custom trays' },
+        ],
+      },
+      {
+        title: 'Orthodontics',
+        items: [
+          {
+            id: 'aligners',
+            label: 'Ordoline clear aligners',
+            note: 'One arch. The final price depends on case complexity and the number of arches',
+          },
+        ],
+      },
+    ],
+    cbctNote:
+      'Implant placement requires a 3D scan (CBCT), taken at an external radiology centre. Dr. Vila reads and assesses the scan personally, as she does daily in her London practice, and that assessment is included in your treatment plan.',
+    keyItems: [
+      {
+        id: 'implantCrown',
+        title: 'Implant + porcelain crown',
+        body: 'A fixed price with the crown included. No hidden extras, no piece-by-piece pricing.',
+      },
+      {
+        id: 'aligners',
+        title: 'Clear aligners',
+        body: 'One arch. The final price depends on case complexity and the number of arches.',
+      },
+      {
+        id: 'cleaning',
+        title: 'Dental cleaning',
+        body: 'A full professional clean, with a check-up and advice for looking after your smile at home.',
+      },
+    ],
+    askQuote: 'Looking for another treatment? Message me and I will tell you the price, no obligation.',
+    askQuoteCta: 'Ask for a quote on WhatsApp',
+  },
   featuredReviews: {
     eyebrow: 'Real opinions',
     title: 'What her patients say',
@@ -703,6 +868,10 @@ const en: SiteCopy = {
     services: {
       title: 'Not sure which treatment is right for you?',
       body: 'Tell me what you’re considering on WhatsApp and I’ll reply personally, with no obligation.',
+    },
+    prices: {
+      title: 'Want a fixed quote for your case?',
+      body: 'Message me on WhatsApp, tell me what you need and I’ll send you a written quote, with no obligation.',
     },
     reviews: {
       title: 'Want the kind of care these patients describe?',
