@@ -44,11 +44,6 @@ export interface PriceGroup {
   title: string;
   items: PriceItem[];
 }
-export interface PriceHighlight {
-  id: PriceId;
-  title: string;
-  body: string;
-}
 
 export interface SiteCopy {
   nav: {
@@ -84,7 +79,6 @@ export interface SiteCopy {
     disclaimer: string;
     groups: PriceGroup[];
     cbctNote: string;
-    keyItems: PriceHighlight[];
     askQuote: string;
     askQuoteCta: string;
   };
@@ -278,7 +272,7 @@ const es: SiteCopy = {
         lead: 'Recupera dientes perdidos con implantes que se ven, se sienten y funcionan como los tuyos.',
         points: [
           'Implante unitario, múltiple o rehabilitación completa de la boca',
-          'Planificación digital con escáner intraoral e imagen 3D (CBCT)',
+          'Planificación digital a partir de imagen 3D (CBCT)',
           'Injertos óseos y elevación de seno cuando hacen falta',
           'Revisiones y mantenimiento a largo plazo',
         ],
@@ -343,7 +337,11 @@ const es: SiteCopy = {
         items: [
           { id: 'zirconiaCrown', label: 'Corona de zirconio' },
           { id: 'compositeVeneer', label: 'Carilla de composite', note: 'Por unidad' },
-          { id: 'whitening', label: 'Blanqueamiento con férulas a medida' },
+          {
+            id: 'whitening',
+            label: 'Blanqueamiento dental',
+            note: 'Incluye férulas a medida superior e inferior y las jeringas de blanqueamiento',
+          },
         ],
       },
       {
@@ -359,23 +357,6 @@ const es: SiteCopy = {
     ],
     cbctNote:
       'La colocación de implantes requiere un TAC 3D (CBCT), que se realiza en un centro radiológico externo. La Dra. Vila lee y valora la prueba personalmente, como hace a diario en su consulta de Londres, y esa valoración está incluida en tu plan de tratamiento.',
-    keyItems: [
-      {
-        id: 'implantCrown',
-        title: 'Implante + corona de porcelana',
-        body: 'Precio cerrado con la corona incluida. Sin extras ocultos ni precios por piezas sueltas.',
-      },
-      {
-        id: 'aligners',
-        title: 'Ortodoncia con alineadores',
-        body: 'Una arcada. El precio final depende de la complejidad del caso y del número de arcadas.',
-      },
-      {
-        id: 'cleaning',
-        title: 'Limpieza dental',
-        body: 'Higiene profesional completa, con revisión y consejos para cuidarte en casa.',
-      },
-    ],
     askQuote: '¿Buscas otro tratamiento? Escríbeme y te digo el precio sin compromiso.',
     askQuoteCta: 'Pedir presupuesto por WhatsApp',
   },
@@ -659,7 +640,7 @@ const en: SiteCopy = {
         lead: 'Replace missing teeth with implants that look, feel and work like your own.',
         points: [
           'Single, multiple or full-mouth implant rehabilitation',
-          'Digital planning with intraoral scanning and 3D imaging (CBCT)',
+          'Digital planning from 3D imaging (CBCT)',
           'Bone grafts and sinus lifts when needed',
           'Long-term check-ups and maintenance',
         ],
@@ -724,7 +705,11 @@ const en: SiteCopy = {
         items: [
           { id: 'zirconiaCrown', label: 'Zirconia crown' },
           { id: 'compositeVeneer', label: 'Composite veneer', note: 'Per tooth' },
-          { id: 'whitening', label: 'Whitening with custom trays' },
+          {
+            id: 'whitening',
+            label: 'Teeth whitening',
+            note: 'Includes custom upper and lower trays and the whitening gel syringes',
+          },
         ],
       },
       {
@@ -740,23 +725,6 @@ const en: SiteCopy = {
     ],
     cbctNote:
       'Implant placement requires a 3D scan (CBCT), taken at an external radiology centre. Dr. Vila reads and assesses the scan personally, as she does daily in her London practice, and that assessment is included in your treatment plan.',
-    keyItems: [
-      {
-        id: 'implantCrown',
-        title: 'Implant + porcelain crown',
-        body: 'A fixed price with the crown included. No hidden extras, no piece-by-piece pricing.',
-      },
-      {
-        id: 'aligners',
-        title: 'Clear aligners',
-        body: 'One arch. The final price depends on case complexity and the number of arches.',
-      },
-      {
-        id: 'cleaning',
-        title: 'Dental cleaning',
-        body: 'A full professional clean, with a check-up and advice for looking after your smile at home.',
-      },
-    ],
     askQuote: 'Looking for another treatment? Message me and I will tell you the price, no obligation.',
     askQuoteCta: 'Ask for a quote on WhatsApp',
   },

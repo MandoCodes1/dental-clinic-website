@@ -21,10 +21,11 @@ const nav = NAV_KEYS.map((key) => ({ label: t.nav[key], href: ROUTES[key][lang],
   <div class="container-page flex h-16 items-center justify-between gap-4">
     <a href={homeHref} class="flex items-center gap-2.5" aria-label="Dra. Eugenia Vila">
       <Image src={logo} alt="" width={435} height={316} class="h-9 w-auto" />
-      <span class="font-heading text-lg font-semibold text-brand-deep">Dra. Eugenia Vila</span>
+      {/* Between lg and xl the eight nav links need the room, so the mark stands in for the wordmark. */}
+      <span class="font-heading text-lg font-semibold text-brand-deep lg:hidden xl:inline">Dra. Eugenia Vila</span>
     </a>
 
-    <nav class="hidden items-center gap-6 lg:flex" aria-label={t.nav.home}>
+    <nav class="hidden items-center gap-5 lg:flex xl:gap-6" aria-label={t.nav.home}>
       {
         nav.map((item) => (
           <a

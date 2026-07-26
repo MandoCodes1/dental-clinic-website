@@ -30,20 +30,8 @@ export const CLINIC = {
   patients: 20000,
 } as const;
 
-// Stable list + presentation metadata for the four services, reused by the
-// overview, the detailed service page, and footer deep-links. Copy is per-locale
-// in src/content/site.ts, keyed by the same id.
-export const SERVICES = [
-  { id: 'implants', anchor: 'implantes', icon: 'tabler:dental' },
-  { id: 'oral', anchor: 'cirugia', icon: 'tabler:medical-cross' },
-  { id: 'aligners', anchor: 'alineadores', icon: 'tabler:mood-smile' },
-  { id: 'cosmetic', anchor: 'estetica', icon: 'tabler:sparkles' },
-] as const;
-
-export type ServiceId = (typeof SERVICES)[number]['id'];
-
 // Starting-from treatment prices in euros. Single source for the prices page
-// and any "desde" tags elsewhere, so the numbers cannot drift between pages.
+// and the "desde" tags on the services page, so the numbers cannot drift.
 // Provisional until Dra. Vila confirms the final list.
 export const PRICES = {
   implantCrown: 1100,
@@ -58,6 +46,19 @@ export const PRICES = {
 } as const;
 
 export type PriceId = keyof typeof PRICES;
+
+// Stable list + presentation metadata for the four services, reused by the
+// overview, the detailed service page, and footer deep-links. Copy is per-locale
+// in src/content/site.ts, keyed by the same id. `price` is the cheapest entry
+// point into each service, shown as a "desde" tag linking to the prices page.
+export const SERVICES = [
+  { id: 'implants', anchor: 'implantes', icon: 'tabler:dental', price: 'implantCrown' },
+  { id: 'oral', anchor: 'cirugia', icon: 'tabler:medical-cross', price: 'extraction' },
+  { id: 'aligners', anchor: 'alineadores', icon: 'tabler:mood-smile', price: 'aligners' },
+  { id: 'cosmetic', anchor: 'estetica', icon: 'tabler:sparkles', price: 'compositeVeneer' },
+] as const satisfies readonly { id: string; anchor: string; icon: string; price: PriceId }[];
+
+export type ServiceId = (typeof SERVICES)[number]['id'];
 
 export function waLink(message?: string): string {
   const base = `https://wa.me/${CLINIC.whatsapp}`;
