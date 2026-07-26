@@ -36,13 +36,15 @@ export interface ValueItem {
   description: string;
 }
 export interface PriceItem {
-  id: PriceId;
+  // Omitted when the treatment varies too much to carry a starting price.
+  id?: PriceId;
   label: string;
   note?: string;
 }
 export interface PriceGroup {
   title: string;
   items: PriceItem[];
+  note?: string;
 }
 
 export interface SiteCopy {
@@ -76,9 +78,9 @@ export interface SiteCopy {
     title: string;
     lead: string;
     from: string;
+    customQuote: string;
     disclaimer: string;
     groups: PriceGroup[];
-    cbctNote: string;
     askQuote: string;
   };
   featuredReviews: { eyebrow: string; title: string; subtitle: string; viewAll: string };
@@ -315,12 +317,26 @@ const es: SiteCopy = {
     title: 'Precios claros, sin sorpresas',
     lead: 'Creo que debes saber lo que cuesta tu tratamiento antes de sentarte en el sillón. Estos son mis precios de partida, sin letra pequeña.',
     from: 'desde',
+    customQuote: 'Presupuesto a medida',
     disclaimer:
       'Precios orientativos para casos de complejidad baja. Tras la primera valoración recibirás un presupuesto cerrado y por escrito, sin compromiso: el precio acordado es el que pagas.',
     groups: [
       {
-        title: 'Implantes',
-        items: [{ id: 'implantCrown', label: 'Implante + corona de porcelana', note: 'Corona incluida en el precio' }],
+        title: 'Implantes y cirugía',
+        items: [
+          { id: 'implantCrown', label: 'Implante + corona de porcelana', note: 'Corona incluida en el precio' },
+          {
+            id: 'boneGraft',
+            label: 'Injerto de hueso',
+            note: 'Cuando no hay hueso suficiente donde va el implante. Incluye el biomaterial y la membrana de regeneración',
+          },
+          {
+            id: 'sinusLift',
+            label: 'Elevación de seno maxilar',
+            note: 'Para poder colocar implantes en las muelas de arriba cuando falta altura de hueso',
+          },
+        ],
+        note: 'El injerto y la elevación de seno solo se hacen si tu caso los necesita, y siempre van dentro del presupuesto cerrado antes de empezar. La colocación de implantes requiere un TAC 3D (CBCT), que se realiza en un centro radiológico externo: la Dra. Vila lee y valora la prueba personalmente, como hace a diario en su consulta de Londres, y esa valoración está incluida en tu plan de tratamiento.',
       },
       {
         title: 'Odontología general',
@@ -329,6 +345,11 @@ const es: SiteCopy = {
           { id: 'filling', label: 'Empaste de composite' },
           { id: 'reconstruction', label: 'Reconstrucción' },
           { id: 'extraction', label: 'Extracción simple' },
+          {
+            id: 'nightGuard',
+            label: 'Férula de descarga',
+            note: 'Si aprietas o rechinas los dientes al dormir. Hecha a medida para proteger el esmalte y relajar la mandíbula',
+          },
         ],
       },
       {
@@ -353,9 +374,17 @@ const es: SiteCopy = {
           },
         ],
       },
+      {
+        title: 'Rehabilitación de la mordida',
+        items: [
+          {
+            label: 'Reconstrucción de dientes muy desgastados',
+            note: 'Cuando el desgaste ha acortado los dientes y ha bajado la altura de la mordida, se devuelve a los dientes su forma, su función y su aspecto',
+          },
+        ],
+        note: 'Cada boca desgastada es distinta, así que este tratamiento no tiene un precio de partida útil: depende de cuántos dientes haya que reconstruir y de cómo esté la mordida. Te lo estudio y te doy un presupuesto cerrado antes de tocar nada.',
+      },
     ],
-    cbctNote:
-      'La colocación de implantes requiere un TAC 3D (CBCT), que se realiza en un centro radiológico externo. La Dra. Vila lee y valora la prueba personalmente, como hace a diario en su consulta de Londres, y esa valoración está incluida en tu plan de tratamiento.',
     askQuote: '¿Buscas otro tratamiento? Escríbeme y te digo el precio sin compromiso.',
   },
   featuredReviews: {
@@ -682,12 +711,26 @@ const en: SiteCopy = {
     title: 'Clear prices, no surprises',
     lead: 'I believe you should know what your treatment costs before you sit in the chair. These are my starting prices, with no small print.',
     from: 'from',
+    customQuote: 'Quoted case by case',
     disclaimer:
       'Guide prices for straightforward cases. After your first assessment you will receive a fixed, written quote with no obligation: the price we agree is the price you pay.',
     groups: [
       {
-        title: 'Implants',
-        items: [{ id: 'implantCrown', label: 'Implant + porcelain crown', note: 'Crown included in the price' }],
+        title: 'Implants & surgery',
+        items: [
+          { id: 'implantCrown', label: 'Implant + porcelain crown', note: 'Crown included in the price' },
+          {
+            id: 'boneGraft',
+            label: 'Bone graft',
+            note: 'When there is not enough bone where the implant goes. Includes the biomaterial and the regeneration membrane',
+          },
+          {
+            id: 'sinusLift',
+            label: 'Sinus lift',
+            note: 'So implants can be placed in the upper back teeth when bone height is short',
+          },
+        ],
+        note: 'A graft or a sinus lift is only carried out if your case needs one, and it is always part of the fixed quote agreed before we start. Implant placement requires a 3D scan (CBCT), taken at an external radiology centre: Dr. Vila reads and assesses the scan personally, as she does daily in her London practice, and that assessment is included in your treatment plan.',
       },
       {
         title: 'General dentistry',
@@ -696,6 +739,11 @@ const en: SiteCopy = {
           { id: 'filling', label: 'Composite filling' },
           { id: 'reconstruction', label: 'Tooth build-up (reconstruction)' },
           { id: 'extraction', label: 'Simple extraction' },
+          {
+            id: 'nightGuard',
+            label: 'Night guard',
+            note: 'If you clench or grind your teeth in your sleep. Custom-made to protect the enamel and relax the jaw',
+          },
         ],
       },
       {
@@ -720,9 +768,17 @@ const en: SiteCopy = {
           },
         ],
       },
+      {
+        title: 'Rebuilding a worn bite',
+        items: [
+          {
+            label: 'Restoring heavily worn teeth',
+            note: 'When wear has shortened the teeth and lowered the height of the bite, the teeth are given back their shape, their function and their looks',
+          },
+        ],
+        note: 'Every worn bite is different, so a starting price would tell you very little here: it depends on how many teeth need rebuilding and on the state of the bite. I study your case and give you a fixed quote before anything is touched.',
+      },
     ],
-    cbctNote:
-      'Implant placement requires a 3D scan (CBCT), taken at an external radiology centre. Dr. Vila reads and assesses the scan personally, as she does daily in her London practice, and that assessment is included in your treatment plan.',
     askQuote: 'Looking for another treatment? Message me and I will tell you the price, no obligation.',
   },
   featuredReviews: {

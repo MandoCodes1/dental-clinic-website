@@ -35,10 +35,13 @@ export const CLINIC = {
 // Provisional until Dra. Vila confirms the final list.
 export const PRICES = {
   implantCrown: 1100,
+  boneGraft: 300,
+  sinusLift: 600,
   filling: 50,
   extraction: 50,
   reconstruction: 100,
   cleaning: 50,
+  nightGuard: 200,
   zirconiaCrown: 400,
   whitening: 300,
   aligners: 1500,

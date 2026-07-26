@@ -38,17 +38,23 @@ const p = t.pricesPage;
                       <span class="font-medium text-ink">{item.label}</span>
                       {item.note && <span class="mt-0.5 block text-sm text-ink/60">{item.note}</span>}
                     </dt>
-                    <dd class="whitespace-nowrap text-right">
-                      <span class="text-sm text-ink/60">{p.from}</span>
-                      <span class="ml-1 font-heading text-xl font-semibold text-brand-deep">
-                        {formatPrice(PRICES[item.id], lang)}
-                      </span>
+                    <dd class="text-right">
+                      {item.id ? (
+                        <span class="whitespace-nowrap">
+                          <span class="text-sm text-ink/60">{p.from}</span>
+                          <span class="ml-1 font-heading text-xl font-semibold text-brand-deep">
+                            {formatPrice(PRICES[item.id], lang)}
+                          </span>
+                        </span>
+                      ) : (
+                        <span class="font-heading text-lg font-semibold text-brand-deep">{p.customQuote}</span>
+                      )}
                     </dd>
                   </div>
                 ))}
               </dl>
-              {group.items.some((item) => item.id === 'implantCrown') && (
-                <p class="mt-2 border-t border-brand-blue/10 pt-4 text-sm leading-relaxed text-ink/60">{p.cbctNote}</p>
+              {group.note && (
+                <p class="mt-2 border-t border-brand-blue/10 pt-4 text-sm leading-relaxed text-ink/60">{group.note}</p>
               )}
             </div>
           ))
