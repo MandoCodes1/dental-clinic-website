@@ -55,10 +55,9 @@ export const ANALYTICS = {
   umamiDomains: 'www.dreugeniavila.com',
 } as const;
 
-// Affiliate program ids. Dr. Vila's amazon.es Associates tracking id goes here
-// once her account is approved; the placeholder keeps links valid until then.
+// Affiliate program ids. Dr. Vila's amazon.es Associates tracking id.
 export const AFFILIATE = {
-  amazonTagEs: 'REPLACE-21',
+  amazonTagEs: 'evdentalclini-21',
 } as const;
 
 // Build an amazon.es link carrying the affiliate tag. With an ASIN it points at
