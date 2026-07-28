@@ -1,6 +1,6 @@
 # High-Performance Dental Clinic Website
 
-**Live site**: [dreugeniavila.com](https://www.dreugeniavila.com)
+**Live site**: [draeugeniavila.com](https://www.draeugeniavila.com)
 
 Professional, bilingual website for the dental clinic of Dra. Eugenia Vila in El Palo, Málaga, Spain.
 
@@ -79,7 +79,7 @@ npm run fix        # auto-fix ESLint and Prettier issues
 
 ## Deployment
 
-Every push to `main` runs the GitHub Actions workflow in `.github/workflows/deploy.yml`, which builds the site and publishes `dist/` to GitHub Pages. The custom domain `www.dreugeniavila.com` is configured through `public/CNAME` and served through Cloudflare.
+Every push to `main` runs the GitHub Actions workflow in `.github/workflows/deploy.yml`, which builds the site and publishes `dist/` to GitHub Pages. The custom domain `www.draeugeniavila.com` is configured through `public/CNAME` and served through Cloudflare.
 
 ## Acknowledgements
 

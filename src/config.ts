@@ -1,7 +1,7 @@
 // Single source of truth for non-translated facts about the site and clinic.
 
 export const SITE = {
-  domain: 'https://www.dreugeniavila.com',
+  domain: 'https://www.draeugeniavila.com',
   name: 'Dra. Eugenia Vila',
   defaultLang: 'es' as const,
   googleSiteVerificationId: 'orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M',
@@ -52,7 +52,7 @@ export const ANALYTICS = {
   umamiWebsiteId: 'd7017335-3ab7-4991-9dbf-30e172ebaf62',
   umamiScriptUrl: 'https://cloud.umami.is/script.js',
   // Restricting to the live host keeps dev and preview traffic out of the stats.
-  umamiDomains: 'www.dreugeniavila.com',
+  umamiDomains: 'www.draeugeniavila.com',
 } as const;
 
 // Affiliate program ids. Dr. Vila's amazon.es Associates tracking id.
