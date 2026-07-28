@@ -9,7 +9,7 @@ import icon from 'astro-icon';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
-  site: 'https://www.dreugeniavila.com',
+  site: 'https://www.draeugeniavila.com',
   base: '/',
   output: 'static',
   trailingSlash: 'never',
