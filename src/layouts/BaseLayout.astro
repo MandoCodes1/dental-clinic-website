@@ -8,7 +8,7 @@ import Header from '~/components/Header.astro';
 import Footer from '~/components/Footer.astro';
 import LangSuggestBanner from '~/components/LangSuggestBanner.astro';
 import StructuredData from '~/components/StructuredData.astro';
-import { content } from '~/content/site';
+import { content, type FaqItem } from '~/content/site';
 import { ANALYTICS, SITE } from '~/config';
 import { ROUTES, LANG_META, type Lang, type RouteKey } from '~/i18n';
 
@@ -23,11 +23,14 @@ interface Props {
   title?: string;
   description?: string;
   image?: string;
+  // Page-specific structured-data extensions (prices and FAQ pages).
+  offers?: { name: string; price: number }[];
+  faq?: FaqItem[];
 }
-const { lang, page, title, description, image } = Astro.props;
+const { lang, page, title, description, image, offers, faq } = Astro.props;
 const t = content[lang];
 
-const metaKeys = ['home', 'about', 'services', 'gallery', 'reviews', 'contact', 'products'] as const;
+const metaKeys = ['home', 'about', 'services', 'prices', 'gallery', 'reviews', 'contact', 'products', 'faq'] as const;
 const fallback = (metaKeys as readonly string[]).includes(page) ? t.meta[page as (typeof metaKeys)[number]] : undefined;
 const pageTitle = title ?? fallback?.title ?? SITE.name;
 const pageDesc = description ?? fallback?.description ?? '';
@@ -92,7 +95,7 @@ const alternates = [
       )
     }
 
-    <StructuredData />
+    <StructuredData offers={offers} faq={faq} />
 
     <ClientRouter fallback="swap" />
   </head>

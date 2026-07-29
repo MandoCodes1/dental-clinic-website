@@ -6,8 +6,9 @@ import ServiceDetail from '~/components/ServiceDetail.astro';
 import Values from '~/components/Values.astro';
 import ContactCTA from '~/components/ContactCTA.astro';
 import { content } from '~/content/site';
-import { SERVICES, type ServiceId } from '~/config';
-import type { Lang } from '~/i18n';
+import { PRICES, SERVICES, type ServiceId } from '~/config';
+import { formatPrice } from '~/utils/prices';
+import { ROUTES, type Lang } from '~/i18n';
 import implant from '~/assets/images/implant.webp';
 import oral from '~/assets/images/oral_surgery.webp';
 import aligner from '~/assets/images/aligner.webp';
@@ -19,6 +20,13 @@ interface Props {
 const { lang } = Astro.props;
 const t = content[lang];
 const images: Record<ServiceId, ImageMetadata> = { implants: implant, oral, aligners: aligner, cosmetic };
+const pricesHref = ROUTES.prices[lang];
+
+function priceTag(id: ServiceId) {
+  const service = SERVICES.find((s) => s.id === id);
+  if (!service) return undefined;
+  return { label: t.pricesPage.from, amount: formatPrice(PRICES[service.price], lang), href: pricesHref };
+}
 ---
 
 <BaseLayout lang={lang} page="services">
@@ -32,9 +40,14 @@ const images: Record<ServiceId, ImageMetadata> = { implants: implant, oral, alig
             image={images[d.id]}
             anchor={SERVICES.find((s) => s.id === d.id)?.anchor ?? d.id}
             reversed={i % 2 === 1}
+            price={priceTag(d.id)}
           />
         ))
       }
+      <p class="text-center text-ink/75">
+        {t.servicesPage.qualityNote.text}
+        <a href={`${pricesHref}#calidad`} class="link-quiet ml-1">{t.servicesPage.qualityNote.linkLabel}</a>
+      </p>
     </div>
   </section>
   <Values lang={lang} />

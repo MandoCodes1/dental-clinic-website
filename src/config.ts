@@ -12,6 +12,8 @@ export const SITE = {
 
 export const CLINIC = {
   phoneDisplay: '+34 679 975 580',
+  // E.164 form for tel: links and structured data.
+  phoneE164: '+34679975580',
   whatsapp: '34679975580',
   email: 'eugeniavila63@gmail.com',
   addressLine: 'Av. Juan Sebastián Elcano, 191, 2ª planta',
@@ -22,6 +24,10 @@ export const CLINIC = {
   mapsPlaceUrl:
     'https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Dental%20Dra.%20Eugenia%20Vila%2C%20Av.%20Juan%20Sebasti%C3%A1n%20Elcano%20191%2C%2029017%20M%C3%A1laga',
   reviewUrl: 'https://g.page/r/CaQGrzr7SlRIEAE/review',
+  // Google Business Profile place page, confirmed to resolve to the clinic.
+  gbpUrl: 'https://g.page/r/CaQGrzr7SlRIEAE',
+  // Exact pin off the profile (plus code PJCQ+GG Málaga).
+  geo: { latitude: 36.721317, longitude: -4.361166 },
   linkedin: 'https://www.linkedin.com/in/eugenia-vila-garcia/',
   doctoralia: 'https://www.doctoralia.es/maria-eugenia-vila-garcia/dentista/malaga',
   gdc: '287705',
@@ -30,15 +36,36 @@ export const CLINIC = {
   patients: 20000,
 } as const;
 
+// Starting-from treatment prices in euros. Single source for the prices page
+// and the "desde" tags on the services page, so the numbers cannot drift.
+// Provisional until Dra. Vila confirms the final list.
+export const PRICES = {
+  implantCrown: 1100,
+  boneGraft: 300,
+  sinusLift: 600,
+  filling: 50,
+  extraction: 50,
+  reconstruction: 100,
+  cleaning: 50,
+  nightGuard: 200,
+  zirconiaCrown: 400,
+  whitening: 300,
+  aligners: 1500,
+  compositeVeneer: 200,
+} as const;
+
+export type PriceId = keyof typeof PRICES;
+
 // Stable list + presentation metadata for the four services, reused by the
 // overview, the detailed service page, and footer deep-links. Copy is per-locale
-// in src/content/site.ts, keyed by the same id.
+// in src/content/site.ts, keyed by the same id. `price` is the cheapest entry
+// point into each service, shown as a "desde" tag linking to the prices page.
 export const SERVICES = [
-  { id: 'implants', anchor: 'implantes', icon: 'tabler:dental' },
-  { id: 'oral', anchor: 'cirugia', icon: 'tabler:medical-cross' },
-  { id: 'aligners', anchor: 'alineadores', icon: 'tabler:mood-smile' },
-  { id: 'cosmetic', anchor: 'estetica', icon: 'tabler:sparkles' },
-] as const;
+  { id: 'implants', anchor: 'implantes', icon: 'tabler:dental', price: 'implantCrown' },
+  { id: 'oral', anchor: 'cirugia', icon: 'tabler:medical-cross', price: 'extraction' },
+  { id: 'aligners', anchor: 'alineadores', icon: 'tabler:mood-smile', price: 'aligners' },
+  { id: 'cosmetic', anchor: 'estetica', icon: 'tabler:sparkles', price: 'compositeVeneer' },
+] as const satisfies readonly { id: string; anchor: string; icon: string; price: PriceId }[];
 
 export type ServiceId = (typeof SERVICES)[number]['id'];
 

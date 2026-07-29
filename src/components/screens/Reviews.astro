@@ -29,7 +29,7 @@ const total = getAllReviews().length;
             {Array.from({ length: 5 }).map(() => <Icon name="tabler:star-filled" class="h-5 w-5" />)}
           </span>
           <span class="font-semibold">5.0</span>
-          <span class="text-sm text-ink/70">· {total} {content[lang].credentials.reviewsLabel.toLowerCase()}</span>
+          <span class="text-sm text-ink/70">· {total} {r.countSuffix}</span>
         </div>
         <a
           href={CLINIC.reviewUrl}

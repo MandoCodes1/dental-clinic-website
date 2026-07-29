@@ -1,10 +1,19 @@
 ---
 import { SITE, CLINIC } from '~/config';
+import type { FaqItem } from '~/content/site';
 
 // LocalBusiness/Dentist structured data for the practice and the dentist.
 // Intentionally omits aggregateRating/review (Google restricts that markup to
 // sites reviewing OTHER businesses) and openingHours (the clinic is by
 // appointment with variable Málaga periods, so fixed hours would be inaccurate).
+// The prices page passes `offers` ("desde" figures, hence minPrice) and the FAQ
+// page passes `faq`; both extend the same single @graph.
+interface Props {
+  offers?: { name: string; price: number }[];
+  faq?: FaqItem[];
+}
+const { offers, faq } = Astro.props;
+
 const clinicId = `${SITE.domain}/#clinic`;
 const personId = `${SITE.domain}/#dentist`;
 
@@ -17,9 +26,10 @@ const schema = {
       name: 'Clínica Dental Dra. Eugenia Vila',
       url: SITE.domain,
       image: `${SITE.domain}${SITE.ogImage}`,
-      telephone: CLINIC.phoneDisplay,
+      telephone: CLINIC.phoneE164,
       email: CLINIC.email,
       priceRange: '$$',
+      medicalSpecialty: 'Dentistry',
       address: {
         '@type': 'PostalAddress',
         streetAddress: CLINIC.addressLine,
@@ -27,9 +37,22 @@ const schema = {
         postalCode: '29017',
         addressCountry: 'ES',
       },
+      geo: { '@type': 'GeoCoordinates', latitude: CLINIC.geo.latitude, longitude: CLINIC.geo.longitude },
       areaServed: { '@type': 'City', name: 'Málaga' },
-      sameAs: [CLINIC.mapsPlaceUrl],
+      sameAs: [CLINIC.gbpUrl, CLINIC.mapsPlaceUrl],
       founder: { '@id': personId },
+      ...(offers?.length && {
+        hasOfferCatalog: {
+          '@type': 'OfferCatalog',
+          name: 'Tratamientos',
+          itemListElement: offers.map((o) => ({
+            '@type': 'Offer',
+            itemOffered: { '@type': 'Service', name: o.name },
+            priceCurrency: 'EUR',
+            priceSpecification: { '@type': 'PriceSpecification', minPrice: o.price, priceCurrency: 'EUR' },
+          })),
+        },
+      }),
     },
     {
       '@type': 'Person',
@@ -45,6 +68,18 @@ const schema = {
         value: CLINIC.gdc,
       },
     },
+    ...(faq?.length
+      ? [
+          {
+            '@type': 'FAQPage',
+            mainEntity: faq.map((item) => ({
+              '@type': 'Question',
+              name: item.question,
+              acceptedAnswer: { '@type': 'Answer', text: item.answer },
+            })),
+          },
+        ]
+      : []),
   ],
 };
 ---
