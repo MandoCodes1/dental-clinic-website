@@ -12,6 +12,8 @@ export const SITE = {
 
 export const CLINIC = {
   phoneDisplay: '+34 679 975 580',
+  // E.164 form for tel: links and structured data.
+  phoneE164: '+34679975580',
   whatsapp: '34679975580',
   email: 'eugeniavila63@gmail.com',
   addressLine: 'Av. Juan Sebastián Elcano, 191, 2ª planta',
@@ -22,6 +24,10 @@ export const CLINIC = {
   mapsPlaceUrl:
     'https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20Dental%20Dra.%20Eugenia%20Vila%2C%20Av.%20Juan%20Sebasti%C3%A1n%20Elcano%20191%2C%2029017%20M%C3%A1laga',
   reviewUrl: 'https://g.page/r/CaQGrzr7SlRIEAE/review',
+  // Google Business Profile place page, confirmed to resolve to the clinic.
+  gbpUrl: 'https://g.page/r/CaQGrzr7SlRIEAE',
+  // Exact pin off the profile (plus code PJCQ+GG Málaga).
+  geo: { latitude: 36.721317, longitude: -4.361166 },
   linkedin: 'https://www.linkedin.com/in/eugenia-vila-garcia/',
   doctoralia: 'https://www.doctoralia.es/maria-eugenia-vila-garcia/dentista/malaga',
   gdc: '287705',

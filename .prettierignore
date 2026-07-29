@@ -5,3 +5,7 @@ node_modules
 
 # raw salvaged source data: keep verbatim, do not reformat
 src/data/source
+
+# internal working notes: prettier pads markdown table cells to the widest cell
+# in the column, which blows these tables out to 350 characters wide
+docs

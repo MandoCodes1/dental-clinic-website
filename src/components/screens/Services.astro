@@ -44,6 +44,10 @@ function priceTag(id: ServiceId) {
           />
         ))
       }
+      <p class="text-center text-ink/75">
+        {t.servicesPage.qualityNote.text}
+        <a href={`${pricesHref}#calidad`} class="link-quiet ml-1">{t.servicesPage.qualityNote.linkLabel}</a>
+      </p>
     </div>
   </section>
   <Values lang={lang} />

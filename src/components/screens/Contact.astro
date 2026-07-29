@@ -12,6 +12,7 @@ interface Props {
 }
 const { lang } = Astro.props;
 const c = content[lang].contact;
+const waMessage = content[lang].contactCta.defaultMessage;
 ---
 
 <BaseLayout lang={lang} page="contact">
@@ -20,7 +21,7 @@ const c = content[lang].contact;
     <div class="container-page grid gap-10 lg:grid-cols-2">
       <div class="space-y-5">
         <a
-          href={waLink()}
+          href={waLink(waMessage)}
           target="_blank"
           rel="noopener"
           class="card flex items-start gap-4 transition hover:border-brand-blue/30 hover:shadow-md"
@@ -33,6 +34,24 @@ const c = content[lang].contact;
           <div>
             <p class="font-heading text-lg text-brand-deep">{c.whatsappTitle}</p>
             <p class="text-sm text-ink/70">{c.whatsappBody}</p>
+            <p class="mt-1 font-medium text-brand-blue">{CLINIC.phoneDisplay}</p>
+          </div>
+        </a>
+
+        <a
+          href={`tel:${CLINIC.phoneE164}`}
+          class="card flex items-start gap-4 transition hover:border-brand-blue/30 hover:shadow-md"
+          data-umami-event="phone"
+          data-umami-event-location="contact"
+        >
+          <span
+            class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-blue/10 text-brand-blue"
+          >
+            <Icon name="tabler:phone" class="h-6 w-6" />
+          </span>
+          <div>
+            <p class="font-heading text-lg text-brand-deep">{c.phoneTitle}</p>
+            <p class="text-sm text-ink/70">{c.phoneBody}</p>
             <p class="mt-1 font-medium text-brand-blue">{CLINIC.phoneDisplay}</p>
           </div>
         </a>

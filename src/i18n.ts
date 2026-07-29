@@ -14,6 +14,7 @@ export const ROUTES = {
   gallery: { es: '/galeria', en: '/en/gallery' },
   products: { es: '/productos', en: '/en/products' },
   contact: { es: '/contacto', en: '/en/contact' },
+  faq: { es: '/preguntas-frecuentes', en: '/en/faq' },
   privacy: { es: '/privacy', en: '/en/privacy' },
   terms: { es: '/terms', en: '/en/terms' },
 } as const;
