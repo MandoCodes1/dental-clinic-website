@@ -4,7 +4,8 @@ export const SITE = {
   domain: 'https://www.draeugeniavila.com',
   name: 'Dra. Eugenia Vila',
   defaultLang: 'es' as const,
-  googleSiteVerificationId: 'orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M',
+  // No google-site-verification meta tag: both domains are verified in Search
+  // Console through Cloudflare's provider integration, which needs nothing here.
   // Branded share card lives in /public; added in the polish phase.
   ogImage: '/og.jpg',
 };
