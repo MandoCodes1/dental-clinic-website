@@ -65,6 +65,7 @@ export interface SiteCopy {
     products: string;
     contact: string;
     faq: string;
+    more: string;
     book: string;
   };
   meta: Record<
@@ -94,10 +95,12 @@ export interface SiteCopy {
     groups: PriceGroup[];
     quality: { title: string; lead: string; points: ValueItem[] };
     askQuote: string;
+    faqTitle: string;
     faqPrompt: string;
     faqLink: string;
   };
   featuredReviews: { eyebrow: string; title: string; subtitle: string; viewAll: string };
+  homeFaq: { eyebrow: string; title: string; subtitle: string; viewAll: string };
   about: {
     eyebrow: string;
     title: string;
@@ -171,6 +174,7 @@ const es: SiteCopy = {
     products: 'Productos',
     contact: 'Contacto',
     faq: 'Preguntas frecuentes',
+    more: 'Más',
     book: 'Pedir cita',
   },
   meta: {
@@ -449,6 +453,7 @@ const es: SiteCopy = {
       ],
     },
     askQuote: '¿Buscas otro tratamiento? Escríbeme y te digo el precio sin compromiso.',
+    faqTitle: 'Garantía y formas de pago',
     faqPrompt: '¿Tienes más dudas sobre precios, materiales o cómo trabajo?',
     faqLink: 'Consulta las preguntas frecuentes',
   },
@@ -457,6 +462,12 @@ const es: SiteCopy = {
     title: 'Lo que dicen sus pacientes',
     subtitle: 'Reseñas verificadas de Google y Trustpilot.',
     viewAll: 'Ver todas las reseñas',
+  },
+  homeFaq: {
+    eyebrow: 'Resuelve tus dudas',
+    title: 'Preguntas frecuentes',
+    subtitle: 'Respuestas claras a lo que más me preguntan los pacientes, sin letra pequeña.',
+    viewAll: 'Ver todas las preguntas',
   },
   about: {
     eyebrow: 'Sobre mí',
@@ -680,6 +691,7 @@ const en: SiteCopy = {
     products: 'Products',
     contact: 'Contact',
     faq: 'FAQ',
+    more: 'More',
     book: 'Book a visit',
   },
   meta: {
@@ -957,6 +969,7 @@ const en: SiteCopy = {
       ],
     },
     askQuote: 'Looking for another treatment? Message me and I will tell you the price, no obligation.',
+    faqTitle: 'Guarantees and payment',
     faqPrompt: 'More questions about prices, materials or how I work?',
     faqLink: 'Read the frequently asked questions',
   },
@@ -965,6 +978,12 @@ const en: SiteCopy = {
     title: 'What her patients say',
     subtitle: 'Verified reviews from Google and Trustpilot.',
     viewAll: 'Read all reviews',
+  },
+  homeFaq: {
+    eyebrow: 'Your questions, answered',
+    title: 'Frequently asked questions',
+    subtitle: 'Clear answers to the things patients ask me most, with no small print.',
+    viewAll: 'See all questions',
   },
   about: {
     eyebrow: 'About',

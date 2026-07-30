@@ -5,6 +5,7 @@ import CredentialsBand from '~/components/CredentialsBand.astro';
 import ServicesOverview from '~/components/ServicesOverview.astro';
 import Values from '~/components/Values.astro';
 import FeaturedReviews from '~/components/FeaturedReviews.astro';
+import HomeFaq from '~/components/HomeFaq.astro';
 import ContactCTA from '~/components/ContactCTA.astro';
 import type { Lang } from '~/i18n';
 
@@ -20,5 +21,6 @@ const { lang } = Astro.props;
   <ServicesOverview lang={lang} />
   <Values lang={lang} />
   <FeaturedReviews lang={lang} />
+  <HomeFaq lang={lang} />
   <ContactCTA lang={lang} page="home" />
 </BaseLayout>

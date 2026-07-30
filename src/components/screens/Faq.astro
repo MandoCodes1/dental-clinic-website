@@ -1,7 +1,7 @@
 ---
-import { Icon } from 'astro-icon/components';
 import BaseLayout from '~/layouts/BaseLayout.astro';
 import PageHeader from '~/components/PageHeader.astro';
+import FaqList from '~/components/FaqList.astro';
 import ContactCTA from '~/components/ContactCTA.astro';
 import { content } from '~/content/site';
 import type { Lang } from '~/i18n';
@@ -18,22 +18,7 @@ const f = content[lang].faqPage;
   {/* No bottom padding: the body is cream too, so it would only stack with the CTA's own. */}
   <section class="section bg-cream pb-0">
     <div class="container-page">
-      <div class="mx-auto max-w-3xl space-y-4">
-        {
-          f.items.map((item) => (
-            <details class="card group">
-              <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-medium text-ink [&::-webkit-details-marker]:hidden">
-                {item.question}
-                <Icon
-                  name="tabler:chevron-down"
-                  class="h-5 w-5 shrink-0 text-brand-blue transition-transform group-open:rotate-180"
-                />
-              </summary>
-              <p class="mt-3 text-sm leading-relaxed text-ink/70">{item.answer}</p>
-            </details>
-          ))
-        }
-      </div>
+      <FaqList items={f.items} />
     </div>
   </section>
   <ContactCTA lang={lang} page="faq" />
