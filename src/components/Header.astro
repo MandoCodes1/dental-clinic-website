@@ -4,7 +4,7 @@ import { Image } from 'astro:assets';
 import logo from '~/assets/images/brand/logo2.png';
 import LanguageToggle from '~/components/LanguageToggle.astro';
 import { content } from '~/content/site';
-import { ROUTES, NAV_KEYS, type Lang, type RouteKey } from '~/i18n';
+import { ROUTES, NAV_TOP, NAV_MORE, NAV_TAIL, NAV_ALL, type Lang, type NavKey, type RouteKey } from '~/i18n';
 import { waLink } from '~/config';
 
 interface Props {
@@ -14,20 +14,75 @@ interface Props {
 const { lang, page } = Astro.props;
 const t = content[lang];
 const homeHref = ROUTES.home[lang];
-const nav = NAV_KEYS.map((key) => ({ label: t.nav[key], href: ROUTES[key][lang], active: key === page }));
+const toItem = (key: NavKey) => ({ label: t.nav[key], href: ROUTES[key][lang], active: key === page });
+const navTop = NAV_TOP.map(toItem);
+const navMore = NAV_MORE.map(toItem);
+const navTail = NAV_TAIL.map(toItem);
+const navAll = NAV_ALL.map(toItem);
+// Keep the dropdown trigger highlighted while one of the pages behind it is open.
+const moreActive = (NAV_MORE as readonly RouteKey[]).includes(page);
 ---
 
 <header class="sticky top-0 z-40 border-b border-brand-blue/10 bg-cream/90 backdrop-blur">
   <div class="container-page flex h-16 items-center justify-between gap-4">
     <a href={homeHref} class="flex items-center gap-2.5" aria-label="Dra. Eugenia Vila">
       <Image src={logo} alt="" width={435} height={316} class="h-9 w-auto" />
-      {/* Between lg and xl the eight nav links need the room, so the mark stands in for the wordmark. */}
-      <span class="font-heading text-lg font-semibold text-brand-deep lg:hidden xl:inline">Dra. Eugenia Vila</span>
+      <span class="font-heading text-lg font-semibold text-brand-deep">Dra. Eugenia Vila</span>
     </a>
 
     <nav class="hidden items-center gap-5 lg:flex xl:gap-6" aria-label={t.nav.home}>
       {
-        nav.map((item) => (
+        navTop.map((item) => (
+          <a
+            href={item.href}
+            class:list={[
+              'text-sm font-medium transition hover:text-brand-blue',
+              item.active ? 'text-brand-blue' : 'text-ink/80',
+            ]}
+            aria-current={item.active ? 'page' : undefined}
+          >
+            {item.label}
+          </a>
+        ))
+      }
+
+      <div class="relative">
+        <button
+          type="button"
+          id="more-toggle"
+          class:list={[
+            'inline-flex items-center gap-1 text-sm font-medium transition hover:text-brand-blue',
+            moreActive ? 'text-brand-blue' : 'text-ink/80',
+          ]}
+          aria-expanded="false"
+          aria-controls="more-menu"
+        >
+          {t.nav.more}
+          <Icon name="tabler:chevron-down" class="h-4 w-4" />
+        </button>
+        <div
+          id="more-menu"
+          class="absolute right-0 top-full mt-3 hidden w-60 rounded-xl border border-brand-blue/10 bg-cream p-2 shadow-lg"
+        >
+          {
+            navMore.map((item) => (
+              <a
+                href={item.href}
+                class:list={[
+                  'block rounded-md px-3 py-2 text-sm font-medium transition hover:bg-brand-light',
+                  item.active ? 'text-brand-blue' : 'text-ink/80',
+                ]}
+                aria-current={item.active ? 'page' : undefined}
+              >
+                {item.label}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+
+      {
+        navTail.map((item) => (
           <a
             href={item.href}
             class:list={[
@@ -71,7 +126,7 @@ const nav = NAV_KEYS.map((key) => ({ label: t.nav[key], href: ROUTES[key][lang],
   <div id="mobile-menu" class="hidden border-t border-brand-blue/10 bg-cream lg:hidden">
     <nav class="container-page flex flex-col py-3" aria-label={t.nav.home}>
       {
-        nav.map((item) => (
+        navAll.map((item) => (
           <a
             href={item.href}
             class:list={[
@@ -110,4 +165,38 @@ const nav = NAV_KEYS.map((key) => ({ label: t.nav[key], href: ROUTES[key][lang],
     });
   }
   document.addEventListener('astro:page-load', initMenu);
+
+  // The "more" dropdown is delegated off document so the listeners bind once and
+  // survive view transitions; binding per page-load would stack them instead.
+  function moreEls() {
+    return {
+      btn: document.getElementById('more-toggle'),
+      menu: document.getElementById('more-menu'),
+    };
+  }
+
+  function closeMore() {
+    const { btn, menu } = moreEls();
+    if (!btn || !menu || menu.classList.contains('hidden')) return false;
+    menu.classList.add('hidden');
+    btn.setAttribute('aria-expanded', 'false');
+    return true;
+  }
+
+  document.addEventListener('click', (event) => {
+    const { btn, menu } = moreEls();
+    if (!btn || !menu) return;
+    const target = event.target instanceof Element ? event.target : null;
+    if (target && btn.contains(target)) {
+      const isOpen = menu.classList.toggle('hidden') === false;
+      btn.setAttribute('aria-expanded', String(isOpen));
+    } else if (!target || !menu.contains(target)) {
+      closeMore();
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape') return;
+    if (closeMore()) moreEls().btn?.focus();
+  });
 </script>

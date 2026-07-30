@@ -21,8 +21,15 @@ export const ROUTES = {
 
 export type RouteKey = keyof typeof ROUTES;
 
-// Page keys that appear in the main navigation, in order.
-export const NAV_KEYS = ['home', 'about', 'services', 'prices', 'reviews', 'gallery', 'products', 'contact'] as const;
+// Main navigation, grouped for the desktop header: top-level links, then a "more"
+// dropdown for the low-intent pages, then contact. Home is not listed; the logo
+// links there. NAV_ALL is the flat display order used by the mobile menu and footer.
+export const NAV_TOP = ['about', 'services', 'prices', 'reviews'] as const;
+export const NAV_MORE = ['gallery', 'products', 'faq'] as const;
+export const NAV_TAIL = ['contact'] as const;
+export const NAV_ALL = [...NAV_TOP, ...NAV_MORE, ...NAV_TAIL] as const;
+
+export type NavKey = (typeof NAV_ALL)[number];
 
 export const LANG_META = {
   es: { label: 'ES', name: 'Español', ogLocale: 'es_ES' },
