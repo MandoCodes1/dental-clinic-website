@@ -95,6 +95,7 @@ export interface SiteCopy {
     groups: PriceGroup[];
     quality: { title: string; lead: string; points: ValueItem[] };
     askQuote: string;
+    faqTitle: string;
     faqPrompt: string;
     faqLink: string;
   };
@@ -452,6 +453,7 @@ const es: SiteCopy = {
       ],
     },
     askQuote: '¿Buscas otro tratamiento? Escríbeme y te digo el precio sin compromiso.',
+    faqTitle: 'Garantía y formas de pago',
     faqPrompt: '¿Tienes más dudas sobre precios, materiales o cómo trabajo?',
     faqLink: 'Consulta las preguntas frecuentes',
   },
@@ -967,6 +969,7 @@ const en: SiteCopy = {
       ],
     },
     askQuote: 'Looking for another treatment? Message me and I will tell you the price, no obligation.',
+    faqTitle: 'Guarantees and payment',
     faqPrompt: 'More questions about prices, materials or how I work?',
     faqLink: 'Read the frequently asked questions',
   },

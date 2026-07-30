@@ -2,8 +2,9 @@
 import { Icon } from 'astro-icon/components';
 import BaseLayout from '~/layouts/BaseLayout.astro';
 import PageHeader from '~/components/PageHeader.astro';
+import FaqList from '~/components/FaqList.astro';
 import ContactCTA from '~/components/ContactCTA.astro';
-import { content } from '~/content/site';
+import { content, type FaqItem } from '~/content/site';
 import { PRICES } from '~/config';
 import { formatPrice } from '~/utils/prices';
 import { ROUTES, type Lang } from '~/i18n';
@@ -19,6 +20,14 @@ const p = t.pricesPage;
 const offers = p.groups.flatMap((g) =>
   g.items.filter((i) => i.id).map((i) => ({ name: i.label, price: PRICES[i.id!] }))
 );
+
+// The only money questions this page does not already answer: the guarantee and how
+// payment works. Everything else would just be noise here, since the table notes carry
+// what each price includes and the quality section covers why the prices are low, the
+// materials, the closed written quote and where the 3D scan is taken. Indices into
+// faqPage.items, which SiteCopy keeps parallel across locales; the rest of the list
+// stays on the FAQ page, linked below.
+const faqItems = [3, 9].map((i) => t.faqPage.items[i]).filter((item): item is FaqItem => item !== undefined);
 ---
 
 <BaseLayout lang={lang} page="prices" offers={offers}>
@@ -84,8 +93,13 @@ const offers = p.groups.flatMap((g) =>
         </ul>
       </div>
 
+      <h2 class="mx-auto mt-10 max-w-3xl font-heading text-2xl text-brand-deep">{p.faqTitle}</h2>
+      <div class="mt-4">
+        <FaqList items={faqItems} />
+      </div>
+
       {/* The WhatsApp button lives in the ContactCTA below, so this is text only. */}
-      <p class="mx-auto mt-8 max-w-3xl text-center text-ink/75">{p.askQuote}</p>
+      <p class="mx-auto mt-10 max-w-3xl text-center text-ink/75">{p.askQuote}</p>
       <p class="mx-auto mt-2 max-w-3xl text-center text-sm text-ink/60">
         {p.faqPrompt}
         <a href={ROUTES.faq[lang]} class="link-quiet ml-1">{p.faqLink}</a>
