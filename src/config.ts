@@ -67,16 +67,15 @@ export type PriceId = keyof typeof PRICES;
 
 // The six treatment categories behind the treatments section: overview cards,
 // the per-treatment pages, the header dropdown and footer deep-links. Copy is
-// per-locale in src/content/site.ts, keyed by the same id. `featuredPrice` is
-// the cheapest entry point, shown as a "desde" tag on the overview cards.
+// per-locale in src/content/site.ts, keyed by the same id.
 export const TREATMENTS = [
-  { id: 'implants', route: 'treatmentImplants', icon: 'tabler:dental', featuredPrice: 'implantOnly' },
-  { id: 'oralSurgery', route: 'treatmentOralSurgery', icon: 'tabler:medical-cross', featuredPrice: 'extraction' },
-  { id: 'orthodontics', route: 'treatmentOrthodontics', icon: 'tabler:mood-smile', featuredPrice: 'aligners' },
-  { id: 'aesthetics', route: 'treatmentAesthetics', icon: 'tabler:sparkles', featuredPrice: 'compositeVeneer' },
-  { id: 'general', route: 'treatmentGeneral', icon: 'tabler:dental-broken', featuredPrice: 'cleaning' },
-  { id: 'crowns', route: 'treatmentCrowns', icon: 'tabler:crown', featuredPrice: 'zirconiaCrown' },
-] as const satisfies readonly { id: string; route: RouteKey; icon: string; featuredPrice: PriceId }[];
+  { id: 'implants', route: 'treatmentImplants', icon: 'tabler:dental' },
+  { id: 'oralSurgery', route: 'treatmentOralSurgery', icon: 'tabler:medical-cross' },
+  { id: 'orthodontics', route: 'treatmentOrthodontics', icon: 'tabler:mood-smile' },
+  { id: 'aesthetics', route: 'treatmentAesthetics', icon: 'tabler:sparkles' },
+  { id: 'general', route: 'treatmentGeneral', icon: 'tabler:dental-broken' },
+  { id: 'crowns', route: 'treatmentCrowns', icon: 'tabler:crown' },
+] as const satisfies readonly { id: string; route: RouteKey; icon: string }[];
 
 export type TreatmentId = (typeof TREATMENTS)[number]['id'];
 

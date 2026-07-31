@@ -95,7 +95,7 @@ export interface SiteCopy {
   };
   meta: Record<'home' | 'about' | 'treatments' | 'gallery' | 'reviews' | 'contact' | 'products' | 'faq', MetaEntry>;
   a11y: { skip: string; openMenu: string; closeMenu: string; switchLang: string };
-  hero: { eyebrow: string; title: string; subtitle: string; ctaBook: string; ctaReviews: string; availability: string };
+  hero: { eyebrow: string; title: string; subtitle: string; ctaBook: string; ctaTreatments: string; availability: string };
   credentials: {
     title: string;
     yearsLabel: string;
@@ -265,7 +265,7 @@ const es: SiteCopy = {
     subtitle:
       'Más de 30 años cuidando sonrisas en Málaga, con un trato cercano y honesto. Te atiende siempre la Dra. Eugenia Vila en persona, sin prisas y con materiales de primera calidad.',
     ctaBook: 'Pedir cita por WhatsApp',
-    ctaReviews: 'Ver reseñas',
+    ctaTreatments: 'Ver tratamientos',
     availability: 'Con cita previa · Te responde la propia doctora',
   },
   credentials: {
@@ -933,7 +933,7 @@ const en: SiteCopy = {
     subtitle:
       'Over 30 years caring for smiles in Málaga, with warm, honest treatment. You are always seen personally by Dr. Eugenia Vila, with unhurried visits and top-quality materials.',
     ctaBook: 'Book on WhatsApp',
-    ctaReviews: 'Read reviews',
+    ctaTreatments: 'See treatments',
     availability: 'By appointment · The doctor replies to you herself',
   },
   credentials: {
