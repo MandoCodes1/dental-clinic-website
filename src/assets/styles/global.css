@@ -60,7 +60,7 @@
   }
 
   .btn-whatsapp {
-    @apply btn bg-brand-deep text-white hover:brightness-95;
+    @apply btn bg-whatsapp text-white hover:brightness-95;
   }
 
   .btn-outline {
