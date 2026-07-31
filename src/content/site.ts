@@ -173,6 +173,7 @@ export interface SiteCopy {
   homeVisit: {
     eyebrow: string;
     title: string;
+    subtitle: string;
     contactLink: string;
     form: {
       name: string;
@@ -795,6 +796,7 @@ const es: SiteCopy = {
   homeVisit: {
     eyebrow: 'Contacto',
     title: 'Escríbeme o ven a verme',
+    subtitle: 'Cuéntame tu caso por WhatsApp y te respondo yo misma, sin compromiso.',
     contactLink: 'Ver todas las formas de contacto',
     form: {
       name: 'Nombre',
@@ -1462,6 +1464,7 @@ const en: SiteCopy = {
   homeVisit: {
     eyebrow: 'Contact',
     title: 'Write to me or drop by',
+    subtitle: 'Tell me about your case on WhatsApp and I’ll reply personally, with no obligation.',
     contactLink: 'See all the ways to reach me',
     form: {
       name: 'Name',
