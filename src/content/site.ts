@@ -217,6 +217,11 @@ const es: SiteCopy = {
       description:
         'Todos los tratamientos de la clínica de la Dra. Eugenia Vila en El Palo, Málaga, con sus precios de partida: implantes, ortodoncia invisible, estética dental, coronas y más.',
     },
+    treatments: {
+      title: 'Tratamientos y precios - Dra. Eugenia Vila',
+      description:
+        'Todos los tratamientos de la clínica de la Dra. Eugenia Vila en El Palo, Málaga, con sus precios de partida: implantes, ortodoncia invisible, estética dental, coronas y más.',
+    },
     gallery: {
       title: 'Antes y después - Dra. Eugenia Vila',
       description:
@@ -859,6 +864,11 @@ const en: SiteCopy = {
       title: 'About - Dr. Eugenia Vila',
       description:
         'Meet Dr. Eugenia Vila: doctor of Medicine and licensed dentist, with master’s degrees in Implantology and Aesthetics, over 30 years of experience and Dentist of the Year 2024.',
+    },
+    treatments: {
+      title: 'Treatments & prices - Dr. Eugenia Vila',
+      description:
+        'All treatments at Dr. Eugenia Vila’s clinic in El Palo, Málaga, with their starting prices: implants, invisible orthodontics, cosmetic dentistry, crowns and more.',
     },
     treatments: {
       title: 'Treatments & prices - Dr. Eugenia Vila',
