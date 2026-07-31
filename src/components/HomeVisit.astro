@@ -48,7 +48,11 @@ const fieldClass =
           <label for="visit-treatment" class="text-sm font-medium text-brand-deep">{v.form.treatment}</label>
           <select id="visit-treatment" name="treatment" class={fieldClass}>
             <option value="">{v.form.treatmentPlaceholder}</option>
-            {TREATMENTS.map((tr) => <option value={t.treatments[tr.id].navLabel}>{t.treatments[tr.id].navLabel}</option>)}
+            {
+              TREATMENTS.map((tr) => (
+                <option value={t.treatments[tr.id].navLabel}>{t.treatments[tr.id].navLabel}</option>
+              ))
+            }
           </select>
         </div>
 

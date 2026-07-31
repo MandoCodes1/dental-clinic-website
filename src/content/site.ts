@@ -95,7 +95,14 @@ export interface SiteCopy {
   };
   meta: Record<'home' | 'about' | 'treatments' | 'gallery' | 'reviews' | 'contact' | 'products' | 'faq', MetaEntry>;
   a11y: { skip: string; openMenu: string; closeMenu: string; switchLang: string };
-  hero: { eyebrow: string; title: string; subtitle: string; ctaBook: string; ctaTreatments: string; availability: string };
+  hero: {
+    eyebrow: string;
+    title: string;
+    subtitle: string;
+    ctaBook: string;
+    ctaTreatments: string;
+    availability: string;
+  };
   credentials: {
     title: string;
     yearsLabel: string;
@@ -1016,7 +1023,8 @@ const en: SiteCopy = {
       ],
     },
     faqTitle: 'Guarantees and payment',
-    askQuote: 'Looking for another treatment? Message me, tell me about your case and I will tell you how I would approach it, no obligation.',
+    askQuote:
+      'Looking for another treatment? Message me, tell me about your case and I will tell you how I would approach it, no obligation.',
     faqPrompt: 'More questions about the treatments, the materials or how I work?',
     faqLink: 'Read the frequently asked questions',
   },
