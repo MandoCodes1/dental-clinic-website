@@ -4,15 +4,18 @@ import { content } from '~/content/site';
 import { waLink } from '~/config';
 import type { Lang } from '~/i18n';
 
-type CtaPage = 'home' | 'about' | 'services' | 'prices' | 'reviews' | 'gallery' | 'products' | 'faq';
+type CtaPage = 'home' | 'about' | 'services' | 'prices' | 'treatments' | 'reviews' | 'gallery' | 'products' | 'faq';
 
 interface Props {
   lang: Lang;
   page?: CtaPage;
+  // Treatment detail pages carry their own copy instead of a contactCta entry.
+  override?: { title: string; body: string; message: string };
+  location?: string;
 }
-const { lang, page = 'home' } = Astro.props;
+const { lang, page = 'home', override, location = 'cta' } = Astro.props;
 const cta = content[lang].contactCta;
-const c = cta[page];
+const c = override ?? cta[page];
 ---
 
 <section class="section text-center">
@@ -25,7 +28,7 @@ const c = cta[page];
       rel="noopener"
       class="btn-whatsapp mt-7"
       data-umami-event="whatsapp"
-      data-umami-event-location="cta"
+      data-umami-event-location={location}
     >
       <Icon name="tabler:brand-whatsapp" class="h-6 w-6" />
       {cta.button}
