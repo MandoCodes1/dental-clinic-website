@@ -209,7 +209,7 @@ const es: SiteCopy = {
     about: {
       title: 'Sobre mí - Dra. Eugenia Vila',
       description:
-        'Conoce a la Dra. Eugenia Vila: doctora en Medicina y licenciada en Odontología, máster en Implantología y Estética, más de 30 años de experiencia y Dentista del Año 2024.',
+        'Conoce a la Dra. Eugenia Vila: licenciada en Medicina y Cirugía y en Odontología, máster en Implantología y Estética, más de 30 años de experiencia y Dentista del Año 2024.',
     },
     treatments: {
       title: 'Tratamientos y precios - Dra. Eugenia Vila',
@@ -259,7 +259,7 @@ const es: SiteCopy = {
     reviewsLabel: 'Nota media · basada en {count} reseñas',
     awardValue: '2024',
     awardLabel: 'Dentista del Año',
-    note: 'Galardonada Dentista del Año 2024 (Dental Art Implant Clinics, Londres) · Doctora en Medicina y Licenciada en Odontología · Registro GDC 287705 · Nota media 5.0 en Google y Trustpilot',
+    note: 'Galardonada Dentista del Año 2024 (Dental Art Implant Clinics, Londres) · Licenciada en Medicina y Cirugía y en Odontología · Registro GDC 287705 · Nota media 5.0 en Google y Trustpilot',
   },
   values: {
     eyebrow: 'Por qué sus pacientes la recomiendan',
@@ -591,9 +591,13 @@ const es: SiteCopy = {
         org: 'Universitat Internacional de Catalunya (UIC), Barcelona',
         date: '2002 - 2003',
       },
-      { title: 'Convalidación del título de Odontología', org: 'Universidad de Murcia', date: '1993 - 1994' },
-      { title: 'Grado en Odontología (BDS)', org: 'UNIBE, Santo Domingo', date: '1989 - 1991' },
-      { title: 'Licenciatura en Medicina (MBBS)', org: 'Universidad de Málaga', date: '1982 - 1989' },
+      {
+        title: 'Convalidación del título como Licenciatura en Odontología',
+        org: 'Universidad de Murcia',
+        date: '1993 - 1994',
+      },
+      { title: 'Doctorado en Odontología', org: 'UNIBE, Santo Domingo', date: '1989 - 1991' },
+      { title: 'Licenciatura en Medicina y Cirugía', org: 'Universidad de Málaga', date: '1982 - 1989' },
     ],
     experienceTitle: 'Experiencia',
     experience: [
@@ -619,7 +623,7 @@ const es: SiteCopy = {
     ],
     credsTitle: 'Colegiación y membresías',
     memberships: [
-      'Doctora en Medicina y Cirugía y Licenciada en Odontología',
+      'Licenciada en Medicina y Cirugía y Licenciada en Odontología',
       'Ilustre Colegio de Dentistas de Málaga (colegiada desde 1994)',
       'Royal College of Surgeons of Ireland (RCSI), afiliada desde 2021',
       'Registro GDC (Reino Unido): 287705',
@@ -856,7 +860,7 @@ const en: SiteCopy = {
     about: {
       title: 'About - Dr. Eugenia Vila',
       description:
-        'Meet Dr. Eugenia Vila: doctor of Medicine and licensed dentist, with master’s degrees in Implantology and Aesthetics, over 30 years of experience and Dentist of the Year 2024.',
+        'Meet Dr. Eugenia Vila: physician and licensed dentist, with master’s degrees in Implantology and Aesthetics, over 30 years of experience and Dentist of the Year 2024.',
     },
     treatments: {
       title: 'Treatments & prices - Dr. Eugenia Vila',
@@ -906,7 +910,7 @@ const en: SiteCopy = {
     reviewsLabel: 'Average rating · based on {count} reviews',
     awardValue: '2024',
     awardLabel: 'Dentist of the Year',
-    note: 'Awarded Dentist of the Year 2024 (Dental Art Implant Clinics, London) · Doctor of Medicine and Licensed Dentist · GDC reg. 287705 · 5.0 average rating on Google and Trustpilot',
+    note: 'Awarded Dentist of the Year 2024 (Dental Art Implant Clinics, London) · Degrees in Medicine and Surgery, and in Dentistry · GDC reg. 287705 · 5.0 average rating on Google and Trustpilot',
   },
   values: {
     eyebrow: 'Why her patients recommend her',
@@ -1228,7 +1232,7 @@ const en: SiteCopy = {
   about: {
     eyebrow: 'About',
     title: 'Dr. Eugenia Vila',
-    lead: 'I’m Eugenia Vila, a dentist and medical doctor, and I’ve spent over 30 years caring for the oral health of families in Málaga. I trained in Implantology (UIC Barcelona) and Aesthetics (University of Córdoba), and I treat every case personally and unhurried, always putting the patient first.',
+    lead: 'I’m Eugenia Vila, a dentist and physician, and I’ve spent over 30 years caring for the oral health of families in Málaga. I trained in Implantology (UIC Barcelona) and Aesthetics (University of Córdoba), and I treat every case personally and unhurried, always putting the patient first.',
     educationTitle: 'Education',
     education: [
       { title: 'Master’s in Aesthetic Medicine', org: 'University of Córdoba', date: '2008 - 2009' },
@@ -1237,9 +1241,13 @@ const en: SiteCopy = {
         org: 'Universitat Internacional de Catalunya (UIC), Barcelona',
         date: '2002 - 2003',
       },
-      { title: 'Dental Degree Validation', org: 'University of Murcia', date: '1993 - 1994' },
-      { title: 'Bachelor of Dental Surgery (BDS)', org: 'UNIBE, Santo Domingo', date: '1989 - 1991' },
-      { title: 'Degree in Medicine (MBBS)', org: 'University of Málaga', date: '1982 - 1989' },
+      {
+        title: 'Dental degree validation (recognised as Licenciatura)',
+        org: 'University of Murcia',
+        date: '1993 - 1994',
+      },
+      { title: 'Doctorate in Dentistry (DDS)', org: 'UNIBE, Santo Domingo', date: '1989 - 1991' },
+      { title: 'Degree in Medicine and Surgery (MBBS)', org: 'University of Málaga', date: '1982 - 1989' },
     ],
     experienceTitle: 'Experience',
     experience: [
@@ -1265,7 +1273,7 @@ const en: SiteCopy = {
     ],
     credsTitle: 'Registration & memberships',
     memberships: [
-      'Doctor of Medicine and Surgery, and Licensed Dentist',
+      'Degree in Medicine and Surgery, and Licensed Dentist',
       'Official College of Dentists of Málaga (registered since 1994)',
       'Royal College of Surgeons of Ireland (RCSI), affiliate since 2021',
       'GDC registration (United Kingdom): 287705',
