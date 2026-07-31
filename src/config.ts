@@ -65,21 +65,8 @@ export const PRICES = {
 
 export type PriceId = keyof typeof PRICES;
 
-// Stable list + presentation metadata for the four services, reused by the
-// overview, the detailed service page, and footer deep-links. Copy is per-locale
-// in src/content/site.ts, keyed by the same id. `price` is the cheapest entry
-// point into each service, shown as a "desde" tag linking to the prices page.
-export const SERVICES = [
-  { id: 'implants', anchor: 'implantes', icon: 'tabler:dental', price: 'implantCrown' },
-  { id: 'oral', anchor: 'cirugia', icon: 'tabler:medical-cross', price: 'extraction' },
-  { id: 'aligners', anchor: 'alineadores', icon: 'tabler:mood-smile', price: 'aligners' },
-  { id: 'cosmetic', anchor: 'estetica', icon: 'tabler:sparkles', price: 'compositeVeneer' },
-] as const satisfies readonly { id: string; anchor: string; icon: string; price: PriceId }[];
-
-export type ServiceId = (typeof SERVICES)[number]['id'];
-
 // The six treatment categories behind the treatments section: overview cards,
-// the per-treatment pages and (in the nav flip) the header dropdown. Copy is
+// the per-treatment pages, the header dropdown and footer deep-links. Copy is
 // per-locale in src/content/site.ts, keyed by the same id. `featuredPrice` is
 // the cheapest entry point, shown as a "desde" tag on the overview cards.
 export const TREATMENTS = [

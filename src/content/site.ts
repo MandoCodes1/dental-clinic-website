@@ -1,7 +1,7 @@
 import type { Lang } from '~/i18n';
 // The FAQ answers quote figures that also appear in the price table, so they
 // read PRICES rather than repeating the numbers as prose and drifting from it.
-import { PRICES, type PriceId, type ServiceId, type TreatmentId } from '~/config';
+import { PRICES, type PriceId, type TreatmentId } from '~/config';
 import { formatPrice } from '~/utils/prices';
 
 // All translatable copy lives here once per locale. The shared SiteCopy type
@@ -11,17 +11,6 @@ import { formatPrice } from '~/utils/prices';
 export interface MetaEntry {
   title: string;
   description: string;
-}
-export interface ServiceItem {
-  id: ServiceId;
-  title: string;
-  description: string;
-}
-export interface ServiceDetail {
-  id: ServiceId;
-  title: string;
-  lead: string;
-  points: string[];
 }
 export interface TimelineItem {
   title: string;
@@ -95,8 +84,6 @@ export interface SiteCopy {
   nav: {
     home: string;
     about: string;
-    services: string;
-    prices: string;
     treatments: string;
     reviews: string;
     gallery: string;
@@ -106,10 +93,7 @@ export interface SiteCopy {
     more: string;
     book: string;
   };
-  meta: Record<
-    'home' | 'about' | 'services' | 'prices' | 'treatments' | 'gallery' | 'reviews' | 'contact' | 'products' | 'faq',
-    MetaEntry
-  >;
+  meta: Record<'home' | 'about' | 'treatments' | 'gallery' | 'reviews' | 'contact' | 'products' | 'faq', MetaEntry>;
   a11y: { skip: string; openMenu: string; closeMenu: string; switchLang: string };
   hero: { eyebrow: string; title: string; subtitle: string; ctaBook: string; ctaReviews: string; availability: string };
   credentials: {
@@ -122,24 +106,10 @@ export interface SiteCopy {
     note: string;
   };
   values: { eyebrow: string; title: string; items: ValueItem[] };
-  services: { eyebrow: string; title: string; subtitle: string; learnMore: string; items: ServiceItem[] };
-  servicesPage: { lead: string; details: ServiceDetail[]; qualityNote: { text: string; linkLabel: string } };
-  pricesPage: {
-    title: string;
-    lead: string;
-    from: string;
-    customQuote: string;
-    disclaimer: string;
-    groups: PriceGroup[];
-    quality: { title: string; lead: string; points: ValueItem[] };
-    askQuote: string;
-    faqTitle: string;
-    faqPrompt: string;
-    faqLink: string;
-  };
   treatmentsPage: {
     title: string;
     lead: string;
+    home: { eyebrow: string; title: string; subtitle: string };
     viewDetails: string;
     allLabel: string;
     pricesTitle: string;
@@ -206,8 +176,6 @@ export interface SiteCopy {
     defaultMessage: string;
     home: { title: string; body: string; message: string };
     about: { title: string; body: string; message: string };
-    services: { title: string; body: string; message: string };
-    prices: { title: string; body: string; message: string };
     treatments: { title: string; body: string; message: string };
     reviews: { title: string; body: string; message: string };
     gallery: { title: string; body: string; message: string };
@@ -215,7 +183,7 @@ export interface SiteCopy {
     faq: { title: string; body: string; message: string };
   };
   stickyBar: { call: string; whatsapp: string };
-  footer: { tagline: string; servicesTitle: string; navTitle: string; contactTitle: string; rights: string };
+  footer: { tagline: string; treatmentsTitle: string; navTitle: string; contactTitle: string; rights: string };
   common: { readMore: string; readLess: string; viewReview: string; whatsapp: string; backHome: string };
   langSuggest: { message: string; cta: string; dismiss: string };
 }
@@ -224,8 +192,6 @@ const es: SiteCopy = {
   nav: {
     home: 'Inicio',
     about: 'Sobre mí',
-    services: 'Servicios',
-    prices: 'Precios',
     treatments: 'Tratamientos',
     reviews: 'Reseñas',
     gallery: 'Galería',
@@ -245,16 +211,6 @@ const es: SiteCopy = {
       title: 'Sobre mí - Dra. Eugenia Vila',
       description:
         'Conoce a la Dra. Eugenia Vila: doctora en Medicina y licenciada en Odontología, máster en Implantología y Estética, más de 30 años de experiencia y Dentista del Año 2024.',
-    },
-    services: {
-      title: 'Servicios - Dra. Eugenia Vila',
-      description:
-        'Implantes dentales, cirugía oral, alineadores y odontología estética en El Palo, Málaga. Tratamientos de calidad con materiales de primera y precios justos.',
-    },
-    prices: {
-      title: 'Precios - Dra. Eugenia Vila',
-      description:
-        'Precios de la clínica dental de la Dra. Eugenia Vila en El Palo, Málaga: implantes, empastes, limpieza, blanqueamiento, alineadores y más. Precios claros y cerrados, sin sorpresas.',
     },
     treatments: {
       title: 'Tratamientos y precios - Dra. Eugenia Vila',
@@ -328,201 +284,14 @@ const es: SiteCopy = {
       },
     ],
   },
-  services: {
-    eyebrow: 'Tratamientos',
-    title: 'Odontología completa, hecha a tu medida',
-    subtitle: 'Desde una revisión hasta una rehabilitación completa, siempre con un plan pensado para ti.',
-    learnMore: 'Saber más',
-    items: [
-      {
-        id: 'implants',
-        title: 'Implantes dentales',
-        description: 'Recupera dientes perdidos con implantes que se ven y se sienten naturales.',
-      },
-      {
-        id: 'oral',
-        title: 'Cirugía oral',
-        description:
-          'Extracciones, injertos y cirugía con técnica cuidadosa, avalada por más de 30 años de experiencia.',
-      },
-      {
-        id: 'aligners',
-        title: 'Alineadores',
-        description: 'Endereza tu sonrisa de forma discreta y cómoda, sin brackets metálicos.',
-      },
-      {
-        id: 'cosmetic',
-        title: 'Estética dental',
-        description: 'Carillas, blanqueamiento y reconstrucciones que respetan tu sonrisa natural.',
-      },
-    ],
-  },
-  servicesPage: {
-    lead: 'Cada tratamiento empieza por escucharte. Estudio tu caso con calma y te propongo solo lo que de verdad necesitas.',
-    details: [
-      {
-        id: 'implants',
-        title: 'Implantes dentales',
-        lead: 'Recupera dientes perdidos con implantes que se ven, se sienten y funcionan como los tuyos.',
-        points: [
-          'Implante unitario, múltiple o rehabilitación completa de la boca',
-          'Planificación sobre TAC 3D (CBCT) de un centro radiológico externo, valorado personalmente por la doctora',
-          'Injertos óseos y elevación de seno cuando hacen falta',
-          'Revisiones y mantenimiento a largo plazo',
-        ],
-      },
-      {
-        id: 'oral',
-        title: 'Cirugía oral',
-        lead: 'Extracciones y cirugía con técnica cuidadosa para una recuperación cómoda.',
-        points: [
-          'Extracciones simples y de muelas del juicio',
-          'Cirugía mínimamente invasiva que preserva el tejido sano',
-          'Injertos óseos y preparación para implantes',
-          'Seguimiento postoperatorio cercano',
-        ],
-      },
-      {
-        id: 'aligners',
-        title: 'Alineadores',
-        lead: 'Endereza tu sonrisa de forma discreta, sin brackets metálicos.',
-        points: [
-          'Alineadores transparentes y cómodos',
-          'Plan de tratamiento hecho a tu medida',
-          'Ideales para apiñamiento y espacios entre dientes',
-          'Controles regulares para seguir el avance',
-        ],
-      },
-      {
-        id: 'cosmetic',
-        title: 'Estética dental',
-        lead: 'Mejora tu sonrisa respetando siempre tu aspecto natural.',
-        points: [
-          'Carillas y reconstrucciones estéticas',
-          'Blanqueamiento dental profesional',
-          'Reparación de empastes y bordes desgastados',
-          'Diseño de sonrisa personalizado',
-        ],
-      },
-    ],
-    qualityNote: {
-      text: '¿Por qué mis precios son más bajos que la media sin recortar en materiales?',
-      linkLabel: 'Te lo explico en la página de precios',
-    },
-  },
-  pricesPage: {
-    title: 'Precios claros, sin sorpresas',
-    lead: 'Creo que debes saber lo que cuesta tu tratamiento antes de sentarte en el sillón. Estos son mis precios de partida, sin letra pequeña.',
-    from: 'desde',
-    customQuote: 'Presupuesto a medida',
-    disclaimer:
-      'Precios orientativos para casos de complejidad baja. Tras la primera valoración recibirás un presupuesto cerrado y por escrito, sin compromiso: el precio acordado es el que pagas.',
-    groups: [
-      {
-        title: 'Implantes y cirugía',
-        items: [
-          { id: 'implantCrown', label: 'Implante + corona de porcelana', note: 'Corona incluida en el precio' },
-          {
-            id: 'boneGraft',
-            label: 'Injerto de hueso',
-            note: 'Cuando no hay hueso suficiente donde va el implante. Incluye el biomaterial y la membrana de regeneración',
-          },
-          {
-            id: 'sinusLift',
-            label: 'Elevación de seno maxilar',
-            note: 'Para poder colocar implantes en las muelas de arriba cuando falta altura de hueso',
-          },
-        ],
-        note: 'El injerto y la elevación de seno solo se hacen si tu caso los necesita, y siempre van dentro del presupuesto cerrado antes de empezar. La colocación de implantes requiere un TAC 3D (CBCT), que se realiza en un centro radiológico externo: la Dra. Vila lee y valora la prueba personalmente, como hace a diario en su consulta de Londres, y esa valoración está incluida en tu plan de tratamiento.',
-      },
-      {
-        title: 'Odontología general',
-        items: [
-          { id: 'cleaning', label: 'Limpieza dental' },
-          { id: 'filling', label: 'Empaste de composite' },
-          { id: 'reconstruction', label: 'Reconstrucción' },
-          { id: 'extraction', label: 'Extracción simple' },
-          {
-            id: 'nightGuard',
-            label: 'Férula de descarga',
-            note: 'Si aprietas o rechinas los dientes al dormir. Hecha a medida para proteger el esmalte y relajar la mandíbula',
-          },
-        ],
-      },
-      {
-        title: 'Estética y coronas',
-        items: [
-          { id: 'zirconiaCrown', label: 'Corona de zirconio' },
-          { id: 'compositeVeneer', label: 'Carilla de composite', note: 'Por unidad' },
-          {
-            id: 'whitening',
-            label: 'Blanqueamiento dental',
-            note: 'Incluye férulas a medida superior e inferior y las jeringas de blanqueamiento',
-          },
-        ],
-      },
-      {
-        title: 'Ortodoncia',
-        items: [
-          {
-            id: 'aligners',
-            label: 'Ortodoncia con alineadores Ordoline',
-            note: 'Una arcada. El precio final depende de la complejidad del caso y del número de arcadas',
-          },
-        ],
-      },
-      {
-        title: 'Rehabilitación de la mordida',
-        items: [
-          {
-            label: 'Reconstrucción de dientes muy desgastados',
-            note: 'Cuando el desgaste ha acortado los dientes y ha bajado la altura de la mordida, se devuelve a los dientes su forma, su función y su aspecto',
-          },
-        ],
-        note: 'Cada boca desgastada es distinta, así que este tratamiento no tiene un precio de partida útil: depende de cuántos dientes haya que reconstruir y de cómo esté la mordida. Te lo estudio y te doy un presupuesto cerrado antes de tocar nada.',
-      },
-    ],
-    quality: {
-      title: 'Precios bajos no significa materiales baratos',
-      lead: 'Muchas clínicas anuncian materiales de calidad a precios bajos y luego recortan donde no se ve. Mis precios son más bajos porque esta es una consulta pequeña y personal, con pocos gastos de estructura, nunca porque use materiales inferiores. Y no tienes que fiarte de mi palabra: todo esto se puede comprobar.',
-      points: [
-        {
-          title: 'Más de 30 años de experiencia',
-          description: 'Desde 1994 he tratado a más de 20.000 pacientes entre Málaga y Londres.',
-        },
-        {
-          title: 'Dentista del Año 2024',
-          description: 'Galardonada en Dental Art Implant Clinics, la clínica de implantes donde trabajo en Londres.',
-        },
-        {
-          title: 'Regulada también en Reino Unido',
-          description:
-            'Además del Colegio de Dentistas de Málaga, estoy registrada en el GDC británico (n.º 287705), que supervisa mi ejercicio profesional.',
-        },
-        {
-          title: 'Los mismos materiales que en Londres',
-          description: 'En Málaga trabajo con los mismos materiales y protocolos que uso en mi consulta de Londres.',
-        },
-        {
-          title: 'Presupuesto cerrado por escrito',
-          description:
-            'Antes de empezar sabes exactamente qué incluye tu tratamiento y cuánto cuesta. El precio acordado es el que pagas.',
-        },
-        {
-          title: 'Transparencia con las pruebas',
-          description:
-            'El TAC 3D (CBCT) se hace en un centro radiológico externo y lo valoro yo personalmente, como hago a diario en Londres.',
-        },
-      ],
-    },
-    askQuote: '¿Buscas otro tratamiento? Escríbeme y te digo el precio sin compromiso.',
-    faqTitle: 'Garantía y formas de pago',
-    faqPrompt: '¿Tienes más dudas sobre precios, materiales o cómo trabajo?',
-    faqLink: 'Consulta las preguntas frecuentes',
-  },
   treatmentsPage: {
     title: 'Tratamientos',
     lead: 'Toda mi odontología en un solo lugar: qué hago, cómo lo hago y cuánto cuesta. Elige un tratamiento para ver los detalles, o baja hasta la lista completa de precios.',
+    home: {
+      eyebrow: 'Tratamientos',
+      title: 'Odontología completa, hecha a tu medida',
+      subtitle: 'Desde una revisión hasta una rehabilitación completa, siempre con un plan pensado para ti.',
+    },
     viewDetails: 'Ver detalles',
     allLabel: 'Todos los tratamientos',
     pricesTitle: 'Lista de precios',
@@ -1016,16 +785,6 @@ const es: SiteCopy = {
       body: 'Escríbeme por WhatsApp y te respondo yo misma, igual que en la consulta.',
       message: 'Hola, me gustaría pedir una cita con la Dra. Vila.',
     },
-    services: {
-      title: '¿Tienes dudas sobre qué tratamiento necesitas?',
-      body: 'Cuéntame qué te preocupa por WhatsApp y te respondo yo misma, sin compromiso.',
-      message: 'Hola, me gustaría contarle mi caso para saber qué tratamiento necesito.',
-    },
-    prices: {
-      title: '¿Quieres un presupuesto cerrado para tu caso?',
-      body: 'Escríbeme por WhatsApp, cuéntame qué necesitas y te doy un presupuesto por escrito, sin compromiso.',
-      message: 'Hola, me gustaría un presupuesto cerrado por escrito para mi caso.',
-    },
     treatments: {
       title: '¿No tienes claro qué tratamiento necesitas?',
       body: 'Cuéntame qué te preocupa por WhatsApp y te respondo yo misma, sin compromiso.',
@@ -1058,7 +817,7 @@ const es: SiteCopy = {
   },
   footer: {
     tagline: 'Clínica dental en El Palo, Málaga. Cuidado cercano y honesto desde 1994.',
-    servicesTitle: 'Servicios',
+    treatmentsTitle: 'Tratamientos',
     navTitle: 'Navegación',
     contactTitle: 'Contacto',
     rights: 'Todos los derechos reservados.',
@@ -1081,8 +840,6 @@ const en: SiteCopy = {
   nav: {
     home: 'Home',
     about: 'About',
-    services: 'Services',
-    prices: 'Prices',
     treatments: 'Treatments',
     reviews: 'Reviews',
     gallery: 'Gallery',
@@ -1102,16 +859,6 @@ const en: SiteCopy = {
       title: 'About - Dr. Eugenia Vila',
       description:
         'Meet Dr. Eugenia Vila: doctor of Medicine and licensed dentist, with master’s degrees in Implantology and Aesthetics, over 30 years of experience and Dentist of the Year 2024.',
-    },
-    services: {
-      title: 'Services - Dr. Eugenia Vila',
-      description:
-        'Dental implants, oral surgery, aligners and cosmetic dentistry in El Palo, Málaga. Quality treatment with premium materials at fair prices.',
-    },
-    prices: {
-      title: 'Prices - Dr. Eugenia Vila',
-      description:
-        'Prices at Dr. Eugenia Vila’s dental clinic in El Palo, Málaga: implants, fillings, cleaning, whitening, aligners and more. Clear, fixed prices with no surprises.',
     },
     treatments: {
       title: 'Treatments & prices - Dr. Eugenia Vila',
@@ -1185,200 +932,14 @@ const en: SiteCopy = {
       },
     ],
   },
-  services: {
-    eyebrow: 'Treatments',
-    title: 'Complete dentistry, tailored to you',
-    subtitle: 'From a check-up to a full-mouth rehabilitation, always with a plan made for you.',
-    learnMore: 'Learn more',
-    items: [
-      {
-        id: 'implants',
-        title: 'Dental implants',
-        description: 'Replace missing teeth with implants that look and feel completely natural.',
-      },
-      {
-        id: 'oral',
-        title: 'Oral surgery',
-        description: 'Extractions, grafts and surgery with careful technique, backed by over 30 years of experience.',
-      },
-      {
-        id: 'aligners',
-        title: 'Aligners',
-        description: 'Straighten your smile discreetly and comfortably, with no metal braces.',
-      },
-      {
-        id: 'cosmetic',
-        title: 'Cosmetic dentistry',
-        description: 'Veneers, whitening and restorations that respect your natural smile.',
-      },
-    ],
-  },
-  servicesPage: {
-    lead: 'Every treatment starts by listening to you. I study your case calmly and only recommend what you truly need.',
-    details: [
-      {
-        id: 'implants',
-        title: 'Dental implants',
-        lead: 'Replace missing teeth with implants that look, feel and work like your own.',
-        points: [
-          'Single, multiple or full-mouth implant rehabilitation',
-          'Planning from a 3D scan (CBCT) taken at an external radiology centre, assessed personally by the doctor',
-          'Bone grafts and sinus lifts when needed',
-          'Long-term check-ups and maintenance',
-        ],
-      },
-      {
-        id: 'oral',
-        title: 'Oral surgery',
-        lead: 'Extractions and surgery with careful technique for a comfortable recovery.',
-        points: [
-          'Simple and wisdom-tooth extractions',
-          'Minimally invasive surgery that preserves healthy tissue',
-          'Bone grafts and preparation for implants',
-          'Close post-operative follow-up',
-        ],
-      },
-      {
-        id: 'aligners',
-        title: 'Aligners',
-        lead: 'Straighten your smile discreetly, with no metal braces.',
-        points: [
-          'Clear, comfortable aligners',
-          'A treatment plan tailored to you',
-          'Ideal for crowding and gaps between teeth',
-          'Regular check-ins to track progress',
-        ],
-      },
-      {
-        id: 'cosmetic',
-        title: 'Cosmetic dentistry',
-        lead: 'Improve your smile while always respecting your natural look.',
-        points: [
-          'Veneers and aesthetic restorations',
-          'Professional teeth whitening',
-          'Repair of worn fillings and edges',
-          'Personalised smile design',
-        ],
-      },
-    ],
-    qualityNote: {
-      text: 'Why are my prices below average without cutting corners on materials?',
-      linkLabel: 'I explain it on the prices page',
-    },
-  },
-  pricesPage: {
-    title: 'Clear prices, no surprises',
-    lead: 'I believe you should know what your treatment costs before you sit in the chair. These are my starting prices, with no small print.',
-    from: 'from',
-    customQuote: 'Quoted case by case',
-    disclaimer:
-      'Guide prices for straightforward cases. After your first assessment you will receive a fixed, written quote with no obligation: the price we agree is the price you pay.',
-    groups: [
-      {
-        title: 'Implants & surgery',
-        items: [
-          { id: 'implantCrown', label: 'Implant + porcelain crown', note: 'Crown included in the price' },
-          {
-            id: 'boneGraft',
-            label: 'Bone graft',
-            note: 'When there is not enough bone where the implant goes. Includes the biomaterial and the regeneration membrane',
-          },
-          {
-            id: 'sinusLift',
-            label: 'Sinus lift',
-            note: 'So implants can be placed in the upper back teeth when bone height is short',
-          },
-        ],
-        note: 'A graft or a sinus lift is only carried out if your case needs one, and it is always part of the fixed quote agreed before we start. Implant placement requires a 3D scan (CBCT), taken at an external radiology centre: Dr. Vila reads and assesses the scan personally, as she does daily in her London practice, and that assessment is included in your treatment plan.',
-      },
-      {
-        title: 'General dentistry',
-        items: [
-          { id: 'cleaning', label: 'Dental cleaning' },
-          { id: 'filling', label: 'Composite filling' },
-          { id: 'reconstruction', label: 'Tooth build-up (reconstruction)' },
-          { id: 'extraction', label: 'Simple extraction' },
-          {
-            id: 'nightGuard',
-            label: 'Night guard',
-            note: 'If you clench or grind your teeth in your sleep. Custom-made to protect the enamel and relax the jaw',
-          },
-        ],
-      },
-      {
-        title: 'Cosmetic & crowns',
-        items: [
-          { id: 'zirconiaCrown', label: 'Zirconia crown' },
-          { id: 'compositeVeneer', label: 'Composite veneer', note: 'Per tooth' },
-          {
-            id: 'whitening',
-            label: 'Teeth whitening',
-            note: 'Includes custom upper and lower trays and the whitening gel syringes',
-          },
-        ],
-      },
-      {
-        title: 'Orthodontics',
-        items: [
-          {
-            id: 'aligners',
-            label: 'Ordoline clear aligners',
-            note: 'One arch. The final price depends on case complexity and the number of arches',
-          },
-        ],
-      },
-      {
-        title: 'Rebuilding a worn bite',
-        items: [
-          {
-            label: 'Restoring heavily worn teeth',
-            note: 'When wear has shortened the teeth and lowered the height of the bite, the teeth are given back their shape, their function and their looks',
-          },
-        ],
-        note: 'Every worn bite is different, so a starting price would tell you very little here: it depends on how many teeth need rebuilding and on the state of the bite. I study your case and give you a fixed quote before anything is touched.',
-      },
-    ],
-    quality: {
-      title: 'Low prices do not mean cheap materials',
-      lead: 'Many clinics advertise quality materials at low prices and then cut corners where you cannot see. My prices are lower because this is a small personal practice with low overheads, never because I use inferior materials. And you do not have to take my word for it: all of this can be checked.',
-      points: [
-        {
-          title: 'Over 30 years of experience',
-          description: 'Since 1994 I have treated more than 20,000 patients between Málaga and London.',
-        },
-        {
-          title: 'Dentist of the Year 2024',
-          description: 'Awarded at Dental Art Implant Clinics, the implant clinic where I work in London.',
-        },
-        {
-          title: 'Also regulated in the UK',
-          description:
-            'Besides the Málaga College of Dentists, I am registered with the British GDC (no. 287705), which oversees my professional practice.',
-        },
-        {
-          title: 'The same materials as in London',
-          description: 'In Málaga I work with the same materials and protocols I use in my London practice.',
-        },
-        {
-          title: 'A fixed, written quote',
-          description:
-            'Before we start you know exactly what your treatment includes and what it costs. The price we agree is the price you pay.',
-        },
-        {
-          title: 'Transparent about scans',
-          description:
-            'The 3D scan (CBCT) is taken at an external radiology centre and I assess it personally, as I do daily in London.',
-        },
-      ],
-    },
-    askQuote: 'Looking for another treatment? Message me and I will tell you the price, no obligation.',
-    faqTitle: 'Guarantees and payment',
-    faqPrompt: 'More questions about prices, materials or how I work?',
-    faqLink: 'Read the frequently asked questions',
-  },
   treatmentsPage: {
     title: 'Treatments',
     lead: 'All my dentistry in one place: what I do, how I do it and what it costs. Pick a treatment to see the details, or scroll down to the full price list.',
+    home: {
+      eyebrow: 'Treatments',
+      title: 'Complete dentistry, tailored to you',
+      subtitle: 'From a check-up to a full-mouth rehabilitation, always with a plan made for you.',
+    },
     viewDetails: 'View details',
     allLabel: 'All treatments',
     pricesTitle: 'Price list',
@@ -1870,16 +1431,6 @@ const en: SiteCopy = {
       body: 'Message me on WhatsApp and I’ll reply personally, just as I would in the clinic.',
       message: 'Hello, I would like to book an appointment with Dr. Vila.',
     },
-    services: {
-      title: 'Not sure which treatment is right for you?',
-      body: 'Tell me what you’re considering on WhatsApp and I’ll reply personally, with no obligation.',
-      message: 'Hello, I would like to tell you about my case to find out which treatment I need.',
-    },
-    prices: {
-      title: 'Want a fixed quote for your case?',
-      body: 'Message me on WhatsApp, tell me what you need and I’ll send you a written quote, with no obligation.',
-      message: 'Hello, I would like a fixed written quote for my case.',
-    },
     treatments: {
       title: 'Not sure which treatment you need?',
       body: 'Tell me what is bothering you on WhatsApp and I’ll reply personally, with no obligation.',
@@ -1912,7 +1463,7 @@ const en: SiteCopy = {
   },
   footer: {
     tagline: 'Dental clinic in El Palo, Málaga. Warm, honest care since 1994.',
-    servicesTitle: 'Services',
+    treatmentsTitle: 'Treatments',
     navTitle: 'Navigation',
     contactTitle: 'Contact',
     rights: 'All rights reserved.',

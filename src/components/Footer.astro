@@ -2,7 +2,7 @@
 import { Icon } from 'astro-icon/components';
 import { content } from '~/content/site';
 import { ROUTES, NAV_ALL, type Lang } from '~/i18n';
-import { CLINIC, SERVICES, waLink } from '~/config';
+import { CLINIC, TREATMENTS, waLink } from '~/config';
 
 interface Props {
   lang: Lang;
@@ -10,7 +10,6 @@ interface Props {
 const { lang } = Astro.props;
 const t = content[lang];
 const year = new Date().getFullYear();
-const servicesHref = ROUTES.services[lang];
 ---
 
 <footer class="bg-brand-deep text-cream/90">
@@ -21,19 +20,16 @@ const servicesHref = ROUTES.services[lang];
     </div>
 
     <div>
-      <h2 class="text-sm font-semibold uppercase tracking-wider text-white">{t.footer.servicesTitle}</h2>
+      <h2 class="text-sm font-semibold uppercase tracking-wider text-white">{t.footer.treatmentsTitle}</h2>
       <ul class="mt-3 space-y-2 text-sm">
         {
-          t.services.items.map((s) => {
-            const anchor = SERVICES.find((x) => x.id === s.id)?.anchor;
-            return (
-              <li>
-                <a class="text-cream/80 transition hover:text-white" href={`${servicesHref}#${anchor}`}>
-                  {s.title}
-                </a>
-              </li>
-            );
-          })
+          TREATMENTS.map((tr) => (
+            <li>
+              <a class="text-cream/80 transition hover:text-white" href={ROUTES[tr.route][lang]}>
+                {t.treatments[tr.id].navLabel}
+              </a>
+            </li>
+          ))
         }
       </ul>
     </div>

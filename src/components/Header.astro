@@ -4,8 +4,8 @@ import { Image } from 'astro:assets';
 import logo from '~/assets/images/brand/logo2.png';
 import LanguageToggle from '~/components/LanguageToggle.astro';
 import { content } from '~/content/site';
-import { ROUTES, NAV_TOP, NAV_MORE, NAV_TAIL, NAV_ALL, type Lang, type NavKey, type RouteKey } from '~/i18n';
-import { waLink } from '~/config';
+import { ROUTES, NAV_MORE, type Lang, type NavKey, type RouteKey } from '~/i18n';
+import { TREATMENTS, waLink } from '~/config';
 
 interface Props {
   lang: Lang;
@@ -15,12 +15,18 @@ const { lang, page } = Astro.props;
 const t = content[lang];
 const homeHref = ROUTES.home[lang];
 const toItem = (key: NavKey) => ({ label: t.nav[key], href: ROUTES[key][lang], active: key === page });
-const navTop = NAV_TOP.map(toItem);
+const about = toItem('about');
+const reviews = toItem('reviews');
+const contact = toItem('contact');
 const navMore = NAV_MORE.map(toItem);
-const navTail = NAV_TAIL.map(toItem);
-const navAll = NAV_ALL.map(toItem);
-// Keep the dropdown trigger highlighted while one of the pages behind it is open.
+// Keep each dropdown trigger highlighted while one of the pages behind it is open.
+const treatmentsActive = page === 'treatments' || page.startsWith('treatment');
 const moreActive = (NAV_MORE as readonly RouteKey[]).includes(page);
+const treatmentLinks = TREATMENTS.map((tr) => ({
+  label: t.treatments[tr.id].navLabel,
+  href: ROUTES[tr.route][lang],
+  active: tr.route === page,
+}));
 ---
 
 <header class="sticky top-0 z-40 border-b border-brand-blue/10 bg-cream/90 backdrop-blur">
@@ -31,25 +37,78 @@ const moreActive = (NAV_MORE as readonly RouteKey[]).includes(page);
     </a>
 
     <nav class="hidden items-center gap-5 lg:flex xl:gap-6" aria-label={t.nav.home}>
-      {
-        navTop.map((item) => (
-          <a
-            href={item.href}
-            class:list={[
-              'text-sm font-medium transition hover:text-brand-blue',
-              item.active ? 'text-brand-blue' : 'text-ink/80',
-            ]}
-            aria-current={item.active ? 'page' : undefined}
-          >
-            {item.label}
-          </a>
-        ))
-      }
+      <a
+        href={about.href}
+        class:list={[
+          'text-sm font-medium transition hover:text-brand-blue',
+          about.active ? 'text-brand-blue' : 'text-ink/80',
+        ]}
+        aria-current={about.active ? 'page' : undefined}
+      >
+        {about.label}
+      </a>
 
       <div class="relative">
         <button
           type="button"
-          id="more-toggle"
+          data-dropdown-toggle
+          class:list={[
+            'inline-flex items-center gap-1 text-sm font-medium transition hover:text-brand-blue',
+            treatmentsActive ? 'text-brand-blue' : 'text-ink/80',
+          ]}
+          aria-expanded="false"
+          aria-controls="treatments-menu"
+        >
+          {t.nav.treatments}
+          <Icon name="tabler:chevron-down" class="h-4 w-4" />
+        </button>
+        <div
+          id="treatments-menu"
+          class="absolute left-0 top-full mt-3 hidden w-64 rounded-xl border border-brand-blue/10 bg-cream p-2 shadow-lg"
+        >
+          <a
+            href={ROUTES.treatments[lang]}
+            class:list={[
+              'block rounded-md px-3 py-2 text-sm font-semibold transition hover:bg-brand-light',
+              page === 'treatments' ? 'text-brand-blue' : 'text-brand-deep',
+            ]}
+            aria-current={page === 'treatments' ? 'page' : undefined}
+          >
+            {t.treatmentsPage.allLabel}
+          </a>
+          <div class="my-1 border-t border-brand-blue/10"></div>
+          {
+            treatmentLinks.map((item) => (
+              <a
+                href={item.href}
+                class:list={[
+                  'block rounded-md px-3 py-2 text-sm font-medium transition hover:bg-brand-light',
+                  item.active ? 'text-brand-blue' : 'text-ink/80',
+                ]}
+                aria-current={item.active ? 'page' : undefined}
+              >
+                {item.label}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+
+      <a
+        href={reviews.href}
+        class:list={[
+          'text-sm font-medium transition hover:text-brand-blue',
+          reviews.active ? 'text-brand-blue' : 'text-ink/80',
+        ]}
+        aria-current={reviews.active ? 'page' : undefined}
+      >
+        {reviews.label}
+      </a>
+
+      <div class="relative">
+        <button
+          type="button"
+          data-dropdown-toggle
           class:list={[
             'inline-flex items-center gap-1 text-sm font-medium transition hover:text-brand-blue',
             moreActive ? 'text-brand-blue' : 'text-ink/80',
@@ -81,20 +140,16 @@ const moreActive = (NAV_MORE as readonly RouteKey[]).includes(page);
         </div>
       </div>
 
-      {
-        navTail.map((item) => (
-          <a
-            href={item.href}
-            class:list={[
-              'text-sm font-medium transition hover:text-brand-blue',
-              item.active ? 'text-brand-blue' : 'text-ink/80',
-            ]}
-            aria-current={item.active ? 'page' : undefined}
-          >
-            {item.label}
-          </a>
-        ))
-      }
+      <a
+        href={contact.href}
+        class:list={[
+          'text-sm font-medium transition hover:text-brand-blue',
+          contact.active ? 'text-brand-blue' : 'text-ink/80',
+        ]}
+        aria-current={contact.active ? 'page' : undefined}
+      >
+        {contact.label}
+      </a>
     </nav>
 
     <div class="flex items-center gap-3">
@@ -123,10 +178,45 @@ const moreActive = (NAV_MORE as readonly RouteKey[]).includes(page);
     </div>
   </div>
 
+  {
+    /* The treatment links stay expanded (no tap-to-open) so nothing is hidden
+      behind an extra tap for less tech-confident visitors. */
+  }
   <div id="mobile-menu" class="hidden border-t border-brand-blue/10 bg-cream lg:hidden">
     <nav class="container-page flex flex-col py-3" aria-label={t.nav.home}>
+      <a
+        href={about.href}
+        class:list={['rounded-md px-2 py-2.5 text-base font-medium', about.active ? 'text-brand-blue' : 'text-ink/80']}
+        aria-current={about.active ? 'page' : undefined}
+      >
+        {about.label}
+      </a>
+      <a
+        href={ROUTES.treatments[lang]}
+        class:list={[
+          'rounded-md px-2 py-2.5 text-base font-medium',
+          page === 'treatments' ? 'text-brand-blue' : 'text-ink/80',
+        ]}
+        aria-current={page === 'treatments' ? 'page' : undefined}
+      >
+        {t.nav.treatments}
+      </a>
       {
-        navAll.map((item) => (
+        treatmentLinks.map((item) => (
+          <a
+            href={item.href}
+            class:list={[
+              'rounded-md py-2 pl-6 pr-2 text-sm font-medium',
+              item.active ? 'text-brand-blue' : 'text-ink/70',
+            ]}
+            aria-current={item.active ? 'page' : undefined}
+          >
+            {item.label}
+          </a>
+        ))
+      }
+      {
+        [reviews, ...navMore, contact].map((item) => (
           <a
             href={item.href}
             class:list={[
@@ -166,37 +256,49 @@ const moreActive = (NAV_MORE as readonly RouteKey[]).includes(page);
   }
   document.addEventListener('astro:page-load', initMenu);
 
-  // The "more" dropdown is delegated off document so the listeners bind once and
-  // survive view transitions; binding per page-load would stack them instead.
-  function moreEls() {
-    return {
-      btn: document.getElementById('more-toggle'),
-      menu: document.getElementById('more-menu'),
-    };
+  // The desktop dropdowns are delegated off document so the listeners bind once
+  // and survive view transitions; binding per page-load would stack them instead.
+  function dropdownToggles(): HTMLElement[] {
+    return Array.from(document.querySelectorAll<HTMLElement>('[data-dropdown-toggle]'));
   }
 
-  function closeMore() {
-    const { btn, menu } = moreEls();
-    if (!btn || !menu || menu.classList.contains('hidden')) return false;
+  function menuFor(btn: HTMLElement): HTMLElement | null {
+    return document.getElementById(btn.getAttribute('aria-controls') ?? '');
+  }
+
+  function closeDropdown(btn: HTMLElement): boolean {
+    const menu = menuFor(btn);
+    if (!menu || menu.classList.contains('hidden')) return false;
     menu.classList.add('hidden');
     btn.setAttribute('aria-expanded', 'false');
     return true;
   }
 
   document.addEventListener('click', (event) => {
-    const { btn, menu } = moreEls();
-    if (!btn || !menu) return;
     const target = event.target instanceof Element ? event.target : null;
-    if (target && btn.contains(target)) {
-      const isOpen = menu.classList.toggle('hidden') === false;
-      btn.setAttribute('aria-expanded', String(isOpen));
-    } else if (!target || !menu.contains(target)) {
-      closeMore();
+    const toggles = dropdownToggles();
+    const clicked = toggles.find((btn) => target && btn.contains(target));
+    for (const btn of toggles) {
+      if (btn !== clicked) {
+        const menu = menuFor(btn);
+        // Leave a menu open when the click landed inside it (its links navigate anyway).
+        if (!clicked && menu && target && menu.contains(target)) continue;
+        closeDropdown(btn);
+      }
+    }
+    if (clicked) {
+      const menu = menuFor(clicked);
+      if (menu) {
+        const isOpen = menu.classList.toggle('hidden') === false;
+        clicked.setAttribute('aria-expanded', String(isOpen));
+      }
     }
   });
 
   document.addEventListener('keydown', (event) => {
     if (event.key !== 'Escape') return;
-    if (closeMore()) moreEls().btn?.focus();
+    for (const btn of dropdownToggles()) {
+      if (closeDropdown(btn)) btn.focus();
+    }
   });
 </script>
