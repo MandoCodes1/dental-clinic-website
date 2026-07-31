@@ -19,12 +19,12 @@ export default defineConfig({
 
   // The services and prices pages merged into the treatments section. Static
   // output turns these into meta-refresh pages, which is what GitHub Pages can
-  // serve; the price table lives at /tratamientos#precios.
+  // serve; prices now live on each treatment's own page.
   redirects: {
     '/servicios': '/tratamientos',
-    '/precios': '/tratamientos#precios',
+    '/precios': '/tratamientos',
     '/en/services': '/en/treatments',
-    '/en/prices': '/en/treatments#precios',
+    '/en/prices': '/en/treatments',
   },
 
   i18n: {
