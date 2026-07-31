@@ -190,6 +190,10 @@ const treatmentLinks = TREATMENTS.map((tr) => ({
     </div>
   </div>
 
+  {
+    /* The treatment links stay expanded (no tap-to-open) so nothing is hidden
+      behind an extra tap for less tech-confident visitors. */
+  }
   <div id="mobile-menu" class="hidden border-t border-brand-blue/10 bg-cream lg:hidden">
     <nav class="container-page flex flex-col divide-y divide-brand-blue/10 py-2" aria-label={t.nav.home}>
       <a
