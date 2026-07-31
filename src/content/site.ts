@@ -170,7 +170,23 @@ export interface SiteCopy {
     hoursBody: string;
     directions: string;
   };
-  homeVisit: { eyebrow: string; title: string; contactLink: string };
+  homeVisit: {
+    eyebrow: string;
+    title: string;
+    contactLink: string;
+    form: {
+      name: string;
+      namePlaceholder: string;
+      treatment: string;
+      treatmentPlaceholder: string;
+      message: string;
+      messagePlaceholder: string;
+      submit: string;
+      hint: string;
+      greeting: string;
+      interest: string;
+    };
+  };
   contactCta: {
     button: string;
     defaultMessage: string;
@@ -777,9 +793,21 @@ const es: SiteCopy = {
     directions: 'Cómo llegar',
   },
   homeVisit: {
-    eyebrow: 'La clínica',
-    title: 'Dónde encontrarme',
+    eyebrow: 'Contacto',
+    title: 'Escríbeme o ven a verme',
     contactLink: 'Ver todas las formas de contacto',
+    form: {
+      name: 'Nombre',
+      namePlaceholder: 'Tu nombre',
+      treatment: 'Tratamiento',
+      treatmentPlaceholder: 'Elige un tratamiento (opcional)',
+      message: 'Mensaje',
+      messagePlaceholder: 'Cuéntame tu caso o tu duda',
+      submit: 'Enviar por WhatsApp',
+      hint: 'Al pulsar se abre WhatsApp con el mensaje ya escrito: lo revisas y lo envías tú.',
+      greeting: 'Hola, soy',
+      interest: 'Me interesa:',
+    },
   },
   contactCta: {
     button: 'Escribir por WhatsApp',
@@ -1432,9 +1460,21 @@ const en: SiteCopy = {
     directions: 'Get directions',
   },
   homeVisit: {
-    eyebrow: 'The clinic',
-    title: 'Where to find me',
+    eyebrow: 'Contact',
+    title: 'Write to me or drop by',
     contactLink: 'See all the ways to reach me',
+    form: {
+      name: 'Name',
+      namePlaceholder: 'Your name',
+      treatment: 'Treatment',
+      treatmentPlaceholder: 'Choose a treatment (optional)',
+      message: 'Message',
+      messagePlaceholder: 'Tell me about your case or question',
+      submit: 'Send via WhatsApp',
+      hint: 'Tapping opens WhatsApp with your message already written: you review it and hit send.',
+      greeting: 'Hello, my name is',
+      interest: 'I am interested in:',
+    },
   },
   contactCta: {
     button: 'Message on WhatsApp',
