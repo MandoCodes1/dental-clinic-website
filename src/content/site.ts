@@ -138,7 +138,6 @@ export interface SiteCopy {
     memberships: string[];
     personalTitle: string;
     personal: string;
-    cvCta: string;
   };
   reviewsPage: { lead: string; basedOn: string; malagaTitle: string; londonTitle: string; cta: string };
   faqPage: { title: string; lead: string; items: FaqItem[] };
@@ -211,11 +210,6 @@ const es: SiteCopy = {
       title: 'Sobre mí - Dra. Eugenia Vila',
       description:
         'Conoce a la Dra. Eugenia Vila: doctora en Medicina y licenciada en Odontología, máster en Implantología y Estética, más de 30 años de experiencia y Dentista del Año 2024.',
-    },
-    treatments: {
-      title: 'Tratamientos y precios - Dra. Eugenia Vila',
-      description:
-        'Todos los tratamientos de la clínica de la Dra. Eugenia Vila en El Palo, Málaga, con sus precios de partida: implantes, ortodoncia invisible, estética dental, coronas y más.',
     },
     treatments: {
       title: 'Tratamientos y precios - Dra. Eugenia Vila',
@@ -633,7 +627,6 @@ const es: SiteCopy = {
     personalTitle: 'Más allá de la consulta',
     personal:
       'Fuera de la clínica, mi familia es lo primero: tengo dos hijos con los que me encanta pasar el tiempo. Disfruto del tenis, viajar, cocinar y cuidarme con una vida sana. Creo en tratar a cada paciente como me gustaría que tratasen a los míos.',
-    cvCta: 'Descargar CV (PDF)',
   },
   reviewsPage: {
     lead: 'Reseñas reales de pacientes, sin filtros. Estas son algunas de las personas que han confiado en la Dra. Vila.',
@@ -864,11 +857,6 @@ const en: SiteCopy = {
       title: 'About - Dr. Eugenia Vila',
       description:
         'Meet Dr. Eugenia Vila: doctor of Medicine and licensed dentist, with master’s degrees in Implantology and Aesthetics, over 30 years of experience and Dentist of the Year 2024.',
-    },
-    treatments: {
-      title: 'Treatments & prices - Dr. Eugenia Vila',
-      description:
-        'All treatments at Dr. Eugenia Vila’s clinic in El Palo, Málaga, with their starting prices: implants, invisible orthodontics, cosmetic dentistry, crowns and more.',
     },
     treatments: {
       title: 'Treatments & prices - Dr. Eugenia Vila',
@@ -1285,7 +1273,6 @@ const en: SiteCopy = {
     personalTitle: 'Beyond the clinic',
     personal:
       'Outside the clinic, my family comes first: I have two sons I love spending time with. I enjoy tennis, travelling, cooking and staying active. I believe in treating every patient the way I’d want my own family to be treated.',
-    cvCta: 'Download CV (PDF)',
   },
   reviewsPage: {
     lead: 'Real patient reviews, unfiltered. Here are some of the people who have trusted Dr. Vila with their care.',
