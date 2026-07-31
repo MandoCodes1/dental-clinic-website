@@ -298,8 +298,8 @@ const es: SiteCopy = {
           'Antes de empezar sabes exactamente qué incluye tu tratamiento, paso a paso y sin sorpresas. Todo queda recogido por escrito.',
       },
       {
-        title: 'Materiales de primera',
-        description: 'Solo materiales de la más alta calidad, los mismos que usaría para mi propia familia.',
+        title: 'Materiales de primera calidad',
+        description: 'Solo materiales de las mejores marcas, los mismos que usaría para mi propia familia.',
       },
       {
         title: 'Tiempo para ti',
@@ -422,20 +422,26 @@ const es: SiteCopy = {
       meta: {
         title: 'Cirugía oral en Málaga - Dra. Eugenia Vila',
         description:
-          'Extracciones simples y de muelas del juicio, injertos y cirugía mínimamente invasiva en El Palo, Málaga. Más de 30 años de experiencia quirúrgica.',
+          'Extracciones simples y complejas, injertos y cirugía mínimamente invasiva en El Palo, Málaga. Más de 30 años de experiencia quirúrgica.',
       },
       title: 'Cirugía oral',
       lead: 'Más de 30 años de cirugía avalan una técnica cuidadosa que preserva el tejido sano y hace la recuperación más llevadera.',
       points: [
-        'Extracciones simples y de muelas del juicio',
+        'Extracciones simples y complejas',
         'Cirugía mínimamente invasiva que preserva el tejido sano',
         'Injertos óseos y preparación para implantes',
         'Pauta de cuidados por escrito y seguimiento postoperatorio cercano',
       ],
       priceGroup: {
         title: 'Precios de cirugía oral',
-        items: [{ id: 'extraction', label: 'Extracción simple' }],
-        note: 'Las extracciones complejas y las muelas del juicio se presupuestan tras valorar tu caso, siempre por escrito y antes de empezar.',
+        items: [
+          { id: 'extraction', label: 'Extracción simple' },
+          {
+            id: 'complexExtraction',
+            label: 'Extracción compleja',
+            note: 'Muelas del juicio, restos radiculares y extracciones que requieren técnica quirúrgica',
+          },
+        ],
       },
       cta: {
         title: '¿Te preocupa una extracción?',
@@ -618,7 +624,7 @@ const es: SiteCopy = {
         org: 'Universidad de Murcia',
         date: '1993 - 1994',
       },
-      { title: 'Doctorado en Odontología', org: 'UNIBE, Santo Domingo', date: '1989 - 1991' },
+      { title: 'Licenciatura en Odontología', org: 'UNIBE, Santo Domingo', date: '1989 - 1991' },
       { title: 'Licenciatura en Medicina y Cirugía', org: 'Universidad de Málaga', date: '1982 - 1989' },
     ],
     experienceTitle: 'Experiencia',
@@ -635,9 +641,9 @@ const es: SiteCopy = {
       {
         role: 'Odontóloga y cirujana',
         org: 'Clínica Dental Dra. Eugenia Vila, Málaga',
-        period: '1994 - 2022',
+        period: '1994 - actualidad',
         bullets: [
-          'Más de 20.000 pacientes atendidos en consulta privada durante 28 años.',
+          'Más de 20.000 pacientes atendidos en consulta privada durante más de 30 años.',
           'Miles de implantes, cirugías, tratamientos y reconstrucciones estéticas.',
           'Trato personal y seguimiento cercano de cada paciente y su familia.',
         ],
@@ -645,14 +651,15 @@ const es: SiteCopy = {
     ],
     credsTitle: 'Colegiación y membresías',
     memberships: [
-      'Licenciada en Medicina y Cirugía y Licenciada en Odontología',
+      'Licenciada en Medicina y Cirugía',
+      'Licenciada en Odontología',
       'Ilustre Colegio de Dentistas de Málaga (colegiada desde 1994)',
       'Royal College of Surgeons of Ireland (RCSI), afiliada desde 2021',
       'Registro GDC (Reino Unido): 287705',
     ],
     personalTitle: 'Más allá de la consulta',
     personal:
-      'Fuera de la clínica, mi familia es lo primero: tengo dos hijos con los que me encanta pasar el tiempo. Disfruto del tenis, viajar, cocinar y cuidarme con una vida sana. Creo en tratar a cada paciente como me gustaría que tratasen a los míos.',
+      'Fuera de la clínica, mi familia es lo primero: tengo dos hijos con los que me encanta pasar el tiempo. Disfruto del tenis, viajar, cocinar y cuidarme con una vida sana.',
   },
   reviewsPage: {
     lead: 'Reseñas reales de pacientes, sin filtros. Estas son algunas de las personas que han confiado en la Dra. Vila.',
@@ -966,8 +973,8 @@ const en: SiteCopy = {
           'Before we start you know exactly what your treatment includes, step by step and with no surprises. Everything is set out in writing.',
       },
       {
-        title: 'Premium materials',
-        description: 'Only the highest-quality materials, the same ones I would use for my own family.',
+        title: 'Top-quality materials',
+        description: 'Only materials from the best brands, the same ones I would use for my own family.',
       },
       {
         title: 'Time for you',
@@ -1091,20 +1098,26 @@ const en: SiteCopy = {
       meta: {
         title: 'Oral surgery in Málaga - Dr. Eugenia Vila',
         description:
-          'Simple and wisdom-tooth extractions, grafts and minimally invasive surgery in El Palo, Málaga. Over 30 years of surgical experience.',
+          'Simple and complex extractions, grafts and minimally invasive surgery in El Palo, Málaga. Over 30 years of surgical experience.',
       },
       title: 'Oral surgery',
       lead: 'Over 30 years of surgery stand behind a careful technique that preserves healthy tissue and makes recovery easier.',
       points: [
-        'Simple and wisdom-tooth extractions',
+        'Simple and complex extractions',
         'Minimally invasive surgery that preserves healthy tissue',
         'Bone grafts and preparation for implants',
         'Written aftercare instructions and close post-operative follow-up',
       ],
       priceGroup: {
         title: 'Oral surgery prices',
-        items: [{ id: 'extraction', label: 'Simple extraction' }],
-        note: 'Complex extractions and wisdom teeth are quoted after assessing your case, always in writing and before we start.',
+        items: [
+          { id: 'extraction', label: 'Simple extraction' },
+          {
+            id: 'complexExtraction',
+            label: 'Complex extraction',
+            note: 'Wisdom teeth, root remnants and extractions that need a surgical approach',
+          },
+        ],
       },
       cta: {
         title: 'Worried about an extraction?',
@@ -1286,7 +1299,7 @@ const en: SiteCopy = {
         org: 'University of Murcia',
         date: '1993 - 1994',
       },
-      { title: 'Doctorate in Dentistry (DDS)', org: 'UNIBE, Santo Domingo', date: '1989 - 1991' },
+      { title: 'Degree in Dentistry', org: 'UNIBE, Santo Domingo', date: '1989 - 1991' },
       { title: 'Degree in Medicine and Surgery (MBBS)', org: 'University of Málaga', date: '1982 - 1989' },
     ],
     experienceTitle: 'Experience',
@@ -1303,9 +1316,9 @@ const en: SiteCopy = {
       {
         role: 'Dentist and surgeon',
         org: 'Clínica Dental Dra. Eugenia Vila, Málaga',
-        period: '1994 - 2022',
+        period: '1994 - present',
         bullets: [
-          'More than 20,000 patients treated in private practice over 28 years.',
+          'More than 20,000 patients treated in private practice over 30 years.',
           'Thousands of implants, surgeries, treatments and aesthetic restorations.',
           'Personal care and close follow-up of every patient and their family.',
         ],
@@ -1313,14 +1326,15 @@ const en: SiteCopy = {
     ],
     credsTitle: 'Registration & memberships',
     memberships: [
-      'Degree in Medicine and Surgery, and Licensed Dentist',
+      'Degree in Medicine and Surgery',
+      'Degree in Dentistry',
       'Official College of Dentists of Málaga (registered since 1994)',
       'Royal College of Surgeons of Ireland (RCSI), affiliate since 2021',
       'GDC registration (United Kingdom): 287705',
     ],
     personalTitle: 'Beyond the clinic',
     personal:
-      'Outside the clinic, my family comes first: I have two sons I love spending time with. I enjoy tennis, travelling, cooking and staying active. I believe in treating every patient the way I’d want my own family to be treated.',
+      'Outside the clinic, my family comes first: I have two sons I love spending time with. I enjoy tennis, travelling, cooking and staying active.',
   },
   reviewsPage: {
     lead: 'Real patient reviews, unfiltered. Here are some of the people who have trusted Dr. Vila with their care.',

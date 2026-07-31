@@ -47,6 +47,7 @@ const BASE_PRICES = {
   sinusLift: 600,
   filling: 50,
   extraction: 50,
+  complexExtraction: 100,
   reconstruction: 100,
   cleaning: 50,
   nightGuard: 200,
