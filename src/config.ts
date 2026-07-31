@@ -1,5 +1,7 @@
 // Single source of truth for non-translated facts about the site and clinic.
 
+import type { RouteKey } from '~/i18n';
+
 export const SITE = {
   domain: 'https://www.draeugeniavila.com',
   name: 'Dra. Eugenia Vila',
@@ -36,10 +38,10 @@ export const CLINIC = {
   patients: 20000,
 } as const;
 
-// Starting-from treatment prices in euros. Single source for the prices page
-// and the "desde" tags on the services page, so the numbers cannot drift.
+// Starting-from treatment prices in euros. Single source for the price tables
+// and every "desde" tag, so the numbers cannot drift.
 // Provisional until Dra. Vila confirms the final list.
-export const PRICES = {
+const BASE_PRICES = {
   implantCrown: 1100,
   boneGraft: 300,
   sinusLift: 600,
@@ -52,6 +54,13 @@ export const PRICES = {
   whitening: 300,
   aligners: 1500,
   compositeVeneer: 200,
+} as const;
+
+export const PRICES = {
+  ...BASE_PRICES,
+  // Implant placement alone; the advertised bundle is implantOnly + zirconiaCrown,
+  // so the split always adds up to the implantCrown total.
+  implantOnly: BASE_PRICES.implantCrown - BASE_PRICES.zirconiaCrown,
 } as const;
 
 export type PriceId = keyof typeof PRICES;
@@ -68,6 +77,21 @@ export const SERVICES = [
 ] as const satisfies readonly { id: string; anchor: string; icon: string; price: PriceId }[];
 
 export type ServiceId = (typeof SERVICES)[number]['id'];
+
+// The six treatment categories behind the treatments section: overview cards,
+// the per-treatment pages and (in the nav flip) the header dropdown. Copy is
+// per-locale in src/content/site.ts, keyed by the same id. `featuredPrice` is
+// the cheapest entry point, shown as a "desde" tag on the overview cards.
+export const TREATMENTS = [
+  { id: 'implants', route: 'treatmentImplants', icon: 'tabler:dental', featuredPrice: 'implantOnly' },
+  { id: 'oralSurgery', route: 'treatmentOralSurgery', icon: 'tabler:medical-cross', featuredPrice: 'extraction' },
+  { id: 'orthodontics', route: 'treatmentOrthodontics', icon: 'tabler:mood-smile', featuredPrice: 'aligners' },
+  { id: 'aesthetics', route: 'treatmentAesthetics', icon: 'tabler:sparkles', featuredPrice: 'compositeVeneer' },
+  { id: 'general', route: 'treatmentGeneral', icon: 'tabler:dental-broken', featuredPrice: 'cleaning' },
+  { id: 'crowns', route: 'treatmentCrowns', icon: 'tabler:crown', featuredPrice: 'zirconiaCrown' },
+] as const satisfies readonly { id: string; route: RouteKey; icon: string; featuredPrice: PriceId }[];
+
+export type TreatmentId = (typeof TREATMENTS)[number]['id'];
 
 export function waLink(message?: string): string {
   const base = `https://wa.me/${CLINIC.whatsapp}`;
