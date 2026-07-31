@@ -8,8 +8,6 @@ export const LANGS: Lang[] = ['es', 'en'];
 export const ROUTES = {
   home: { es: '/', en: '/en' },
   about: { es: '/sobre-mi', en: '/en/about' },
-  services: { es: '/servicios', en: '/en/services' },
-  prices: { es: '/precios', en: '/en/prices' },
   treatments: { es: '/tratamientos', en: '/en/treatments' },
   treatmentImplants: { es: '/tratamientos/implantes', en: '/en/treatments/dental-implants' },
   treatmentOralSurgery: { es: '/tratamientos/cirugia-oral', en: '/en/treatments/oral-surgery' },
@@ -29,9 +27,10 @@ export const ROUTES = {
 export type RouteKey = keyof typeof ROUTES;
 
 // Main navigation, grouped for the desktop header: top-level links, then a "more"
-// dropdown for the low-intent pages, then contact. Home is not listed; the logo
-// links there. NAV_ALL is the flat display order used by the mobile menu and footer.
-export const NAV_TOP = ['about', 'services', 'prices', 'reviews'] as const;
+// dropdown for the low-intent pages, then contact. Home gets an explicit link
+// besides the logo; not every visitor knows the logo leads there. NAV_ALL is the
+// flat display order used by the footer.
+export const NAV_TOP = ['home', 'about', 'treatments', 'reviews'] as const;
 export const NAV_MORE = ['gallery', 'products', 'faq'] as const;
 export const NAV_TAIL = ['contact'] as const;
 export const NAV_ALL = [...NAV_TOP, ...NAV_MORE, ...NAV_TAIL] as const;

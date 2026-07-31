@@ -17,6 +17,16 @@ export default defineConfig({
   // /en with no redirect), instead of `en/index.html` (which the host 301s to /en/).
   build: { format: 'file' },
 
+  // The services and prices pages merged into the treatments section. Static
+  // output turns these into meta-refresh pages, which is what GitHub Pages can
+  // serve; the price table lives at /tratamientos#precios.
+  redirects: {
+    '/servicios': '/tratamientos',
+    '/precios': '/tratamientos#precios',
+    '/en/services': '/en/treatments',
+    '/en/prices': '/en/treatments#precios',
+  },
+
   i18n: {
     defaultLocale: 'es',
     locales: ['es', 'en'],
