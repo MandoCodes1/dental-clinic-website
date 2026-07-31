@@ -1,0 +1,66 @@
+---
+import { Icon } from 'astro-icon/components';
+import Map from '~/components/Map.astro';
+import { content } from '~/content/site';
+import { CLINIC } from '~/config';
+import { ROUTES, type Lang } from '~/i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = content[lang];
+const v = t.homeVisit;
+const c = t.contact;
+---
+
+<section class="section bg-white">
+  <div class="container-page grid items-start gap-10 lg:grid-cols-2">
+    <div>
+      <p class="eyebrow">{v.eyebrow}</p>
+      <h2 class="mt-2 font-heading text-3xl text-brand-deep sm:text-4xl">{v.title}</h2>
+
+      <div class="mt-8 space-y-5">
+        <div class="card flex items-start gap-4">
+          <span
+            class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-blue/10 text-brand-blue"
+          >
+            <Icon name="tabler:map-pin" class="h-6 w-6" />
+          </span>
+          <div>
+            <p class="font-heading text-lg text-brand-deep">{c.locationTitle}</p>
+            <p class="mt-1 text-sm text-ink/70">{CLINIC.addressLine}, {CLINIC.addressCity}</p>
+            <a
+              href={CLINIC.mapsPlaceUrl}
+              target="_blank"
+              rel="noopener"
+              class="mt-1 inline-block text-sm font-medium text-brand-blue hover:underline"
+              data-umami-event="directions"
+              data-umami-event-location="home"
+            >
+              {c.directions}
+            </a>
+          </div>
+        </div>
+
+        <div class="card flex items-start gap-4">
+          <span
+            class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-blue/10 text-brand-blue"
+          >
+            <Icon name="tabler:clock-hour-4" class="h-6 w-6" />
+          </span>
+          <div>
+            <p class="font-heading text-lg text-brand-deep">{c.hoursTitle}</p>
+            <p class="mt-1 text-sm leading-relaxed text-ink/70">{c.hoursBody}</p>
+          </div>
+        </div>
+      </div>
+
+      <a href={ROUTES.contact[lang]} class="mt-6 inline-block font-medium text-brand-blue hover:underline">
+        {v.contactLink}
+      </a>
+    </div>
+
+    <div><Map lang={lang} /></div>
+  </div>
+</section>

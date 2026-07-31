@@ -7,6 +7,7 @@ import Values from '~/components/Values.astro';
 import FeaturedReviews from '~/components/FeaturedReviews.astro';
 import HomeFaq from '~/components/HomeFaq.astro';
 import ContactCTA from '~/components/ContactCTA.astro';
+import HomeVisit from '~/components/HomeVisit.astro';
 import { content } from '~/content/site';
 import type { Lang } from '~/i18n';
 
@@ -34,4 +35,5 @@ const h = content[lang].treatmentsPage.home;
   <FeaturedReviews lang={lang} />
   <HomeFaq lang={lang} />
   <ContactCTA lang={lang} page="home" />
+  <HomeVisit lang={lang} />
 </BaseLayout>

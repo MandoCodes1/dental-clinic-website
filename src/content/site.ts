@@ -170,6 +170,7 @@ export interface SiteCopy {
     hoursBody: string;
     directions: string;
   };
+  homeVisit: { eyebrow: string; title: string; contactLink: string };
   contactCta: {
     button: string;
     defaultMessage: string;
@@ -774,6 +775,11 @@ const es: SiteCopy = {
     hoursBody:
       'Atiendo con cita previa. Paso consulta en Málaga en periodos concretos del año; escríbeme por WhatsApp y buscamos juntos el mejor momento para verte.',
     directions: 'Cómo llegar',
+  },
+  homeVisit: {
+    eyebrow: 'La clínica',
+    title: 'Dónde encontrarme',
+    contactLink: 'Ver todas las formas de contacto',
   },
   contactCta: {
     button: 'Escribir por WhatsApp',
@@ -1424,6 +1430,11 @@ const en: SiteCopy = {
     hoursBody:
       'I see patients by appointment. I hold consultations in Málaga during specific periods of the year; message me on WhatsApp and we’ll find the best time to see you.',
     directions: 'Get directions',
+  },
+  homeVisit: {
+    eyebrow: 'The clinic',
+    title: 'Where to find me',
+    contactLink: 'See all the ways to reach me',
   },
   contactCta: {
     button: 'Message on WhatsApp',
