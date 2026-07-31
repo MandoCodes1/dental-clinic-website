@@ -286,7 +286,7 @@ const es: SiteCopy = {
   },
   values: {
     eyebrow: 'Por qué sus pacientes la recomiendan',
-    title: 'Cuidado de verdad, no de cadena',
+    title: 'Cuidado de verdad, no de franquicia',
     items: [
       {
         title: 'Te atiende siempre la Dra. Vila',
@@ -954,7 +954,7 @@ const en: SiteCopy = {
   },
   values: {
     eyebrow: 'Why her patients recommend her',
-    title: 'Real care, not a chain',
+    title: 'Real care, not a franchise',
     items: [
       {
         title: 'Always treated by Dr. Vila herself',
