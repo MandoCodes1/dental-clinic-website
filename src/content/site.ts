@@ -204,7 +204,7 @@ const es: SiteCopy = {
     home: {
       title: 'Dra. Eugenia Vila - Clínica Dental en El Palo, Málaga',
       description:
-        'Clínica dental en El Palo, Málaga. Más de 30 años de experiencia en implantes, cirugía oral, alineadores y estética dental. Trato cercano y precios justos: te atiende siempre la Dra. Eugenia Vila.',
+        'Implantes dentales, cirugía oral, alineadores y odontología estética en El Palo, Málaga. Tratamientos de calidad con materiales de primera, siempre con la Dra. Eugenia Vila en persona.',
     },
     about: {
       title: 'Sobre mí - Dra. Eugenia Vila',
@@ -247,7 +247,7 @@ const es: SiteCopy = {
     eyebrow: 'Clínica dental en El Palo, Málaga',
     title: 'Tu sonrisa, en las mejores manos',
     subtitle:
-      'Más de 30 años cuidando sonrisas en Málaga, con un trato cercano y honesto. Te atiende siempre la Dra. Eugenia Vila en persona, sin prisas y con precios justos.',
+      'Más de 30 años cuidando sonrisas en Málaga, con un trato cercano y honesto. Te atiende siempre la Dra. Eugenia Vila en persona, sin prisas y con materiales de primera calidad.',
     ctaBook: 'Pedir cita por WhatsApp',
     ctaReviews: 'Ver reseñas',
     availability: 'Con cita previa · Te responde la propia doctora',
@@ -270,8 +270,9 @@ const es: SiteCopy = {
         description: 'Una sola dentista que te conoce y te sigue en cada visita, sin rotación de personal.',
       },
       {
-        title: 'Precios justos y claros',
-        description: 'Tratamientos de calidad a precios honestos. Te explico el coste antes de empezar, sin sorpresas.',
+        title: 'Un plan claro, por escrito',
+        description:
+          'Antes de empezar sabes exactamente qué incluye tu tratamiento, paso a paso y sin sorpresas. Todo queda recogido por escrito.',
       },
       {
         title: 'Materiales de primera',
@@ -855,7 +856,7 @@ const en: SiteCopy = {
     home: {
       title: 'Dr. Eugenia Vila - Dental Clinic in El Palo, Málaga',
       description:
-        'Dental clinic in El Palo, Málaga. Over 30 years of experience in implants, oral surgery, aligners and cosmetic dentistry. Warm, honest care at fair prices, always with Dr. Eugenia Vila herself.',
+        'Dental clinic in El Palo, Málaga. Over 30 years of experience in implants, oral surgery, aligners and cosmetic dentistry. Warm, personal care and top-quality materials, always with Dr. Eugenia Vila herself.',
     },
     about: {
       title: 'About - Dr. Eugenia Vila',
@@ -898,7 +899,7 @@ const en: SiteCopy = {
     eyebrow: 'Dental clinic in El Palo, Málaga',
     title: 'Your smile, in the best hands',
     subtitle:
-      'Over 30 years caring for smiles in Málaga, with warm, honest treatment. You are always seen personally by Dr. Eugenia Vila, unhurried and at fair prices.',
+      'Over 30 years caring for smiles in Málaga, with warm, honest treatment. You are always seen personally by Dr. Eugenia Vila, with unhurried visits and top-quality materials.',
     ctaBook: 'Book on WhatsApp',
     ctaReviews: 'Read reviews',
     availability: 'By appointment · The doctor replies to you herself',
@@ -921,8 +922,9 @@ const en: SiteCopy = {
         description: 'One dentist who knows you and follows your care at every visit, with no staff rotation.',
       },
       {
-        title: 'Fair, clear prices',
-        description: 'Quality treatment at honest prices. I explain the cost before we start, with no surprises.',
+        title: 'A clear plan, in writing',
+        description:
+          'Before we start you know exactly what your treatment includes, step by step and with no surprises. Everything is set out in writing.',
       },
       {
         title: 'Premium materials',

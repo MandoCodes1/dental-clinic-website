@@ -10,9 +10,9 @@ interface Props {
 const { lang } = Astro.props;
 const t = content[lang];
 
-// The highest-intent questions: implant price, why the prices are low, the
-// first visit, and how to book around her calendar.
-const items = getFaqItems(lang, ['implantCost', 'whyAffordable', 'firstVisit', 'booking']);
+// The trust-building questions: the materials used, the guarantee, what the
+// first visit is like, and how to book around her calendar.
+const items = getFaqItems(lang, ['materials', 'guarantee', 'firstVisit', 'booking']);
 ---
 
 {/* No bottom padding: the CTA below is cream too, so it would only stack with its own. */}
