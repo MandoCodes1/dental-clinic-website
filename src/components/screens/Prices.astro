@@ -4,7 +4,7 @@ import BaseLayout from '~/layouts/BaseLayout.astro';
 import PageHeader from '~/components/PageHeader.astro';
 import FaqList from '~/components/FaqList.astro';
 import ContactCTA from '~/components/ContactCTA.astro';
-import { content, type FaqItem } from '~/content/site';
+import { content, getFaqItems } from '~/content/site';
 import { PRICES } from '~/config';
 import { formatPrice } from '~/utils/prices';
 import { ROUTES, type Lang } from '~/i18n';
@@ -24,10 +24,9 @@ const offers = p.groups.flatMap((g) =>
 // The only money questions this page does not already answer: the guarantee and how
 // payment works. Everything else would just be noise here, since the table notes carry
 // what each price includes and the quality section covers why the prices are low, the
-// materials, the closed written quote and where the 3D scan is taken. Indices into
-// faqPage.items, which SiteCopy keeps parallel across locales; the rest of the list
-// stays on the FAQ page, linked below.
-const faqItems = [3, 9].map((i) => t.faqPage.items[i]).filter((item): item is FaqItem => item !== undefined);
+// materials, the closed written quote and where the 3D scan is taken. The rest of the
+// list stays on the FAQ page, linked below.
+const faqItems = getFaqItems(lang, ['guarantee', 'payment']);
 ---
 
 <BaseLayout lang={lang} page="prices" offers={offers}>

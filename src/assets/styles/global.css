@@ -17,6 +17,14 @@
     @apply bg-cream font-sans text-ink antialiased;
   }
 
+  /* Keep the page clear of the fixed contact bar on phones (bar is h-14 = 3.5rem
+     plus the iOS home-indicator inset; hidden from sm up). */
+  @media (max-width: 639px) {
+    body {
+      padding-bottom: calc(3.5rem + env(safe-area-inset-bottom));
+    }
+  }
+
   h1,
   h2,
   h3,

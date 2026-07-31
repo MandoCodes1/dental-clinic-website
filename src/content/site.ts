@@ -49,7 +49,24 @@ export interface PriceGroup {
   items: PriceItem[];
   note?: string;
 }
+// Stable ids for the FAQ entries, so pages can feature a subset without relying
+// on array positions. Both locales carry the same ids; getFaqItems resolves them.
+export const FAQ_IDS = [
+  'implantCost',
+  'whyAffordable',
+  'materials',
+  'guarantee',
+  'booking',
+  'firstVisit',
+  'cbct',
+  'whitening',
+  'aligners',
+  'payment',
+] as const;
+export type FaqId = (typeof FAQ_IDS)[number];
+
 export interface FaqItem {
+  id: FaqId;
   question: string;
   answer: string;
 }
@@ -115,7 +132,7 @@ export interface SiteCopy {
     personal: string;
     cvCta: string;
   };
-  reviewsPage: { lead: string; countSuffix: string; malagaTitle: string; londonTitle: string; cta: string };
+  reviewsPage: { lead: string; basedOn: string; malagaTitle: string; londonTitle: string; cta: string };
   faqPage: { title: string; lead: string; items: FaqItem[] };
   productsPage: {
     eyebrow: string;
@@ -158,6 +175,7 @@ export interface SiteCopy {
     products: { title: string; body: string; message: string };
     faq: { title: string; body: string; message: string };
   };
+  stickyBar: { call: string; whatsapp: string };
   footer: { tagline: string; servicesTitle: string; navTitle: string; contactTitle: string; rights: string };
   common: { readMore: string; readLess: string; viewReview: string; whatsapp: string; backHome: string };
   langSuggest: { message: string; cta: string; dismiss: string };
@@ -238,7 +256,7 @@ const es: SiteCopy = {
     title: 'Una trayectoria que habla por sí sola',
     yearsLabel: 'Años de experiencia',
     patientsLabel: 'Pacientes atendidos',
-    reviewsLabel: 'Reseñas · nota media 5.0',
+    reviewsLabel: 'Nota media · basada en {count} reseñas',
     awardValue: '2024',
     awardLabel: 'Dentista del Año',
     note: 'Galardonada Dentista del Año 2024 (Dental Art Implant Clinics, Londres) · Doctora en Medicina y Licenciada en Odontología · Registro GDC 287705 · Nota media 5.0 en Google y Trustpilot',
@@ -521,7 +539,7 @@ const es: SiteCopy = {
   },
   reviewsPage: {
     lead: 'Reseñas reales de pacientes, sin filtros. Estas son algunas de las personas que han confiado en la Dra. Vila.',
-    countSuffix: 'reseñas en Google y Trustpilot',
+    basedOn: 'basada en {count} reseñas en Google y Trustpilot',
     malagaTitle: 'En Málaga',
     londonTitle: 'En Londres, donde la Dra. Vila también ejerce',
     cta: 'Deja tu reseña en Google',
@@ -531,48 +549,58 @@ const es: SiteCopy = {
     lead: 'Las dudas que más me plantean los pacientes, respondidas con claridad. Si no encuentras la tuya, escríbeme y te contesto yo misma.',
     items: [
       {
+        id: 'implantCost',
         question: '¿Cuánto cuesta un implante dental y qué incluye el precio?',
         answer: `El implante con su corona de porcelana cuesta desde ${formatPrice(PRICES.implantCrown, 'es')}, con la corona incluida. Si tu caso necesita un injerto de hueso o una elevación de seno, se añade al presupuesto cerrado que recibes por escrito antes de empezar: el precio acordado es el que pagas.`,
       },
       {
+        id: 'whyAffordable',
         question: '¿Por qué tus precios son más bajos que la media si no usas materiales baratos?',
         answer:
           'Porque esta es una consulta pequeña y personal, sin los gastos de estructura de una gran clínica ni comisiones comerciales. Trabajo con los mismos materiales y protocolos que uso en la clínica de implantes de Londres donde ejerzo; lo que recorto son gastos, no calidad.',
       },
       {
+        id: 'materials',
         question: '¿Qué materiales utilizas?',
         answer:
           'Solo materiales de primeras marcas, los mismos que uso en mi consulta de Londres y los que usaría para mi propia familia. En tu presupuesto por escrito verás exactamente qué incluye tu tratamiento, y en la consulta te enseño encantada qué sistema y qué laboratorio hay detrás de cada trabajo.',
       },
       {
+        id: 'guarantee',
         question: '¿Los tratamientos tienen garantía?',
         answer:
           'Todo tratamiento va con un plan y un presupuesto cerrado por escrito, y el seguimiento posterior forma parte del tratamiento. Las condiciones concretas de garantía te las explico en la primera valoración, según tu caso.',
       },
       {
+        id: 'booking',
         question: '¿Cómo pido cita si la doctora no está todo el año en Málaga?',
         answer:
           'Paso consulta en Málaga en periodos concretos del año. Escríbeme por WhatsApp, cuéntame tu caso y buscamos juntos la mejor fecha; te respondo yo misma, no una centralita.',
       },
       {
+        id: 'firstVisit',
         question: '¿Cómo es la primera visita?',
         answer:
           'En la primera valoración te exploro, escucho qué necesitas y te explico las opciones. Después recibes un presupuesto cerrado y por escrito, sin compromiso: sin letra pequeña y sin sorpresas a mitad de tratamiento.',
       },
       {
+        id: 'cbct',
         question: '¿Necesito un TAC (CBCT) para ponerme un implante? ¿Dónde se hace?',
         answer:
           'Sí, para colocar implantes hace falta un TAC 3D (CBCT). Se realiza en un centro radiológico externo y lo leo y valoro yo personalmente, como hago a diario en Londres; esa valoración está incluida en tu plan de tratamiento.',
       },
       {
+        id: 'whitening',
         question: '¿Qué incluye el blanqueamiento dental?',
         answer: `El blanqueamiento cuesta desde ${formatPrice(PRICES.whitening, 'es')} e incluye las férulas a medida superior e inferior y las jeringas de blanqueamiento. Te explico cómo usarlo en casa y seguimos el resultado juntos.`,
       },
       {
+        id: 'aligners',
         question: '¿Cómo funcionan los alineadores y cuánto cuestan?',
         answer: `Trabajo con alineadores Ordoline. El tratamiento de una arcada cuesta desde ${formatPrice(PRICES.aligners, 'es')}; el precio final depende de la complejidad del caso y de si necesitas una o las dos arcadas. Tras la valoración te doy la cifra cerrada.`,
       },
       {
+        id: 'payment',
         question: '¿Cómo se paga el tratamiento?',
         answer:
           'El precio se acuerda por escrito antes de empezar y no cambia por el camino. Las formas de pago las vemos en la consulta, según el tratamiento y tu caso.',
@@ -658,6 +686,10 @@ const es: SiteCopy = {
       body: 'Escríbeme por WhatsApp y te respondo yo misma, sin compromiso.',
       message: 'Hola, tengo una duda que no aparece en las preguntas frecuentes.',
     },
+  },
+  stickyBar: {
+    call: 'Llamar',
+    whatsapp: 'WhatsApp',
   },
   footer: {
     tagline: 'Clínica dental en El Palo, Málaga. Cuidado cercano y honesto desde 1994.',
@@ -755,7 +787,7 @@ const en: SiteCopy = {
     title: 'A career that speaks for itself',
     yearsLabel: 'Years of experience',
     patientsLabel: 'Patients treated',
-    reviewsLabel: 'Reviews · 5.0 average',
+    reviewsLabel: 'Average rating · based on {count} reviews',
     awardValue: '2024',
     awardLabel: 'Dentist of the Year',
     note: 'Awarded Dentist of the Year 2024 (Dental Art Implant Clinics, London) · Doctor of Medicine and Licensed Dentist · GDC reg. 287705 · 5.0 average rating on Google and Trustpilot',
@@ -1037,7 +1069,7 @@ const en: SiteCopy = {
   },
   reviewsPage: {
     lead: 'Real patient reviews, unfiltered. Here are some of the people who have trusted Dr. Vila with their care.',
-    countSuffix: 'reviews on Google and Trustpilot',
+    basedOn: 'based on {count} reviews on Google and Trustpilot',
     malagaTitle: 'In Málaga',
     londonTitle: 'In London, where Dr. Vila also practises',
     cta: 'Leave your review on Google',
@@ -1047,48 +1079,58 @@ const en: SiteCopy = {
     lead: 'The questions my patients ask most, answered clearly. If yours is not here, message me and I will answer it myself.',
     items: [
       {
+        id: 'implantCost',
         question: 'How much does a dental implant cost and what does the price include?',
         answer: `An implant with its porcelain crown costs from ${formatPrice(PRICES.implantCrown, 'en')}, crown included. If your case needs a bone graft or a sinus lift, it is added to the fixed quote you receive in writing before we start: the price we agree is the price you pay.`,
       },
       {
+        id: 'whyAffordable',
         question: 'Why are your prices below average if you do not use cheap materials?',
         answer:
           'Because this is a small personal practice, without the overheads of a big clinic or sales commissions. I work with the same materials and protocols I use at the London implant clinic where I practise; what I cut is overhead, not quality.',
       },
       {
+        id: 'materials',
         question: 'Which materials do you use?',
         answer:
           'Only leading-brand materials, the same ones I use in my London practice and the ones I would choose for my own family. Your written quote shows exactly what your treatment includes, and at the clinic I will gladly show you which system and which laboratory are behind each piece of work.',
       },
       {
+        id: 'guarantee',
         question: 'Do treatments come with a guarantee?',
         answer:
           'Every treatment comes with a written plan and a fixed quote, and follow-up care is part of the treatment. I explain the specific guarantee terms at your first assessment, based on your case.',
       },
       {
+        id: 'booking',
         question: 'How do I book if the doctor is not in Málaga all year?',
         answer:
           'I hold consultations in Málaga during specific periods of the year. Message me on WhatsApp, tell me about your case and we will find the best date together; I reply personally, not a call centre.',
       },
       {
+        id: 'firstVisit',
         question: 'What happens at the first visit?',
         answer:
           'At the first assessment I examine you, listen to what you need and explain your options. You then receive a fixed, written quote with no obligation: no small print and no surprises mid-treatment.',
       },
       {
+        id: 'cbct',
         question: 'Do I need a CBCT scan for an implant? Where is it taken?',
         answer:
           'Yes, implant placement requires a 3D scan (CBCT). It is taken at an external radiology centre and I read and assess it personally, as I do daily in London; that assessment is included in your treatment plan.',
       },
       {
+        id: 'whitening',
         question: 'What does teeth whitening include?',
         answer: `Whitening costs from ${formatPrice(PRICES.whitening, 'en')} and includes custom upper and lower trays and the whitening gel syringes. I explain how to use it at home and we track the result together.`,
       },
       {
+        id: 'aligners',
         question: 'How do aligners work and what do they cost?',
         answer: `I work with Ordoline aligners. Treatment for one arch costs from ${formatPrice(PRICES.aligners, 'en')}; the final price depends on case complexity and on whether you need one or both arches. After your assessment I give you the fixed figure.`,
       },
       {
+        id: 'payment',
         question: 'How do I pay for treatment?',
         answer:
           'The price is agreed in writing before we start and does not change along the way. We discuss payment options at the clinic, depending on the treatment and your case.',
@@ -1174,6 +1216,10 @@ const en: SiteCopy = {
       message: 'Hello, I have a question that is not covered in the FAQ.',
     },
   },
+  stickyBar: {
+    call: 'Call',
+    whatsapp: 'WhatsApp',
+  },
   footer: {
     tagline: 'Dental clinic in El Palo, Málaga. Warm, honest care since 1994.',
     servicesTitle: 'Services',
@@ -1196,3 +1242,10 @@ const en: SiteCopy = {
 };
 
 export const content: Record<Lang, SiteCopy> = { es, en };
+
+// Resolve FAQ entries by id, preserving the order of `ids`. Unknown ids are
+// dropped, so a page can never render an undefined item.
+export function getFaqItems(lang: Lang, ids: readonly FaqId[]): FaqItem[] {
+  const items = content[lang].faqPage.items;
+  return ids.map((id) => items.find((item) => item.id === id)).filter((item): item is FaqItem => item !== undefined);
+}
