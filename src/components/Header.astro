@@ -15,6 +15,7 @@ const { lang, page } = Astro.props;
 const t = content[lang];
 const homeHref = ROUTES.home[lang];
 const toItem = (key: NavKey) => ({ label: t.nav[key], href: ROUTES[key][lang], active: key === page });
+const home = toItem('home');
 const about = toItem('about');
 const reviews = toItem('reviews');
 const contact = toItem('contact');
@@ -37,6 +38,17 @@ const treatmentLinks = TREATMENTS.map((tr) => ({
     </a>
 
     <nav class="hidden items-center gap-5 lg:flex xl:gap-6" aria-label={t.nav.home}>
+      <a
+        href={home.href}
+        class:list={[
+          'text-sm font-medium transition hover:text-brand-blue',
+          home.active ? 'text-brand-blue' : 'text-ink/80',
+        ]}
+        aria-current={home.active ? 'page' : undefined}
+      >
+        {home.label}
+      </a>
+
       <a
         href={about.href}
         class:list={[
@@ -184,6 +196,13 @@ const treatmentLinks = TREATMENTS.map((tr) => ({
   }
   <div id="mobile-menu" class="hidden border-t border-brand-blue/10 bg-cream lg:hidden">
     <nav class="container-page flex flex-col py-3" aria-label={t.nav.home}>
+      <a
+        href={home.href}
+        class:list={['rounded-md px-2 py-2.5 text-base font-medium', home.active ? 'text-brand-blue' : 'text-ink/80']}
+        aria-current={home.active ? 'page' : undefined}
+      >
+        {home.label}
+      </a>
       <a
         href={about.href}
         class:list={['rounded-md px-2 py-2.5 text-base font-medium', about.active ? 'text-brand-blue' : 'text-ink/80']}

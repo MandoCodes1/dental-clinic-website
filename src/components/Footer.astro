@@ -38,7 +38,7 @@ const year = new Date().getFullYear();
       <h2 class="text-sm font-semibold uppercase tracking-wider text-white">{t.footer.navTitle}</h2>
       <ul class="mt-3 space-y-2 text-sm">
         {
-          (['home', ...NAV_ALL] as const).map((key) => (
+          NAV_ALL.map((key) => (
             <li>
               <a class="text-cream/80 transition hover:text-white" href={ROUTES[key][lang]}>
                 {t.nav[key]}
