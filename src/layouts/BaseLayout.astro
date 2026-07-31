@@ -6,6 +6,8 @@ import { ClientRouter } from 'astro:transitions';
 
 import Header from '~/components/Header.astro';
 import Footer from '~/components/Footer.astro';
+import StickyContactBar from '~/components/StickyContactBar.astro';
+import WhatsAppFab from '~/components/WhatsAppFab.astro';
 import LangSuggestBanner from '~/components/LangSuggestBanner.astro';
 import StructuredData from '~/components/StructuredData.astro';
 import { content, type FaqItem } from '~/content/site';
@@ -52,7 +54,8 @@ const alternates = [
 <html lang={lang}>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {/* viewport-fit=cover lets the sticky contact bar pad for the iOS home indicator. */}
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>{pageTitle}</title>
     <meta name="description" content={pageDesc} />
     <link rel="canonical" href={canonical} />
@@ -111,5 +114,7 @@ const alternates = [
     <Header lang={lang} page={page} />
     <main id="main"><slot /></main>
     <Footer lang={lang} />
+    <StickyContactBar lang={lang} />
+    <WhatsAppFab lang={lang} />
   </body>
 </html>

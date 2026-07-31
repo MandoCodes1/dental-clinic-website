@@ -24,12 +24,14 @@ const total = getAllReviews().length;
   <section class="section bg-cream">
     <div class="container-page">
       <div class="flex flex-wrap items-center justify-between gap-4 rounded-2xl bg-white p-5 shadow-sm">
-        <div class="flex items-center gap-2 text-brand-deep">
-          <span class="flex text-brand-sky">
-            {Array.from({ length: 5 }).map(() => <Icon name="tabler:star-filled" class="h-5 w-5" />)}
-          </span>
-          <span class="font-semibold">5.0</span>
-          <span class="text-sm text-ink/70">· {total} {r.countSuffix}</span>
+        <div class="text-brand-deep">
+          <div class="flex items-center gap-3">
+            <span class="font-heading text-3xl font-semibold leading-none">5.0/5.0</span>
+            <span class="flex text-brand-sky">
+              {Array.from({ length: 5 }).map(() => <Icon name="tabler:star-filled" class="h-5 w-5" />)}
+            </span>
+          </div>
+          <p class="mt-1.5 text-sm text-ink/70">{r.basedOn.replace('{count}', String(total))}</p>
         </div>
         <a
           href={CLINIC.reviewUrl}

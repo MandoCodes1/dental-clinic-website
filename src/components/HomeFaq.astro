@@ -1,7 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
 import FaqList from '~/components/FaqList.astro';
-import { content } from '~/content/site';
+import { content, getFaqItems } from '~/content/site';
 import { ROUTES, type Lang } from '~/i18n';
 
 interface Props {
@@ -10,11 +10,9 @@ interface Props {
 const { lang } = Astro.props;
 const t = content[lang];
 
-// The highest-intent questions, as indices into faqPage.items: implant price,
-// why the prices are low, the first visit, and how to book around her calendar.
-// SiteCopy keeps both locales' arrays parallel, so the indices hold for each.
-const FEATURED = [0, 1, 5, 4];
-const items = FEATURED.map((i) => t.faqPage.items[i]).filter((item) => item !== undefined);
+// The highest-intent questions: implant price, why the prices are low, the
+// first visit, and how to book around her calendar.
+const items = getFaqItems(lang, ['implantCost', 'whyAffordable', 'firstVisit', 'booking']);
 ---
 
 {/* No bottom padding: the CTA below is cream too, so it would only stack with its own. */}

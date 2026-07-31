@@ -1,0 +1,44 @@
+---
+import { Icon } from 'astro-icon/components';
+import { content } from '~/content/site';
+import { CLINIC, waLink } from '~/config';
+import type { Lang } from '~/i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = content[lang];
+---
+
+{
+  /* Phone-only bottom bar: many patients scroll without ever opening the nav, so
+    calling and WhatsApp stay one tap away. Above sm the WhatsApp FAB takes over.
+    Static markup, so there is nothing to re-init across view transitions. The
+    matching body padding lives in global.css. */
+}
+<div
+  class="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 border-t border-brand-blue/10 bg-cream/95 backdrop-blur sm:hidden"
+  style="padding-bottom: env(safe-area-inset-bottom)"
+>
+  <a
+    href={`tel:${CLINIC.phoneE164}`}
+    class="flex h-14 items-center justify-center gap-2 text-base font-semibold text-brand-deep"
+    data-umami-event="phone"
+    data-umami-event-location="sticky-bar"
+  >
+    <Icon name="tabler:phone" class="h-5 w-5" />
+    {t.stickyBar.call}
+  </a>
+  <a
+    href={waLink(t.contactCta.defaultMessage)}
+    target="_blank"
+    rel="noopener"
+    class="flex h-14 items-center justify-center gap-2 bg-whatsapp text-base font-semibold text-white"
+    data-umami-event="whatsapp"
+    data-umami-event-location="sticky-bar"
+  >
+    <Icon name="tabler:brand-whatsapp" class="h-5 w-5" />
+    {t.stickyBar.whatsapp}
+  </a>
+</div>
