@@ -6,8 +6,6 @@ import TreatmentCards from '~/components/TreatmentCards.astro';
 import FaqList from '~/components/FaqList.astro';
 import ContactCTA from '~/components/ContactCTA.astro';
 import { content, getFaqItems } from '~/content/site';
-import { PRICES, TREATMENTS } from '~/config';
-import { formatPrice } from '~/utils/prices';
 import { ROUTES, type Lang } from '~/i18n';
 
 interface Props {
@@ -17,17 +15,11 @@ const { lang } = Astro.props;
 const t = content[lang];
 const p = t.treatmentsPage;
 
-// "Desde" figures for the OfferCatalog structured data. This page carries the
-// full price list, so it is the only one that emits offers.
-const offers = TREATMENTS.flatMap((tr) =>
-  t.treatments[tr.id].priceGroup.items.filter((i) => i.id).map((i) => ({ name: i.label, price: PRICES[i.id!] }))
-);
-
-// The two money questions the table notes do not already answer.
+// The two money questions the per-treatment tables do not already answer.
 const faqItems = getFaqItems(lang, ['guarantee', 'payment']);
 ---
 
-<BaseLayout lang={lang} page="treatments" offers={offers}>
+<BaseLayout lang={lang} page="treatments">
   <PageHeader title={p.title} lead={p.lead} />
 
   <section class="section bg-white">
@@ -37,56 +29,9 @@ const faqItems = getFaqItems(lang, ['guarantee', 'payment']);
   </section>
 
   {/* No bottom padding: the body is cream too, so it would only stack with the CTA's own. */}
-  <section id="precios" class="section scroll-mt-24 bg-cream pb-0">
+  <section id="calidad" class="section scroll-mt-24 bg-cream pb-0">
     <div class="container-page">
-      <h2 class="mx-auto max-w-3xl font-heading text-3xl text-brand-deep">{p.pricesTitle}</h2>
-
-      <div class="card mx-auto mt-6 flex max-w-3xl items-start gap-4">
-        <Icon name="tabler:info-circle" class="h-6 w-6 shrink-0 text-brand-blue" />
-        <p class="text-sm leading-relaxed text-ink/70">{p.disclaimer}</p>
-      </div>
-
-      <div class="mx-auto mt-8 max-w-3xl space-y-6">
-        {
-          TREATMENTS.map((tr) => {
-            const group = t.treatments[tr.id].priceGroup;
-            return (
-              <div class="card">
-                <h3 class="font-heading text-2xl text-brand-deep">{group.title}</h3>
-                <dl class="mt-2 divide-y divide-brand-blue/10">
-                  {group.items.map((item) => (
-                    <div class="flex items-baseline justify-between gap-4 py-3 sm:gap-6">
-                      <dt>
-                        <span class="font-medium text-ink">{item.label}</span>
-                        {item.note && <span class="mt-0.5 block text-sm text-ink/60">{item.note}</span>}
-                      </dt>
-                      <dd class="text-right">
-                        {item.id ? (
-                          <span class="whitespace-nowrap">
-                            <span class="text-sm text-ink/60">{p.from}</span>
-                            <span class="ml-1 font-heading text-xl font-semibold text-brand-deep">
-                              {formatPrice(PRICES[item.id], lang)}
-                            </span>
-                          </span>
-                        ) : (
-                          <span class="font-heading text-lg font-semibold text-brand-deep">{p.customQuote}</span>
-                        )}
-                      </dd>
-                    </div>
-                  ))}
-                </dl>
-                {group.note && (
-                  <p class="mt-2 border-t border-brand-blue/10 pt-4 text-sm leading-relaxed text-ink/60">
-                    {group.note}
-                  </p>
-                )}
-              </div>
-            );
-          })
-        }
-      </div>
-
-      <div id="calidad" class="card mx-auto mt-8 max-w-3xl scroll-mt-24">
+      <div class="card mx-auto max-w-3xl">
         <h2 class="font-heading text-2xl text-brand-deep">{p.quality.title}</h2>
         <p class="mt-3 leading-relaxed text-ink/75">{p.quality.lead}</p>
         <ul class="mt-6 grid gap-x-8 gap-y-5 sm:grid-cols-2">

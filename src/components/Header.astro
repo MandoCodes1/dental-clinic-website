@@ -195,70 +195,89 @@ const treatmentLinks = TREATMENTS.map((tr) => ({
       behind an extra tap for less tech-confident visitors. */
   }
   <div id="mobile-menu" class="hidden border-t border-brand-blue/10 bg-cream lg:hidden">
-    <nav class="container-page flex flex-col py-3" aria-label={t.nav.home}>
+    <nav class="container-page flex flex-col divide-y divide-brand-blue/10 py-2" aria-label={t.nav.home}>
       <a
         href={home.href}
-        class:list={['rounded-md px-2 py-2.5 text-base font-medium', home.active ? 'text-brand-blue' : 'text-ink/80']}
+        class:list={['px-2 py-3 text-base font-medium', home.active ? 'text-brand-blue' : 'text-ink/80']}
         aria-current={home.active ? 'page' : undefined}
       >
         {home.label}
       </a>
       <a
         href={about.href}
-        class:list={['rounded-md px-2 py-2.5 text-base font-medium', about.active ? 'text-brand-blue' : 'text-ink/80']}
+        class:list={['px-2 py-3 text-base font-medium', about.active ? 'text-brand-blue' : 'text-ink/80']}
         aria-current={about.active ? 'page' : undefined}
       >
         {about.label}
       </a>
-      <a
-        href={ROUTES.treatments[lang]}
-        class:list={[
-          'rounded-md px-2 py-2.5 text-base font-medium',
-          page === 'treatments' ? 'text-brand-blue' : 'text-ink/80',
-        ]}
-        aria-current={page === 'treatments' ? 'page' : undefined}
-      >
-        {t.nav.treatments}
-      </a>
-      {
-        treatmentLinks.map((item) => (
+      <div>
+        <button
+          type="button"
+          data-accordion-toggle
+          aria-controls="mobile-treatments"
+          aria-expanded={treatmentsActive ? 'true' : 'false'}
+          class:list={[
+            'group flex w-full items-center justify-between px-2 py-3 text-left text-base font-medium',
+            treatmentsActive ? 'text-brand-blue' : 'text-ink/80',
+          ]}
+        >
+          {t.nav.treatments}
+          <Icon
+            name="tabler:chevron-down"
+            class="h-5 w-5 shrink-0 transition-transform group-aria-expanded:rotate-180"
+          />
+        </button>
+        <div id="mobile-treatments" class:list={['pb-2', !treatmentsActive && 'hidden']}>
           <a
-            href={item.href}
+            href={ROUTES.treatments[lang]}
             class:list={[
-              'rounded-md py-2 pl-6 pr-2 text-sm font-medium',
-              item.active ? 'text-brand-blue' : 'text-ink/70',
+              'block py-2.5 pl-6 pr-2 text-base font-semibold',
+              page === 'treatments' ? 'text-brand-blue' : 'text-ink/80',
             ]}
-            aria-current={item.active ? 'page' : undefined}
+            aria-current={page === 'treatments' ? 'page' : undefined}
           >
-            {item.label}
+            {t.treatmentsPage.allLabel}
           </a>
-        ))
-      }
+          {
+            treatmentLinks.map((item) => (
+              <a
+                href={item.href}
+                class:list={[
+                  'block py-2.5 pl-6 pr-2 text-base font-medium',
+                  item.active ? 'text-brand-blue' : 'text-ink/70',
+                ]}
+                aria-current={item.active ? 'page' : undefined}
+              >
+                {item.label}
+              </a>
+            ))
+          }
+        </div>
+      </div>
       {
         [reviews, ...navMore, contact].map((item) => (
           <a
             href={item.href}
-            class:list={[
-              'rounded-md px-2 py-2.5 text-base font-medium',
-              item.active ? 'text-brand-blue' : 'text-ink/80',
-            ]}
+            class:list={['px-2 py-3 text-base font-medium', item.active ? 'text-brand-blue' : 'text-ink/80']}
             aria-current={item.active ? 'page' : undefined}
           >
             {item.label}
           </a>
         ))
       }
-      <a
-        href={waLink(t.contactCta.defaultMessage)}
-        target="_blank"
-        rel="noopener"
-        class="btn-whatsapp mt-2"
-        data-umami-event="whatsapp"
-        data-umami-event-location="header-mobile"
-      >
-        <Icon name="tabler:brand-whatsapp" class="h-6 w-6" />
-        {t.nav.book}
-      </a>
+      <div class="pt-3 pb-1">
+        <a
+          href={waLink(t.contactCta.defaultMessage)}
+          target="_blank"
+          rel="noopener"
+          class="btn-whatsapp w-full"
+          data-umami-event="whatsapp"
+          data-umami-event-location="header-mobile"
+        >
+          <Icon name="tabler:brand-whatsapp" class="h-6 w-6" />
+          {t.nav.book}
+        </a>
+      </div>
     </nav>
   </div>
 </header>
@@ -312,6 +331,19 @@ const treatmentLinks = TREATMENTS.map((tr) => ({
         clicked.setAttribute('aria-expanded', String(isOpen));
       }
     }
+  });
+
+  // The mobile accordion is delegated off document too (bind once, survive view
+  // transitions). Unlike the dropdowns it must not close on outside clicks: it
+  // lives inside the open mobile menu, so only its own button toggles it.
+  document.addEventListener('click', (event) => {
+    const target = event.target instanceof Element ? event.target : null;
+    const btn = target?.closest<HTMLElement>('[data-accordion-toggle]');
+    if (!btn) return;
+    const panel = document.getElementById(btn.getAttribute('aria-controls') ?? '');
+    if (!panel) return;
+    const isOpen = panel.classList.toggle('hidden') === false;
+    btn.setAttribute('aria-expanded', String(isOpen));
   });
 
   document.addEventListener('keydown', (event) => {

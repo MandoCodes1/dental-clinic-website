@@ -42,7 +42,7 @@ export interface PriceGroup {
 // on array positions. Both locales carry the same ids; getFaqItems resolves them.
 export const FAQ_IDS = [
   'implantCost',
-  'whyAffordable',
+  'howIWork',
   'materials',
   'guarantee',
   'booking',
@@ -95,7 +95,14 @@ export interface SiteCopy {
   };
   meta: Record<'home' | 'about' | 'treatments' | 'gallery' | 'reviews' | 'contact' | 'products' | 'faq', MetaEntry>;
   a11y: { skip: string; openMenu: string; closeMenu: string; switchLang: string };
-  hero: { eyebrow: string; title: string; subtitle: string; ctaBook: string; ctaReviews: string; availability: string };
+  hero: {
+    eyebrow: string;
+    title: string;
+    subtitle: string;
+    ctaBook: string;
+    ctaTreatments: string;
+    availability: string;
+  };
   credentials: {
     title: string;
     yearsLabel: string;
@@ -112,8 +119,6 @@ export interface SiteCopy {
     home: { eyebrow: string; title: string; subtitle: string };
     viewDetails: string;
     allLabel: string;
-    pricesTitle: string;
-    allPricesLabel: string;
     from: string;
     customQuote: string;
     disclaimer: string;
@@ -170,6 +175,24 @@ export interface SiteCopy {
     hoursBody: string;
     directions: string;
   };
+  homeVisit: {
+    eyebrow: string;
+    title: string;
+    subtitle: string;
+    contactLink: string;
+    form: {
+      name: string;
+      namePlaceholder: string;
+      treatment: string;
+      treatmentPlaceholder: string;
+      message: string;
+      messagePlaceholder: string;
+      submit: string;
+      hint: string;
+      greeting: string;
+      interest: string;
+    };
+  };
   contactCta: {
     button: string;
     defaultMessage: string;
@@ -204,7 +227,7 @@ const es: SiteCopy = {
     home: {
       title: 'Dra. Eugenia Vila - Clínica Dental en El Palo, Málaga',
       description:
-        'Clínica dental en El Palo, Málaga. Más de 30 años de experiencia en implantes, cirugía oral, alineadores y estética dental. Trato cercano y precios justos: te atiende siempre la Dra. Eugenia Vila.',
+        'Implantes dentales, cirugía oral, alineadores y odontología estética en El Palo, Málaga. Tratamientos de calidad con materiales de primera, siempre con la Dra. Eugenia Vila en persona.',
     },
     about: {
       title: 'Sobre mí - Dra. Eugenia Vila',
@@ -214,7 +237,7 @@ const es: SiteCopy = {
     treatments: {
       title: 'Tratamientos y precios - Dra. Eugenia Vila',
       description:
-        'Todos los tratamientos de la clínica de la Dra. Eugenia Vila en El Palo, Málaga, con sus precios de partida: implantes, ortodoncia invisible, estética dental, coronas y más.',
+        'Todos los tratamientos de la clínica de la Dra. Eugenia Vila en El Palo, Málaga: implantes, ortodoncia invisible, estética dental, coronas y más, con los detalles y el precio de partida de cada uno.',
     },
     gallery: {
       title: 'Antes y después - Dra. Eugenia Vila',
@@ -247,9 +270,9 @@ const es: SiteCopy = {
     eyebrow: 'Clínica dental en El Palo, Málaga',
     title: 'Tu sonrisa, en las mejores manos',
     subtitle:
-      'Más de 30 años cuidando sonrisas en Málaga, con un trato cercano y honesto. Te atiende siempre la Dra. Eugenia Vila en persona, sin prisas y con precios justos.',
+      'Más de 30 años cuidando sonrisas en Málaga, con un trato cercano y honesto. Te atiende siempre la Dra. Eugenia Vila en persona, sin prisas y con materiales de primera calidad.',
     ctaBook: 'Pedir cita por WhatsApp',
-    ctaReviews: 'Ver reseñas',
+    ctaTreatments: 'Ver tratamientos',
     availability: 'Con cita previa · Te responde la propia doctora',
   },
   credentials: {
@@ -263,19 +286,20 @@ const es: SiteCopy = {
   },
   values: {
     eyebrow: 'Por qué sus pacientes la recomiendan',
-    title: 'Cuidado de verdad, no de cadena',
+    title: 'Cuidado de verdad, no de franquicia',
     items: [
       {
         title: 'Te atiende siempre la Dra. Vila',
         description: 'Una sola dentista que te conoce y te sigue en cada visita, sin rotación de personal.',
       },
       {
-        title: 'Precios justos y claros',
-        description: 'Tratamientos de calidad a precios honestos. Te explico el coste antes de empezar, sin sorpresas.',
+        title: 'Un plan claro, por escrito',
+        description:
+          'Antes de empezar sabes exactamente qué incluye tu tratamiento, paso a paso y sin sorpresas. Todo queda recogido por escrito.',
       },
       {
-        title: 'Materiales de primera',
-        description: 'Solo materiales de la más alta calidad, los mismos que usaría para mi propia familia.',
+        title: 'Materiales de primera calidad',
+        description: 'Solo materiales de las mejores marcas, los mismos que usaría para mi propia familia.',
       },
       {
         title: 'Tiempo para ti',
@@ -285,7 +309,7 @@ const es: SiteCopy = {
   },
   treatmentsPage: {
     title: 'Tratamientos',
-    lead: 'Toda mi odontología en un solo lugar: qué hago, cómo lo hago y cuánto cuesta. Elige un tratamiento para ver los detalles, o baja hasta la lista completa de precios.',
+    lead: 'Toda mi odontología en un solo lugar: qué hago, cómo lo hago y qué puedes esperar. Elige un tratamiento para ver los detalles y su precio de partida.',
     home: {
       eyebrow: 'Tratamientos',
       title: 'Odontología completa, hecha a tu medida',
@@ -293,15 +317,13 @@ const es: SiteCopy = {
     },
     viewDetails: 'Ver detalles',
     allLabel: 'Todos los tratamientos',
-    pricesTitle: 'Lista de precios',
-    allPricesLabel: 'Ver la lista completa de precios',
     from: 'desde',
     customQuote: 'Presupuesto a medida',
     disclaimer:
       'Precios orientativos para casos de complejidad baja. Tras la primera valoración recibirás un presupuesto cerrado y por escrito, sin compromiso: el precio acordado es el que pagas.',
     quality: {
-      title: 'Precios bajos no significa materiales baratos',
-      lead: 'Muchas clínicas anuncian materiales de calidad a precios bajos y luego recortan donde no se ve. Mis precios son más bajos porque esta es una consulta pequeña y personal, con pocos gastos de estructura, nunca porque use materiales inferiores. Y no tienes que fiarte de mi palabra: todo esto se puede comprobar.',
+      title: 'La misma calidad que ofrezco en Londres',
+      lead: 'Cada tratamiento lo hago yo misma, con calma y sin atajos: los mismos materiales, protocolos y laboratorios que uso en la clínica de implantes de Londres donde ejerzo. No doy un caso por terminado hasta que el resultado es perfecto, y nada de esto tienes que creértelo por mi palabra: se puede comprobar.',
       points: [
         {
           title: 'Más de 30 años de experiencia',
@@ -333,8 +355,8 @@ const es: SiteCopy = {
       ],
     },
     faqTitle: 'Garantía y formas de pago',
-    askQuote: '¿Buscas otro tratamiento? Escríbeme y te digo el precio sin compromiso.',
-    faqPrompt: '¿Tienes más dudas sobre precios, materiales o cómo trabajo?',
+    askQuote: '¿Buscas otro tratamiento? Escríbeme, cuéntame tu caso y te digo cómo lo enfocaría, sin compromiso.',
+    faqPrompt: '¿Tienes más dudas sobre los tratamientos, los materiales o cómo trabajo?',
     faqLink: 'Consulta las preguntas frecuentes',
   },
   treatments: {
@@ -343,7 +365,7 @@ const es: SiteCopy = {
       card: {
         title: 'Implantes dentales',
         description:
-          'Recupera los dientes que te faltan con implantes fijos que se ven y se sienten naturales, con el precio del conjunto claro desde el primer día.',
+          'Recupera los dientes que te faltan con implantes fijos que se ven y se sienten naturales, planificados y colocados por la propia doctora.',
       },
       meta: {
         title: 'Implantes dentales en Málaga - Dra. Eugenia Vila',
@@ -382,11 +404,11 @@ const es: SiteCopy = {
             note: 'Para poder colocar implantes en las muelas de arriba cuando falta altura de hueso',
           },
         ],
-        note: `Implante y corona de zirconio juntos: desde ${formatPrice(PRICES.implantCrown, 'es')}. Muchas clínicas anuncian el implante sin contar la corona; aquí el conjunto tiene precio claro desde el primer día. El injerto y la elevación de seno solo se hacen si tu caso los necesita, y siempre dentro del presupuesto cerrado. El TAC 3D (CBCT) se realiza en un centro radiológico externo y lo valoro yo personalmente; esa valoración está incluida en tu plan.`,
+        note: `Implante y corona de zirconio juntos: desde ${formatPrice(PRICES.implantCrown, 'es')}, con la corona incluida. El injerto y la elevación de seno solo se hacen si tu caso los necesita, y siempre dentro del presupuesto cerrado. El TAC 3D (CBCT) se realiza en un centro radiológico externo y lo valoro yo personalmente; esa valoración está incluida en tu plan.`,
       },
       cta: {
-        title: '¿Te faltan dientes? Recupéralos con precio cerrado.',
-        body: 'Escríbeme por WhatsApp, cuéntame tu caso y te explico opciones y precios sin compromiso.',
+        title: '¿Te faltan dientes? Recupera una sonrisa completa y fija.',
+        body: 'Escríbeme por WhatsApp, cuéntame tu caso y te explico las opciones que tienes, sin compromiso.',
         message: 'Hola, me gustaría informarme sobre implantes dentales.',
       },
     },
@@ -400,20 +422,26 @@ const es: SiteCopy = {
       meta: {
         title: 'Cirugía oral en Málaga - Dra. Eugenia Vila',
         description:
-          'Extracciones simples y de muelas del juicio, injertos y cirugía mínimamente invasiva en El Palo, Málaga. Más de 30 años de experiencia quirúrgica.',
+          'Extracciones simples y complejas, injertos y cirugía mínimamente invasiva en El Palo, Málaga. Más de 30 años de experiencia quirúrgica.',
       },
       title: 'Cirugía oral',
       lead: 'Más de 30 años de cirugía avalan una técnica cuidadosa que preserva el tejido sano y hace la recuperación más llevadera.',
       points: [
-        'Extracciones simples y de muelas del juicio',
+        'Extracciones simples y complejas',
         'Cirugía mínimamente invasiva que preserva el tejido sano',
         'Injertos óseos y preparación para implantes',
         'Pauta de cuidados por escrito y seguimiento postoperatorio cercano',
       ],
       priceGroup: {
         title: 'Precios de cirugía oral',
-        items: [{ id: 'extraction', label: 'Extracción simple' }],
-        note: 'Las extracciones complejas y las muelas del juicio se presupuestan tras valorar tu caso, siempre por escrito y antes de empezar.',
+        items: [
+          { id: 'extraction', label: 'Extracción simple' },
+          {
+            id: 'complexExtraction',
+            label: 'Extracción compleja',
+            note: 'Muelas del juicio, restos radiculares y extracciones que requieren técnica quirúrgica',
+          },
+        ],
       },
       cta: {
         title: '¿Te preocupa una extracción?',
@@ -596,7 +624,7 @@ const es: SiteCopy = {
         org: 'Universidad de Murcia',
         date: '1993 - 1994',
       },
-      { title: 'Doctorado en Odontología', org: 'UNIBE, Santo Domingo', date: '1989 - 1991' },
+      { title: 'Licenciatura en Odontología', org: 'UNIBE, Santo Domingo', date: '1989 - 1991' },
       { title: 'Licenciatura en Medicina y Cirugía', org: 'Universidad de Málaga', date: '1982 - 1989' },
     ],
     experienceTitle: 'Experiencia',
@@ -613,9 +641,9 @@ const es: SiteCopy = {
       {
         role: 'Odontóloga y cirujana',
         org: 'Clínica Dental Dra. Eugenia Vila, Málaga',
-        period: '1994 - 2022',
+        period: '1994 - actualidad',
         bullets: [
-          'Más de 20.000 pacientes atendidos en consulta privada durante 28 años.',
+          'Más de 20.000 pacientes atendidos en consulta privada durante más de 30 años.',
           'Miles de implantes, cirugías, tratamientos y reconstrucciones estéticas.',
           'Trato personal y seguimiento cercano de cada paciente y su familia.',
         ],
@@ -623,14 +651,15 @@ const es: SiteCopy = {
     ],
     credsTitle: 'Colegiación y membresías',
     memberships: [
-      'Licenciada en Medicina y Cirugía y Licenciada en Odontología',
+      'Licenciada en Medicina y Cirugía',
+      'Licenciada en Odontología',
       'Ilustre Colegio de Dentistas de Málaga (colegiada desde 1994)',
       'Royal College of Surgeons of Ireland (RCSI), afiliada desde 2021',
       'Registro GDC (Reino Unido): 287705',
     ],
     personalTitle: 'Más allá de la consulta',
     personal:
-      'Fuera de la clínica, mi familia es lo primero: tengo dos hijos con los que me encanta pasar el tiempo. Disfruto del tenis, viajar, cocinar y cuidarme con una vida sana. Creo en tratar a cada paciente como me gustaría que tratasen a los míos.',
+      'Fuera de la clínica, mi familia es lo primero: tengo dos hijos con los que me encanta pasar el tiempo. Disfruto del tenis, viajar, cocinar y cuidarme con una vida sana.',
   },
   reviewsPage: {
     lead: 'Reseñas reales de pacientes, sin filtros. Estas son algunas de las personas que han confiado en la Dra. Vila.',
@@ -649,10 +678,10 @@ const es: SiteCopy = {
         answer: `El implante con su corona de porcelana cuesta desde ${formatPrice(PRICES.implantCrown, 'es')}, con la corona incluida. Si tu caso necesita un injerto de hueso o una elevación de seno, se añade al presupuesto cerrado que recibes por escrito antes de empezar: el precio acordado es el que pagas.`,
       },
       {
-        id: 'whyAffordable',
-        question: '¿Por qué tus precios son más bajos que la media si no usas materiales baratos?',
+        id: 'howIWork',
+        question: '¿Qué hace diferente tu forma de trabajar?',
         answer:
-          'Porque esta es una consulta pequeña y personal, sin los gastos de estructura de una gran clínica ni comisiones comerciales. Trabajo con los mismos materiales y protocolos que uso en la clínica de implantes de Londres donde ejerzo; lo que recorto son gastos, no calidad.',
+          'Esta es una consulta pequeña y personal: te atiendo yo misma en cada visita, con tiempo y sin prisas. Trabajo con los mismos materiales, protocolos y laboratorios que uso en la clínica de implantes de Londres donde ejerzo, y no doy un tratamiento por terminado hasta que el resultado es exactamente el que busco.',
       },
       {
         id: 'materials',
@@ -774,6 +803,24 @@ const es: SiteCopy = {
       'Atiendo con cita previa. Paso consulta en Málaga en periodos concretos del año; escríbeme por WhatsApp y buscamos juntos el mejor momento para verte.',
     directions: 'Cómo llegar',
   },
+  homeVisit: {
+    eyebrow: 'Contacto',
+    title: 'Escríbeme o ven a verme',
+    subtitle: 'Cuéntame tu caso por WhatsApp y te respondo yo misma, sin compromiso.',
+    contactLink: 'Ver todas las formas de contacto',
+    form: {
+      name: 'Nombre',
+      namePlaceholder: 'Tu nombre',
+      treatment: 'Tratamiento',
+      treatmentPlaceholder: 'Elige un tratamiento (opcional)',
+      message: 'Mensaje',
+      messagePlaceholder: 'Cuéntame tu caso o tu duda',
+      submit: 'Enviar por WhatsApp',
+      hint: 'Al pulsar se abre WhatsApp con el mensaje ya escrito: lo revisas y lo envías tú.',
+      greeting: 'Hola, soy',
+      interest: 'Me interesa:',
+    },
+  },
   contactCta: {
     button: 'Escribir por WhatsApp',
     defaultMessage: 'Hola, me gustaría pedir una cita con la Dra. Vila.',
@@ -855,7 +902,7 @@ const en: SiteCopy = {
     home: {
       title: 'Dr. Eugenia Vila - Dental Clinic in El Palo, Málaga',
       description:
-        'Dental clinic in El Palo, Málaga. Over 30 years of experience in implants, oral surgery, aligners and cosmetic dentistry. Warm, honest care at fair prices, always with Dr. Eugenia Vila herself.',
+        'Dental clinic in El Palo, Málaga. Over 30 years of experience in implants, oral surgery, aligners and cosmetic dentistry. Warm, personal care and top-quality materials, always with Dr. Eugenia Vila herself.',
     },
     about: {
       title: 'About - Dr. Eugenia Vila',
@@ -865,7 +912,7 @@ const en: SiteCopy = {
     treatments: {
       title: 'Treatments & prices - Dr. Eugenia Vila',
       description:
-        'All treatments at Dr. Eugenia Vila’s clinic in El Palo, Málaga, with their starting prices: implants, invisible orthodontics, cosmetic dentistry, crowns and more.',
+        'All treatments at Dr. Eugenia Vila’s clinic in El Palo, Málaga: implants, invisible orthodontics, cosmetic dentistry, crowns and more, with details and starting prices for each one.',
     },
     gallery: {
       title: 'Before & after - Dr. Eugenia Vila',
@@ -898,9 +945,9 @@ const en: SiteCopy = {
     eyebrow: 'Dental clinic in El Palo, Málaga',
     title: 'Your smile, in the best hands',
     subtitle:
-      'Over 30 years caring for smiles in Málaga, with warm, honest treatment. You are always seen personally by Dr. Eugenia Vila, unhurried and at fair prices.',
+      'Over 30 years caring for smiles in Málaga, with warm, honest treatment. You are always seen personally by Dr. Eugenia Vila, with unhurried visits and top-quality materials.',
     ctaBook: 'Book on WhatsApp',
-    ctaReviews: 'Read reviews',
+    ctaTreatments: 'See treatments',
     availability: 'By appointment · The doctor replies to you herself',
   },
   credentials: {
@@ -914,19 +961,20 @@ const en: SiteCopy = {
   },
   values: {
     eyebrow: 'Why her patients recommend her',
-    title: 'Real care, not a chain',
+    title: 'Real care, not a franchise',
     items: [
       {
         title: 'Always treated by Dr. Vila herself',
         description: 'One dentist who knows you and follows your care at every visit, with no staff rotation.',
       },
       {
-        title: 'Fair, clear prices',
-        description: 'Quality treatment at honest prices. I explain the cost before we start, with no surprises.',
+        title: 'A clear plan, in writing',
+        description:
+          'Before we start you know exactly what your treatment includes, step by step and with no surprises. Everything is set out in writing.',
       },
       {
-        title: 'Premium materials',
-        description: 'Only the highest-quality materials, the same ones I would use for my own family.',
+        title: 'Top-quality materials',
+        description: 'Only materials from the best brands, the same ones I would use for my own family.',
       },
       {
         title: 'Time for you',
@@ -936,7 +984,7 @@ const en: SiteCopy = {
   },
   treatmentsPage: {
     title: 'Treatments',
-    lead: 'All my dentistry in one place: what I do, how I do it and what it costs. Pick a treatment to see the details, or scroll down to the full price list.',
+    lead: 'All my dentistry in one place: what I do, how I do it and what to expect. Pick a treatment to see the details and its starting price.',
     home: {
       eyebrow: 'Treatments',
       title: 'Complete dentistry, tailored to you',
@@ -944,15 +992,13 @@ const en: SiteCopy = {
     },
     viewDetails: 'View details',
     allLabel: 'All treatments',
-    pricesTitle: 'Price list',
-    allPricesLabel: 'See the full price list',
     from: 'from',
     customQuote: 'Quoted case by case',
     disclaimer:
       'Guide prices for straightforward cases. After your first assessment you will receive a fixed, written quote with no obligation: the price we agree is the price you pay.',
     quality: {
-      title: 'Low prices do not mean cheap materials',
-      lead: 'Many clinics advertise quality materials at low prices and then cut corners where you cannot see. My prices are lower because this is a small personal practice with low overheads, never because I use inferior materials. And you do not have to take my word for it: all of this can be checked.',
+      title: 'The same quality I deliver in London',
+      lead: 'I carry out every treatment myself, calmly and without shortcuts: the same materials, protocols and laboratories I use at the London implant clinic where I practise. I do not consider a case finished until the result is perfect, and none of this has to be taken on my word: it can all be checked.',
       points: [
         {
           title: 'Over 30 years of experience',
@@ -984,8 +1030,9 @@ const en: SiteCopy = {
       ],
     },
     faqTitle: 'Guarantees and payment',
-    askQuote: 'Looking for another treatment? Message me and I will tell you the price, no obligation.',
-    faqPrompt: 'More questions about prices, materials or how I work?',
+    askQuote:
+      'Looking for another treatment? Message me, tell me about your case and I will tell you how I would approach it, no obligation.',
+    faqPrompt: 'More questions about the treatments, the materials or how I work?',
     faqLink: 'Read the frequently asked questions',
   },
   treatments: {
@@ -994,7 +1041,7 @@ const en: SiteCopy = {
       card: {
         title: 'Dental implants',
         description:
-          'Replace missing teeth with fixed implants that look and feel natural, with the price of the full set clear from day one.',
+          'Replace missing teeth with fixed implants that look and feel natural, planned and placed by the doctor herself.',
       },
       meta: {
         title: 'Dental implants in Málaga - Dr. Eugenia Vila',
@@ -1033,11 +1080,11 @@ const en: SiteCopy = {
             note: 'So implants can be placed in the upper back teeth when bone height is short',
           },
         ],
-        note: `Implant and zirconia crown together: from ${formatPrice(PRICES.implantCrown, 'en')}. Many clinics advertise the implant without counting the crown; here the full set has a clear price from day one. A graft or a sinus lift is only carried out if your case needs one, always within the fixed quote. The 3D scan (CBCT) is taken at an external radiology centre and I assess it personally; that assessment is included in your plan.`,
+        note: `Implant and zirconia crown together: from ${formatPrice(PRICES.implantCrown, 'en')}, crown included. A graft or a sinus lift is only carried out if your case needs one, always within the fixed quote. The 3D scan (CBCT) is taken at an external radiology centre and I assess it personally; that assessment is included in your plan.`,
       },
       cta: {
-        title: 'Missing teeth? Get them back at a fixed price.',
-        body: 'Message me on WhatsApp, tell me about your case and I will explain options and prices with no obligation.',
+        title: 'Missing teeth? Get back a complete, fixed smile.',
+        body: 'Message me on WhatsApp, tell me about your case and I will explain the options you have, with no obligation.',
         message: 'Hello, I would like to find out about dental implants.',
       },
     },
@@ -1051,20 +1098,26 @@ const en: SiteCopy = {
       meta: {
         title: 'Oral surgery in Málaga - Dr. Eugenia Vila',
         description:
-          'Simple and wisdom-tooth extractions, grafts and minimally invasive surgery in El Palo, Málaga. Over 30 years of surgical experience.',
+          'Simple and complex extractions, grafts and minimally invasive surgery in El Palo, Málaga. Over 30 years of surgical experience.',
       },
       title: 'Oral surgery',
       lead: 'Over 30 years of surgery stand behind a careful technique that preserves healthy tissue and makes recovery easier.',
       points: [
-        'Simple and wisdom-tooth extractions',
+        'Simple and complex extractions',
         'Minimally invasive surgery that preserves healthy tissue',
         'Bone grafts and preparation for implants',
         'Written aftercare instructions and close post-operative follow-up',
       ],
       priceGroup: {
         title: 'Oral surgery prices',
-        items: [{ id: 'extraction', label: 'Simple extraction' }],
-        note: 'Complex extractions and wisdom teeth are quoted after assessing your case, always in writing and before we start.',
+        items: [
+          { id: 'extraction', label: 'Simple extraction' },
+          {
+            id: 'complexExtraction',
+            label: 'Complex extraction',
+            note: 'Wisdom teeth, root remnants and extractions that need a surgical approach',
+          },
+        ],
       },
       cta: {
         title: 'Worried about an extraction?',
@@ -1246,7 +1299,7 @@ const en: SiteCopy = {
         org: 'University of Murcia',
         date: '1993 - 1994',
       },
-      { title: 'Doctorate in Dentistry (DDS)', org: 'UNIBE, Santo Domingo', date: '1989 - 1991' },
+      { title: 'Degree in Dentistry', org: 'UNIBE, Santo Domingo', date: '1989 - 1991' },
       { title: 'Degree in Medicine and Surgery (MBBS)', org: 'University of Málaga', date: '1982 - 1989' },
     ],
     experienceTitle: 'Experience',
@@ -1263,9 +1316,9 @@ const en: SiteCopy = {
       {
         role: 'Dentist and surgeon',
         org: 'Clínica Dental Dra. Eugenia Vila, Málaga',
-        period: '1994 - 2022',
+        period: '1994 - present',
         bullets: [
-          'More than 20,000 patients treated in private practice over 28 years.',
+          'More than 20,000 patients treated in private practice over 30 years.',
           'Thousands of implants, surgeries, treatments and aesthetic restorations.',
           'Personal care and close follow-up of every patient and their family.',
         ],
@@ -1273,14 +1326,15 @@ const en: SiteCopy = {
     ],
     credsTitle: 'Registration & memberships',
     memberships: [
-      'Degree in Medicine and Surgery, and Licensed Dentist',
+      'Degree in Medicine and Surgery',
+      'Degree in Dentistry',
       'Official College of Dentists of Málaga (registered since 1994)',
       'Royal College of Surgeons of Ireland (RCSI), affiliate since 2021',
       'GDC registration (United Kingdom): 287705',
     ],
     personalTitle: 'Beyond the clinic',
     personal:
-      'Outside the clinic, my family comes first: I have two sons I love spending time with. I enjoy tennis, travelling, cooking and staying active. I believe in treating every patient the way I’d want my own family to be treated.',
+      'Outside the clinic, my family comes first: I have two sons I love spending time with. I enjoy tennis, travelling, cooking and staying active.',
   },
   reviewsPage: {
     lead: 'Real patient reviews, unfiltered. Here are some of the people who have trusted Dr. Vila with their care.',
@@ -1299,10 +1353,10 @@ const en: SiteCopy = {
         answer: `An implant with its porcelain crown costs from ${formatPrice(PRICES.implantCrown, 'en')}, crown included. If your case needs a bone graft or a sinus lift, it is added to the fixed quote you receive in writing before we start: the price we agree is the price you pay.`,
       },
       {
-        id: 'whyAffordable',
-        question: 'Why are your prices below average if you do not use cheap materials?',
+        id: 'howIWork',
+        question: 'What makes the way you work different?',
         answer:
-          'Because this is a small personal practice, without the overheads of a big clinic or sales commissions. I work with the same materials and protocols I use at the London implant clinic where I practise; what I cut is overhead, not quality.',
+          'This is a small, personal practice: I see you myself at every visit, with time and without rushing. I work with the same materials, protocols and laboratories I use at the London implant clinic where I practise, and I do not sign off a treatment until the result is exactly what I am after.',
       },
       {
         id: 'materials',
@@ -1422,6 +1476,24 @@ const en: SiteCopy = {
     hoursBody:
       'I see patients by appointment. I hold consultations in Málaga during specific periods of the year; message me on WhatsApp and we’ll find the best time to see you.',
     directions: 'Get directions',
+  },
+  homeVisit: {
+    eyebrow: 'Contact',
+    title: 'Write to me or drop by',
+    subtitle: 'Tell me about your case on WhatsApp and I’ll reply personally, with no obligation.',
+    contactLink: 'See all the ways to reach me',
+    form: {
+      name: 'Name',
+      namePlaceholder: 'Your name',
+      treatment: 'Treatment',
+      treatmentPlaceholder: 'Choose a treatment (optional)',
+      message: 'Message',
+      messagePlaceholder: 'Tell me about your case or question',
+      submit: 'Send via WhatsApp',
+      hint: 'Tapping opens WhatsApp with your message already written: you review it and hit send.',
+      greeting: 'Hello, my name is',
+      interest: 'I am interested in:',
+    },
   },
   contactCta: {
     button: 'Message on WhatsApp',

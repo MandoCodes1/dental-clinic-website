@@ -39,9 +39,13 @@ const images: Record<TreatmentId, ImageMetadata> = {
 };
 
 const faqItems = getFaqItems(lang, TREATMENT_FAQS[treatment]);
+
+// "Desde" figures for the OfferCatalog structured data; each treatment page
+// carries its own price table, so each emits its own offers.
+const offers = c.priceGroup.items.filter((i) => i.id).map((i) => ({ name: i.label, price: PRICES[i.id!] }));
 ---
 
-<BaseLayout lang={lang} page={def.route} title={c.meta.title} description={c.meta.description}>
+<BaseLayout lang={lang} page={def.route} title={c.meta.title} description={c.meta.description} offers={offers}>
   <PageHeader title={c.title} lead={c.lead} />
 
   <section class="section bg-white">
@@ -101,9 +105,7 @@ const faqItems = getFaqItems(lang, TREATMENT_FAQS[treatment]);
             </p>
           )
         }
-        <p class="mt-4 text-sm">
-          <a href={`${ROUTES.treatments[lang]}#precios`} class="link-quiet">{p.allPricesLabel}</a>
-        </p>
+        <p class="mt-4 text-sm leading-relaxed text-ink/60">{p.disclaimer}</p>
       </div>
 
       <h2 class="mx-auto mt-12 max-w-3xl font-heading text-2xl text-brand-deep">{t.homeFaq.title}</h2>

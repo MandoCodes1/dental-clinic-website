@@ -6,7 +6,7 @@ import type { FaqItem } from '~/content/site';
 // Intentionally omits aggregateRating/review (Google restricts that markup to
 // sites reviewing OTHER businesses) and openingHours (the clinic is by
 // appointment with variable Málaga periods, so fixed hours would be inaccurate).
-// The prices page passes `offers` ("desde" figures, hence minPrice) and the FAQ
+// Treatment pages pass `offers` ("desde" figures, hence minPrice) and the FAQ
 // page passes `faq`; both extend the same single @graph.
 interface Props {
   offers?: { name: string; price: number }[];
