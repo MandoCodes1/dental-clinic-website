@@ -1,6 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components';
-import { switchLangPath, LANG_META, type Lang } from '~/i18n';
+import { switchLangPath, type Lang } from '~/i18n';
 import { content } from '~/content/site';
 
 interface Props {
@@ -16,8 +16,12 @@ const t = content[lang];
   href={href}
   hreflang={other}
   aria-label={t.a11y.switchLang}
-  class="inline-flex items-center gap-1 rounded-full border border-brand-blue/20 px-2.5 py-1 text-xs font-semibold text-brand-deep transition hover:bg-brand-light"
+  title={t.a11y.switchLang}
+  class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition hover:bg-brand-light"
 >
-  <Icon name="tabler:world" class="h-3.5 w-3.5" aria-hidden="true" />
-  {LANG_META[other].label}
+  <Icon
+    name={other === 'en' ? 'circle-flags:gb' : 'circle-flags:es'}
+    class="h-7 w-7 rounded-full ring-1 ring-brand-deep/15"
+    aria-hidden="true"
+  />
 </a>
