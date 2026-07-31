@@ -138,7 +138,6 @@ export interface SiteCopy {
     memberships: string[];
     personalTitle: string;
     personal: string;
-    cvCta: string;
   };
   reviewsPage: { lead: string; basedOn: string; malagaTitle: string; londonTitle: string; cta: string };
   faqPage: { title: string; lead: string; items: FaqItem[] };
@@ -628,7 +627,6 @@ const es: SiteCopy = {
     personalTitle: 'Más allá de la consulta',
     personal:
       'Fuera de la clínica, mi familia es lo primero: tengo dos hijos con los que me encanta pasar el tiempo. Disfruto del tenis, viajar, cocinar y cuidarme con una vida sana. Creo en tratar a cada paciente como me gustaría que tratasen a los míos.',
-    cvCta: 'Descargar CV (PDF)',
   },
   reviewsPage: {
     lead: 'Reseñas reales de pacientes, sin filtros. Estas son algunas de las personas que han confiado en la Dra. Vila.',
@@ -1275,7 +1273,6 @@ const en: SiteCopy = {
     personalTitle: 'Beyond the clinic',
     personal:
       'Outside the clinic, my family comes first: I have two sons I love spending time with. I enjoy tennis, travelling, cooking and staying active. I believe in treating every patient the way I’d want my own family to be treated.',
-    cvCta: 'Download CV (PDF)',
   },
   reviewsPage: {
     lead: 'Real patient reviews, unfiltered. Here are some of the people who have trusted Dr. Vila with their care.',
