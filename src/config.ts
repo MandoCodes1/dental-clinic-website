@@ -34,7 +34,8 @@ export const CLINIC = {
   doctoralia: 'https://www.doctoralia.es/maria-eugenia-vila-garcia/dentista/malaga',
   gdc: '287705',
   awardYear: 2024,
-  years: 30,
+  // In practice since 1994; computed at build time so the figure never goes stale.
+  years: new Date().getFullYear() - 1994,
   patients: 20000,
 } as const;
 

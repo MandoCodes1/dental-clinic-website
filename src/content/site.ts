@@ -1,7 +1,7 @@
 import type { Lang } from '~/i18n';
 // The FAQ answers quote figures that also appear in the price table, so they
 // read PRICES rather than repeating the numbers as prose and drifting from it.
-import { PRICES, type PriceId, type TreatmentId } from '~/config';
+import { CLINIC, PRICES, type PriceId, type TreatmentId } from '~/config';
 import { formatPrice } from '~/utils/prices';
 
 // All translatable copy lives here once per locale. The shared SiteCopy type
@@ -239,8 +239,7 @@ const es: SiteCopy = {
     },
     about: {
       title: 'Sobre mí - Dra. Eugenia Vila',
-      description:
-        'Conoce a la Dra. Eugenia Vila: licenciada en Medicina y Cirugía y en Odontología, máster en Implantología y Estética, más de 30 años de experiencia y Dentista del Año 2024.',
+      description: `Conoce a la Dra. Eugenia Vila: licenciada en Medicina y Cirugía y en Odontología, máster en Implantología y Estética, ${CLINIC.years} años de experiencia y Dentista del Año 2024.`,
     },
     treatments: {
       title: 'Tratamientos y precios - Dra. Eugenia Vila',
@@ -277,8 +276,7 @@ const es: SiteCopy = {
   hero: {
     eyebrow: 'Clínica dental en El Palo, Málaga',
     title: 'Tu sonrisa, en las mejores manos',
-    subtitle:
-      'Más de 30 años cuidando sonrisas en Málaga, con un trato cercano y honesto. Te atiende siempre la Dra. Eugenia Vila en persona, sin prisas y con materiales de primera calidad.',
+    subtitle: `${CLINIC.years} años cuidando sonrisas en Málaga, con un trato cercano y honesto. Te atiende siempre la Dra. Eugenia Vila en persona, sin prisas y con materiales de primera calidad.`,
     ctaBook: 'Pedir cita por WhatsApp',
     ctaTreatments: 'Ver tratamientos',
     availability: 'Primera valoración gratuita · Con cita previa · Te responde la propia doctora',
@@ -334,7 +332,7 @@ const es: SiteCopy = {
       lead: 'Cada tratamiento lo hago yo misma, con calma y sin atajos: los mismos materiales, protocolos y laboratorios que uso en la clínica de implantes de Londres donde ejerzo. No doy un caso por terminado hasta que el resultado es perfecto, y nada de esto tienes que creértelo por mi palabra: se puede comprobar.',
       points: [
         {
-          title: 'Más de 30 años de experiencia',
+          title: `${CLINIC.years} años de experiencia`,
           description: 'Desde 1994 he tratado a más de 20.000 pacientes entre Málaga y Londres.',
         },
         {
@@ -377,7 +375,7 @@ const es: SiteCopy = {
       },
       meta: {
         title: 'Implantes dentales en Málaga - Dra. Eugenia Vila',
-        description: `Implantes dentales Klockner en El Palo, Málaga, desde ${formatPrice(PRICES.implantOnly, 'es')} más ${formatPrice(PRICES.zirconiaCrown, 'es')} la corona de zirconio. Más de 30 años de experiencia en implantología y presupuesto cerrado por escrito.`,
+        description: `Implantes dentales Klockner en El Palo, Málaga, desde ${formatPrice(PRICES.implantOnly, 'es')} más ${formatPrice(PRICES.zirconiaCrown, 'es')} la corona de zirconio. ${CLINIC.years} años de experiencia en implantología y presupuesto cerrado por escrito.`,
       },
       title: 'Implantes dentales',
       lead: 'Un implante sustituye la raíz del diente perdido y sobre él se coloca una corona fija. El resultado se ve, se siente y funciona como un diente propio.',
@@ -385,7 +383,7 @@ const es: SiteCopy = {
         'Implante unitario, múltiple o rehabilitación completa de la boca',
         'Implantes Klockner y solo aditamentos originales de la marca en la prótesis',
         'Planificación sobre TAC 3D (CBCT), valorado personalmente por la doctora',
-        'Injertos óseos y elevación de seno cuando hacen falta',
+        'Injertos óseos y elevación de seno cuando sean necesarios',
         'Presupuesto cerrado por escrito antes de empezar',
         'Revisiones y mantenimiento a largo plazo',
       ],
@@ -466,11 +464,10 @@ const es: SiteCopy = {
       },
       meta: {
         title: 'Cirugía oral en Málaga - Dra. Eugenia Vila',
-        description:
-          'Extracciones simples y complejas, injertos y cirugía mínimamente invasiva en El Palo, Málaga. Más de 30 años de experiencia quirúrgica.',
+        description: `Extracciones simples y complejas, injertos y cirugía mínimamente invasiva en El Palo, Málaga. ${CLINIC.years} años de experiencia quirúrgica.`,
       },
       title: 'Cirugía oral',
-      lead: 'Más de 30 años de cirugía avalan una técnica cuidadosa que preserva el tejido sano y hace la recuperación más llevadera.',
+      lead: `${CLINIC.years} años de cirugía avalan una técnica cuidadosa que preserva el tejido sano y hace la recuperación más llevadera.`,
       points: [
         'Extracciones simples y complejas',
         'Cirugía mínimamente invasiva que preserva el tejido sano',
@@ -656,7 +653,7 @@ const es: SiteCopy = {
   about: {
     eyebrow: 'Sobre mí',
     title: 'Dra. Eugenia Vila',
-    lead: 'Soy Eugenia Vila, dentista y médico, y llevo más de 30 años cuidando la salud bucal de familias en Málaga. Me formé en Implantología (UIC Barcelona) y en Estética (Universidad de Córdoba), y atiendo cada caso de forma personal y sin prisas, poniendo siempre al paciente por delante.',
+    lead: `Soy Eugenia Vila, dentista y médico, y llevo ${CLINIC.years} años cuidando la salud bucal de familias en Málaga. Me formé en Implantología (UIC Barcelona) y en Estética (Universidad de Córdoba), y atiendo cada caso de forma personal y sin prisas, poniendo siempre al paciente por delante.`,
     educationTitle: 'Formación',
     education: [
       { title: 'Máster en Medicina Estética', org: 'Universidad de Córdoba', date: '2008 - 2009' },
@@ -689,7 +686,7 @@ const es: SiteCopy = {
         org: 'Clínica Dental Dra. Eugenia Vila, Málaga',
         period: '1994 - actualidad',
         bullets: [
-          'Más de 20.000 pacientes atendidos en consulta privada durante más de 30 años.',
+          `Más de 20.000 pacientes atendidos en consulta privada durante ${CLINIC.years} años.`,
           'Miles de implantes, cirugías, tratamientos y reconstrucciones estéticas.',
           'Trato personal y seguimiento cercano de cada paciente y su familia.',
         ],
@@ -947,13 +944,11 @@ const en: SiteCopy = {
   meta: {
     home: {
       title: 'Dr. Eugenia Vila - Dental Clinic in El Palo, Málaga',
-      description:
-        'Dental clinic in El Palo, Málaga. Over 30 years of experience in implants, oral surgery, aligners and cosmetic dentistry. Warm, personal care and top-quality materials, always with Dr. Eugenia Vila herself.',
+      description: `Dental clinic in El Palo, Málaga. ${CLINIC.years} years of experience in implants, oral surgery, aligners and cosmetic dentistry. Warm, personal care and top-quality materials, always with Dr. Eugenia Vila herself.`,
     },
     about: {
       title: 'About - Dr. Eugenia Vila',
-      description:
-        'Meet Dr. Eugenia Vila: physician and licensed dentist, with master’s degrees in Implantology and Aesthetics, over 30 years of experience and Dentist of the Year 2024.',
+      description: `Meet Dr. Eugenia Vila: physician and licensed dentist, with master’s degrees in Implantology and Aesthetics, ${CLINIC.years} years of experience and Dentist of the Year 2024.`,
     },
     treatments: {
       title: 'Treatments & prices - Dr. Eugenia Vila',
@@ -990,8 +985,7 @@ const en: SiteCopy = {
   hero: {
     eyebrow: 'Dental clinic in El Palo, Málaga',
     title: 'Your smile, in the best hands',
-    subtitle:
-      'Over 30 years caring for smiles in Málaga, with warm, honest treatment. You are always seen personally by Dr. Eugenia Vila, with unhurried visits and top-quality materials.',
+    subtitle: `${CLINIC.years} years caring for smiles in Málaga, with warm, honest treatment. You are always seen personally by Dr. Eugenia Vila, with unhurried visits and top-quality materials.`,
     ctaBook: 'Book on WhatsApp',
     ctaTreatments: 'See treatments',
     availability: 'Free first assessment · By appointment · The doctor replies to you herself',
@@ -1047,7 +1041,7 @@ const en: SiteCopy = {
       lead: 'I carry out every treatment myself, calmly and without shortcuts: the same materials, protocols and laboratories I use at the London implant clinic where I practise. I do not consider a case finished until the result is perfect, and none of this has to be taken on my word: it can all be checked.',
       points: [
         {
-          title: 'Over 30 years of experience',
+          title: `${CLINIC.years} years of experience`,
           description: 'Since 1994 I have treated more than 20,000 patients between Málaga and London.',
         },
         {
@@ -1091,7 +1085,7 @@ const en: SiteCopy = {
       },
       meta: {
         title: 'Dental implants in Málaga - Dr. Eugenia Vila',
-        description: `Klockner dental implants in El Palo, Málaga, from ${formatPrice(PRICES.implantOnly, 'en')} plus ${formatPrice(PRICES.zirconiaCrown, 'en')} for the zirconia crown. Over 30 years of implantology experience and a fixed written quote.`,
+        description: `Klockner dental implants in El Palo, Málaga, from ${formatPrice(PRICES.implantOnly, 'en')} plus ${formatPrice(PRICES.zirconiaCrown, 'en')} for the zirconia crown. ${CLINIC.years} years of implantology experience and a fixed written quote.`,
       },
       title: 'Dental implants',
       lead: 'An implant replaces the root of the missing tooth, and a fixed crown is placed on top. The result looks, feels and works like a tooth of your own.',
@@ -1180,11 +1174,10 @@ const en: SiteCopy = {
       },
       meta: {
         title: 'Oral surgery in Málaga - Dr. Eugenia Vila',
-        description:
-          'Simple and complex extractions, grafts and minimally invasive surgery in El Palo, Málaga. Over 30 years of surgical experience.',
+        description: `Simple and complex extractions, grafts and minimally invasive surgery in El Palo, Málaga. ${CLINIC.years} years of surgical experience.`,
       },
       title: 'Oral surgery',
-      lead: 'Over 30 years of surgery stand behind a careful technique that preserves healthy tissue and makes recovery easier.',
+      lead: `${CLINIC.years} years of surgery stand behind a careful technique that preserves healthy tissue and makes recovery easier.`,
       points: [
         'Simple and complex extractions',
         'Minimally invasive surgery that preserves healthy tissue',
@@ -1369,7 +1362,7 @@ const en: SiteCopy = {
   about: {
     eyebrow: 'About',
     title: 'Dr. Eugenia Vila',
-    lead: 'I’m Eugenia Vila, a dentist and physician, and I’ve spent over 30 years caring for the oral health of families in Málaga. I trained in Implantology (UIC Barcelona) and Aesthetics (University of Córdoba), and I treat every case personally and unhurried, always putting the patient first.',
+    lead: `I’m Eugenia Vila, a dentist and physician, and I’ve spent ${CLINIC.years} years caring for the oral health of families in Málaga. I trained in Implantology (UIC Barcelona) and Aesthetics (University of Córdoba), and I treat every case personally and unhurried, always putting the patient first.`,
     educationTitle: 'Education',
     education: [
       { title: 'Master’s in Aesthetic Medicine', org: 'University of Córdoba', date: '2008 - 2009' },
@@ -1402,7 +1395,7 @@ const en: SiteCopy = {
         org: 'Clínica Dental Dra. Eugenia Vila, Málaga',
         period: '1994 - present',
         bullets: [
-          'More than 20,000 patients treated in private practice over 30 years.',
+          `More than 20,000 patients treated in private practice over ${CLINIC.years} years.`,
           'Thousands of implants, surgeries, treatments and aesthetic restorations.',
           'Personal care and close follow-up of every patient and their family.',
         ],
