@@ -66,6 +66,11 @@ export interface FaqItem {
   answer: string;
 }
 
+export interface ProcessStep {
+  title: string;
+  description: string;
+}
+
 // Everything a treatment page needs, plus its overview card and nav label.
 // The priceGroup is the single source for that treatment's rows, reused by the
 // full price table on the treatments overview.
@@ -76,6 +81,9 @@ export interface TreatmentCopy {
   title: string;
   lead: string;
   points: string[];
+  // Visit-by-visit walkthrough, rolled out treatment by treatment. Optional so
+  // treatments without one yet still compile; fill both locales together.
+  process?: { title: string; intro: string; steps: ProcessStep[] };
   priceGroup: PriceGroup;
   cta: { title: string; body: string; message: string };
 }
@@ -369,17 +377,54 @@ const es: SiteCopy = {
       },
       meta: {
         title: 'Implantes dentales en Málaga - Dra. Eugenia Vila',
-        description: `Implantes dentales en El Palo, Málaga, desde ${formatPrice(PRICES.implantOnly, 'es')} más ${formatPrice(PRICES.zirconiaCrown, 'es')} la corona de zirconio. Más de 30 años de experiencia en implantología y presupuesto cerrado por escrito.`,
+        description: `Implantes dentales Klockner en El Palo, Málaga, desde ${formatPrice(PRICES.implantOnly, 'es')} más ${formatPrice(PRICES.zirconiaCrown, 'es')} la corona de zirconio. Más de 30 años de experiencia en implantología y presupuesto cerrado por escrito.`,
       },
       title: 'Implantes dentales',
       lead: 'Un implante sustituye la raíz del diente perdido y sobre él se coloca una corona fija. El resultado se ve, se siente y funciona como un diente propio.',
       points: [
         'Implante unitario, múltiple o rehabilitación completa de la boca',
+        'Implantes Klockner y solo aditamentos originales de la marca en la prótesis',
         'Planificación sobre TAC 3D (CBCT), valorado personalmente por la doctora',
         'Injertos óseos y elevación de seno cuando hacen falta',
         'Presupuesto cerrado por escrito antes de empezar',
         'Revisiones y mantenimiento a largo plazo',
       ],
+      process: {
+        title: 'Así es el tratamiento, paso a paso',
+        intro: 'Cada boca es distinta, pero un implante bien hecho sigue siempre el mismo camino. Así es como trabajo:',
+        steps: [
+          {
+            title: 'Valoración y TAC 3D',
+            description:
+              'En la primera visita te exploro y te explico tus opciones. Si el implante tiene sentido, te doy un volante para hacerte el TAC (CBCT) en un centro radiológico cercano; lo leo y valoro yo personalmente, y si sigues adelante con el tratamiento, lo que pagues por él se descuenta del presupuesto.',
+          },
+          {
+            title: 'Plan y presupuesto cerrado',
+            description:
+              'Sobre el TAC planifico dónde y cómo va cada implante, y te entrego el plan por escrito con su presupuesto cerrado. Antes de empezar sabes exactamente qué incluye y cuánto cuesta.',
+          },
+          {
+            title: 'Colocación del implante',
+            description:
+              'Con anestesia local y técnica mínimamente invasiva coloco el implante, de la marca Klockner. No duele, y la mayoría de mis pacientes se sorprende de lo llevadera que resulta la intervención.',
+          },
+          {
+            title: 'Osteointegración',
+            description:
+              'Durante unos seis meses el hueso se une al implante hasta dejarlo tan firme como una raíz propia. En este periodo hago las revisiones necesarias para comprobar que todo avanza como debe.',
+          },
+          {
+            title: 'Corona definitiva',
+            description:
+              'Sobre el implante ya integrado coloco la corona de zirconio, siempre con aditamentos originales Klockner y nunca con copias compatibles: el ajuste es exacto y el implante queda protegido a largo plazo. Ajusto forma y color hasta que el diente se ve y funciona como uno propio.',
+          },
+          {
+            title: 'Revisiones y mantenimiento',
+            description:
+              'Un implante bien cuidado dura muchos años. Te doy tu pauta de higiene y lo seguimos juntos en tus revisiones.',
+          },
+        ],
+      },
       priceGroup: {
         title: 'Precios de implantes',
         items: [
@@ -464,6 +509,7 @@ const es: SiteCopy = {
       lead: 'Los alineadores transparentes corrigen la posición de los dientes de forma discreta: te los quitas para comer y casi nadie nota que los llevas.',
       points: [
         'Alineadores transparentes y cómodos, hechos a tu medida',
+        'Simulación 3D del antes y el después: ves el resultado esperado antes de empezar',
         'Ideales para apiñamiento y espacios entre dientes',
         'Te los quitas para comer y para cepillarte',
         'Controles regulares para seguir el avance',
@@ -687,7 +733,7 @@ const es: SiteCopy = {
         id: 'materials',
         question: '¿Qué materiales utilizas?',
         answer:
-          'Solo materiales de primeras marcas, los mismos que uso en mi consulta de Londres y los que usaría para mi propia familia. En tu presupuesto por escrito verás exactamente qué incluye tu tratamiento, y en la consulta te enseño encantada qué sistema y qué laboratorio hay detrás de cada trabajo.',
+          'Solo materiales de primeras marcas, los mismos que uso en mi consulta de Londres y los que usaría para mi propia familia. Los implantes, por ejemplo, son Klockner, y en la prótesis uso únicamente aditamentos originales de la marca, nunca copias compatibles. En tu presupuesto por escrito verás exactamente qué incluye tu tratamiento, y en la consulta te enseño encantada qué sistema y qué laboratorio hay detrás de cada trabajo.',
       },
       {
         id: 'guarantee',
@@ -1045,17 +1091,54 @@ const en: SiteCopy = {
       },
       meta: {
         title: 'Dental implants in Málaga - Dr. Eugenia Vila',
-        description: `Dental implants in El Palo, Málaga, from ${formatPrice(PRICES.implantOnly, 'en')} plus ${formatPrice(PRICES.zirconiaCrown, 'en')} for the zirconia crown. Over 30 years of implantology experience and a fixed written quote.`,
+        description: `Klockner dental implants in El Palo, Málaga, from ${formatPrice(PRICES.implantOnly, 'en')} plus ${formatPrice(PRICES.zirconiaCrown, 'en')} for the zirconia crown. Over 30 years of implantology experience and a fixed written quote.`,
       },
       title: 'Dental implants',
       lead: 'An implant replaces the root of the missing tooth, and a fixed crown is placed on top. The result looks, feels and works like a tooth of your own.',
       points: [
         'Single, multiple or full-mouth implant rehabilitation',
+        'Klockner implants, with only original-brand components in the prosthesis',
         'Planning from a 3D scan (CBCT), assessed personally by the doctor',
         'Bone grafts and sinus lifts when needed',
         'A fixed, written quote before we start',
         'Long-term check-ups and maintenance',
       ],
+      process: {
+        title: 'The treatment, step by step',
+        intro: 'Every mouth is different, but a well-placed implant always follows the same path. This is how I work:',
+        steps: [
+          {
+            title: 'Assessment and 3D scan',
+            description:
+              'At the first visit I examine you and explain your options. If an implant makes sense, I give you a referral note for a CBCT scan at a nearby radiology centre; I read and assess it personally, and if you go ahead with treatment, what you pay for it is deducted from the quote.',
+          },
+          {
+            title: 'Plan and fixed quote',
+            description:
+              'Working on the scan I plan where and how each implant goes, and you receive the written plan with its fixed quote. Before we start you know exactly what it includes and what it costs.',
+          },
+          {
+            title: 'Implant placement',
+            description:
+              'Under local anaesthetic and with minimally invasive technique I place the implant, a Klockner implant. It does not hurt, and most of my patients are surprised by how manageable the procedure is.',
+          },
+          {
+            title: 'Osseointegration',
+            description:
+              'Over about six months the bone bonds to the implant until it is as firm as a natural root. During this period I carry out the check-ups needed to confirm everything is progressing as it should.',
+          },
+          {
+            title: 'Final crown',
+            description:
+              'Onto the integrated implant I fit the zirconia crown, always with original Klockner components and never compatible copies: the fit is exact and the implant stays protected in the long run. I adjust shape and colour until the tooth looks and works like your own.',
+          },
+          {
+            title: 'Check-ups and maintenance',
+            description:
+              'A well-cared-for implant lasts many years. I give you your hygiene routine and we follow it together at your check-ups.',
+          },
+        ],
+      },
       priceGroup: {
         title: 'Implant prices',
         items: [
@@ -1139,6 +1222,7 @@ const en: SiteCopy = {
       lead: 'Clear aligners correct the position of your teeth discreetly: you take them out to eat, and hardly anyone notices you are wearing them.',
       points: [
         'Clear, comfortable aligners, made to measure',
+        'A 3D before-and-after simulation: you see the expected result before starting',
         'Ideal for crowding and gaps between teeth',
         'You take them out to eat and to brush',
         'Regular check-ins to track progress',
@@ -1362,7 +1446,7 @@ const en: SiteCopy = {
         id: 'materials',
         question: 'Which materials do you use?',
         answer:
-          'Only leading-brand materials, the same ones I use in my London practice and the ones I would choose for my own family. Your written quote shows exactly what your treatment includes, and at the clinic I will gladly show you which system and which laboratory are behind each piece of work.',
+          'Only leading-brand materials, the same ones I use in my London practice and the ones I would choose for my own family. The implants, for example, are Klockner, and in the prosthesis I use only the brand’s original components, never compatible copies. Your written quote shows exactly what your treatment includes, and at the clinic I will gladly show you which system and which laboratory are behind each piece of work.',
       },
       {
         id: 'guarantee',
