@@ -203,6 +203,9 @@ export interface SiteCopy {
     before: string;
     after: string;
     caseLabel: string;
+    dragHint: string;
+    sliderLabel: string;
+    framingNote: string;
     comingSoonTitle: string;
     comingSoon: string;
   };
@@ -1281,6 +1284,10 @@ const es: SiteCopy = {
     before: 'Antes',
     after: 'Después',
     caseLabel: 'Caso',
+    dragHint: 'Arrastra el divisor para comparar el antes y el después',
+    sliderLabel: 'Mover el divisor para comparar antes y después',
+    framingNote:
+      'Casos reales, siempre en primer plano de la boca: es donde se ve el trabajo de verdad, sin que la pose ni la sonrisa puedan adornar el resultado.',
     comingSoonTitle: 'Pronto, más casos',
     comingSoon:
       'Estamos preparando más casos para compartir. Mientras tanto, puedes ver las experiencias de sus pacientes en las reseñas.',
@@ -2407,6 +2414,10 @@ const en: SiteCopy = {
     before: 'Before',
     after: 'After',
     caseLabel: 'Case',
+    dragHint: 'Drag the divider to compare before and after',
+    sliderLabel: 'Move the divider to compare before and after',
+    framingNote:
+      'Real cases, always as close-ups of the mouth: that is where the work really shows, with no pose or smile to dress up the result.',
     comingSoonTitle: 'More cases soon',
     comingSoon:
       'We are preparing more cases to share. In the meantime, you can read her patients’ experiences in the reviews.',

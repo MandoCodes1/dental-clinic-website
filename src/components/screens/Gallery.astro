@@ -27,7 +27,14 @@ const cases = [
   <PageHeader title={t.nav.gallery} lead={g.lead} />
   <section class="section bg-cream">
     <div class="container-page">
-      <BeforeAfter cases={cases} beforeLabel={g.before} afterLabel={g.after} />
+      <BeforeAfter
+        cases={cases}
+        beforeLabel={g.before}
+        afterLabel={g.after}
+        dragHint={g.dragHint}
+        sliderLabel={g.sliderLabel}
+      />
+      <p class="mx-auto mt-6 max-w-2xl text-center text-sm leading-relaxed text-ink/60">{g.framingNote}</p>
       <div class="mt-10 rounded-2xl border border-dashed border-brand-blue/30 bg-white p-6 text-center">
         <h2 class="font-heading text-lg text-brand-deep">{g.comingSoonTitle}</h2>
         <p class="mx-auto mt-2 max-w-xl text-sm text-ink/70">{g.comingSoon}</p>

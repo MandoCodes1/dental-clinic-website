@@ -2,6 +2,9 @@
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 
+// Before/after cases as drag-to-compare sliders. Both photos share one frame,
+// so the comparison is like for like: a wider or better-lit "after" cannot
+// flatter the result the way a side-by-side pair can.
 interface CaseItem {
   before: ImageMetadata;
   after: ImageMetadata;
@@ -11,42 +14,79 @@ interface Props {
   cases: CaseItem[];
   beforeLabel: string;
   afterLabel: string;
+  dragHint: string;
+  sliderLabel: string;
 }
-const { cases, beforeLabel, afterLabel } = Astro.props;
+const { cases, beforeLabel, afterLabel, dragHint, sliderLabel } = Astro.props;
 ---
 
 <div class="grid gap-6 sm:grid-cols-2">
   {
     cases.map((c) => (
       <figure class="card overflow-hidden p-0">
-        <div class="grid grid-cols-2">
-          <div class="relative">
-            <Image
-              src={c.before}
-              alt={`${beforeLabel}: ${c.title}`}
-              widths={[300, 500]}
-              sizes="(max-width: 640px) 50vw, 260px"
-              class="aspect-[4/3] w-full object-cover"
-            />
-            <span class="absolute left-2 top-2 rounded-full bg-ink/75 px-2 py-0.5 text-xs font-medium text-white">
-              {beforeLabel}
-            </span>
-          </div>
-          <div class="relative">
-            <Image
-              src={c.after}
-              alt={`${afterLabel}: ${c.title}`}
-              widths={[300, 500]}
-              sizes="(max-width: 640px) 50vw, 260px"
-              class="aspect-[4/3] w-full object-cover"
-            />
-            <span class="absolute left-2 top-2 rounded-full bg-brand-deep px-2 py-0.5 text-xs font-medium text-white">
-              {afterLabel}
-            </span>
-          </div>
+        <div class="relative aspect-[4/3] select-none overflow-hidden" data-compare style="--pos: 50%">
+          <Image
+            src={c.after}
+            alt={`${afterLabel}: ${c.title}`}
+            widths={[400, 700, 1000]}
+            sizes="(max-width: 640px) 92vw, 460px"
+            class="absolute inset-0 h-full w-full object-cover"
+          />
+          {/* The before shot sits on top, revealed from the left up to --pos. */}
+          <Image
+            src={c.before}
+            alt={`${beforeLabel}: ${c.title}`}
+            widths={[400, 700, 1000]}
+            sizes="(max-width: 640px) 92vw, 460px"
+            class="absolute inset-0 h-full w-full object-cover"
+            style="clip-path: inset(0 calc(100% - var(--pos)) 0 0)"
+          />
+
+          <span class="pointer-events-none absolute left-2 top-2 rounded-full bg-ink/75 px-2 py-0.5 text-xs font-medium text-white">
+            {beforeLabel}
+          </span>
+          <span class="pointer-events-none absolute right-2 top-2 rounded-full bg-brand-deep px-2 py-0.5 text-xs font-medium text-white">
+            {afterLabel}
+          </span>
+
+          {/* Divider and handle, drawn at --pos and never intercepting pointer events. */}
+          <span class="pointer-events-none absolute inset-y-0 w-0.5 bg-white/90 shadow" style="left: var(--pos)" />
+          <span
+            class="pointer-events-none absolute top-1/2 flex h-9 w-9 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-brand-deep shadow-md"
+            style="left: var(--pos)"
+          >
+            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M9 7L4 12l5 5M15 7l5 5-5 5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+
+          {/* The range input is the control: pointer drag and arrow keys both work. */}
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value="50"
+            step="1"
+            data-compare-range
+            aria-label={`${sliderLabel} (${c.title})`}
+            class="absolute inset-0 h-full w-full cursor-ew-resize appearance-none bg-transparent opacity-0"
+          />
         </div>
-        <figcaption class="px-4 py-3 text-sm font-medium text-brand-deep">{c.title}</figcaption>
+        <figcaption class="flex items-center justify-between gap-3 px-4 py-3 text-sm">
+          <span class="font-medium text-brand-deep">{c.title}</span>
+          <span class="text-xs text-ink/55">{dragHint}</span>
+        </figcaption>
       </figure>
     ))
   }
 </div>
+
+<script>
+  // Delegated so it binds once and keeps working across view transitions.
+  document.addEventListener('input', (event) => {
+    const range = event.target;
+    if (!(range instanceof HTMLInputElement) || !range.hasAttribute('data-compare-range')) return;
+    const frame = range.closest<HTMLElement>('[data-compare]');
+    frame?.style.setProperty('--pos', `${range.value}%`);
+  });
+</script>
