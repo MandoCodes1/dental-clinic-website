@@ -1,0 +1,163 @@
+---
+import type { TreatmentId } from '~/config';
+
+// Line illustrations drawn in the brand palette, one per treatment, so the six
+// pages read as one designed set instead of assorted stock photography. They
+// are decorative: the page copy carries the meaning, hence aria-hidden.
+// Palette: deep #0B3A5C outlines, sky #2E8BC4 accents, light #E5F0F8 fills.
+interface Props {
+  treatment: TreatmentId;
+  class?: string;
+}
+const { treatment, class: className } = Astro.props;
+---
+
+<svg
+  viewBox="0 0 240 200"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  role="presentation"
+  aria-hidden="true"
+  class={className}
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  {
+    treatment === 'implants' && (
+      <g>
+        {/* jaw bone the implant is anchored in */}
+        <rect x="52" y="112" width="136" height="74" rx="18" fill="#2E8BC4" fill-opacity="0.14" />
+        {/* crown */}
+        <path
+          d="M80 52C80 28 102 20 120 28C138 20 160 28 160 52C160 74 155 92 148 106L92 106C85 92 80 74 80 52Z"
+          fill="#FFFFFF"
+          stroke="#0B3A5C"
+          stroke-width="5"
+        />
+        {/* abutment */}
+        <path d="M106 106L134 106L130 126L110 126Z" fill="#FFFFFF" stroke="#0B3A5C" stroke-width="4" />
+        {/* implant screw, seated in the bone */}
+        <path d="M106 126L134 126L127 168C125 178 115 178 113 168Z" fill="#FFFFFF" stroke="#0F6BA8" stroke-width="5" />
+        <path d="M109 138L131 138M110 150L129 150M112 160L127 160" stroke="#2E8BC4" stroke-width="4" />
+      </g>
+    )
+  }
+
+  {
+    treatment === 'oralSurgery' && (
+      <g>
+        {/* gum, with the socket the tooth came out of */}
+        <rect x="52" y="128" width="136" height="58" rx="18" fill="#2E8BC4" fill-opacity="0.14" />
+        <path
+          d="M104 128C104 152 136 152 136 128"
+          stroke="#0B3A5C"
+          stroke-width="4"
+          stroke-dasharray="7 7"
+          fill="none"
+        />
+        {/* lifted tooth */}
+        <g transform="translate(60 6)">
+          <path
+            d="M10 35C10 12 32 4 50 12C68 4 90 12 90 35C90 58 84 78 78 100C74 116 62 118 59 104L54 76C52 66 48 66 46 76L41 104C38 118 26 116 22 100C16 78 10 58 10 35Z"
+            fill="#FFFFFF"
+            stroke="#0B3A5C"
+            stroke-width="5"
+          />
+        </g>
+        {/* direction of removal */}
+        <path d="M196 132L196 74" stroke="#2E8BC4" stroke-width="5" />
+        <path d="M184 88L196 74L208 88" stroke="#2E8BC4" stroke-width="5" />
+      </g>
+    )
+  }
+
+  {
+    treatment === 'orthodontics' && (
+      <g>
+        {/* gum */}
+        <rect x="34" y="132" width="172" height="44" rx="16" fill="#2E8BC4" fill-opacity="0.14" />
+        {/* teeth: the middle one still tilted, the rest already aligned */}
+        <rect x="44" y="84" width="38" height="54" rx="12" fill="#FFFFFF" stroke="#0B3A5C" stroke-width="5" />
+        <g transform="rotate(-16 111 111)">
+          <rect x="92" y="84" width="38" height="54" rx="12" fill="#FFFFFF" stroke="#0B3A5C" stroke-width="5" />
+        </g>
+        <rect x="158" y="84" width="38" height="54" rx="12" fill="#FFFFFF" stroke="#0B3A5C" stroke-width="5" />
+        {/* the movement the aligner produces */}
+        <path d="M96 62C110 50 132 50 146 62" stroke="#2E8BC4" stroke-width="5" stroke-dasharray="9 9" fill="none" />
+        <path d="M136 50L148 63L134 72" stroke="#2E8BC4" stroke-width="5" fill="none" />
+      </g>
+    )
+  }
+
+  {
+    treatment === 'aesthetics' && (
+      <g>
+        {/* tooth */}
+        <g transform="translate(56 34)">
+          <path
+            d="M10 35C10 12 32 4 50 12C68 4 90 12 90 35C90 58 84 78 78 100C74 116 62 118 59 104L54 76C52 66 48 66 46 76L41 104C38 118 26 116 22 100C16 78 10 58 10 35Z"
+            fill="#FFFFFF"
+            stroke="#0B3A5C"
+            stroke-width="5"
+          />
+        </g>
+        {/* veneer shell bonded onto the front face of the tooth */}
+        <path
+          d="M80 64C80 50 92 44 106 48C120 44 132 50 132 64C132 84 128 100 121 112C114 118 98 118 91 112C84 100 80 84 80 64Z"
+          fill="#FFFFFF"
+          stroke="#2E8BC4"
+          stroke-width="5"
+        />
+        {/* shine */}
+        <path d="M186 44L191 60L207 65L191 70L186 86L181 70L165 65L181 60Z" fill="#2E8BC4" />
+        <path d="M156 96L159 105L168 108L159 111L156 120L153 111L144 108L153 105Z" fill="#2E8BC4" opacity="0.7" />
+      </g>
+    )
+  }
+
+  {
+    treatment === 'general' && (
+      <g>
+        {/* tooth */}
+        <g transform="translate(34 36)">
+          <path
+            d="M10 35C10 12 32 4 50 12C68 4 90 12 90 35C90 58 84 78 78 100C74 116 62 118 59 104L54 76C52 66 48 66 46 76L41 104C38 118 26 116 22 100C16 78 10 58 10 35Z"
+            fill="#FFFFFF"
+            stroke="#0B3A5C"
+            stroke-width="5"
+          />
+        </g>
+        {/* mouth mirror */}
+        <circle cx="182" cy="66" r="24" fill="#E5F0F8" stroke="#0B3A5C" stroke-width="5" />
+        <path d="M166 84L140 122" stroke="#0B3A5C" stroke-width="5" />
+        {/* healthy check */}
+        <circle cx="170" cy="146" r="22" fill="#2E8BC4" />
+        <path d="M160 146L167 154L181 138" stroke="#FFFFFF" stroke-width="5" />
+      </g>
+    )
+  }
+
+  {
+    treatment === 'crowns' && (
+      <g>
+        {/* prepared tooth */}
+        <path
+          d="M84 120L156 120L149 152C146 168 133 170 130 156L126 138C124 130 118 130 116 138L112 156C109 170 96 168 93 152Z"
+          fill="#E5F0F8"
+          stroke="#0B3A5C"
+          stroke-width="5"
+        />
+        {/* crown cap coming down onto it */}
+        <path
+          d="M78 42C78 20 100 12 120 20C140 12 162 20 162 42C162 62 158 78 152 92L88 92C82 78 78 62 78 42Z"
+          fill="#FFFFFF"
+          stroke="#0F6BA8"
+          stroke-width="5"
+        />
+        {/* seating direction */}
+        <path d="M120 100L120 112" stroke="#2E8BC4" stroke-width="5" stroke-dasharray="2 8" />
+        <path d="M112 106L120 114L128 106" stroke="#2E8BC4" stroke-width="5" />
+      </g>
+    )
+  }
+</svg>
