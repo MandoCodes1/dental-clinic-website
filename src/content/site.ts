@@ -195,6 +195,10 @@ export interface SiteCopy {
     hoursBody: string;
     directions: string;
     mapCta: string;
+    gettingHereTitle: string;
+    gettingHereBus: string;
+    gettingHereCar: string;
+    gettingHereAccess: string;
   };
   homeVisit: {
     eyebrow: string;
@@ -1084,8 +1088,14 @@ const es: SiteCopy = {
     hoursTitle: 'Horario y citas',
     hoursBody:
       'Atiendo con cita previa. Paso consulta en Málaga en periodos concretos del año; escríbeme por WhatsApp y buscamos juntos el mejor momento para verte.',
-    directions: 'Cómo llegar',
+    directions: 'Ver la ruta en Google Maps',
     mapCta: 'Ver el mapa',
+    gettingHereTitle: 'Cómo llegar',
+    gettingHereBus:
+      'En autobús: las líneas 3 y 11 de la EMT recorren la avenida Juan Sebastián Elcano y paran a un paso de la clínica.',
+    gettingHereCar:
+      'En coche: se suele poder aparcar en la propia avenida o en las calles cercanas; ten en cuenta que algunas plazas son de zona azul (SARE) entre semana.',
+    gettingHereAccess: 'La consulta está en la 2ª planta y el edificio tiene ascensor.',
   },
   homeVisit: {
     eyebrow: 'Contacto',
@@ -2020,8 +2030,14 @@ const en: SiteCopy = {
     hoursTitle: 'Hours & appointments',
     hoursBody:
       'I see patients by appointment. I hold consultations in Málaga during specific periods of the year; message me on WhatsApp and we’ll find the best time to see you.',
-    directions: 'Get directions',
+    directions: 'View the route on Google Maps',
     mapCta: 'View the map',
+    gettingHereTitle: 'Getting here',
+    gettingHereBus:
+      'By bus: EMT lines 3 and 11 run along Avenida Juan Sebastián Elcano and stop a short walk from the clinic.',
+    gettingHereCar:
+      'By car: you can usually park on the avenue itself or in the nearby streets; note that some spaces are blue-zone (SARE) paid parking on weekdays.',
+    gettingHereAccess: 'The clinic is on the second floor and the building has a lift.',
   },
   homeVisit: {
     eyebrow: 'Contact',
