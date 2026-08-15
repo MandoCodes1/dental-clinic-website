@@ -273,7 +273,7 @@ const es: SiteCopy = {
       'Más de 30 años cuidando sonrisas en Málaga, con un trato cercano y honesto. Te atiende siempre la Dra. Eugenia Vila en persona, sin prisas y con materiales de primera calidad.',
     ctaBook: 'Pedir cita por WhatsApp',
     ctaTreatments: 'Ver tratamientos',
-    availability: 'Con cita previa · Te responde la propia doctora',
+    availability: 'Primera valoración gratuita · Con cita previa · Te responde la propia doctora',
   },
   credentials: {
     title: 'Una trayectoria que habla por sí sola',
@@ -320,7 +320,7 @@ const es: SiteCopy = {
     from: 'desde',
     customQuote: 'Presupuesto a medida',
     disclaimer:
-      'Precios orientativos para casos de complejidad baja. Tras la primera valoración recibirás un presupuesto cerrado y por escrito, sin compromiso: el precio acordado es el que pagas.',
+      'Precios orientativos para casos de complejidad baja. La primera valoración es gratuita, y con ella recibes un presupuesto cerrado y por escrito, sin compromiso: el precio acordado es el que pagas.',
     quality: {
       title: 'La misma calidad que ofrezco en Londres',
       lead: 'Cada tratamiento lo hago yo misma, con calma y sin atajos: los mismos materiales, protocolos y laboratorios que uso en la clínica de implantes de Londres donde ejerzo. No doy un caso por terminado hasta que el resultado es perfecto, y nada de esto tienes que creértelo por mi palabra: se puede comprobar.',
@@ -703,15 +703,15 @@ const es: SiteCopy = {
       },
       {
         id: 'firstVisit',
-        question: '¿Cómo es la primera visita?',
+        question: '¿Cuánto cuesta la primera visita?',
         answer:
-          'En la primera valoración te exploro, escucho qué necesitas y te explico las opciones. Después recibes un presupuesto cerrado y por escrito, sin compromiso: sin letra pequeña y sin sorpresas a mitad de tratamiento.',
+          'Nada: la primera valoración es gratuita. Te exploro, escucho qué necesitas y te explico las opciones, y después recibes un presupuesto cerrado y por escrito, sin compromiso. Si tu caso necesita radiografías, te doy un volante para un centro radiológico cercano; si sigues adelante con el tratamiento, lo que pagues por ellas se descuenta del presupuesto.',
       },
       {
         id: 'cbct',
         question: '¿Necesito un TAC (CBCT) para ponerme un implante? ¿Dónde se hace?',
         answer:
-          'Sí, para colocar implantes hace falta un TAC 3D (CBCT). Se realiza en un centro radiológico externo y lo leo y valoro yo personalmente, como hago a diario en Londres; esa valoración está incluida en tu plan de tratamiento.',
+          'Sí, para colocar implantes hace falta un TAC 3D (CBCT). Se realiza en un centro radiológico externo y lo leo y valoro yo personalmente, como hago a diario en Londres; esa valoración está incluida en tu plan y, si sigues adelante con el tratamiento, lo que pagues por el TAC se descuenta del presupuesto.',
       },
       {
         id: 'whitening',
@@ -725,9 +725,9 @@ const es: SiteCopy = {
       },
       {
         id: 'payment',
-        question: '¿Cómo se paga el tratamiento?',
+        question: '¿Cómo se paga el tratamiento? ¿Se puede fraccionar?',
         answer:
-          'El precio se acuerda por escrito antes de empezar y no cambia por el camino. Las formas de pago las vemos en la consulta, según el tratamiento y tu caso.',
+          'El precio se acuerda por escrito antes de empezar y no cambia por el camino. Si te viene mejor, el pago se puede fraccionar a lo largo del tratamiento; lo concretamos en la consulta, según el tratamiento y tu caso.',
       },
       {
         id: 'implantPain',
@@ -948,7 +948,7 @@ const en: SiteCopy = {
       'Over 30 years caring for smiles in Málaga, with warm, honest treatment. You are always seen personally by Dr. Eugenia Vila, with unhurried visits and top-quality materials.',
     ctaBook: 'Book on WhatsApp',
     ctaTreatments: 'See treatments',
-    availability: 'By appointment · The doctor replies to you herself',
+    availability: 'Free first assessment · By appointment · The doctor replies to you herself',
   },
   credentials: {
     title: 'A career that speaks for itself',
@@ -995,7 +995,7 @@ const en: SiteCopy = {
     from: 'from',
     customQuote: 'Quoted case by case',
     disclaimer:
-      'Guide prices for straightforward cases. After your first assessment you will receive a fixed, written quote with no obligation: the price we agree is the price you pay.',
+      'Guide prices for straightforward cases. Your first assessment is free, and with it you receive a fixed, written quote with no obligation: the price we agree is the price you pay.',
     quality: {
       title: 'The same quality I deliver in London',
       lead: 'I carry out every treatment myself, calmly and without shortcuts: the same materials, protocols and laboratories I use at the London implant clinic where I practise. I do not consider a case finished until the result is perfect, and none of this has to be taken on my word: it can all be checked.',
@@ -1378,15 +1378,15 @@ const en: SiteCopy = {
       },
       {
         id: 'firstVisit',
-        question: 'What happens at the first visit?',
+        question: 'What does the first visit cost?',
         answer:
-          'At the first assessment I examine you, listen to what you need and explain your options. You then receive a fixed, written quote with no obligation: no small print and no surprises mid-treatment.',
+          'Nothing: the first assessment is free. I examine you, listen to what you need and explain your options, and you then receive a fixed, written quote with no obligation. If your case needs X-rays, I give you a referral note for a nearby radiology centre; if you go ahead with treatment, what you pay for them is deducted from the quote.',
       },
       {
         id: 'cbct',
         question: 'Do I need a CBCT scan for an implant? Where is it taken?',
         answer:
-          'Yes, implant placement requires a 3D scan (CBCT). It is taken at an external radiology centre and I read and assess it personally, as I do daily in London; that assessment is included in your treatment plan.',
+          'Yes, implant placement requires a 3D scan (CBCT). It is taken at an external radiology centre and I read and assess it personally, as I do daily in London; that assessment is included in your plan and, if you go ahead with treatment, what you pay for the scan is deducted from the quote.',
       },
       {
         id: 'whitening',
@@ -1400,9 +1400,9 @@ const en: SiteCopy = {
       },
       {
         id: 'payment',
-        question: 'How do I pay for treatment?',
+        question: 'How do I pay for treatment? Can I pay in instalments?',
         answer:
-          'The price is agreed in writing before we start and does not change along the way. We discuss payment options at the clinic, depending on the treatment and your case.',
+          'The price is agreed in writing before we start and does not change along the way. If it suits you better, payment can be spread over the course of treatment; we settle the details at the clinic, depending on the treatment and your case.',
       },
       {
         id: 'implantPain',
