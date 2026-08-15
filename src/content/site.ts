@@ -325,7 +325,7 @@ const es: SiteCopy = {
   hero: {
     eyebrow: 'Clínica dental en El Palo, Málaga',
     title: 'Tu sonrisa, en las mejores manos',
-    subtitle: `${CLINIC.years} años cuidando sonrisas en Málaga, con un trato cercano y honesto. Te atiende siempre la Dra. Eugenia Vila en persona, sin prisas y con materiales de primera calidad.`,
+    subtitle: `${CLINIC.years} años cuidando sonrisas en Málaga, con un trato cercano y claro. Te atiende siempre la Dra. Eugenia Vila en persona, sin prisas y con materiales de primera calidad.`,
     ctaBook: 'Pedir cita por WhatsApp',
     ctaTreatments: 'Ver tratamientos',
     availability: 'Primera valoración gratuita · Con cita previa · Te responde la propia doctora',
@@ -340,7 +340,7 @@ const es: SiteCopy = {
     note: 'Galardonada Dentista del Año 2024 (Dental Art Implant Clinics, Londres) · Licenciada en Medicina y Cirugía y en Odontología · Registro GDC 287705 · Nota media 5.0 en Google y Trustpilot',
   },
   values: {
-    eyebrow: 'Por qué sus pacientes la recomiendan',
+    eyebrow: 'Por qué me recomiendan mis pacientes',
     title: 'Cuidado de verdad, no de franquicia',
     items: [
       {
@@ -364,7 +364,7 @@ const es: SiteCopy = {
   },
   treatmentsPage: {
     title: 'Tratamientos',
-    lead: 'Toda mi odontología en un solo lugar: qué hago, cómo lo hago y qué puedes esperar. Elige un tratamiento para ver los detalles y su precio de partida.',
+    lead: 'Todo lo que hago en la consulta: en qué consiste cada tratamiento, cómo lo trabajo y qué puedes esperar. Elige uno para ver los detalles y su precio de partida.',
     home: {
       eyebrow: 'Tratamientos',
       title: 'Odontología completa, hecha a tu medida',
@@ -378,7 +378,7 @@ const es: SiteCopy = {
       'Precios orientativos para casos de complejidad baja. La primera valoración es gratuita, y con ella recibes un presupuesto cerrado y por escrito, sin compromiso: el precio acordado es el que pagas.',
     quality: {
       title: 'La misma calidad que ofrezco en Londres',
-      lead: 'Cada tratamiento lo hago yo misma, con calma y sin atajos: los mismos materiales, protocolos y laboratorios que uso en la clínica de implantes de Londres donde ejerzo. No doy un caso por terminado hasta que el resultado es perfecto, y nada de esto tienes que creértelo por mi palabra: se puede comprobar.',
+      lead: 'Cada tratamiento lo hago yo misma, con calma y sin atajos: los mismos materiales, protocolos y laboratorios que uso en la clínica de implantes de Londres donde ejerzo. No doy un caso por terminado hasta que el resultado es perfecto, y no hace falta que me creas: todo esto se puede comprobar.',
       points: [
         {
           title: `${CLINIC.years} años de experiencia`,
@@ -1023,7 +1023,7 @@ const es: SiteCopy = {
   },
   featuredReviews: {
     eyebrow: 'Opiniones reales',
-    title: 'Lo que dicen sus pacientes',
+    title: 'Lo que cuentan mis pacientes',
     subtitle: 'Reseñas verificadas de Google y Trustpilot.',
     viewAll: 'Ver todas las reseñas',
   },
@@ -1280,22 +1280,22 @@ const es: SiteCopy = {
     },
   },
   gallery: {
-    lead: 'Casos reales tratados por la Dra. Vila. Cada sonrisa cuenta una historia.',
+    lead: 'Casos reales tratados en mi consulta. Mueve la barra de cada foto y verás cómo estaba la boca antes y cómo quedó después.',
     before: 'Antes',
     after: 'Después',
     caseLabel: 'Caso',
-    dragHint: 'Arrastra el divisor para comparar el antes y el después',
-    sliderLabel: 'Mover el divisor para comparar antes y después',
+    dragHint: 'Desliza para ver el antes y el después',
+    sliderLabel: 'Comparar el antes y el después',
     framingNote:
-      'Casos reales, siempre en primer plano de la boca: es donde se ve el trabajo de verdad, sin que la pose ni la sonrisa puedan adornar el resultado.',
-    comingSoonTitle: 'Pronto, más casos',
+      'Son fotos de cerca de la boca, que es donde se ve el trabajo: ni la pose ni la luz pueden maquillar el resultado.',
+    comingSoonTitle: 'Iré subiendo más casos',
     comingSoon:
-      'Estamos preparando más casos para compartir. Mientras tanto, puedes ver las experiencias de sus pacientes en las reseñas.',
+      'Poco a poco voy publicando casos nuevos. Mientras tanto, en las reseñas puedes leer lo que cuentan mis pacientes.',
   },
   contact: {
     lead: 'Pide tu cita o cuéntame tu caso. Te atiendo yo misma, sin intermediarios.',
     whatsappTitle: 'WhatsApp',
-    whatsappBody: 'La forma más rápida de contactar. Te respondo personalmente.',
+    whatsappBody: 'La vía más rápida para escribirme. Te contesto yo misma.',
     phoneTitle: 'Teléfono',
     phoneBody: 'Si prefieres hablar directamente, llámame y lo vemos por teléfono.',
     emailTitle: 'Email',
@@ -1334,7 +1334,7 @@ const es: SiteCopy = {
     button: 'Escribir por WhatsApp',
     defaultMessage: 'Hola, me gustaría pedir una cita con la Dra. Vila.',
     home: {
-      title: '¿Damos el primer paso hacia tu sonrisa?',
+      title: '¿Hablamos de tu sonrisa?',
       body: 'Escríbeme por WhatsApp y te respondo yo misma, sin compromiso.',
       message: 'Hola, me gustaría pedir una primera cita con la Dra. Vila.',
     },
@@ -1374,7 +1374,7 @@ const es: SiteCopy = {
     whatsapp: 'WhatsApp',
   },
   footer: {
-    tagline: 'Clínica dental en El Palo, Málaga. Cuidado cercano y honesto desde 1994.',
+    tagline: 'Clínica dental en El Palo, Málaga. Trato cercano y claro desde 1994.',
     treatmentsTitle: 'Tratamientos',
     navTitle: 'Navegación',
     contactTitle: 'Contacto',
@@ -1472,7 +1472,7 @@ const en: SiteCopy = {
     note: 'Awarded Dentist of the Year 2024 (Dental Art Implant Clinics, London) · Degrees in Medicine and Surgery, and in Dentistry · GDC reg. 287705 · 5.0 average rating on Google and Trustpilot',
   },
   values: {
-    eyebrow: 'Why her patients recommend her',
+    eyebrow: 'Why my patients recommend me',
     title: 'Real care, not a franchise',
     items: [
       {
@@ -2154,7 +2154,7 @@ const en: SiteCopy = {
   },
   featuredReviews: {
     eyebrow: 'Real opinions',
-    title: 'What her patients say',
+    title: 'What my patients say',
     subtitle: 'Verified reviews from Google and Trustpilot.',
     viewAll: 'Read all reviews',
   },
@@ -2410,17 +2410,17 @@ const en: SiteCopy = {
     },
   },
   gallery: {
-    lead: 'Real cases treated by Dr. Vila. Every smile tells a story.',
+    lead: 'Real cases treated at my practice. Slide the bar across each photo to see how the mouth looked before and how it ended up.',
     before: 'Before',
     after: 'After',
     caseLabel: 'Case',
-    dragHint: 'Drag the divider to compare before and after',
-    sliderLabel: 'Move the divider to compare before and after',
+    dragHint: 'Slide to see before and after',
+    sliderLabel: 'Compare before and after',
     framingNote:
-      'Real cases, always as close-ups of the mouth: that is where the work really shows, with no pose or smile to dress up the result.',
-    comingSoonTitle: 'More cases soon',
+      'These are close-ups of the mouth, which is where the work shows: neither the pose nor the lighting can dress up the result.',
+    comingSoonTitle: 'More cases on the way',
     comingSoon:
-      'We are preparing more cases to share. In the meantime, you can read her patients’ experiences in the reviews.',
+      'I add new cases little by little. In the meantime, the reviews are where you can read what my patients say.',
   },
   contact: {
     lead: 'Book an appointment or tell me about your case. You’ll be looked after by me, with no middlemen.',
@@ -2464,7 +2464,7 @@ const en: SiteCopy = {
     button: 'Message on WhatsApp',
     defaultMessage: 'Hello, I would like to book an appointment with Dr. Vila.',
     home: {
-      title: 'Ready to take the first step toward your smile?',
+      title: 'Shall we talk about your smile?',
       body: 'Message me on WhatsApp and I’ll reply personally, with no obligation.',
       message: 'Hello, I would like to book a first visit with Dr. Vila.',
     },
