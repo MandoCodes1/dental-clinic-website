@@ -1,7 +1,7 @@
 import type { Lang } from '~/i18n';
 // The FAQ answers quote figures that also appear in the price table, so they
 // read PRICES rather than repeating the numbers as prose and drifting from it.
-import { CLINIC, PRICES, type PriceId, type TreatmentId } from '~/config';
+import { CLINIC, PRICES, type GuideId, type PriceId, type TreatmentId } from '~/config';
 import { formatPrice } from '~/utils/prices';
 
 // All translatable copy lives here once per locale. The shared SiteCopy type
@@ -83,6 +83,23 @@ export interface ProcessStep {
   description: string;
 }
 
+// Evergreen guides: plain-language answers to what people search for, each one
+// a short article plus the same closing CTA as the treatment pages.
+export interface GuideSection {
+  title: string;
+  body: string[];
+}
+
+export interface GuideCopy {
+  navLabel: string;
+  card: { title: string; description: string };
+  meta: MetaEntry;
+  title: string;
+  lead: string;
+  sections: GuideSection[];
+  cta: { title: string; body: string; message: string };
+}
+
 // Everything a treatment page needs, plus its overview card and nav label.
 // The priceGroup is the single source for that treatment's rows, reused by the
 // full price table on the treatments overview.
@@ -110,10 +127,14 @@ export interface SiteCopy {
     products: string;
     contact: string;
     faq: string;
+    guides: string;
     more: string;
     book: string;
   };
-  meta: Record<'home' | 'about' | 'treatments' | 'gallery' | 'reviews' | 'contact' | 'products' | 'faq', MetaEntry>;
+  meta: Record<
+    'home' | 'about' | 'treatments' | 'gallery' | 'reviews' | 'contact' | 'products' | 'faq' | 'guides',
+    MetaEntry
+  >;
   a11y: { skip: string; openMenu: string; closeMenu: string; switchLang: string };
   hero: {
     eyebrow: string;
@@ -149,6 +170,8 @@ export interface SiteCopy {
     faqLink: string;
   };
   treatments: Record<TreatmentId, TreatmentCopy>;
+  guidesPage: { eyebrow: string; title: string; lead: string; readMore: string; backToGuides: string };
+  guides: Record<GuideId, GuideCopy>;
   featuredReviews: { eyebrow: string; title: string; subtitle: string; viewAll: string };
   homeFaq: { eyebrow: string; title: string; subtitle: string; viewAll: string };
   about: {
@@ -245,6 +268,7 @@ const es: SiteCopy = {
     products: 'Productos',
     contact: 'Contacto',
     faq: 'Preguntas frecuentes',
+    guides: 'Guías',
     more: 'Más',
     book: 'Pedir cita',
   },
@@ -287,6 +311,11 @@ const es: SiteCopy = {
       title: 'Preguntas frecuentes - Dra. Eugenia Vila',
       description:
         'Respuestas claras sobre implantes dentales en El Palo, Málaga: precios y qué incluyen, materiales, garantía, primera visita y cómo pedir cita.',
+    },
+    guides: {
+      title: 'Guías dentales - Dra. Eugenia Vila',
+      description:
+        'Guías claras para decidir con criterio: cuánto cuesta un implante dental en Málaga, cómo elegir dentista y atención en inglés en El Palo.',
     },
   },
   a11y: { skip: 'Saltar al contenido', openMenu: 'Abrir menú', closeMenu: 'Cerrar menú', switchLang: 'Ver en inglés' },
@@ -810,6 +839,185 @@ const es: SiteCopy = {
       },
     },
   },
+  guidesPage: {
+    eyebrow: 'Guías',
+    title: 'Guías para decidir con criterio',
+    lead: 'Respuestas largas y claras a las dudas que más me llegan antes de empezar un tratamiento. Sin tecnicismos innecesarios y sin letra pequeña.',
+    readMore: 'Leer la guía',
+    backToGuides: 'Ver todas las guías',
+  },
+  guides: {
+    implantCost: {
+      navLabel: 'Precio de un implante dental',
+      card: {
+        title: '¿Cuánto cuesta un implante dental en Málaga?',
+        description:
+          'Qué se paga exactamente, de qué depende el precio final y qué preguntas conviene hacer antes de decidir.',
+      },
+      meta: {
+        title: '¿Cuánto cuesta un implante dental en Málaga? - Dra. Eugenia Vila',
+        description: `Precio de un implante dental en Málaga: desde ${formatPrice(PRICES.implantOnly, 'es')} el implante y ${formatPrice(PRICES.zirconiaCrown, 'es')} la corona de zirconio. Qué incluye, de qué depende y qué preguntar antes de decidir.`,
+      },
+      title: '¿Cuánto cuesta un implante dental en Málaga?',
+      lead: `Un implante con su corona cuesta desde ${formatPrice(PRICES.implantCrown, 'es')} en mi consulta de El Palo. Debajo te explico cómo se reparte esa cifra, qué la hace subir en algunos casos y qué deberías preguntar en cualquier clínica antes de decidirte.`,
+      sections: [
+        {
+          title: 'El precio tiene dos partes',
+          body: [
+            `Un implante no es una pieza única, sino dos: la raíz artificial que se integra en el hueso y el diente visible que va encima. La colocación del implante cuesta desde ${formatPrice(PRICES.implantOnly, 'es')} y la corona de zirconio desde ${formatPrice(PRICES.zirconiaCrown, 'es')}, es decir, desde ${formatPrice(PRICES.implantCrown, 'es')} el tratamiento completo.`,
+            'Verlo separado ayuda a comparar presupuestos: a veces una cifra que parece baja corresponde solo al implante y la corona se suma después. Pregunta siempre si el precio que te dan incluye ya el diente que se ve.',
+          ],
+        },
+        {
+          title: 'De qué depende el precio final',
+          body: [
+            'De cuántos dientes falten y de cómo esté el hueso donde va el implante. Un implante unitario en un hueso sano es el caso más sencillo; varias piezas, o un hueso que ha perdido volumen tras años sin diente, necesitan más planificación y a veces pasos adicionales.',
+            'También influye el estado del resto de la boca. Si hay encías inflamadas o caries activas, eso se trata antes: un implante se coloca sobre una boca sana, nunca a la vez que se apaga un fuego al lado.',
+          ],
+        },
+        {
+          title: 'Cuándo hacen falta injerto o elevación de seno',
+          body: [
+            `Cuando falta hueso donde tiene que anclarse el implante. El injerto (desde ${formatPrice(PRICES.boneGraft, 'es')}) aporta el volumen que falta, y la elevación de seno (desde ${formatPrice(PRICES.sinusLift, 'es')}) gana altura en las muelas de arriba, donde el seno maxilar baja con los años.`,
+            'No son un extra que se añade por sistema: se hacen solo si tu caso los necesita, se ven en el TAC 3D antes de empezar y entran en el presupuesto cerrado desde el principio, no a mitad del tratamiento.',
+          ],
+        },
+        {
+          title: 'Qué está incluido y qué no',
+          body: [
+            'La primera valoración es gratuita: te exploro, te explico las opciones y sales con un presupuesto por escrito, sin compromiso.',
+            'El TAC 3D (CBCT) se hace en un centro radiológico cercano porque el equipo no está en la consulta. Lo leo y lo planifico yo personalmente, y si sigues adelante con el tratamiento, lo que hayas pagado por él se descuenta del presupuesto.',
+            'Las revisiones y el seguimiento posterior forman parte del tratamiento, no se facturan aparte.',
+          ],
+        },
+        {
+          title: 'Qué preguntar antes de decidir',
+          body: [
+            '¿Qué marca de implante se va a usar y qué aditamentos lleva la prótesis? En mi consulta son implantes Klockner y solo aditamentos originales de la marca, nunca copias compatibles: el ajuste es exacto y el implante queda protegido a largo plazo.',
+            '¿Quién planifica y quién coloca el implante, y verás a esa misma persona en las revisiones?',
+            '¿El presupuesto es cerrado y por escrito antes de empezar? El precio acordado debería ser el que pagas al terminar.',
+          ],
+        },
+      ],
+      cta: {
+        title: '¿Quieres saber qué costaría en tu caso?',
+        body: 'Escríbeme por WhatsApp, cuéntame qué diente te falta y te digo cómo lo enfocaría, sin compromiso.',
+        message: 'Hola, me gustaría saber qué costaría un implante en mi caso.',
+      },
+    },
+    englishDentist: {
+      navLabel: 'Dentista que habla inglés',
+      card: {
+        title: 'Dentista que habla inglés en Málaga',
+        description: 'Atención en inglés y en español, con una dentista registrada también en el Reino Unido.',
+      },
+      meta: {
+        title: 'Dentista que habla inglés en Málaga - Dra. Eugenia Vila',
+        description:
+          'Dentista bilingüe en El Palo, Málaga: la Dra. Eugenia Vila atiende en inglés y en español, ejerce en una clínica de implantes de Londres y está registrada en el GDC británico.',
+      },
+      title: 'Dentista que habla inglés en Málaga',
+      lead: 'Si vives en Málaga o pasas temporadas aquí y prefieres que te expliquen tu tratamiento en inglés, en mi consulta de El Palo lo hacemos con naturalidad: trabajo la mitad del año en una clínica de implantes de Londres.',
+      sections: [
+        {
+          title: 'Consultas en inglés y en español',
+          body: [
+            'Te atiendo yo misma en el idioma que prefieras, sin intérpretes ni malentendidos. En una consulta dental eso importa: entender bien qué se te propone, por qué y qué alternativas tienes es lo que te permite decidir con tranquilidad.',
+            'Los presupuestos y las pautas de cuidados también te los puedo entregar en inglés.',
+          ],
+        },
+        {
+          title: 'Registrada también en el Reino Unido',
+          body: [
+            `Además de estar colegiada en el Ilustre Colegio de Dentistas de Málaga, estoy registrada en el General Dental Council británico (n.º ${CLINIC.gdc}), el organismo que regula el ejercicio de la odontología en el Reino Unido.`,
+            'Trabajo como implantóloga en Dental Art Implant Clinics, en Londres, donde fui Dentista del Año 2024.',
+          ],
+        },
+        {
+          title: 'Los mismos materiales y protocolos que en Londres',
+          body: [
+            'Uso en Málaga los mismos implantes, materiales y laboratorios que uso en Londres, con los mismos protocolos de trabajo. Si te has tratado en el Reino Unido y comparas, reconocerás la forma de trabajar.',
+            'La diferencia práctica está en los tiempos y en el trato: aquí la consulta es pequeña y personal, y te atiendo yo en cada visita.',
+          ],
+        },
+        {
+          title: 'Si estás de visita o vives a caballo entre dos países',
+          body: [
+            'Paso consulta en Málaga en periodos concretos del año, así que conviene escribir con algo de antelación para encajar tu tratamiento en tus fechas. Muchos pacientes organizan las visitas alrededor de sus viajes.',
+            'Escríbeme por WhatsApp contándome tu caso y tus fechas y te digo con franqueza qué se puede hacer en ese tiempo y qué es mejor no acelerar.',
+          ],
+        },
+      ],
+      cta: {
+        title: '¿Prefieres que te atienda en inglés?',
+        body: 'Escríbeme por WhatsApp en el idioma que quieras y te respondo yo misma.',
+        message: 'Hello, I would like to book an appointment in English.',
+      },
+    },
+    chooseDentist: {
+      navLabel: 'Cómo elegir dentista',
+      card: {
+        title: 'Cómo elegir dentista en Málaga',
+        description: 'Seis preguntas sencillas que te dicen bastante más sobre una clínica que su publicidad.',
+      },
+      meta: {
+        title: 'Cómo elegir dentista en Málaga - Dra. Eugenia Vila',
+        description:
+          'Seis preguntas para elegir clínica dental en Málaga con criterio: quién te atiende, qué materiales se usan, si el presupuesto es cerrado y qué pasa después del tratamiento.',
+      },
+      title: 'Cómo elegir dentista en Málaga',
+      lead: 'Elegir dentista cuesta, porque desde fuera todas las clínicas se parecen. Estas seis preguntas se hacen en un minuto y te dicen bastante más que cualquier anuncio.',
+      sections: [
+        {
+          title: '1. ¿Quién te va a atender en cada visita?',
+          body: [
+            'En muchas clínicas te valora una persona, te trata otra y te revisa una tercera. No tiene por qué salir mal, pero se pierden matices por el camino y acabas contando tu caso tres veces.',
+            'Pregunta si verás siempre al mismo profesional, y si quien hace el diagnóstico será quien haga el tratamiento.',
+          ],
+        },
+        {
+          title: '2. ¿Qué materiales y qué marcas se usan?',
+          body: [
+            'Una clínica que trabaja con buenos materiales no tiene ningún problema en decirte la marca del implante, del composite o del laboratorio que hace las coronas.',
+            'En implantes hay un detalle que casi nadie pregunta y que importa mucho: si la prótesis lleva aditamentos originales de la marca del implante o piezas compatibles de otro fabricante.',
+          ],
+        },
+        {
+          title: '3. ¿El presupuesto es cerrado y por escrito?',
+          body: [
+            'Un presupuesto por escrito, con el detalle de lo que incluye, evita el peor momento de cualquier tratamiento: la sorpresa a mitad de camino.',
+            'Pregunta también qué pasa si aparece algo imprevisto, y si eso puede cambiar la cifra.',
+          ],
+        },
+        {
+          title: '4. ¿Cuánto tiempo se dedica a tu caso?',
+          body: [
+            'El tiempo es la parte del trabajo que no se ve en el precio, y es donde se nota la diferencia entre un tratamiento correcto y uno bien acabado: ajustar una corona, pulir una carilla o comprobar una mordida requiere calma.',
+            'Una primera visita de cinco minutos rara vez da para entender un caso completo.',
+          ],
+        },
+        {
+          title: '5. ¿Puedes ver opiniones y casos reales?',
+          body: [
+            'Las reseñas con nombre y detalle valen mucho más que una nota media. Busca opiniones que cuenten qué tratamiento se hizo y cómo fue el seguimiento.',
+            'Si ves fotos de antes y después, fíjate en si el encuadre y la luz son parecidos en las dos. Una foto de después mejor iluminada y con más arreglo personal exagera el cambio: los primeros planos comparables son los que de verdad enseñan el trabajo.',
+          ],
+        },
+        {
+          title: '6. ¿Qué pasa después del tratamiento?',
+          body: [
+            'Un buen tratamiento no termina el día que sales de la consulta. Pregunta qué revisiones incluye, cada cuánto conviene volver y a quién llamas si algo te molesta un domingo.',
+            'La respuesta a esa última pregunta dice mucho sobre cómo entiende una clínica su trabajo.',
+          ],
+        },
+      ],
+      cta: {
+        title: '¿Quieres una segunda opinión sobre tu caso?',
+        body: 'Cuéntame por WhatsApp qué te han propuesto y te doy mi opinión con franqueza, sin compromiso.',
+        message: 'Hola, me gustaría una segunda opinión sobre un tratamiento.',
+      },
+    },
+  },
   featuredReviews: {
     eyebrow: 'Opiniones reales',
     title: 'Lo que dicen sus pacientes',
@@ -1189,6 +1397,7 @@ const en: SiteCopy = {
     products: 'Products',
     contact: 'Contact',
     faq: 'FAQ',
+    guides: 'Guides',
     more: 'More',
     book: 'Book a visit',
   },
@@ -1230,6 +1439,11 @@ const en: SiteCopy = {
       title: 'FAQ - Dr. Eugenia Vila',
       description:
         'Clear answers about dental implants in El Palo, Málaga: prices and what they include, materials, guarantees, your first visit and how to book.',
+    },
+    guides: {
+      title: 'Dental guides - Dr. Eugenia Vila',
+      description:
+        'Clear guides to help you decide: how much a dental implant costs in Málaga, how to choose a dentist, and English-speaking dental care in El Palo.',
     },
   },
   a11y: { skip: 'Skip to content', openMenu: 'Open menu', closeMenu: 'Close menu', switchLang: 'View in Spanish' },
@@ -1750,6 +1964,184 @@ const en: SiteCopy = {
         title: 'A broken or badly worn tooth?',
         body: 'Send me a photo on WhatsApp and I will tell you what your options are, with no obligation.',
         message: 'Hello, I have a damaged tooth and would like an assessment.',
+      },
+    },
+  },
+  guidesPage: {
+    eyebrow: 'Guides',
+    title: 'Guides to help you decide',
+    lead: 'Long, clear answers to the questions I am asked most before a treatment starts. No unnecessary jargon and no small print.',
+    readMore: 'Read the guide',
+    backToGuides: 'See all guides',
+  },
+  guides: {
+    implantCost: {
+      navLabel: 'Dental implant cost',
+      card: {
+        title: 'How much does a dental implant cost in Málaga?',
+        description: 'Exactly what you pay for, what makes the final price change and what to ask before you decide.',
+      },
+      meta: {
+        title: 'How much does a dental implant cost in Málaga? - Dr. Eugenia Vila',
+        description: `Dental implant prices in Málaga: from ${formatPrice(PRICES.implantOnly, 'en')} for the implant and ${formatPrice(PRICES.zirconiaCrown, 'en')} for the zirconia crown. What is included, what changes the price and what to ask before deciding.`,
+      },
+      title: 'How much does a dental implant cost in Málaga?',
+      lead: `An implant with its crown starts from ${formatPrice(PRICES.implantCrown, 'en')} at my practice in El Palo. Below I explain how that figure breaks down, what pushes it up in some cases, and what you should ask at any clinic before deciding.`,
+      sections: [
+        {
+          title: 'The price comes in two parts',
+          body: [
+            `An implant is not a single piece but two: the artificial root that integrates with the bone, and the visible tooth on top. Placing the implant starts from ${formatPrice(PRICES.implantOnly, 'en')} and the zirconia crown from ${formatPrice(PRICES.zirconiaCrown, 'en')}, which is ${formatPrice(PRICES.implantCrown, 'en')} for the complete treatment.`,
+            'Seeing it split helps when comparing quotes: sometimes a low-looking figure covers only the implant and the crown is added later. Always ask whether the price you are given already includes the tooth you can see.',
+          ],
+        },
+        {
+          title: 'What the final price depends on',
+          body: [
+            'On how many teeth are missing and on the state of the bone where the implant goes. A single implant in healthy bone is the simplest case; several teeth, or bone that has lost volume after years without a tooth, need more planning and sometimes extra steps.',
+            'The rest of the mouth matters too. If there are inflamed gums or active decay, those are treated first: an implant goes into a healthy mouth, never alongside a fire being put out next door.',
+          ],
+        },
+        {
+          title: 'When a graft or a sinus lift is needed',
+          body: [
+            `When there is not enough bone to anchor the implant. A graft (from ${formatPrice(PRICES.boneGraft, 'en')}) adds the missing volume, and a sinus lift (from ${formatPrice(PRICES.sinusLift, 'en')}) gains height in the upper back teeth, where the maxillary sinus drops over the years.`,
+            'They are not an extra added as a matter of course: they are only done if your case needs them, they show up on the 3D scan before we start, and they are part of the fixed quote from the outset, not halfway through treatment.',
+          ],
+        },
+        {
+          title: 'What is included and what is not',
+          body: [
+            'The first assessment is free: I examine you, explain your options and you leave with a written quote, with no obligation.',
+            'The 3D scan (CBCT) is taken at a nearby radiology centre because the equipment is not in the practice. I read and plan it personally, and if you go ahead with treatment, what you paid for it is deducted from the quote.',
+            'Check-ups and follow-up are part of the treatment, not billed separately.',
+          ],
+        },
+        {
+          title: 'What to ask before deciding',
+          body: [
+            'Which implant brand will be used, and what components will the prosthesis carry? At my practice they are Klockner implants with original Klockner components only, never compatible copies: the fit is exact and the implant stays protected long term.',
+            'Who plans and who places the implant, and will you see that same person at your check-ups?',
+            'Is the quote fixed and in writing before starting? The price agreed should be the price you pay at the end.',
+          ],
+        },
+      ],
+      cta: {
+        title: 'Want to know what it would cost in your case?',
+        body: 'Message me on WhatsApp, tell me which tooth is missing and I will tell you how I would approach it, with no obligation.',
+        message: 'Hello, I would like to know what an implant would cost in my case.',
+      },
+    },
+    englishDentist: {
+      navLabel: 'English-speaking dentist',
+      card: {
+        title: 'English-speaking dentist in Málaga',
+        description: 'Care in English and Spanish, from a dentist also registered in the United Kingdom.',
+      },
+      meta: {
+        title: 'English-speaking dentist in Málaga - Dr. Eugenia Vila',
+        description:
+          'Bilingual dentist in El Palo, Málaga: Dr. Eugenia Vila treats patients in English and Spanish, practises at a London implant clinic and is registered with the UK GDC.',
+      },
+      title: 'English-speaking dentist in Málaga',
+      lead: 'If you live in Málaga or spend part of the year here and would rather have your treatment explained in English, that comes naturally at my practice in El Palo: I spend half the year working at an implant clinic in London.',
+      sections: [
+        {
+          title: 'Appointments in English and Spanish',
+          body: [
+            'I see you myself, in whichever language you prefer, with no interpreters and no misunderstandings. In a dental appointment that matters: properly understanding what is being proposed, why, and what the alternatives are is what lets you decide calmly.',
+            'Quotes and aftercare instructions can be given to you in English too.',
+          ],
+        },
+        {
+          title: 'Also registered in the United Kingdom',
+          body: [
+            `Besides being registered with the Málaga College of Dentists, I am registered with the British General Dental Council (no. ${CLINIC.gdc}), the body that regulates dental practice in the UK.`,
+            'I work as an implantologist at Dental Art Implant Clinics in London, where I was named Dentist of the Year 2024.',
+          ],
+        },
+        {
+          title: 'The same materials and protocols as in London',
+          body: [
+            'In Málaga I use the same implants, materials and laboratories I use in London, with the same working protocols. If you have been treated in the UK and compare, you will recognise the way of working.',
+            'The practical difference is in the timings and the care: here the practice is small and personal, and I see you myself at every visit.',
+          ],
+        },
+        {
+          title: 'If you are visiting or living between two countries',
+          body: [
+            'I hold consultations in Málaga during specific periods of the year, so it is worth writing a little in advance to fit your treatment around your dates. Many patients plan their visits around their trips.',
+            'Message me on WhatsApp with your case and your dates and I will tell you frankly what can be done in that time and what is better not to rush.',
+          ],
+        },
+      ],
+      cta: {
+        title: 'Would you rather be seen in English?',
+        body: 'Message me on WhatsApp in whichever language you prefer and I will reply personally.',
+        message: 'Hello, I would like to book an appointment in English.',
+      },
+    },
+    chooseDentist: {
+      navLabel: 'How to choose a dentist',
+      card: {
+        title: 'How to choose a dentist in Málaga',
+        description: 'Six simple questions that tell you far more about a clinic than its advertising does.',
+      },
+      meta: {
+        title: 'How to choose a dentist in Málaga - Dr. Eugenia Vila',
+        description:
+          'Six questions for choosing a dental clinic in Málaga: who treats you, which materials are used, whether the quote is fixed, and what happens after treatment.',
+      },
+      title: 'How to choose a dentist in Málaga',
+      lead: 'Choosing a dentist is hard, because from the outside every clinic looks alike. These six questions take a minute to ask and tell you far more than any advert.',
+      sections: [
+        {
+          title: '1. Who will treat you at each visit?',
+          body: [
+            'At many clinics one person assesses you, another treats you and a third does your check-up. It does not have to go wrong, but details get lost along the way and you end up telling your story three times.',
+            'Ask whether you will always see the same professional, and whether whoever makes the diagnosis will be the one carrying out the treatment.',
+          ],
+        },
+        {
+          title: '2. Which materials and brands are used?',
+          body: [
+            'A clinic that works with good materials has no problem telling you the brand of the implant, the composite, or the laboratory that makes its crowns.',
+            'With implants there is one detail almost nobody asks about and that matters a great deal: whether the prosthesis uses original components from the implant brand or compatible parts from another manufacturer.',
+          ],
+        },
+        {
+          title: '3. Is the quote fixed and in writing?',
+          body: [
+            'A written quote, itemising what it includes, avoids the worst moment of any treatment: the surprise halfway through.',
+            'Ask as well what happens if something unexpected comes up, and whether that can change the figure.',
+          ],
+        },
+        {
+          title: '4. How much time is given to your case?',
+          body: [
+            'Time is the part of the work that does not show up in the price, and it is where the difference lies between a correct treatment and a well-finished one: adjusting a crown, polishing a veneer or checking a bite takes patience.',
+            'A five-minute first visit rarely allows anyone to understand a whole case.',
+          ],
+        },
+        {
+          title: '5. Can you see real reviews and cases?',
+          body: [
+            'Reviews with a name and detail are worth far more than an average score. Look for opinions that say which treatment was done and how the follow-up went.',
+            'If you see before-and-after photos, check whether the framing and lighting match in both. An after photo that is better lit and better groomed exaggerates the change: comparable close-ups are what really show the work.',
+          ],
+        },
+        {
+          title: '6. What happens after the treatment?',
+          body: [
+            'Good treatment does not end the day you walk out of the clinic. Ask which check-ups are included, how often you should come back, and who you call if something bothers you on a Sunday.',
+            'The answer to that last question says a lot about how a clinic understands its work.',
+          ],
+        },
+      ],
+      cta: {
+        title: 'Would you like a second opinion on your case?',
+        body: 'Tell me on WhatsApp what you have been offered and I will give you my frank opinion, with no obligation.',
+        message: 'Hello, I would like a second opinion on a treatment.',
       },
     },
   },
