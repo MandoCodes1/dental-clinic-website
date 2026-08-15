@@ -1,4 +1,5 @@
 ---
+import { Icon } from 'astro-icon/components';
 import { CLINIC } from '~/config';
 import { content } from '~/content/site';
 import type { Lang } from '~/i18n';
@@ -10,14 +11,44 @@ const { lang } = Astro.props;
 const t = content[lang].contact;
 ---
 
+{
+  /* Click-to-load facade: the Google iframe (and its cookies) only load when the
+    visitor asks for the map, so the page makes no third-party requests on load. */
+}
 <div class="overflow-hidden rounded-2xl border border-brand-blue/10 shadow-sm">
-  <iframe
-    title={t.locationTitle}
-    src={CLINIC.mapEmbedSrc}
-    width="100%"
-    height="360"
-    style="border:0"
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade"
-    allowfullscreen></iframe>
+  <button
+    type="button"
+    data-map-facade
+    data-map-src={CLINIC.mapEmbedSrc}
+    data-map-title={t.locationTitle}
+    class="group flex h-[360px] w-full flex-col items-center justify-center gap-3 bg-brand-light/60 transition hover:bg-brand-light"
+    data-umami-event="map-open"
+  >
+    <span
+      class="flex h-12 w-12 items-center justify-center rounded-full bg-brand-deep text-white transition group-hover:scale-105"
+    >
+      <Icon name="tabler:map-pin" class="h-6 w-6" />
+    </span>
+    <span class="text-sm font-semibold text-brand-deep">{t.mapCta}</span>
+    <span class="text-xs text-ink/60">{CLINIC.addressLine} · Google Maps</span>
+  </button>
 </div>
+
+<script>
+  // Delegated off document so it binds once and survives view transitions.
+  document.addEventListener('click', (event) => {
+    const target = event.target instanceof Element ? event.target : null;
+    const btn = target?.closest<HTMLElement>('[data-map-facade]');
+    if (!btn) return;
+    const iframe = document.createElement('iframe');
+    iframe.src = btn.dataset.mapSrc ?? '';
+    iframe.title = btn.dataset.mapTitle ?? '';
+    iframe.width = '100%';
+    iframe.height = '360';
+    iframe.style.border = '0';
+    iframe.loading = 'lazy';
+    iframe.referrerPolicy = 'no-referrer-when-downgrade';
+    iframe.allowFullscreen = true;
+    btn.replaceWith(iframe);
+  });
+</script>

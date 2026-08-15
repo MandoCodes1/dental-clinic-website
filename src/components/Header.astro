@@ -60,7 +60,7 @@ const treatmentLinks = TREATMENTS.map((tr) => ({
         {about.label}
       </a>
 
-      <div class="relative">
+      <div class="group relative">
         <button
           type="button"
           data-dropdown-toggle
@@ -74,9 +74,14 @@ const treatmentLinks = TREATMENTS.map((tr) => ({
           {t.nav.treatments}
           <Icon name="tabler:chevron-down" class="h-4 w-4" />
         </button>
+        {
+          /* group-hover opens on hover too (the click toggle stays for touch and
+          keyboard); the before: strip bridges the mt-3 gap so the pointer can
+          travel from the trigger into the menu without it closing. */
+        }
         <div
           id="treatments-menu"
-          class="absolute left-0 top-full mt-3 hidden w-64 rounded-xl border border-brand-blue/10 bg-cream p-2 shadow-lg"
+          class="absolute left-0 top-full mt-3 hidden w-64 rounded-xl border border-brand-blue/10 bg-cream p-2 shadow-lg before:absolute before:inset-x-0 before:-top-3 before:h-3 before:content-[''] group-hover:block"
         >
           <a
             href={ROUTES.treatments[lang]}
@@ -117,7 +122,7 @@ const treatmentLinks = TREATMENTS.map((tr) => ({
         {reviews.label}
       </a>
 
-      <div class="relative">
+      <div class="group relative">
         <button
           type="button"
           data-dropdown-toggle
@@ -133,7 +138,7 @@ const treatmentLinks = TREATMENTS.map((tr) => ({
         </button>
         <div
           id="more-menu"
-          class="absolute right-0 top-full mt-3 hidden w-60 rounded-xl border border-brand-blue/10 bg-cream p-2 shadow-lg"
+          class="absolute right-0 top-full mt-3 hidden w-60 rounded-xl border border-brand-blue/10 bg-cream p-2 shadow-lg before:absolute before:inset-x-0 before:-top-3 before:h-3 before:content-[''] group-hover:block"
         >
           {
             navMore.map((item) => (
