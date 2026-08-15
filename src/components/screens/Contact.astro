@@ -82,11 +82,25 @@ const waMessage = content[lang].contactCta.defaultMessage;
           <div>
             <p class="font-heading text-lg text-brand-deep">{c.locationTitle}</p>
             <p class="mt-1 text-sm text-ink/70">{CLINIC.addressLine}, {CLINIC.addressCity}</p>
+          </div>
+        </div>
+
+        <div class="card flex items-start gap-4">
+          <span
+            class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-blue/10 text-brand-blue"
+          >
+            <Icon name="tabler:bus" class="h-6 w-6" />
+          </span>
+          <div>
+            <p class="font-heading text-lg text-brand-deep">{c.gettingHereTitle}</p>
+            <p class="mt-1 text-sm leading-relaxed text-ink/70">{c.gettingHereBus}</p>
+            <p class="mt-1 text-sm leading-relaxed text-ink/70">{c.gettingHereCar}</p>
+            <p class="mt-1 text-sm leading-relaxed text-ink/70">{c.gettingHereAccess}</p>
             <a
               href={CLINIC.mapsPlaceUrl}
               target="_blank"
               rel="noopener"
-              class="mt-1 inline-block text-sm font-medium text-brand-blue hover:underline"
+              class="mt-2 inline-block text-sm font-medium text-brand-blue hover:underline"
               data-umami-event="directions"
               data-umami-event-location="contact"
             >
