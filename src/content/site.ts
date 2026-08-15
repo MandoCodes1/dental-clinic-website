@@ -57,6 +57,18 @@ export const FAQ_IDS = [
   'veneersLifespan',
   'cleaningFrequency',
   'crownLifespan',
+  'implantLifespan',
+  'implantSmoking',
+  'extractionPain',
+  'wisdomTeeth',
+  'alignersDuration',
+  'alignersRetention',
+  'whiteningEnamel',
+  'veneersCare',
+  'bleedingGums',
+  'bruxismSigns',
+  'crownWhen',
+  'crownCare',
 ] as const;
 export type FaqId = (typeof FAQ_IDS)[number];
 
@@ -475,6 +487,38 @@ const es: SiteCopy = {
         'Injertos óseos y preparación para implantes',
         'Pauta de cuidados por escrito y seguimiento postoperatorio cercano',
       ],
+      process: {
+        title: 'Así es una extracción, paso a paso',
+        intro:
+          'Una extracción da respeto, lo sé. Por eso te explico todo antes de hacer nada, y trabajo para que la experiencia sea mucho más llevadera de lo que imaginas:',
+        steps: [
+          {
+            title: 'Valoración y radiografía',
+            description:
+              'Te exploro, veo cómo está el diente y te explico con claridad por qué conviene extraerlo o si se puede salvar. Si hace falta una radiografía, te doy un volante para un centro radiológico cercano y, si sigues adelante, lo que pagues por ella se descuenta del presupuesto.',
+          },
+          {
+            title: 'Plan y presupuesto cerrado',
+            description:
+              'Antes de empezar sabes qué voy a hacer, cuánto cuesta y qué vas a notar en cada momento. Si la extracción es compleja, te lo digo desde el principio; sin sorpresas a mitad de camino.',
+          },
+          {
+            title: 'La intervención',
+            description:
+              'Con anestesia local no duele: notarás presión, nada más. Uso una técnica cuidadosa y mínimamente invasiva que respeta el hueso y la encía de alrededor, pensando ya en cómo cicatrizará la zona.',
+          },
+          {
+            title: 'Cuidados en casa',
+            description:
+              'Te vas con la pauta completa por escrito: las primeras 24 horas son las importantes, con frío local, sin enjuagues fuertes, sin fumar y comiendo blando. Y me tienes a un WhatsApp para cualquier duda.',
+          },
+          {
+            title: 'Revisión y siguiente paso',
+            description:
+              'Reviso la cicatrización y, si el diente extraído hay que reponerlo, vemos con calma las opciones, como un implante, a tu ritmo y con su propio presupuesto cerrado.',
+          },
+        ],
+      },
       priceGroup: {
         title: 'Precios de cirugía oral',
         items: [
@@ -512,6 +556,38 @@ const es: SiteCopy = {
         'Te los quitas para comer y para cepillarte',
         'Controles regulares para seguir el avance',
       ],
+      process: {
+        title: 'Así es el tratamiento, paso a paso',
+        intro:
+          'Con los alineadores no hay misterio: desde el primer día sabes qué se va a mover, cuánto va a tardar aproximadamente y cuánto cuesta.',
+        steps: [
+          {
+            title: 'Valoración y estudio',
+            description:
+              'Te exploro, escucho qué te gustaría corregir y tomo los registros de tu boca. Con ellos se prepara el estudio de tu caso y compruebo que los alineadores son la opción adecuada para ti.',
+          },
+          {
+            title: 'Simulación 3D y presupuesto',
+            description:
+              'Ves en 3D cómo se moverán tus dientes y cómo quedará tu sonrisa al terminar, antes de empezar. Si te convence, recibes tu plan con el número aproximado de alineadores y el presupuesto cerrado por escrito.',
+          },
+          {
+            title: 'Tus alineadores',
+            description:
+              'Recibes tus juegos de alineadores Ordoline hechos a medida. Se llevan unas 22 horas al día, te los quitas para comer y cepillarte, y cada juego se cambia según el plan que marcamos juntos.',
+          },
+          {
+            title: 'Controles con la doctora',
+            description:
+              'Nos vemos con regularidad para comprobar que el movimiento avanza según la simulación. Si algo se desvía, lo corrijo a tiempo; los controles los hago yo misma, no un auxiliar.',
+          },
+          {
+            title: 'Retención',
+            description:
+              'Cuando llegamos al resultado, una retención sencilla mantiene los dientes en su nueva posición. Sin ella, los dientes tienden a moverse de nuevo con los años; con ella, lo conseguido se queda.',
+          },
+        ],
+      },
       priceGroup: {
         title: 'Precios de ortodoncia invisible',
         items: [
@@ -547,6 +623,38 @@ const es: SiteCopy = {
         'Reparación de empastes y bordes desgastados',
         'Diseño de sonrisa personalizado',
       ],
+      process: {
+        title: 'Así trabajo la estética, paso a paso',
+        intro:
+          'En estética la técnica importa, pero escuchar importa igual: el mejor resultado es el que se ve bonito y sigue pareciendo tuyo.',
+        steps: [
+          {
+            title: 'Escucharte y valorar tu sonrisa',
+            description:
+              'Me cuentas qué te gustaría cambiar y yo te digo con sinceridad qué haría y qué no. A veces la opción más sencilla, un blanqueamiento o un pequeño retoque, es la que mejor resultado da.',
+          },
+          {
+            title: 'Plan y presupuesto cerrado',
+            description:
+              'Definimos juntos el objetivo y te entrego el plan por escrito, con su presupuesto cerrado. Sabes qué vamos a hacer, en cuántas citas y cuánto cuesta antes de empezar.',
+          },
+          {
+            title: 'Blanqueamiento, si entra en tu plan',
+            description:
+              'Preparo tus férulas a medida y te enseño a usarlas en casa con las jeringas de blanqueamiento. Seguimos el avance juntos hasta llegar a un blanco natural, sin pasarnos.',
+          },
+          {
+            title: 'Carillas de composite',
+            description:
+              'Modelo el composite directamente sobre el diente, normalmente sin tallarlo, ajustando forma y color en la misma cita. Trabajo capa a capa hasta que la carilla se funde con el resto de tu sonrisa.',
+          },
+          {
+            title: 'Revisión y mantenimiento',
+            description:
+              'A los pocos días reviso el resultado con calma y hago los retoques finales si hacen falta. En tus revisiones pulimos y mantenemos el trabajo para que siga como el primer día.',
+          },
+        ],
+      },
       priceGroup: {
         title: 'Precios de estética dental',
         items: [
@@ -583,6 +691,33 @@ const es: SiteCopy = {
         'Empastes y reconstrucciones con composite de calidad',
         'Férulas de descarga a medida si aprietas los dientes al dormir',
       ],
+      process: {
+        title: 'Así es una revisión, paso a paso',
+        intro:
+          'Sea tu primera visita o la revisión de cada año, el objetivo es el mismo: que salgas sabiendo exactamente cómo está tu boca y qué necesita, si es que necesita algo.',
+        steps: [
+          {
+            title: 'Revisión completa y sin prisas',
+            description:
+              'Exploro dientes, encías y mordida con calma y te explico lo que veo en palabras claras. Si algo necesita tratamiento te digo por qué, y si está todo sano, te lo digo igual: no trato lo que no lo necesita.',
+          },
+          {
+            title: 'Limpieza cuidadosa',
+            description:
+              'Elimino el sarro y el manchado con una técnica que respeta el esmalte y las encías. Aprovecho para enseñarte los trucos de higiene que más le convienen a tu boca, del cepillado a los interdentales.',
+          },
+          {
+            title: 'Tratamiento por prioridades',
+            description:
+              'Si hay caries u otros problemas, ordenamos el plan por prioridades y recibes tu presupuesto cerrado por escrito. Los empastes y reconstrucciones los hago con composite de calidad, con calma y bien ajustados a tu mordida.',
+          },
+          {
+            title: 'Mantenimiento a tu ritmo',
+            description:
+              'Te digo cada cuánto conviene revisarte en tu caso, sin citas innecesarias. Y si aprietas los dientes al dormir, una férula de descarga a medida protege tu esmalte y todo el trabajo hecho.',
+          },
+        ],
+      },
       priceGroup: {
         title: 'Precios de odontología general',
         items: [
@@ -621,6 +756,38 @@ const es: SiteCopy = {
         'Rehabilitación completa de la mordida cuando hace falta',
         'Materiales y laboratorios de primera, los mismos que en Londres',
       ],
+      process: {
+        title: 'Así es el tratamiento, paso a paso',
+        intro:
+          'Una corona bien hecha no se nota: se confunde con tus dientes y te deja masticar tranquilo. Llegar ahí lleva un proceso cuidadoso:',
+        steps: [
+          {
+            title: 'Valoración del diente',
+            description:
+              'Compruebo cómo está el diente y te explico la mejor forma de recuperarlo: a veces basta una reconstrucción y otras conviene una corona que lo proteja por completo. Si hace falta una radiografía, te doy un volante para un centro cercano.',
+          },
+          {
+            title: 'Plan y presupuesto cerrado',
+            description:
+              'Recibes el plan por escrito con su presupuesto cerrado antes de empezar. Si hay varias piezas afectadas o la mordida está baja por el desgaste, te explico el orden y los tiempos de todo el proceso.',
+          },
+          {
+            title: 'Preparación y provisional',
+            description:
+              'Preparo el diente respetando al máximo lo sano, tomo los registros para el laboratorio y te coloco un provisional: sales de la consulta con el diente protegido y una estética correcta.',
+          },
+          {
+            title: 'El trabajo de laboratorio',
+            description:
+              'Tu corona de zirconio se fabrica en los mismos laboratorios con los que trabajo en Londres, ajustada a la forma y el color de tus dientes. No doy por buena una corona que no pasaría en mi consulta de Londres.',
+          },
+          {
+            title: 'Colocación y ajuste',
+            description:
+              'Pruebo la corona, ajusto el contacto y la mordida hasta que la sientes como un diente propio, y entonces la fijo definitivamente. En tus revisiones compruebo que todo sigue perfecto.',
+          },
+        ],
+      },
       priceGroup: {
         title: 'Precios de coronas y prótesis',
         items: [
@@ -808,6 +975,78 @@ const es: SiteCopy = {
         question: '¿Cuánto dura una corona de zirconio?',
         answer:
           'Muchos años: el zirconio es de lo más resistente que existe en odontología y no se oscurece. Con buena higiene y revisiones, una corona bien ajustada puede durar más de una década.',
+      },
+      {
+        id: 'implantLifespan',
+        question: '¿Cuánto dura un implante dental?',
+        answer:
+          'Bien colocado y bien cuidado, un implante puede durar décadas. Las dos claves están en tus manos y en las mías: una higiene diaria a conciencia y revisiones regulares para que la encía y el hueso de alrededor se mantengan sanos.',
+      },
+      {
+        id: 'implantSmoking',
+        question: 'Fumo. ¿Puedo ponerme implantes?',
+        answer:
+          'Fumar no siempre impide el tratamiento, pero sí aumenta el riesgo de que el implante fracase o de que la encía de alrededor enferme. Lo valoramos juntos en la primera visita, con claridad y sin sermones; si estás pensando en reducir o dejarlo, el implante es una buena excusa.',
+      },
+      {
+        id: 'extractionPain',
+        question: '¿Duele una extracción?',
+        answer:
+          'Con anestesia local, no: durante la intervención notas presión, pero no dolor. Después puede haber molestias unos días, que se controlan bien con la pauta que te doy por escrito. La mayoría de mis pacientes me dice que fue mucho mejor de lo que esperaba.',
+      },
+      {
+        id: 'wisdomTeeth',
+        question: '¿Hay que quitar siempre las muelas del juicio?',
+        answer:
+          'No. Solo conviene extraerlas cuando dan problemas o van a darlos: caries que no se pueden tratar bien, infecciones repetidas, daño a la muela de al lado o falta de espacio. Se valora con una exploración y una radiografía, no por sistema.',
+      },
+      {
+        id: 'alignersDuration',
+        question: '¿Cuánto dura el tratamiento con alineadores?',
+        answer:
+          'Depende de tu caso: las correcciones sencillas pueden resolverse en pocos meses y las más completas superan el año. Con la simulación 3D sabrás la duración estimada de tu plan antes de empezar.',
+      },
+      {
+        id: 'alignersRetention',
+        question: '¿Y cuando termine? ¿Se pueden volver a mover los dientes?',
+        answer:
+          'Los dientes tienden a moverse durante toda la vida, por eso el tratamiento termina con una retención que mantiene el resultado. Es sencilla de llevar y es la diferencia entre una sonrisa alineada unos años y una alineada para siempre.',
+      },
+      {
+        id: 'whiteningEnamel',
+        question: '¿El blanqueamiento daña el esmalte?',
+        answer:
+          'Hecho con productos profesionales y con seguimiento, no daña el esmalte. Puede dar algo de sensibilidad pasajera los primeros días; por eso lo pautamos juntos y ajustamos el ritmo si hace falta.',
+      },
+      {
+        id: 'veneersCare',
+        question: '¿Qué cuidados necesitan las carillas de composite?',
+        answer:
+          'Los mismos que tus dientes: buen cepillado, limpieza interdental y revisiones. Conviene no morder cosas duras con los dientes delanteros (hielo, cáscaras, abrir envases), y en tus revisiones las pulimos para que conserven el brillo.',
+      },
+      {
+        id: 'bleedingGums',
+        question: 'Me sangran las encías al cepillarme. ¿Es normal?',
+        answer:
+          'No, sangrar no es normal: suele ser señal de encía inflamada por la placa y el sarro. Se resuelve con una buena limpieza y la técnica de higiene adecuada; dejarlo pasar puede acabar afectando al hueso que sujeta los dientes, así que mejor verlo pronto.',
+      },
+      {
+        id: 'bruxismSigns',
+        question: '¿Cómo sé si aprieto o rechino los dientes al dormir?',
+        answer:
+          'Las señales típicas: despertarte con la mandíbula cansada o dolor de cabeza, sensibilidad, dientes que se ven desgastados o pequeñas fisuras. En la revisión lo confirmo enseguida y, si hace falta, una férula de descarga a medida protege tus dientes mientras duermes.',
+      },
+      {
+        id: 'crownWhen',
+        question: '¿Cuándo hace falta una corona y no basta un empaste?',
+        answer:
+          'Cuando queda poco diente sano: caries grandes, fracturas o dientes muy desgastados o endodonciados. Un empaste repara, pero no abraza el diente; la corona lo cubre por completo y reparte la fuerza al masticar, que es lo que evita que se rompa.',
+      },
+      {
+        id: 'crownCare',
+        question: '¿Una corona necesita cuidados especiales?',
+        answer:
+          'Los de siempre, hechos bien: cepillado, higiene interdental y revisiones. La corona no se caría, pero el diente que hay debajo sí puede hacerlo en el borde de la unión, y de eso se encargan tu higiene diaria y mis revisiones.',
       },
     ],
   },
@@ -1186,6 +1425,38 @@ const en: SiteCopy = {
         'Bone grafts and preparation for implants',
         'Written aftercare instructions and close post-operative follow-up',
       ],
+      process: {
+        title: 'An extraction, step by step',
+        intro:
+          'Extractions are daunting, I know. That is why I explain everything before doing anything, and work to make the experience far easier than you imagine:',
+        steps: [
+          {
+            title: 'Assessment and X-ray',
+            description:
+              'I examine you, see how the tooth is doing and explain clearly why it should come out, or whether it can be saved. If an X-ray is needed, I give you a referral note for a nearby radiology centre and, if you go ahead, what you pay for it is deducted from the quote.',
+          },
+          {
+            title: 'Plan and fixed quote',
+            description:
+              'Before we start you know what I am going to do, what it costs and what you will feel at each moment. If the extraction is complex, I tell you from the outset; no surprises halfway through.',
+          },
+          {
+            title: 'The procedure',
+            description:
+              'With local anaesthetic it does not hurt: you will feel pressure, nothing more. I use a careful, minimally invasive technique that respects the surrounding bone and gum, already thinking about how the area will heal.',
+          },
+          {
+            title: 'Aftercare at home',
+            description:
+              'You leave with complete written instructions: the first 24 hours matter most, with a cold compress, no vigorous rinsing, no smoking and soft food. And I am one WhatsApp message away for any question.',
+          },
+          {
+            title: 'Follow-up and next step',
+            description:
+              'I check the healing and, if the extracted tooth needs replacing, we look calmly at the options, such as an implant, at your pace and with its own fixed quote.',
+          },
+        ],
+      },
       priceGroup: {
         title: 'Oral surgery prices',
         items: [
@@ -1222,6 +1493,38 @@ const en: SiteCopy = {
         'You take them out to eat and to brush',
         'Regular check-ins to track progress',
       ],
+      process: {
+        title: 'The treatment, step by step',
+        intro:
+          'With aligners there is no mystery: from day one you know what will move, roughly how long it will take and what it costs.',
+        steps: [
+          {
+            title: 'Assessment and records',
+            description:
+              'I examine you, listen to what you would like to correct and take the records of your mouth. With them your case study is prepared and I confirm aligners are the right option for you.',
+          },
+          {
+            title: '3D simulation and quote',
+            description:
+              'You see in 3D how your teeth will move and how your smile will look at the end, before starting. If you like it, you receive your plan with the approximate number of aligners and the fixed written quote.',
+          },
+          {
+            title: 'Your aligners',
+            description:
+              'You receive your made-to-measure Ordoline aligner sets. They are worn about 22 hours a day, you take them out to eat and brush, and each set is changed following the plan we agree together.',
+          },
+          {
+            title: 'Check-ups with the doctor',
+            description:
+              'We meet regularly to confirm the movement is following the simulation. If anything drifts, I correct it in time; the check-ups are done by me, not an assistant.',
+          },
+          {
+            title: 'Retention',
+            description:
+              'Once we reach the result, simple retention keeps your teeth in their new position. Without it, teeth tend to drift again over the years; with it, what we achieved stays.',
+          },
+        ],
+      },
       priceGroup: {
         title: 'Invisible orthodontics prices',
         items: [
@@ -1257,6 +1560,38 @@ const en: SiteCopy = {
         'Repair of worn fillings and edges',
         'Personalised smile design',
       ],
+      process: {
+        title: 'How I work on aesthetics, step by step',
+        intro:
+          'In aesthetics technique matters, but listening matters just as much: the best result is the one that looks beautiful and still looks like you.',
+        steps: [
+          {
+            title: 'Listening and assessing your smile',
+            description:
+              'You tell me what you would like to change and I tell you sincerely what I would do and what I would not. Sometimes the simplest option, a whitening or a small touch-up, gives the best result.',
+          },
+          {
+            title: 'Plan and fixed quote',
+            description:
+              'We define the goal together and you receive the written plan with its fixed quote. You know what we will do, in how many visits and at what cost before we start.',
+          },
+          {
+            title: 'Whitening, if it is part of your plan',
+            description:
+              'I prepare your custom trays and show you how to use them at home with the whitening syringes. We track the progress together until we reach a natural white, without overdoing it.',
+          },
+          {
+            title: 'Composite veneers',
+            description:
+              'I model the composite directly on the tooth, usually without drilling it, adjusting shape and colour in the same visit. I work layer by layer until the veneer blends in with the rest of your smile.',
+          },
+          {
+            title: 'Review and maintenance',
+            description:
+              'A few days later I review the result calmly and make any final touch-ups. At your check-ups we polish and maintain the work so it stays looking like day one.',
+          },
+        ],
+      },
       priceGroup: {
         title: 'Cosmetic dentistry prices',
         items: [
@@ -1293,6 +1628,33 @@ const en: SiteCopy = {
         'Fillings and build-ups with quality composite',
         'Custom night guards if you clench your teeth in your sleep',
       ],
+      process: {
+        title: 'A check-up, step by step',
+        intro:
+          'Whether it is your first visit or your yearly check-up, the goal is the same: you leave knowing exactly how your mouth is and what it needs, if anything.',
+        steps: [
+          {
+            title: 'A complete, unhurried check-up',
+            description:
+              'I examine teeth, gums and bite calmly and explain what I see in plain words. If something needs treatment I tell you why, and if everything is healthy I tell you that too: I do not treat what does not need it.',
+          },
+          {
+            title: 'A careful cleaning',
+            description:
+              'I remove tartar and staining with a technique that respects the enamel and the gums. I also show you the hygiene habits that suit your mouth best, from brushing to interdental cleaning.',
+          },
+          {
+            title: 'Treatment by priority',
+            description:
+              'If there are cavities or other problems, we order the plan by priority and you receive your fixed written quote. Fillings and build-ups are done with quality composite, calmly and carefully adjusted to your bite.',
+          },
+          {
+            title: 'Maintenance at your pace',
+            description:
+              'I tell you how often a check-up makes sense in your case, with no unnecessary visits. And if you clench your teeth in your sleep, a custom night guard protects your enamel and all the work done.',
+          },
+        ],
+      },
       priceGroup: {
         title: 'General dentistry prices',
         items: [
@@ -1331,6 +1693,38 @@ const en: SiteCopy = {
         'Full bite rehabilitation when needed',
         'Premium materials and laboratories, the same as in London',
       ],
+      process: {
+        title: 'The treatment, step by step',
+        intro:
+          'A well-made crown goes unnoticed: it blends in with your teeth and lets you chew with confidence. Getting there takes a careful process:',
+        steps: [
+          {
+            title: 'Assessing the tooth',
+            description:
+              'I check how the tooth is doing and explain the best way to restore it: sometimes a build-up is enough, and sometimes a crown that protects it fully is the better choice. If an X-ray is needed, I give you a referral note for a nearby centre.',
+          },
+          {
+            title: 'Plan and fixed quote',
+            description:
+              'You receive the written plan with its fixed quote before we start. If several teeth are affected or wear has lowered your bite, I explain the order and timings of the whole process.',
+          },
+          {
+            title: 'Preparation and temporary',
+            description:
+              'I prepare the tooth preserving as much healthy structure as possible, take the records for the laboratory and fit a temporary: you leave with the tooth protected and looking presentable.',
+          },
+          {
+            title: 'The laboratory work',
+            description:
+              'Your zirconia crown is made in the same laboratories I work with in London, matched to the shape and colour of your teeth. I do not sign off a crown I would not sign off at my London practice.',
+          },
+          {
+            title: 'Fitting and adjustment',
+            description:
+              'I try the crown in, adjust the contact and the bite until it feels like a tooth of your own, and then fix it permanently. At your check-ups I confirm everything is still perfect.',
+          },
+        ],
+      },
       priceGroup: {
         title: 'Crowns & prosthetics prices',
         items: [
@@ -1519,6 +1913,78 @@ const en: SiteCopy = {
         answer:
           'Many years: zirconia is among the strongest materials in dentistry and does not darken. With good hygiene and check-ups, a well-fitted crown can last more than a decade.',
       },
+      {
+        id: 'implantLifespan',
+        question: 'How long does a dental implant last?',
+        answer:
+          'Well placed and well cared for, an implant can last for decades. The two keys are in your hands and mine: thorough daily hygiene and regular check-ups so the gum and bone around it stay healthy.',
+      },
+      {
+        id: 'implantSmoking',
+        question: 'I smoke. Can I have implants?',
+        answer:
+          'Smoking does not always rule out treatment, but it does raise the risk of the implant failing or the gum around it becoming inflamed. We weigh it up together at the first visit, clearly and without lectures; if you are thinking about cutting down or quitting, an implant is a good excuse.',
+      },
+      {
+        id: 'extractionPain',
+        question: 'Does an extraction hurt?',
+        answer:
+          'With local anaesthetic, no: during the procedure you feel pressure, but not pain. There can be some discomfort for a few days afterwards, well controlled with the written instructions I give you. Most of my patients tell me it was far better than they expected.',
+      },
+      {
+        id: 'wisdomTeeth',
+        question: 'Do wisdom teeth always have to come out?',
+        answer:
+          'No. They are only worth removing when they cause problems or are about to: decay that cannot be properly treated, repeated infections, damage to the neighbouring molar or lack of room. It is assessed with an examination and an X-ray, not as a routine.',
+      },
+      {
+        id: 'alignersDuration',
+        question: 'How long does aligner treatment take?',
+        answer:
+          'It depends on your case: simple corrections can be finished in a few months, while more complete ones take over a year. With the 3D simulation you will know the estimated length of your plan before starting.',
+      },
+      {
+        id: 'alignersRetention',
+        question: 'And when I finish? Can the teeth move again?',
+        answer:
+          'Teeth tend to move throughout life, which is why treatment ends with retention that holds the result. It is easy to wear, and it is the difference between a smile that stays aligned for a few years and one that stays aligned for good.',
+      },
+      {
+        id: 'whiteningEnamel',
+        question: 'Does whitening damage the enamel?',
+        answer:
+          'Done with professional products and proper follow-up, it does not damage the enamel. It can cause some passing sensitivity in the first days; that is why we set the pace together and adjust it if needed.',
+      },
+      {
+        id: 'veneersCare',
+        question: 'How do I look after composite veneers?',
+        answer:
+          'The same way you look after your teeth: good brushing, interdental cleaning and check-ups. Avoid biting hard things with your front teeth (ice, shells, opening packets), and at your check-ups we polish them so they keep their shine.',
+      },
+      {
+        id: 'bleedingGums',
+        question: 'My gums bleed when I brush. Is that normal?',
+        answer:
+          'No, bleeding is not normal: it is usually a sign of gum inflammation caused by plaque and tartar. A good cleaning and the right hygiene technique resolve it; left alone it can end up affecting the bone that holds your teeth, so it is best seen early.',
+      },
+      {
+        id: 'bruxismSigns',
+        question: 'How do I know if I clench or grind my teeth in my sleep?',
+        answer:
+          'The typical signs: waking up with a tired jaw or a headache, sensitivity, teeth that look worn down or small cracks. I can confirm it quickly at a check-up and, if needed, a custom night guard protects your teeth while you sleep.',
+      },
+      {
+        id: 'crownWhen',
+        question: 'When is a crown needed rather than a filling?',
+        answer:
+          'When little healthy tooth is left: large cavities, fractures, or teeth that are heavily worn or root-canal treated. A filling repairs, but does not hold the tooth together; a crown covers it completely and spreads the chewing force, which is what stops it breaking.',
+      },
+      {
+        id: 'crownCare',
+        question: 'Does a crown need special care?',
+        answer:
+          'The usual care, done well: brushing, interdental cleaning and check-ups. The crown itself cannot decay, but the tooth underneath can at the joint line, and that is what your daily hygiene and my check-ups take care of.',
+      },
     ],
   },
   productsPage: {
@@ -1651,10 +2117,10 @@ export function getFaqItems(lang: Lang, ids: readonly FaqId[]): FaqItem[] {
 // Which FAQ entries each treatment page features. Lives outside SiteCopy so the
 // selection cannot diverge between locales.
 export const TREATMENT_FAQS: Record<TreatmentId, readonly FaqId[]> = {
-  implants: ['implantCost', 'implantPain', 'cbct', 'guarantee'],
-  oralSurgery: ['extractionAftercare', 'firstVisit', 'guarantee'],
-  orthodontics: ['aligners', 'alignersDaily', 'firstVisit'],
-  aesthetics: ['whitening', 'veneersLifespan', 'materials'],
-  general: ['cleaningFrequency', 'firstVisit', 'payment'],
-  crowns: ['materials', 'crownLifespan', 'guarantee'],
+  implants: ['implantCost', 'implantPain', 'implantLifespan', 'implantSmoking', 'cbct', 'guarantee'],
+  oralSurgery: ['extractionPain', 'extractionAftercare', 'wisdomTeeth', 'firstVisit', 'guarantee'],
+  orthodontics: ['aligners', 'alignersDaily', 'alignersDuration', 'alignersRetention', 'firstVisit'],
+  aesthetics: ['whitening', 'whiteningEnamel', 'veneersLifespan', 'veneersCare', 'materials'],
+  general: ['cleaningFrequency', 'bleedingGums', 'bruxismSigns', 'firstVisit', 'payment'],
+  crowns: ['crownWhen', 'materials', 'crownLifespan', 'crownCare', 'guarantee'],
 };
