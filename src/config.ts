@@ -79,6 +79,16 @@ export const TREATMENTS = [
   { id: 'crowns', route: 'treatmentCrowns', icon: 'tabler:crown' },
 ] as const satisfies readonly { id: string; route: RouteKey; icon: string }[];
 
+// Evergreen guide pages: long-form answers to the questions people actually
+// search for, deliberately undated so they never read as a stale blog.
+export const GUIDES = [
+  { id: 'implantCost', route: 'guideImplantCost', icon: 'tabler:receipt-euro' },
+  { id: 'englishDentist', route: 'guideEnglishDentist', icon: 'tabler:language' },
+  { id: 'chooseDentist', route: 'guideChooseDentist', icon: 'tabler:list-check' },
+] as const satisfies readonly { id: string; route: RouteKey; icon: string }[];
+
+export type GuideId = (typeof GUIDES)[number]['id'];
+
 export type TreatmentId = (typeof TREATMENTS)[number]['id'];
 
 export function waLink(message?: string): string {

@@ -15,6 +15,19 @@ export const ROUTES = {
   treatmentAesthetics: { es: '/tratamientos/estetica-dental', en: '/en/treatments/cosmetic-dentistry' },
   treatmentGeneral: { es: '/tratamientos/odontologia-general', en: '/en/treatments/general-dentistry' },
   treatmentCrowns: { es: '/tratamientos/coronas-y-protesis', en: '/en/treatments/crowns-and-prosthetics' },
+  guides: { es: '/guias', en: '/en/guides' },
+  guideImplantCost: {
+    es: '/guias/precio-implante-dental-malaga',
+    en: '/en/guides/dental-implant-cost-malaga',
+  },
+  guideEnglishDentist: {
+    es: '/guias/dentista-que-habla-ingles-malaga',
+    en: '/en/guides/english-speaking-dentist-malaga',
+  },
+  guideChooseDentist: {
+    es: '/guias/como-elegir-dentista-malaga',
+    en: '/en/guides/how-to-choose-a-dentist-malaga',
+  },
   reviews: { es: '/resenas', en: '/en/reviews' },
   gallery: { es: '/galeria', en: '/en/gallery' },
   products: { es: '/productos', en: '/en/products' },
@@ -31,7 +44,7 @@ export type RouteKey = keyof typeof ROUTES;
 // besides the logo; not every visitor knows the logo leads there. NAV_ALL is the
 // flat display order used by the footer.
 export const NAV_TOP = ['home', 'about', 'treatments', 'reviews'] as const;
-export const NAV_MORE = ['gallery', 'products', 'faq'] as const;
+export const NAV_MORE = ['guides', 'gallery', 'products', 'faq'] as const;
 export const NAV_TAIL = ['contact'] as const;
 export const NAV_ALL = [...NAV_TOP, ...NAV_MORE, ...NAV_TAIL] as const;
 

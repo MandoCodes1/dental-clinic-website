@@ -1,0 +1,52 @@
+---
+import { Icon } from 'astro-icon/components';
+import BaseLayout from '~/layouts/BaseLayout.astro';
+import PageHeader from '~/components/PageHeader.astro';
+import ContactCTA from '~/components/ContactCTA.astro';
+import { content } from '~/content/site';
+import { GUIDES } from '~/config';
+import { ROUTES, type Lang } from '~/i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = content[lang];
+const g = t.guidesPage;
+---
+
+<BaseLayout lang={lang} page="guides">
+  <PageHeader title={g.title} lead={g.lead} />
+
+  <section class="section bg-white">
+    <div class="container-page">
+      <ul class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {
+          GUIDES.map((guide) => {
+            const c = t.guides[guide.id];
+            return (
+              <li>
+                <a
+                  href={ROUTES[guide.route][lang]}
+                  class="card flex h-full flex-col transition hover:border-brand-blue/30 hover:shadow-md"
+                >
+                  <span class="flex h-11 w-11 items-center justify-center rounded-full bg-brand-light text-brand-blue">
+                    <Icon name={guide.icon} class="h-6 w-6" />
+                  </span>
+                  <h2 class="mt-4 font-heading text-xl text-brand-deep">{c.card.title}</h2>
+                  <p class="mt-2 grow text-ink/70">{c.card.description}</p>
+                  <span class="mt-4 inline-flex items-center gap-1 text-sm font-medium text-brand-blue">
+                    {g.readMore}
+                    <Icon name="tabler:arrow-right" class="h-4 w-4" />
+                  </span>
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
+  </section>
+
+  <ContactCTA lang={lang} />
+</BaseLayout>
