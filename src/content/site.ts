@@ -1101,7 +1101,7 @@ const es: SiteCopy = {
       {
         id: 'implantCost',
         question: '¿Cuánto cuesta un implante dental y qué incluye el precio?',
-        answer: `El implante con su corona de porcelana cuesta desde ${formatPrice(PRICES.implantCrown, 'es')}, con la corona incluida. Si tu caso necesita un injerto de hueso o una elevación de seno, se añade al presupuesto cerrado que recibes por escrito antes de empezar: el precio acordado es el que pagas.`,
+        answer: `El implante con su corona de zirconio cuesta desde ${formatPrice(PRICES.implantCrown, 'es')}, con la corona incluida. Si tu caso necesita un injerto de hueso o una elevación de seno, se añade al presupuesto cerrado que recibes por escrito antes de empezar: el precio acordado es el que pagas.`,
       },
       {
         id: 'howIWork',
@@ -2232,7 +2232,7 @@ const en: SiteCopy = {
       {
         id: 'implantCost',
         question: 'How much does a dental implant cost and what does the price include?',
-        answer: `An implant with its porcelain crown costs from ${formatPrice(PRICES.implantCrown, 'en')}, crown included. If your case needs a bone graft or a sinus lift, it is added to the fixed quote you receive in writing before we start: the price we agree is the price you pay.`,
+        answer: `An implant with its zirconia crown costs from ${formatPrice(PRICES.implantCrown, 'en')}, crown included. If your case needs a bone graft or a sinus lift, it is added to the fixed quote you receive in writing before we start: the price we agree is the price you pay.`,
       },
       {
         id: 'howIWork',
