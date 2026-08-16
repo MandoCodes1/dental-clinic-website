@@ -43,7 +43,7 @@ export const CLINIC = {
 // and every "desde" tag, so the numbers cannot drift.
 // Provisional until Dra. Vila confirms the final list.
 const BASE_PRICES = {
-  implantCrown: 1100,
+  implantCrown: 1200,
   boneGraft: 300,
   sinusLift: 600,
   filling: 50,
@@ -52,7 +52,7 @@ const BASE_PRICES = {
   reconstruction: 100,
   cleaning: 50,
   nightGuard: 200,
-  zirconiaCrown: 400,
+  zirconiaCrown: 500,
   whitening: 300,
   aligners: 1500,
   compositeVeneer: 200,
