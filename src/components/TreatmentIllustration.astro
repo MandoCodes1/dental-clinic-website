@@ -4,12 +4,25 @@ import type { TreatmentId } from '~/config';
 // Line illustrations drawn in the brand palette, one per treatment, so the six
 // pages read as one designed set instead of assorted stock photography. They
 // are decorative: the page copy carries the meaning, hence aria-hidden.
-// Palette: deep #0B3A5C outlines, sky #2E8BC4 accents, light #E5F0F8 fills.
+// Palette: deep #0B3A5C outlines, blue #0F6BA8 and sky #2E8BC4 accents.
 interface Props {
   treatment: TreatmentId;
   class?: string;
 }
 const { treatment, class: className } = Astro.props;
+
+// Every scene shares one gum line, drawn translucent over the artwork at the
+// end, so roots and fixtures read as embedded rather than floating.
+const GUM_TOP = 'M0 142C40 132 80 137 120 137C160 137 200 132 240 142';
+const GUM = `${GUM_TOP}V200H0Z`;
+
+// One tooth silhouette, reused at different scales. Local box 80 x 112, with
+// the roots splitting at y=74 so a translate can sit that split on the gum.
+const TOOTH =
+  'M6 30C6 10 24 0 40 8C56 0 74 10 74 30C74 54 70 74 65 94C62 110 50 112 47 98L43 74C41 64 39 64 37 74L33 98C30 112 18 110 15 94C10 74 6 54 6 30Z';
+
+// Front tooth for the row in the orthodontics scene. Local box 34 x 60.
+const INCISOR = 'M0 12C0 4 5 0 12 0H22C29 0 34 4 34 12V42C34 54 28 60 17 60C6 60 0 54 0 42Z';
 ---
 
 <svg
@@ -25,20 +38,18 @@ const { treatment, class: className } = Astro.props;
   {
     treatment === 'implants' && (
       <g>
-        {/* jaw bone the implant is anchored in */}
-        <rect x="52" y="112" width="136" height="74" rx="18" fill="#2E8BC4" fill-opacity="0.14" />
-        {/* crown */}
+        {/* a natural tooth on the left, for scale and comparison */}
+        <path d={TOOTH} transform="translate(20 66) scale(0.95)" fill="#FFFFFF" stroke="#0B3A5C" stroke-width="5" />
+        {/* the implant: crown, abutment at the gum line, fixture in the bone */}
         <path
-          d="M80 52C80 28 102 20 120 28C138 20 160 28 160 52C160 74 155 92 148 106L92 106C85 92 80 74 80 52Z"
+          d="M126 74C126 54 144 44 160 52C176 44 194 54 194 74C194 94 190 110 186 124L134 124C130 110 126 94 126 74Z"
           fill="#FFFFFF"
           stroke="#0B3A5C"
           stroke-width="5"
         />
-        {/* abutment */}
-        <path d="M106 106L134 106L130 126L110 126Z" fill="#FFFFFF" stroke="#0B3A5C" stroke-width="4" />
-        {/* implant screw, seated in the bone */}
-        <path d="M106 126L134 126L127 168C125 178 115 178 113 168Z" fill="#FFFFFF" stroke="#0F6BA8" stroke-width="5" />
-        <path d="M109 138L131 138M110 150L129 150M112 160L127 160" stroke="#2E8BC4" stroke-width="4" />
+        <path d="M148 124H172L169 144H151Z" fill="#FFFFFF" stroke="#0F6BA8" stroke-width="4" />
+        <path d="M147 144H173L167 184C165 192 155 192 153 184Z" fill="#FFFFFF" stroke="#0F6BA8" stroke-width="5" />
+        <path d="M151 156H169M152 166H168M154 176H166" stroke="#2E8BC4" stroke-width="4" />
       </g>
     )
   }
@@ -46,27 +57,27 @@ const { treatment, class: className } = Astro.props;
   {
     treatment === 'oralSurgery' && (
       <g>
-        {/* gum, with the socket the tooth came out of */}
-        <rect x="52" y="128" width="136" height="58" rx="18" fill="#2E8BC4" fill-opacity="0.14" />
+        {/* the neighbours stay put, so the gap in the middle reads as a gap */}
+        <path d={TOOTH} transform="translate(10 78) scale(0.8)" fill="#FFFFFF" stroke="#0B3A5C" stroke-width="6" />
+        <path d={TOOTH} transform="translate(168 78) scale(0.8)" fill="#FFFFFF" stroke="#0B3A5C" stroke-width="6" />
+        {/* the empty socket */}
         <path
-          d="M104 128C104 152 136 152 136 128"
+          d="M100 138C100 170 140 170 140 138"
           stroke="#0B3A5C"
+          stroke-opacity="0.55"
           stroke-width="4"
-          stroke-dasharray="7 7"
-          fill="none"
+          stroke-dasharray="6 8"
         />
-        {/* lifted tooth */}
-        <g transform="translate(60 6)">
-          <path
-            d="M10 35C10 12 32 4 50 12C68 4 90 12 90 35C90 58 84 78 78 100C74 116 62 118 59 104L54 76C52 66 48 66 46 76L41 104C38 118 26 116 22 100C16 78 10 58 10 35Z"
-            fill="#FFFFFF"
-            stroke="#0B3A5C"
-            stroke-width="5"
-          />
-        </g>
-        {/* direction of removal */}
-        <path d="M196 132L196 74" stroke="#2E8BC4" stroke-width="5" />
-        <path d="M184 88L196 74L208 88" stroke="#2E8BC4" stroke-width="5" />
+        {/* the tooth on its way out */}
+        <path
+          d={TOOTH}
+          transform="translate(92 8) scale(0.78) rotate(10 40 56)"
+          fill="#FFFFFF"
+          stroke="#0B3A5C"
+          stroke-width="6"
+        />
+        <path d="M121 132V116" stroke="#2E8BC4" stroke-width="5" stroke-dasharray="2 9" />
+        <path d="M111 118L121 108L131 118" stroke="#2E8BC4" stroke-width="5" />
       </g>
     )
   }
@@ -74,17 +85,26 @@ const { treatment, class: className } = Astro.props;
   {
     treatment === 'orthodontics' && (
       <g>
-        {/* gum */}
-        <rect x="34" y="132" width="172" height="44" rx="16" fill="#2E8BC4" fill-opacity="0.14" />
-        {/* teeth: the middle one still tilted, the rest already aligned */}
-        <rect x="44" y="84" width="38" height="54" rx="12" fill="#FFFFFF" stroke="#0B3A5C" stroke-width="5" />
-        <g transform="rotate(-16 111 111)">
-          <rect x="92" y="84" width="38" height="54" rx="12" fill="#FFFFFF" stroke="#0B3A5C" stroke-width="5" />
-        </g>
-        <rect x="158" y="84" width="38" height="54" rx="12" fill="#FFFFFF" stroke="#0B3A5C" stroke-width="5" />
-        {/* the movement the aligner produces */}
-        <path d="M96 62C110 50 132 50 146 62" stroke="#2E8BC4" stroke-width="5" stroke-dasharray="9 9" fill="none" />
-        <path d="M136 50L148 63L134 72" stroke="#2E8BC4" stroke-width="5" fill="none" />
+        {/* a row of front teeth, one of them still out of line */}
+        <path d={INCISOR} transform="translate(44 88) scale(0.82)" fill="#FFFFFF" stroke="#0B3A5C" stroke-width="6" />
+        <path
+          d={INCISOR}
+          transform="translate(77 84) scale(0.82) rotate(-15 17 30)"
+          fill="#FFFFFF"
+          stroke="#0B3A5C"
+          stroke-width="6"
+        />
+        <path d={INCISOR} transform="translate(106 88) scale(0.82)" fill="#FFFFFF" stroke="#0B3A5C" stroke-width="6" />
+        <path d={INCISOR} transform="translate(137 88) scale(0.82)" fill="#FFFFFF" stroke="#0B3A5C" stroke-width="6" />
+        <path d={INCISOR} transform="translate(168 88) scale(0.82)" fill="#FFFFFF" stroke="#0B3A5C" stroke-width="6" />
+        {/* the clear aligner, seated over the whole row */}
+        <path
+          d="M26 142C20 110 26 84 50 76C74 68 166 68 190 76C214 84 220 110 214 142Z"
+          fill="#2E8BC4"
+          fill-opacity="0.13"
+          stroke="#2E8BC4"
+          stroke-width="4.5"
+        />
       </g>
     )
   }
@@ -92,25 +112,20 @@ const { treatment, class: className } = Astro.props;
   {
     treatment === 'aesthetics' && (
       <g>
-        {/* tooth */}
-        <g transform="translate(56 34)">
-          <path
-            d="M10 35C10 12 32 4 50 12C68 4 90 12 90 35C90 58 84 78 78 100C74 116 62 118 59 104L54 76C52 66 48 66 46 76L41 104C38 118 26 116 22 100C16 78 10 58 10 35Z"
-            fill="#FFFFFF"
-            stroke="#0B3A5C"
-            stroke-width="5"
-          />
-        </g>
-        {/* veneer shell bonded onto the front face of the tooth */}
+        {/* the same tooth before and after: dull on the left, finished on the right */}
         <path
-          d="M80 64C80 50 92 44 106 48C120 44 132 50 132 64C132 84 128 100 121 112C114 118 98 118 91 112C84 100 80 84 80 64Z"
-          fill="#FFFFFF"
-          stroke="#2E8BC4"
+          d={TOOTH}
+          transform="translate(20 66) scale(0.9)"
+          fill="#0B3A5C"
+          fill-opacity="0.16"
+          stroke="#0B3A5C"
           stroke-width="5"
         />
-        {/* shine */}
-        <path d="M186 44L191 60L207 65L191 70L186 86L181 70L165 65L181 60Z" fill="#2E8BC4" />
-        <path d="M156 96L159 105L168 108L159 111L156 120L153 111L144 108L153 105Z" fill="#2E8BC4" opacity="0.7" />
+        <path d={TOOTH} transform="translate(104 66) scale(0.9)" fill="#FFFFFF" stroke="#0B3A5C" stroke-width="5" />
+        {/* the finished one catches the light */}
+        <path d="M196 40L201 58L219 63L201 68L196 86L191 68L173 63L191 58Z" fill="#2E8BC4" />
+        <path d="M214 94L217 104L227 107L217 110L214 120L211 110L201 107L211 104Z" fill="#2E8BC4" opacity="0.7" />
+        <path d="M184 104L186 111L193 113L186 115L184 122L182 115L175 113L182 111Z" fill="#2E8BC4" opacity="0.5" />
       </g>
     )
   }
@@ -118,21 +133,13 @@ const { treatment, class: className } = Astro.props;
   {
     treatment === 'general' && (
       <g>
-        {/* tooth */}
-        <g transform="translate(34 36)">
-          <path
-            d="M10 35C10 12 32 4 50 12C68 4 90 12 90 35C90 58 84 78 78 100C74 116 62 118 59 104L54 76C52 66 48 66 46 76L41 104C38 118 26 116 22 100C16 78 10 58 10 35Z"
-            fill="#FFFFFF"
-            stroke="#0B3A5C"
-            stroke-width="5"
-          />
-        </g>
-        {/* mouth mirror */}
-        <circle cx="182" cy="66" r="24" fill="#E5F0F8" stroke="#0B3A5C" stroke-width="5" />
-        <path d="M166 84L140 122" stroke="#0B3A5C" stroke-width="5" />
-        {/* healthy check */}
-        <circle cx="170" cy="146" r="22" fill="#2E8BC4" />
-        <path d="M160 146L167 154L181 138" stroke="#FFFFFF" stroke-width="5" />
+        <path d={TOOTH} transform="translate(26 67) scale(0.95)" fill="#FFFFFF" stroke="#0B3A5C" stroke-width="5" />
+        {/* mouth mirror, angled at the tooth */}
+        <circle cx="176" cy="72" r="27" fill="#FFFFFF" stroke="#0B3A5C" stroke-width="5" />
+        <circle cx="176" cy="72" r="18" fill="#2E8BC4" fill-opacity="0.2" />
+        <path d="M164 66C168 60 176 58 182 60" stroke="#FFFFFF" stroke-width="4" />
+        <path d="M196 92L222 128" stroke="#0B3A5C" stroke-width="7" />
+        <path d="M128 40L131 51L142 54L131 57L128 68L125 57L114 54L125 51Z" fill="#2E8BC4" opacity="0.8" />
       </g>
     )
   }
@@ -140,24 +147,37 @@ const { treatment, class: className } = Astro.props;
   {
     treatment === 'crowns' && (
       <g>
-        {/* prepared tooth */}
+        {/* the tooth, trimmed down to take the crown */}
         <path
-          d="M84 120L156 120L149 152C146 168 133 170 130 156L126 138C124 130 118 130 116 138L112 156C109 170 96 168 93 152Z"
-          fill="#E5F0F8"
+          d="M97 118C97 110 102 105 110 105H130C138 105 143 110 143 118C142 132 141 150 138 166C136 178 127 178 125 166L122 142C120 132 116 132 114 142L111 166C109 178 100 178 98 166C95 150 98 132 97 118Z"
+          fill="#FFFFFF"
           stroke="#0B3A5C"
           stroke-width="5"
         />
-        {/* crown cap coming down onto it */}
+        {/* the crown, on its way down onto it */}
         <path
-          d="M78 42C78 20 100 12 120 20C140 12 162 20 162 42C162 62 158 78 152 92L88 92C82 78 78 62 78 42Z"
+          d="M82 38C82 14 101 4 120 12C139 4 158 14 158 38C158 52 155 60 152 68L88 68C85 60 82 52 82 38Z"
           fill="#FFFFFF"
           stroke="#0F6BA8"
           stroke-width="5"
         />
-        {/* seating direction */}
-        <path d="M120 100L120 112" stroke="#2E8BC4" stroke-width="5" stroke-dasharray="2 8" />
-        <path d="M112 106L120 114L128 106" stroke="#2E8BC4" stroke-width="5" />
+        <path d="M88 68C99 79 141 79 152 68" stroke="#0F6BA8" stroke-width="4" fill="none" />
+        <path d="M120 82V92" stroke="#2E8BC4" stroke-width="5" stroke-dasharray="2 9" />
+        <path d="M111 92L120 102L129 92" stroke="#2E8BC4" stroke-width="5" />
       </g>
     )
   }
+
+  {
+    /* Fading the gum out at the bottom keeps it a ground plane rather than a
+      block with a hard edge sitting inside the card. */
+  }
+  <defs>
+    <linearGradient id="illus-gum" x1="0" y1="132" x2="0" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2E8BC4" stop-opacity="0.22"></stop>
+      <stop offset="1" stop-color="#2E8BC4" stop-opacity="0"></stop>
+    </linearGradient>
+  </defs>
+  <path d={GUM} fill="url(#illus-gum)"></path>
+  <path d={GUM_TOP} stroke="#0F6BA8" stroke-opacity="0.4" stroke-width="3" fill="none"></path>
 </svg>
