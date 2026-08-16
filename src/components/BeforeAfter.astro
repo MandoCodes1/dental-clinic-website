@@ -5,6 +5,10 @@ import type { ImageMetadata } from 'astro';
 // Before/after cases as drag-to-compare sliders. Both photos share one frame,
 // so the comparison is like for like: a wider or better-lit "after" cannot
 // flatter the result the way a side-by-side pair can.
+//
+// The frame takes the aspect ratio of the wider photo in the pair and the
+// images are contained rather than cropped, so nothing gets cut off the sides:
+// on a mouth shot the corners of the lips are the reference the eye needs.
 interface CaseItem {
   before: ImageMetadata;
   after: ImageMetadata;
@@ -18,29 +22,39 @@ interface Props {
   sliderLabel: string;
 }
 const { cases, beforeLabel, afterLabel, dragHint, sliderLabel } = Astro.props;
+
+const frameRatio = (c: CaseItem) => Math.max(c.before.width / c.before.height, c.after.width / c.after.height);
 ---
 
 <div class="grid gap-6 sm:grid-cols-2">
   {
     cases.map((c) => (
       <figure class="card overflow-hidden p-0">
-        <div class="relative aspect-[4/3] select-none overflow-hidden" data-compare style="--pos: 50%">
+        <div
+          class="relative select-none overflow-hidden bg-brand-light"
+          data-compare
+          style={`--pos: 50%; aspect-ratio: ${frameRatio(c).toFixed(3)}`}
+        >
           <Image
             src={c.after}
             alt={`${afterLabel}: ${c.title}`}
             widths={[400, 700, 1000]}
             sizes="(max-width: 640px) 92vw, 460px"
-            class="absolute inset-0 h-full w-full object-cover"
+            class="absolute inset-0 h-full w-full object-contain"
           />
-          {/* The before shot sits on top, revealed from the left up to --pos. */}
-          <Image
-            src={c.before}
-            alt={`${beforeLabel}: ${c.title}`}
-            widths={[400, 700, 1000]}
-            sizes="(max-width: 640px) 92vw, 460px"
-            class="absolute inset-0 h-full w-full object-cover"
-            style="clip-path: inset(0 calc(100% - var(--pos)) 0 0)"
-          />
+          {/* The before shot sits on top, revealed from the left up to --pos.
+              It is clipped inside an opaque wrapper so that, when the two
+              photos are not framed alike, its margins stay blank instead of
+              letting the after shot show through and read as one picture. */}
+          <div class="absolute inset-0 bg-brand-light" style="clip-path: inset(0 calc(100% - var(--pos)) 0 0)">
+            <Image
+              src={c.before}
+              alt={`${beforeLabel}: ${c.title}`}
+              widths={[400, 700, 1000]}
+              sizes="(max-width: 640px) 92vw, 460px"
+              class="h-full w-full object-contain"
+            />
+          </div>
 
           <span class="pointer-events-none absolute left-2 top-2 rounded-full bg-ink/75 px-2 py-0.5 text-xs font-medium text-white">
             {beforeLabel}
