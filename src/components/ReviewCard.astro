@@ -11,7 +11,12 @@ interface Props {
 const { review, lang } = Astro.props;
 const t = content[lang];
 const text = lang === 'es' ? review.text_es : review.text_en;
-const labels: Record<string, string> = { malaga: 'Málaga', balham: 'Londres · Balham', finchley: 'Londres · Finchley' };
+const london = lang === 'es' ? 'Londres' : 'London';
+const labels: Record<string, string> = {
+  malaga: 'Málaga',
+  balham: `${london} · Balham`,
+  finchley: `${london} · Finchley`,
+};
 const location = labels[review.clinic] ?? '';
 const avatar = getAvatarDisplay(review.avatar);
 const sourceIcon = review.source === 'Trustpilot' ? 'tabler:star' : 'tabler:brand-google';

@@ -108,11 +108,16 @@ export interface TreatmentCopy {
   card: { title: string; description: string };
   meta: MetaEntry;
   title: string;
+  // Problem-hook: opens from the patient's situation, then names the solution.
   lead: string;
-  points: string[];
-  // Visit-by-visit walkthrough, rolled out treatment by treatment. Optional so
-  // treatments without one yet still compile; fill both locales together.
-  process?: { title: string; intro: string; steps: ProcessStep[] };
+  // Plain-language definition shown next to the illustration.
+  whatIs: { title: string; body: string[] };
+  // Patient situations, written problem-first. Only things she actually offers.
+  situations: { title: string; items: { title: string; description: string }[] };
+  // Visit-by-visit walkthrough: 1-2 sentences per step; detail lives in the FAQs.
+  process: { title: string; intro: string; steps: ProcessStep[] };
+  // The treatment-specific fourth card of the shared "why me" block.
+  whyMeExtra: ValueItem;
   priceGroup: PriceGroup;
   cta: { title: string; body: string; message: string };
 }
@@ -164,6 +169,11 @@ export interface SiteCopy {
     customQuote: string;
     disclaimer: string;
     quality: { title: string; lead: string; points: ValueItem[] };
+    // The three fixed cards of the per-treatment "why me" block; the fourth
+    // comes from each treatment's whyMeExtra.
+    whyMe: { title: string; items: ValueItem[] };
+    // Heading of the per-treatment reviews strip.
+    reviewsTitle: string;
     faqTitle: string;
     askQuote: string;
     faqPrompt: string;
@@ -409,6 +419,26 @@ const es: SiteCopy = {
         },
       ],
     },
+    whyMe: {
+      title: '¿Por qué tratarte conmigo?',
+      items: [
+        {
+          title: 'Te atiendo yo en cada visita',
+          description: 'Quien te valora es quien te trata y quien te revisa: yo. Sin rotación de dentistas.',
+        },
+        {
+          title: 'Presupuesto cerrado por escrito',
+          description:
+            'Antes de empezar sabes qué incluye tu tratamiento y cuánto cuesta. El precio acordado es el que pagas.',
+        },
+        {
+          title: 'La misma calidad que en Londres',
+          description:
+            'Los mismos materiales y laboratorios que en la clínica de implantes de Londres donde fui Dentista del Año 2024.',
+        },
+      ],
+    },
+    reviewsTitle: 'Pacientes que ya han pasado por esto',
     faqTitle: 'Garantía y formas de pago',
     askQuote: '¿Buscas otro tratamiento? Escríbeme, cuéntame tu caso y te digo cómo lo enfocaría, sin compromiso.',
     faqPrompt: '¿Tienes más dudas sobre los tratamientos, los materiales o cómo trabajo?',
@@ -427,50 +457,69 @@ const es: SiteCopy = {
         description: `Implantes dentales Klockner en El Palo, Málaga, desde ${formatPrice(PRICES.implantOnly, 'es')} más ${formatPrice(PRICES.zirconiaCrown, 'es')} la corona de zirconio. ${CLINIC.years} años de experiencia en implantología y presupuesto cerrado por escrito.`,
       },
       title: 'Implantes dentales',
-      lead: 'Un implante sustituye la raíz del diente perdido y sobre él se coloca una corona fija. El resultado se ve, se siente y funciona como un diente propio.',
-      points: [
-        'Implante unitario, múltiple o rehabilitación completa de la boca',
-        'Implantes Klockner y solo aditamentos originales de la marca en la prótesis',
-        'Planificación sobre TAC 3D (CBCT), valorado personalmente por la doctora',
-        'Injertos óseos y elevación de seno cuando sean necesarios',
-        'Presupuesto cerrado por escrito antes de empezar',
-        'Revisiones y mantenimiento a largo plazo',
-      ],
+      lead: '¿Te falta un diente, o varios, y ya no comes ni sonríes tranquilo? Un implante lo sustituye de raíz: fijo, natural y pensado para durar muchos años.',
+      whatIs: {
+        title: '¿Qué es un implante dental?',
+        body: [
+          'Un implante es una raíz artificial de titanio que se coloca en el hueso, donde antes estaba la raíz de tu diente. Sobre ella se fija una corona de zirconio del color de tus dientes.',
+          'No se quita ni se pone: queda fijo, y al comer y sonreír se siente como un diente propio. Trabajo con implantes Klockner, planificados sobre un TAC 3D que valoro yo misma.',
+        ],
+      },
+      situations: {
+        title: '¿Qué se puede hacer en tu caso?',
+        items: [
+          {
+            title: 'Te falta un diente',
+            description: 'Un implante con su corona lo sustituye sin tocar los dientes sanos de al lado.',
+          },
+          {
+            title: 'Te faltan varios dientes',
+            description:
+              'Varios implantes pueden reponerlos a la vez, sin necesidad de un implante por cada diente que falta.',
+          },
+          {
+            title: 'Te quedan pocos dientes o ninguno',
+            description:
+              'Una rehabilitación completa sobre implantes devuelve a tu boca dientes fijos, para comer y sonreír con normalidad.',
+          },
+          {
+            title: 'Te han dicho que no tienes hueso',
+            description:
+              'Un injerto o una elevación de seno preparan la zona cuando el hueso no basta. Solo si tu caso lo necesita.',
+          },
+        ],
+      },
       process: {
         title: 'Así es el tratamiento, paso a paso',
-        intro: 'Cada boca es distinta, pero un implante bien hecho sigue siempre el mismo camino. Así es como trabajo:',
+        intro: 'Cada boca es distinta, pero un implante bien hecho sigue siempre el mismo camino:',
         steps: [
           {
             title: 'Valoración y TAC 3D',
-            description:
-              'En la primera visita te exploro y te explico tus opciones. Si el implante tiene sentido, te doy un volante para hacerte el TAC (CBCT) en un centro radiológico cercano; lo leo y valoro yo personalmente, y si sigues adelante con el tratamiento, lo que pagues por él se descuenta del presupuesto.',
+            description: 'Te exploro, te explico tus opciones y planifico tu caso sobre un TAC 3D que valoro yo misma.',
           },
           {
-            title: 'Plan y presupuesto cerrado',
-            description:
-              'Sobre el TAC planifico dónde y cómo va cada implante, y te entrego el plan por escrito con su presupuesto cerrado. Antes de empezar sabes exactamente qué incluye y cuánto cuesta.',
+            title: 'Presupuesto cerrado',
+            description: 'Recibes tu plan por escrito. Sabes qué incluye y cuánto cuesta antes de empezar.',
           },
           {
             title: 'Colocación del implante',
             description:
-              'Con anestesia local y técnica mínimamente invasiva coloco el implante, de la marca Klockner. No duele, y la mayoría de mis pacientes se sorprende de lo llevadera que resulta la intervención.',
+              'Con anestesia local y técnica mínimamente invasiva. No duele, y sorprende lo llevadera que es.',
           },
           {
             title: 'Osteointegración',
-            description:
-              'Durante unos seis meses el hueso se une al implante hasta dejarlo tan firme como una raíz propia. En este periodo hago las revisiones necesarias para comprobar que todo avanza como debe.',
+            description: 'Durante unos meses el hueso se une al implante hasta dejarlo tan firme como una raíz propia.',
           },
           {
-            title: 'Corona definitiva',
+            title: 'Tu corona definitiva',
             description:
-              'Sobre el implante ya integrado coloco la corona de zirconio, siempre con aditamentos originales Klockner y nunca con copias compatibles: el ajuste es exacto y el implante queda protegido a largo plazo. Ajusto forma y color hasta que el diente se ve y funciona como uno propio.',
-          },
-          {
-            title: 'Revisiones y mantenimiento',
-            description:
-              'Un implante bien cuidado dura muchos años. Te doy tu pauta de higiene y lo seguimos juntos en tus revisiones.',
+              'Coloco la corona de zirconio y ajusto forma y color hasta que es un diente más. Después lo cuidamos juntos en tus revisiones.',
           },
         ],
+      },
+      whyMeExtra: {
+        title: 'Klockner con aditamentos originales',
+        description: 'Nunca copias compatibles: el ajuste es exacto y tu implante queda protegido a largo plazo.',
       },
       priceGroup: {
         title: 'Precios de implantes',
@@ -516,44 +565,69 @@ const es: SiteCopy = {
         description: `Extracciones simples y complejas, injertos y cirugía mínimamente invasiva en El Palo, Málaga. ${CLINIC.years} años de experiencia quirúrgica.`,
       },
       title: 'Cirugía oral',
-      lead: `${CLINIC.years} años de cirugía avalan una técnica cuidadosa que preserva el tejido sano y hace la recuperación más llevadera.`,
-      points: [
-        'Extracciones simples y complejas',
-        'Cirugía mínimamente invasiva que preserva el tejido sano',
-        'Injertos óseos y preparación para implantes',
-        'Pauta de cuidados por escrito y seguimiento postoperatorio cercano',
-      ],
+      lead: '¿Te han dicho que hay que sacar una muela y te da respeto? Es normal. Con una técnica cuidadosa es mucho más llevadero de lo que imaginas.',
+      whatIs: {
+        title: '¿Qué es la cirugía oral?',
+        body: [
+          'Es la parte de la odontología que se ocupa de las extracciones y de las pequeñas intervenciones en la boca: desde sacar una muela dañada hasta preparar el hueso para un implante.',
+          `Después de ${CLINIC.years} años de cirugía, mi prioridad sigue siendo la misma: respetar el tejido sano para que la recuperación sea rápida y cómoda.`,
+        ],
+      },
+      situations: {
+        title: '¿Qué resuelve la cirugía oral?',
+        items: [
+          {
+            title: 'Una muela que no se puede salvar',
+            description:
+              'Si un diente está demasiado dañado, lo extraigo con cuidado y después vemos con calma cómo reponerlo.',
+          },
+          {
+            title: 'Las muelas del juicio',
+            description:
+              'Cuando dan problemas o no tienen sitio, se extraen. Antes lo valoro siempre con una radiografía.',
+          },
+          {
+            title: 'Restos y extracciones difíciles',
+            description:
+              'Restos de raíces y dientes complicados piden técnica quirúrgica. Los resuelvo sin prisas y con mano cuidadosa.',
+          },
+          {
+            title: 'Preparar la boca para implantes',
+            description:
+              'Injertos de hueso y elevaciones de seno, cuando tu caso los necesita, para colocar implantes con seguridad.',
+          },
+        ],
+      },
       process: {
         title: 'Así es una extracción, paso a paso',
-        intro:
-          'Una extracción da respeto, lo sé. Por eso te explico todo antes de hacer nada, y trabajo para que la experiencia sea mucho más llevadera de lo que imaginas:',
+        intro: 'Te explico todo antes de hacer nada, y trabajo para que la experiencia sea mejor de lo que esperas:',
         steps: [
           {
             title: 'Valoración y radiografía',
-            description:
-              'Te exploro, veo cómo está el diente y te explico con claridad por qué conviene extraerlo o si se puede salvar. Si hace falta una radiografía, te doy un volante para un centro radiológico cercano y, si sigues adelante, lo que pagues por ella se descuenta del presupuesto.',
+            description: 'Veo cómo está el diente y te digo con claridad si se puede salvar o conviene extraerlo.',
           },
           {
-            title: 'Plan y presupuesto cerrado',
-            description:
-              'Antes de empezar sabes qué voy a hacer, cuánto cuesta y qué vas a notar en cada momento. Si la extracción es compleja, te lo digo desde el principio; sin sorpresas a mitad de camino.',
+            title: 'Presupuesto cerrado',
+            description: 'Sabes qué voy a hacer y cuánto cuesta antes de empezar. Sin sorpresas a mitad de camino.',
           },
           {
             title: 'La intervención',
             description:
-              'Con anestesia local no duele: notarás presión, nada más. Uso una técnica cuidadosa y mínimamente invasiva que respeta el hueso y la encía de alrededor, pensando ya en cómo cicatrizará la zona.',
+              'Con anestesia local no duele: notarás presión, nada más. Técnica cuidadosa que respeta el hueso y la encía.',
           },
           {
             title: 'Cuidados en casa',
-            description:
-              'Te vas con la pauta completa por escrito: las primeras 24 horas son las importantes, con frío local, sin enjuagues fuertes, sin fumar y comiendo blando. Y me tienes a un WhatsApp para cualquier duda.',
+            description: 'Te vas con la pauta por escrito, y me tienes a un WhatsApp para cualquier duda.',
           },
           {
-            title: 'Revisión y siguiente paso',
-            description:
-              'Reviso la cicatrización y, si el diente extraído hay que reponerlo, vemos con calma las opciones, como un implante, a tu ritmo y con su propio presupuesto cerrado.',
+            title: 'Revisión',
+            description: 'Compruebo la cicatrización y, si hay que reponer el diente, vemos las opciones a tu ritmo.',
           },
         ],
+      },
+      whyMeExtra: {
+        title: 'Cirugía mínimamente invasiva',
+        description: 'Una técnica que preserva el hueso y la encía, pensando ya en cómo cicatrizará la zona.',
       },
       priceGroup: {
         title: 'Precios de cirugía oral',
@@ -584,45 +658,65 @@ const es: SiteCopy = {
         description: `Ortodoncia invisible con alineadores Ordoline en El Palo, Málaga, desde ${formatPrice(PRICES.aligners, 'es')} por arcada. Plan a medida y controles con la propia doctora.`,
       },
       title: 'Ortodoncia invisible',
-      lead: 'Los alineadores transparentes corrigen la posición de los dientes de forma discreta: te los quitas para comer y casi nadie nota que los llevas.',
-      points: [
-        'Alineadores transparentes y cómodos, hechos a tu medida',
-        'Simulación 3D del antes y el después: ves el resultado esperado antes de empezar',
-        'Ideales para apiñamiento y espacios entre dientes',
-        'Te los quitas para comer y para cepillarte',
-        'Controles regulares para seguir el avance',
-      ],
+      lead: '¿Dientes torcidos, montados o con huecos? Los alineadores transparentes los colocan en su sitio sin brackets, y casi nadie notará que los llevas.',
+      whatIs: {
+        title: '¿Cómo funcionan los alineadores?',
+        body: [
+          'Son fundas transparentes hechas a tu medida que van moviendo los dientes poco a poco. Cada juego acerca tus dientes un paso más a su posición final.',
+          'Te los quitas para comer y para cepillarte, y antes de empezar ves en una simulación 3D cómo quedará tu sonrisa.',
+        ],
+      },
+      situations: {
+        title: '¿Qué corrigen los alineadores?',
+        items: [
+          {
+            title: 'Dientes apiñados',
+            description:
+              'Cuando no tienen sitio y se montan unos sobre otros. Es lo más frecuente, y además dificulta la higiene.',
+          },
+          {
+            title: 'Huecos entre dientes',
+            description: 'Los espacios se van cerrando de forma gradual y controlada, hasta una sonrisa uniforme.',
+          },
+          {
+            title: 'Dientes que se han vuelto a mover',
+            description:
+              'Si llevaste ortodoncia hace años y los dientes se han movido, los alineadores pueden devolverlos a su sitio.',
+          },
+        ],
+      },
       process: {
         title: 'Así es el tratamiento, paso a paso',
         intro:
-          'Con los alineadores no hay misterio: desde el primer día sabes qué se va a mover, cuánto va a tardar aproximadamente y cuánto cuesta.',
+          'Con los alineadores no hay misterio: desde el primer día sabes qué se va a mover, cuánto tardará aproximadamente y cuánto cuesta.',
         steps: [
           {
             title: 'Valoración y estudio',
-            description:
-              'Te exploro, escucho qué te gustaría corregir y tomo los registros de tu boca. Con ellos se prepara el estudio de tu caso y compruebo que los alineadores son la opción adecuada para ti.',
+            description: 'Te exploro, escucho qué te gustaría corregir y tomo los registros de tu boca.',
           },
           {
             title: 'Simulación 3D y presupuesto',
-            description:
-              'Ves en 3D cómo se moverán tus dientes y cómo quedará tu sonrisa al terminar, antes de empezar. Si te convence, recibes tu plan con el número aproximado de alineadores y el presupuesto cerrado por escrito.',
+            description: 'Ves cómo quedará tu sonrisa antes de empezar y recibes tu presupuesto cerrado por escrito.',
           },
           {
             title: 'Tus alineadores',
             description:
-              'Recibes tus juegos de alineadores Ordoline hechos a medida. Se llevan unas 22 horas al día, te los quitas para comer y cepillarte, y cada juego se cambia según el plan que marcamos juntos.',
+              'Juegos Ordoline hechos a medida. Se llevan casi todo el día y te los quitas para comer y cepillarte.',
           },
           {
-            title: 'Controles con la doctora',
+            title: 'Controles conmigo',
             description:
-              'Nos vemos con regularidad para comprobar que el movimiento avanza según la simulación. Si algo se desvía, lo corrijo a tiempo; los controles los hago yo misma, no un auxiliar.',
+              'Compruebo yo misma que todo avanza según la simulación, y corrijo a tiempo si algo se desvía.',
           },
           {
             title: 'Retención',
-            description:
-              'Cuando llegamos al resultado, una retención sencilla mantiene los dientes en su nueva posición. Sin ella, los dientes tienden a moverse de nuevo con los años; con ella, lo conseguido se queda.',
+            description: 'Una retención sencilla mantiene el resultado, para que los dientes no vuelvan a moverse.',
           },
         ],
+      },
+      whyMeExtra: {
+        title: 'Controles con la doctora, no con un auxiliar',
+        description: 'Cada control del tratamiento lo hago yo misma, con alineadores Ordoline hechos a tu medida.',
       },
       priceGroup: {
         title: 'Precios de ortodoncia invisible',
@@ -652,44 +746,65 @@ const es: SiteCopy = {
         description: `Blanqueamiento dental desde ${formatPrice(PRICES.whitening, 'es')} y carillas de composite desde ${formatPrice(PRICES.compositeVeneer, 'es')} en El Palo, Málaga. Estética que respeta tu sonrisa natural.`,
       },
       title: 'Estética dental',
-      lead: 'Pequeños cambios bien hechos transforman una sonrisa. Trabajo la estética con una regla fija: que el resultado sea bonito y siga pareciendo tuyo.',
-      points: [
-        'Blanqueamiento profesional con férulas a medida',
-        'Carillas de composite para corregir forma y color',
-        'Reparación de empastes y bordes desgastados',
-        'Diseño de sonrisa personalizado',
-      ],
+      lead: '¿Sonríes tapándote la boca por el color o la forma de tus dientes? Pequeños cambios bien hechos transforman una sonrisa sin que deje de parecer tuya.',
+      whatIs: {
+        title: '¿Qué es la estética dental?',
+        body: [
+          'Son los tratamientos que mejoran el aspecto de tus dientes: el color, la forma y los bordes. Bien hecha, la estética no se nota: la gente te ve mejor sin saber por qué.',
+          'Trabajo con una regla fija: el resultado tiene que ser bonito y natural, nunca artificial.',
+        ],
+      },
+      situations: {
+        title: '¿Qué te gustaría mejorar?',
+        items: [
+          {
+            title: 'El color',
+            description:
+              'Un blanqueamiento profesional con férulas a medida aclara tus dientes de forma segura y controlada.',
+          },
+          {
+            title: 'La forma o los bordes',
+            description:
+              'Las carillas de composite corrigen dientes desgastados, picos y pequeñas roturas, normalmente en una sola sesión.',
+          },
+          {
+            title: 'Un empaste que se nota',
+            description: 'Sustituyo empastes oscurecidos o antiestéticos por composite del color exacto de tu diente.',
+          },
+        ],
+      },
       process: {
         title: 'Así trabajo la estética, paso a paso',
         intro:
-          'En estética la técnica importa, pero escuchar importa igual: el mejor resultado es el que se ve bonito y sigue pareciendo tuyo.',
+          'En estética la técnica importa, pero escuchar importa igual: el mejor resultado es el que sigue pareciendo tuyo.',
         steps: [
           {
-            title: 'Escucharte y valorar tu sonrisa',
-            description:
-              'Me cuentas qué te gustaría cambiar y yo te digo con sinceridad qué haría y qué no. A veces la opción más sencilla, un blanqueamiento o un pequeño retoque, es la que mejor resultado da.',
+            title: 'Escucharte',
+            description: 'Me cuentas qué te gustaría cambiar y te digo con sinceridad qué haría yo y qué no.',
           },
           {
             title: 'Plan y presupuesto cerrado',
-            description:
-              'Definimos juntos el objetivo y te entrego el plan por escrito, con su presupuesto cerrado. Sabes qué vamos a hacer, en cuántas citas y cuánto cuesta antes de empezar.',
+            description: 'Sabes qué vamos a hacer, en cuántas citas y cuánto cuesta, antes de empezar.',
           },
           {
             title: 'Blanqueamiento, si entra en tu plan',
-            description:
-              'Preparo tus férulas a medida y te enseño a usarlas en casa con las jeringas de blanqueamiento. Seguimos el avance juntos hasta llegar a un blanco natural, sin pasarnos.',
+            description: 'Férulas a medida y seguimiento juntos hasta llegar a un blanco natural, sin pasarnos.',
           },
           {
             title: 'Carillas de composite',
             description:
-              'Modelo el composite directamente sobre el diente, normalmente sin tallarlo, ajustando forma y color en la misma cita. Trabajo capa a capa hasta que la carilla se funde con el resto de tu sonrisa.',
+              'Modelo el composite capa a capa sobre el diente hasta que la carilla se funde con tu sonrisa.',
           },
           {
-            title: 'Revisión y mantenimiento',
-            description:
-              'A los pocos días reviso el resultado con calma y hago los retoques finales si hacen falta. En tus revisiones pulimos y mantenemos el trabajo para que siga como el primer día.',
+            title: 'Revisión y retoques',
+            description: 'A los pocos días reviso el resultado con calma y hago los ajustes finales si hacen falta.',
           },
         ],
+      },
+      whyMeExtra: {
+        title: 'Formación específica en estética',
+        description:
+          'Formada en estética en la Universidad de Córdoba, con el composite trabajado capa a capa y sin prisas.',
       },
       priceGroup: {
         title: 'Precios de estética dental',
@@ -720,39 +835,65 @@ const es: SiteCopy = {
         description: `Limpieza dental desde ${formatPrice(PRICES.cleaning, 'es')}, empastes desde ${formatPrice(PRICES.filling, 'es')} y férulas de descarga en El Palo, Málaga. Odontología de confianza para toda la familia.`,
       },
       title: 'Odontología general',
-      lead: 'La base de una boca sana es el cuidado de cada día: revisiones a tiempo, limpiezas bien hechas y empastes que duran.',
-      points: [
-        'Revisiones completas y diagnóstico sin prisas',
-        'Limpiezas cuidadosas que respetan el esmalte',
-        'Empastes y reconstrucciones con composite de calidad',
-        'Férulas de descarga a medida si aprietas los dientes al dormir',
-      ],
+      lead: '¿Hace años que no pisas un dentista, o te da miedo lo que puedan encontrarte? Ven sin agobios: te digo cómo está tu boca con claridad, y no trato nada que no haga falta.',
+      whatIs: {
+        title: '¿Qué incluye la odontología general?',
+        body: [
+          'Es el cuidado de base de tu boca: revisiones, limpiezas, empastes y todo lo que mantiene sanos tus dientes y tus encías año tras año.',
+          'La mayoría de los problemas grandes empiezan siendo pequeños. Cogerlos a tiempo es la forma más cómoda, y también la más barata, de cuidarse.',
+        ],
+      },
+      situations: {
+        title: '¿Qué necesita tu boca?',
+        items: [
+          {
+            title: 'Una revisión y una limpieza',
+            description: 'Exploro dientes y encías, retiro el sarro y te digo cómo está todo, en palabras claras.',
+          },
+          {
+            title: 'Una caries o un diente roto',
+            description:
+              'Empastes y reconstrucciones de composite del color de tu diente, bien ajustados a tu mordida.',
+          },
+          {
+            title: 'Aprietas o rechinas al dormir',
+            description: 'Una férula de descarga hecha a tu medida protege el esmalte y relaja la mandíbula.',
+          },
+          {
+            title: 'Te sangran las encías',
+            description:
+              'Sangrar no es normal: suele ser encía inflamada, y cogido a tiempo se resuelve con una limpieza y la técnica adecuada.',
+          },
+        ],
+      },
       process: {
         title: 'Así es una revisión, paso a paso',
         intro:
-          'Sea tu primera visita o la revisión de cada año, el objetivo es el mismo: que salgas sabiendo exactamente cómo está tu boca y qué necesita, si es que necesita algo.',
+          'Sea tu primera visita o la revisión de cada año, el objetivo es que salgas sabiendo cómo está tu boca y qué necesita, si es que necesita algo.',
         steps: [
           {
-            title: 'Revisión completa y sin prisas',
+            title: 'Revisión sin prisas',
             description:
-              'Exploro dientes, encías y mordida con calma y te explico lo que veo en palabras claras. Si algo necesita tratamiento te digo por qué, y si está todo sano, te lo digo igual: no trato lo que no lo necesita.',
+              'Exploro dientes, encías y mordida y te explico lo que veo. Si está todo sano, te lo digo igual.',
           },
           {
             title: 'Limpieza cuidadosa',
             description:
-              'Elimino el sarro y el manchado con una técnica que respeta el esmalte y las encías. Aprovecho para enseñarte los trucos de higiene que más le convienen a tu boca, del cepillado a los interdentales.',
+              'Retiro el sarro y el manchado respetando el esmalte, y te enseño los trucos de higiene para tu boca.',
           },
           {
             title: 'Tratamiento por prioridades',
-            description:
-              'Si hay caries u otros problemas, ordenamos el plan por prioridades y recibes tu presupuesto cerrado por escrito. Los empastes y reconstrucciones los hago con composite de calidad, con calma y bien ajustados a tu mordida.',
+            description: 'Si hay algo que tratar, ordenamos el plan y recibes tu presupuesto cerrado por escrito.',
           },
           {
             title: 'Mantenimiento a tu ritmo',
-            description:
-              'Te digo cada cuánto conviene revisarte en tu caso, sin citas innecesarias. Y si aprietas los dientes al dormir, una férula de descarga a medida protege tu esmalte y todo el trabajo hecho.',
+            description: 'Te digo cada cuánto conviene revisarte en tu caso, sin citas innecesarias.',
           },
         ],
+      },
+      whyMeExtra: {
+        title: 'Sin tratamientos innecesarios',
+        description: 'Si algo no hace falta, te lo digo. Mi consulta vive de la confianza, no de vender tratamientos.',
       },
       priceGroup: {
         title: 'Precios de odontología general',
@@ -785,44 +926,65 @@ const es: SiteCopy = {
         description: `Coronas de zirconio desde ${formatPrice(PRICES.zirconiaCrown, 'es')} y rehabilitación de la mordida en El Palo, Málaga. Los mismos materiales y laboratorios que en su consulta de Londres.`,
       },
       title: 'Coronas y prótesis',
-      lead: 'Cuando un diente está muy dañado o desgastado, una corona bien hecha le devuelve la forma, la fuerza y el color. Trabajo con zirconio y con los mismos laboratorios que uso en Londres.',
-      points: [
-        'Coronas de zirconio, resistentes y del color de tus dientes',
-        'Reconstrucción de dientes muy desgastados',
-        'Rehabilitación completa de la mordida cuando hace falta',
-        'Materiales y laboratorios de primera, los mismos que en Londres',
-      ],
+      lead: '¿Un diente roto, muy desgastado o que apenas aguanta? Una corona bien hecha le devuelve la forma, la fuerza y el color, y se confunde con los demás.',
+      whatIs: {
+        title: '¿Qué es una corona?',
+        body: [
+          'Una corona es una funda que cubre por completo un diente dañado y lo protege al masticar. Se fabrica a medida, con la forma y el color de tus dientes.',
+          'Las hago de zirconio, de lo más resistente que existe en odontología, y no se oscurece con el tiempo.',
+        ],
+      },
+      situations: {
+        title: '¿Cuándo hace falta una corona?',
+        items: [
+          {
+            title: 'Un diente muy dañado',
+            description:
+              'Cuando queda poco diente sano y un empaste ya no basta, la corona lo cubre y reparte la fuerza al masticar.',
+          },
+          {
+            title: 'Un diente endodonciado',
+            description:
+              'Tras un tratamiento de nervio el diente queda más frágil; la corona lo protege para que no se fracture.',
+          },
+          {
+            title: 'Una mordida desgastada',
+            description:
+              'Si el desgaste ha acortado tus dientes, una rehabilitación completa les devuelve su altura, su función y su aspecto.',
+          },
+        ],
+      },
       process: {
         title: 'Así es el tratamiento, paso a paso',
-        intro:
-          'Una corona bien hecha no se nota: se confunde con tus dientes y te deja masticar tranquilo. Llegar ahí lleva un proceso cuidadoso:',
+        intro: 'Una corona bien hecha no se nota: se confunde con tus dientes y te deja masticar tranquilo.',
         steps: [
           {
             title: 'Valoración del diente',
-            description:
-              'Compruebo cómo está el diente y te explico la mejor forma de recuperarlo: a veces basta una reconstrucción y otras conviene una corona que lo proteja por completo. Si hace falta una radiografía, te doy un volante para un centro cercano.',
+            description: 'Compruebo cómo está y te explico la mejor forma de recuperarlo.',
           },
           {
-            title: 'Plan y presupuesto cerrado',
-            description:
-              'Recibes el plan por escrito con su presupuesto cerrado antes de empezar. Si hay varias piezas afectadas o la mordida está baja por el desgaste, te explico el orden y los tiempos de todo el proceso.',
+            title: 'Presupuesto cerrado',
+            description: 'Por escrito y antes de empezar, con el orden y los tiempos de todo el proceso.',
           },
           {
             title: 'Preparación y provisional',
             description:
-              'Preparo el diente respetando al máximo lo sano, tomo los registros para el laboratorio y te coloco un provisional: sales de la consulta con el diente protegido y una estética correcta.',
+              'Preparo el diente respetando lo sano y sales de la consulta con un provisional que protege y se ve bien.',
           },
           {
-            title: 'El trabajo de laboratorio',
-            description:
-              'Tu corona de zirconio se fabrica en los mismos laboratorios con los que trabajo en Londres, ajustada a la forma y el color de tus dientes. No doy por buena una corona que no pasaría en mi consulta de Londres.',
+            title: 'El laboratorio',
+            description: 'Tu corona de zirconio se fabrica en los mismos laboratorios con los que trabajo en Londres.',
           },
           {
             title: 'Colocación y ajuste',
             description:
-              'Pruebo la corona, ajusto el contacto y la mordida hasta que la sientes como un diente propio, y entonces la fijo definitivamente. En tus revisiones compruebo que todo sigue perfecto.',
+              'Ajusto el contacto y la mordida hasta que la sientes como un diente propio, y entonces la fijo definitivamente.',
           },
         ],
+      },
+      whyMeExtra: {
+        title: 'Los mismos laboratorios que en Londres',
+        description: 'No doy por buena una corona que no pasaría el listón de mi consulta de Londres.',
       },
       priceGroup: {
         title: 'Precios de coronas y prótesis',
@@ -1541,6 +1703,26 @@ const en: SiteCopy = {
         },
       ],
     },
+    whyMe: {
+      title: 'Why have me treat you?',
+      items: [
+        {
+          title: 'You see me at every visit',
+          description: 'The person who assesses you is the one who treats you and reviews you: me. No staff rotation.',
+        },
+        {
+          title: 'A fixed, written quote',
+          description:
+            'Before we start you know what your treatment includes and what it costs. The price we agree is the price you pay.',
+        },
+        {
+          title: 'The same quality as in London',
+          description:
+            'The same materials and laboratories as at the London implant clinic where I was Dentist of the Year 2024.',
+        },
+      ],
+    },
+    reviewsTitle: 'Patients who have been through this',
     faqTitle: 'Guarantees and payment',
     askQuote:
       'Looking for another treatment? Message me, tell me about your case and I will tell you how I would approach it, no obligation.',
@@ -1560,50 +1742,69 @@ const en: SiteCopy = {
         description: `Klockner dental implants in El Palo, Málaga, from ${formatPrice(PRICES.implantOnly, 'en')} plus ${formatPrice(PRICES.zirconiaCrown, 'en')} for the zirconia crown. ${CLINIC.years} years of implantology experience and a fixed written quote.`,
       },
       title: 'Dental implants',
-      lead: 'An implant replaces the root of the missing tooth, and a fixed crown is placed on top. The result looks, feels and works like a tooth of your own.',
-      points: [
-        'Single, multiple or full-mouth implant rehabilitation',
-        'Klockner implants, with only original-brand components in the prosthesis',
-        'Planning from a 3D scan (CBCT), assessed personally by the doctor',
-        'Bone grafts and sinus lifts when needed',
-        'A fixed, written quote before we start',
-        'Long-term check-ups and maintenance',
-      ],
+      lead: 'Missing a tooth, or several, and no longer eating or smiling with ease? An implant replaces it from the root: fixed, natural and made to last for many years.',
+      whatIs: {
+        title: 'What is a dental implant?',
+        body: [
+          'An implant is an artificial titanium root placed in the bone, where the root of your tooth used to be. A zirconia crown matched to the colour of your teeth is fixed on top.',
+          'It does not come in and out: it stays fixed, and when you eat and smile it feels like a tooth of your own. I work with Klockner implants, planned on a 3D scan I assess myself.',
+        ],
+      },
+      situations: {
+        title: 'What can be done in your case?',
+        items: [
+          {
+            title: 'You are missing one tooth',
+            description: 'An implant with its crown replaces it without touching the healthy teeth either side.',
+          },
+          {
+            title: 'You are missing several teeth',
+            description: 'Several implants can replace them together, without needing one implant per missing tooth.',
+          },
+          {
+            title: 'You have few teeth left, or none',
+            description:
+              'A full rehabilitation on implants gives your mouth back fixed teeth, to eat and smile normally.',
+          },
+          {
+            title: 'You have been told you lack bone',
+            description:
+              'A graft or a sinus lift prepares the area when the bone is not enough. Only if your case needs it.',
+          },
+        ],
+      },
       process: {
         title: 'The treatment, step by step',
-        intro: 'Every mouth is different, but a well-placed implant always follows the same path. This is how I work:',
+        intro: 'Every mouth is different, but a well-placed implant always follows the same path:',
         steps: [
           {
             title: 'Assessment and 3D scan',
-            description:
-              'At the first visit I examine you and explain your options. If an implant makes sense, I give you a referral note for a CBCT scan at a nearby radiology centre; I read and assess it personally, and if you go ahead with treatment, what you pay for it is deducted from the quote.',
+            description: 'I examine you, explain your options and plan your case on a 3D scan I assess myself.',
           },
           {
-            title: 'Plan and fixed quote',
+            title: 'Fixed quote',
             description:
-              'Working on the scan I plan where and how each implant goes, and you receive the written plan with its fixed quote. Before we start you know exactly what it includes and what it costs.',
+              'You receive your plan in writing. You know what it includes and what it costs before we start.',
           },
           {
             title: 'Implant placement',
             description:
-              'Under local anaesthetic and with minimally invasive technique I place the implant, a Klockner implant. It does not hurt, and most of my patients are surprised by how manageable the procedure is.',
+              'Under local anaesthetic, with minimally invasive technique. It does not hurt, and it is surprisingly manageable.',
           },
           {
             title: 'Osseointegration',
-            description:
-              'Over about six months the bone bonds to the implant until it is as firm as a natural root. During this period I carry out the check-ups needed to confirm everything is progressing as it should.',
+            description: 'Over a few months the bone bonds to the implant until it is as firm as a natural root.',
           },
           {
-            title: 'Final crown',
+            title: 'Your final crown',
             description:
-              'Onto the integrated implant I fit the zirconia crown, always with original Klockner components and never compatible copies: the fit is exact and the implant stays protected in the long run. I adjust shape and colour until the tooth looks and works like your own.',
-          },
-          {
-            title: 'Check-ups and maintenance',
-            description:
-              'A well-cared-for implant lasts many years. I give you your hygiene routine and we follow it together at your check-ups.',
+              'I fit the zirconia crown and adjust shape and colour until it is simply one more tooth. Then we look after it together at your check-ups.',
           },
         ],
+      },
+      whyMeExtra: {
+        title: 'Klockner with original components',
+        description: 'Never compatible copies: the fit is exact and your implant stays protected in the long run.',
       },
       priceGroup: {
         title: 'Implant prices',
@@ -1649,44 +1850,70 @@ const en: SiteCopy = {
         description: `Simple and complex extractions, grafts and minimally invasive surgery in El Palo, Málaga. ${CLINIC.years} years of surgical experience.`,
       },
       title: 'Oral surgery',
-      lead: `${CLINIC.years} years of surgery stand behind a careful technique that preserves healthy tissue and makes recovery easier.`,
-      points: [
-        'Simple and complex extractions',
-        'Minimally invasive surgery that preserves healthy tissue',
-        'Bone grafts and preparation for implants',
-        'Written aftercare instructions and close post-operative follow-up',
-      ],
+      lead: 'Been told a tooth has to come out, and dreading it? That is normal. With a careful technique it is far easier than you imagine.',
+      whatIs: {
+        title: 'What is oral surgery?',
+        body: [
+          'It is the part of dentistry that deals with extractions and minor procedures in the mouth: from removing a damaged tooth to preparing the bone for an implant.',
+          `After ${CLINIC.years} years of surgery, my priority is still the same: respect the healthy tissue so recovery is quick and comfortable.`,
+        ],
+      },
+      situations: {
+        title: 'What does oral surgery solve?',
+        items: [
+          {
+            title: 'A tooth that cannot be saved',
+            description:
+              'If a tooth is too far gone, I remove it carefully and then we look calmly at how to replace it.',
+          },
+          {
+            title: 'Wisdom teeth',
+            description:
+              'When they cause trouble or have no room, out they come. I always assess them first with an X-ray.',
+          },
+          {
+            title: 'Remnants and difficult extractions',
+            description:
+              'Root remnants and tricky teeth call for a surgical approach. I handle them unhurried and with a careful hand.',
+          },
+          {
+            title: 'Preparing the mouth for implants',
+            description: 'Bone grafts and sinus lifts, when your case needs them, so implants can be placed safely.',
+          },
+        ],
+      },
       process: {
         title: 'An extraction, step by step',
-        intro:
-          'Extractions are daunting, I know. That is why I explain everything before doing anything, and work to make the experience far easier than you imagine:',
+        intro: 'I explain everything before doing anything, and work to make the experience better than you expect:',
         steps: [
           {
             title: 'Assessment and X-ray',
             description:
-              'I examine you, see how the tooth is doing and explain clearly why it should come out, or whether it can be saved. If an X-ray is needed, I give you a referral note for a nearby radiology centre and, if you go ahead, what you pay for it is deducted from the quote.',
+              'I see how the tooth is doing and tell you clearly whether it can be saved or should come out.',
           },
           {
-            title: 'Plan and fixed quote',
+            title: 'Fixed quote',
             description:
-              'Before we start you know what I am going to do, what it costs and what you will feel at each moment. If the extraction is complex, I tell you from the outset; no surprises halfway through.',
+              'You know what I am going to do and what it costs before we start. No surprises halfway through.',
           },
           {
             title: 'The procedure',
             description:
-              'With local anaesthetic it does not hurt: you will feel pressure, nothing more. I use a careful, minimally invasive technique that respects the surrounding bone and gum, already thinking about how the area will heal.',
+              'With local anaesthetic it does not hurt: you will feel pressure, nothing more. A careful technique that respects bone and gum.',
           },
           {
             title: 'Aftercare at home',
-            description:
-              'You leave with complete written instructions: the first 24 hours matter most, with a cold compress, no vigorous rinsing, no smoking and soft food. And I am one WhatsApp message away for any question.',
+            description: 'You leave with written instructions, and I am one WhatsApp message away for any question.',
           },
           {
-            title: 'Follow-up and next step',
-            description:
-              'I check the healing and, if the extracted tooth needs replacing, we look calmly at the options, such as an implant, at your pace and with its own fixed quote.',
+            title: 'Follow-up',
+            description: 'I check the healing and, if the tooth needs replacing, we look at the options at your pace.',
           },
         ],
+      },
+      whyMeExtra: {
+        title: 'Minimally invasive surgery',
+        description: 'A technique that preserves the bone and gum, already thinking about how the area will heal.',
       },
       priceGroup: {
         title: 'Oral surgery prices',
@@ -1716,14 +1943,33 @@ const en: SiteCopy = {
         description: `Invisible orthodontics with Ordoline aligners in El Palo, Málaga, from ${formatPrice(PRICES.aligners, 'en')} per arch. A tailored plan and check-ups with the doctor herself.`,
       },
       title: 'Invisible orthodontics',
-      lead: 'Clear aligners correct the position of your teeth discreetly: you take them out to eat, and hardly anyone notices you are wearing them.',
-      points: [
-        'Clear, comfortable aligners, made to measure',
-        'A 3D before-and-after simulation: you see the expected result before starting',
-        'Ideal for crowding and gaps between teeth',
-        'You take them out to eat and to brush',
-        'Regular check-ins to track progress',
-      ],
+      lead: 'Crooked, crowded or gappy teeth? Clear aligners move them into place without braces, and hardly anyone will notice you are wearing them.',
+      whatIs: {
+        title: 'How do aligners work?',
+        body: [
+          'They are clear, made-to-measure trays that move your teeth little by little. Each set brings your teeth one step closer to their final position.',
+          'You take them out to eat and to brush, and before starting you see in a 3D simulation how your smile will look.',
+        ],
+      },
+      situations: {
+        title: 'What do aligners correct?',
+        items: [
+          {
+            title: 'Crowded teeth',
+            description:
+              'When they have no room and sit on top of each other. It is the most common case, and it also makes cleaning harder.',
+          },
+          {
+            title: 'Gaps between teeth',
+            description: 'The spaces close gradually and under control, towards an even smile.',
+          },
+          {
+            title: 'Teeth that have drifted back',
+            description:
+              'If you had braces years ago and your teeth have moved, aligners can bring them back into place.',
+          },
+        ],
+      },
       process: {
         title: 'The treatment, step by step',
         intro:
@@ -1731,30 +1977,30 @@ const en: SiteCopy = {
         steps: [
           {
             title: 'Assessment and records',
-            description:
-              'I examine you, listen to what you would like to correct and take the records of your mouth. With them your case study is prepared and I confirm aligners are the right option for you.',
+            description: 'I examine you, listen to what you would like to correct and take the records of your mouth.',
           },
           {
             title: '3D simulation and quote',
-            description:
-              'You see in 3D how your teeth will move and how your smile will look at the end, before starting. If you like it, you receive your plan with the approximate number of aligners and the fixed written quote.',
+            description: 'You see how your smile will look before starting, and receive your fixed written quote.',
           },
           {
             title: 'Your aligners',
-            description:
-              'You receive your made-to-measure Ordoline aligner sets. They are worn about 22 hours a day, you take them out to eat and brush, and each set is changed following the plan we agree together.',
+            description: 'Made-to-measure Ordoline sets. Worn nearly all day; you take them out to eat and to brush.',
           },
           {
-            title: 'Check-ups with the doctor',
+            title: 'Check-ups with me',
             description:
-              'We meet regularly to confirm the movement is following the simulation. If anything drifts, I correct it in time; the check-ups are done by me, not an assistant.',
+              'I check myself that everything follows the simulation, and correct in time if anything drifts.',
           },
           {
             title: 'Retention',
-            description:
-              'Once we reach the result, simple retention keeps your teeth in their new position. Without it, teeth tend to drift again over the years; with it, what we achieved stays.',
+            description: 'Simple retention keeps the result, so your teeth do not drift back again.',
           },
         ],
+      },
+      whyMeExtra: {
+        title: 'Check-ups with the doctor, not an assistant',
+        description: 'I do every check-up of the treatment myself, with Ordoline aligners made to your measure.',
       },
       priceGroup: {
         title: 'Invisible orthodontics prices',
@@ -1784,44 +2030,64 @@ const en: SiteCopy = {
         description: `Teeth whitening from ${formatPrice(PRICES.whitening, 'en')} and composite veneers from ${formatPrice(PRICES.compositeVeneer, 'en')} in El Palo, Málaga. Aesthetics that respect your natural smile.`,
       },
       title: 'Cosmetic dentistry',
-      lead: 'Small changes done well transform a smile. I work on aesthetics with one fixed rule: the result should be beautiful and still look like you.',
-      points: [
-        'Professional whitening with custom trays',
-        'Composite veneers to correct shape and colour',
-        'Repair of worn fillings and edges',
-        'Personalised smile design',
-      ],
+      lead: 'Covering your mouth when you smile because of the colour or shape of your teeth? Small changes done well transform a smile without it stopping looking like you.',
+      whatIs: {
+        title: 'What is cosmetic dentistry?',
+        body: [
+          'The treatments that improve how your teeth look: their colour, their shape and their edges. Done well, it does not show: people see you looking better without knowing why.',
+          'I work with one fixed rule: the result has to be beautiful and natural, never artificial.',
+        ],
+      },
+      situations: {
+        title: 'What would you like to improve?',
+        items: [
+          {
+            title: 'The colour',
+            description: 'Professional whitening with custom trays lightens your teeth safely and under control.',
+          },
+          {
+            title: 'The shape or the edges',
+            description: 'Composite veneers correct worn teeth, chips and small fractures, usually in a single visit.',
+          },
+          {
+            title: 'A filling that shows',
+            description: 'I replace darkened or unsightly fillings with composite in the exact colour of your tooth.',
+          },
+        ],
+      },
       process: {
         title: 'How I work on aesthetics, step by step',
         intro:
-          'In aesthetics technique matters, but listening matters just as much: the best result is the one that looks beautiful and still looks like you.',
+          'In aesthetics technique matters, but listening matters just as much: the best result is the one that still looks like you.',
         steps: [
           {
-            title: 'Listening and assessing your smile',
+            title: 'Listening',
             description:
-              'You tell me what you would like to change and I tell you sincerely what I would do and what I would not. Sometimes the simplest option, a whitening or a small touch-up, gives the best result.',
+              'You tell me what you would like to change and I tell you sincerely what I would do and what I would not.',
           },
           {
             title: 'Plan and fixed quote',
-            description:
-              'We define the goal together and you receive the written plan with its fixed quote. You know what we will do, in how many visits and at what cost before we start.',
+            description: 'You know what we will do, in how many visits and at what cost, before we start.',
           },
           {
             title: 'Whitening, if it is part of your plan',
-            description:
-              'I prepare your custom trays and show you how to use them at home with the whitening syringes. We track the progress together until we reach a natural white, without overdoing it.',
+            description: 'Custom trays and joint follow-up until we reach a natural white, without overdoing it.',
           },
           {
             title: 'Composite veneers',
             description:
-              'I model the composite directly on the tooth, usually without drilling it, adjusting shape and colour in the same visit. I work layer by layer until the veneer blends in with the rest of your smile.',
+              'I model the composite layer by layer on the tooth until the veneer blends in with your smile.',
           },
           {
-            title: 'Review and maintenance',
-            description:
-              'A few days later I review the result calmly and make any final touch-ups. At your check-ups we polish and maintain the work so it stays looking like day one.',
+            title: 'Review and touch-ups',
+            description: 'A few days later I review the result calmly and make any final adjustments.',
           },
         ],
+      },
+      whyMeExtra: {
+        title: 'Specific training in aesthetics',
+        description:
+          'Trained in aesthetics at the University of Córdoba, working the composite layer by layer, unhurried.',
       },
       priceGroup: {
         title: 'Cosmetic dentistry prices',
@@ -1852,39 +2118,64 @@ const en: SiteCopy = {
         description: `Dental cleaning from ${formatPrice(PRICES.cleaning, 'en')}, fillings from ${formatPrice(PRICES.filling, 'en')} and night guards in El Palo, Málaga. Trusted dentistry for the whole family.`,
       },
       title: 'General dentistry',
-      lead: 'A healthy mouth is built on everyday care: check-ups in time, cleanings done well and fillings that last.',
-      points: [
-        'Complete check-ups and unhurried diagnosis',
-        'Careful cleanings that respect the enamel',
-        'Fillings and build-ups with quality composite',
-        'Custom night guards if you clench your teeth in your sleep',
-      ],
+      lead: 'Years since you last saw a dentist, or afraid of what they might find? Come without dread: I tell you plainly how your mouth is doing, and I do not treat anything that does not need it.',
+      whatIs: {
+        title: 'What does general dentistry cover?',
+        body: [
+          'The everyday care of your mouth: check-ups, cleanings, fillings and everything that keeps your teeth and gums healthy year after year.',
+          'Most big problems start small. Catching them early is the most comfortable, and also the cheapest, way to look after yourself.',
+        ],
+      },
+      situations: {
+        title: 'What does your mouth need?',
+        items: [
+          {
+            title: 'A check-up and a cleaning',
+            description: 'I examine teeth and gums, remove the tartar and tell you how everything is, in plain words.',
+          },
+          {
+            title: 'A cavity or a broken tooth',
+            description: 'Fillings and build-ups in composite matched to your tooth, carefully adjusted to your bite.',
+          },
+          {
+            title: 'You clench or grind in your sleep',
+            description: 'A custom-made night guard protects the enamel and relaxes the jaw.',
+          },
+          {
+            title: 'Your gums bleed',
+            description:
+              'Bleeding is not normal: it usually means inflamed gums, and caught early it is solved with a cleaning and the right technique.',
+          },
+        ],
+      },
       process: {
         title: 'A check-up, step by step',
         intro:
-          'Whether it is your first visit or your yearly check-up, the goal is the same: you leave knowing exactly how your mouth is and what it needs, if anything.',
+          'Whether it is your first visit or your yearly check-up, the goal is that you leave knowing how your mouth is and what it needs, if anything.',
         steps: [
           {
-            title: 'A complete, unhurried check-up',
+            title: 'An unhurried check-up',
             description:
-              'I examine teeth, gums and bite calmly and explain what I see in plain words. If something needs treatment I tell you why, and if everything is healthy I tell you that too: I do not treat what does not need it.',
+              'I examine teeth, gums and bite and explain what I see. If everything is healthy, I tell you that too.',
           },
           {
             title: 'A careful cleaning',
             description:
-              'I remove tartar and staining with a technique that respects the enamel and the gums. I also show you the hygiene habits that suit your mouth best, from brushing to interdental cleaning.',
+              'I remove tartar and staining while respecting the enamel, and show you the hygiene habits for your mouth.',
           },
           {
             title: 'Treatment by priority',
-            description:
-              'If there are cavities or other problems, we order the plan by priority and you receive your fixed written quote. Fillings and build-ups are done with quality composite, calmly and carefully adjusted to your bite.',
+            description: 'If something needs treating, we order the plan and you receive your fixed written quote.',
           },
           {
             title: 'Maintenance at your pace',
-            description:
-              'I tell you how often a check-up makes sense in your case, with no unnecessary visits. And if you clench your teeth in your sleep, a custom night guard protects your enamel and all the work done.',
+            description: 'I tell you how often a check-up makes sense in your case, with no unnecessary visits.',
           },
         ],
+      },
+      whyMeExtra: {
+        title: 'No unnecessary treatments',
+        description: 'If something is not needed, I say so. My practice runs on trust, not on selling treatments.',
       },
       priceGroup: {
         title: 'General dentistry prices',
@@ -1917,44 +2208,64 @@ const en: SiteCopy = {
         description: `Zirconia crowns from ${formatPrice(PRICES.zirconiaCrown, 'en')} and bite rehabilitation in El Palo, Málaga. The same materials and laboratories as her London practice.`,
       },
       title: 'Crowns & prosthetics',
-      lead: 'When a tooth is badly damaged or worn, a well-made crown gives it back its shape, strength and colour. I work with zirconia and with the same laboratories I use in London.',
-      points: [
-        'Zirconia crowns, strong and matched to your teeth',
-        'Restoration of heavily worn teeth',
-        'Full bite rehabilitation when needed',
-        'Premium materials and laboratories, the same as in London',
-      ],
+      lead: 'A broken tooth, badly worn, or barely holding on? A well-made crown gives it back its shape, strength and colour, and blends in with the rest.',
+      whatIs: {
+        title: 'What is a crown?',
+        body: [
+          'A crown is a cap that fully covers a damaged tooth and protects it when you chew. It is made to measure, in the shape and colour of your teeth.',
+          'I make them in zirconia, one of the strongest materials in dentistry, and it does not darken over time.',
+        ],
+      },
+      situations: {
+        title: 'When is a crown needed?',
+        items: [
+          {
+            title: 'A badly damaged tooth',
+            description:
+              'When little healthy tooth remains and a filling is no longer enough, the crown covers it and spreads the chewing force.',
+          },
+          {
+            title: 'A root-treated tooth',
+            description: 'After a root canal the tooth is left more fragile; the crown protects it from fracturing.',
+          },
+          {
+            title: 'A worn-down bite',
+            description:
+              'If wear has shortened your teeth, a full rehabilitation gives them back their height, their function and their looks.',
+          },
+        ],
+      },
       process: {
         title: 'The treatment, step by step',
-        intro:
-          'A well-made crown goes unnoticed: it blends in with your teeth and lets you chew with confidence. Getting there takes a careful process:',
+        intro: 'A well-made crown goes unnoticed: it blends in with your teeth and lets you chew with confidence.',
         steps: [
           {
             title: 'Assessing the tooth',
-            description:
-              'I check how the tooth is doing and explain the best way to restore it: sometimes a build-up is enough, and sometimes a crown that protects it fully is the better choice. If an X-ray is needed, I give you a referral note for a nearby centre.',
+            description: 'I check how it is doing and explain the best way to restore it.',
           },
           {
-            title: 'Plan and fixed quote',
-            description:
-              'You receive the written plan with its fixed quote before we start. If several teeth are affected or wear has lowered your bite, I explain the order and timings of the whole process.',
+            title: 'Fixed quote',
+            description: 'In writing and before we start, with the order and timings of the whole process.',
           },
           {
             title: 'Preparation and temporary',
             description:
-              'I prepare the tooth preserving as much healthy structure as possible, take the records for the laboratory and fit a temporary: you leave with the tooth protected and looking presentable.',
+              'I prepare the tooth preserving what is healthy, and you leave with a temporary that protects it and looks fine.',
           },
           {
-            title: 'The laboratory work',
-            description:
-              'Your zirconia crown is made in the same laboratories I work with in London, matched to the shape and colour of your teeth. I do not sign off a crown I would not sign off at my London practice.',
+            title: 'The laboratory',
+            description: 'Your zirconia crown is made in the same laboratories I work with in London.',
           },
           {
             title: 'Fitting and adjustment',
             description:
-              'I try the crown in, adjust the contact and the bite until it feels like a tooth of your own, and then fix it permanently. At your check-ups I confirm everything is still perfect.',
+              'I adjust the contact and the bite until it feels like a tooth of your own, and then fix it permanently.',
           },
         ],
+      },
+      whyMeExtra: {
+        title: 'The same laboratories as in London',
+        description: 'I do not sign off a crown that would not clear the bar of my London practice.',
       },
       priceGroup: {
         title: 'Crowns & prosthetics prices',

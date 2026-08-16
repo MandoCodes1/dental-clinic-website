@@ -29,6 +29,7 @@ export default [
   },
   {
     name: 'Emma',
+    treatments: ['general', 'aesthetics'],
     source: 'Trustpilot',
     rating: 5,
     text_en:
@@ -178,6 +179,7 @@ export default [
   },
   {
     name: 'Timothy Gilbert',
+    treatments: ['implants'],
     source: 'Google',
     rating: 5,
     text_en:
@@ -206,6 +208,7 @@ export default [
   },
   {
     name: 'Finn Lynch',
+    treatments: ['implants', 'crowns'],
     source: 'Google',
     rating: 5,
     text_en:
@@ -234,6 +237,7 @@ export default [
   },
   {
     name: 'T J',
+    treatments: ['oralSurgery'],
     source: 'Google',
     rating: 5,
     text_en:
@@ -248,6 +252,7 @@ export default [
   },
   {
     name: 'Qi',
+    treatments: ['orthodontics'],
     source: 'Trustpilot',
     rating: 5,
     text_en:
@@ -289,6 +294,7 @@ export default [
   },
   {
     name: 'Leda Pineda Pineda',
+    treatments: ['general'],
     source: 'Google',
     rating: 5,
     text_en:
@@ -343,6 +349,7 @@ export default [
   },
   {
     name: 'Candy Brooks',
+    treatments: ['implants', 'crowns'],
     source: 'Google',
     rating: 5,
     text_en:
@@ -357,6 +364,7 @@ export default [
   },
   {
     name: 'kevin morrison',
+    treatments: ['oralSurgery', 'implants'],
     source: 'Google',
     rating: 5,
     text_en:
@@ -371,6 +379,7 @@ export default [
   },
   {
     name: 'Duc Chu',
+    treatments: ['crowns'],
     source: 'Google',
     rating: 5,
     text_en:
@@ -399,6 +408,7 @@ export default [
   },
   {
     name: 'Keidi Allka',
+    treatments: ['orthodontics'],
     source: 'Google',
     rating: 5,
     text_en:
@@ -413,6 +423,7 @@ export default [
   },
   {
     name: 'Maysoon Abueed',
+    treatments: ['crowns'],
     source: 'Google',
     rating: 5,
     text_en:
@@ -427,6 +438,7 @@ export default [
   },
   {
     name: 'Christian Mejia',
+    treatments: ['general'],
     source: 'Google',
     rating: 5,
     text_en:
@@ -455,6 +467,7 @@ export default [
   },
   {
     name: 'Luke',
+    treatments: ['crowns'],
     source: 'Google',
     rating: 5,
     text_en:
@@ -469,6 +482,7 @@ export default [
   },
   {
     name: 'horscaste',
+    treatments: ['crowns', 'aesthetics'],
     source: 'Google',
     rating: 5,
     text_en:
@@ -524,6 +538,7 @@ export default [
   },
   {
     name: 'Pedro Rafael',
+    treatments: ['general'],
     source: 'Google',
     rating: 5,
     text_en:
@@ -580,6 +595,7 @@ export default [
   },
   {
     name: 'Emma Turner',
+    treatments: ['implants'],
     source: 'Google',
     rating: 5,
     text_en:
@@ -685,6 +701,7 @@ export default [
   },
   {
     name: 'Louise Cobbett-Witten',
+    treatments: ['general'],
     source: 'Trustpilot',
     rating: 5,
     text_en:
@@ -748,6 +765,7 @@ export default [
   },
   {
     name: 'Sabrina Athwal',
+    treatments: ['general'],
     source: 'Trustpilot',
     rating: 5,
     text_en: 'Thank you to Dr Eugenia Vila, amazing deep clean will definitely come back here!! Such lovely service',
@@ -771,6 +789,7 @@ export default [
   },
   {
     name: 'Larisa Grice',
+    treatments: ['implants', 'crowns'],
     source: 'Google',
     rating: 5,
     text_en:
@@ -853,6 +872,7 @@ export default [
   },
   {
     name: 'Ms Pauline',
+    treatments: ['implants'],
     source: 'Google',
     rating: 5,
     text_en:
@@ -867,6 +887,7 @@ export default [
   },
   {
     name: 'Atanas Georgiev',
+    treatments: ['implants'],
     source: 'Google',
     rating: 5,
     text_en:
@@ -895,6 +916,7 @@ export default [
   },
   {
     name: 'Sylvia Lockyer',
+    treatments: ['crowns'],
     source: 'Google',
     rating: 5,
     text_en:
@@ -937,6 +959,7 @@ export default [
   },
   {
     name: 'Angela Leung',
+    treatments: ['implants'],
     source: 'Google',
     rating: 5,
     text_en:
@@ -951,6 +974,7 @@ export default [
   },
   {
     name: 'Charles Xahi',
+    treatments: ['aesthetics'],
     source: 'Google',
     rating: 5,
     text_en:
@@ -965,6 +989,7 @@ export default [
   },
   {
     name: 'Family Hay',
+    treatments: ['implants'],
     source: 'Google',
     rating: 5,
     text_en:
@@ -992,6 +1017,7 @@ export default [
   },
   {
     name: 'Victoria Dixon',
+    treatments: ['implants'],
     source: 'Google',
     rating: 5,
     text_en:

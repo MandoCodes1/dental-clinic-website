@@ -1,0 +1,35 @@
+---
+// Compact visit-by-visit walkthrough. Reads as a vertical timeline on phones
+// and as a horizontal stepper from lg up; pure CSS, no client script.
+interface Step {
+  title: string;
+  description: string;
+}
+interface Props {
+  steps: Step[];
+}
+const { steps } = Astro.props;
+---
+
+<ol class="lg:grid lg:auto-cols-fr lg:grid-flow-col">
+  {
+    steps.map((step, i) => (
+      <li class:list={['relative flex gap-4 lg:block lg:px-3 lg:text-center', i < steps.length - 1 && 'pb-8 lg:pb-0']}>
+        {/* connector to the next step: vertical on phones, horizontal on lg+ */}
+        {i < steps.length - 1 && (
+          <span
+            aria-hidden="true"
+            class="absolute bottom-0 left-[17px] top-10 w-0.5 bg-brand-blue/15 lg:bottom-auto lg:left-1/2 lg:top-[17px] lg:h-0.5 lg:w-full"
+          />
+        )}
+        <span class="relative flex h-9 w-9 shrink-0 select-none items-center justify-center rounded-full bg-brand-light font-heading text-lg font-semibold text-brand-deep ring-1 ring-brand-blue/15 lg:mx-auto">
+          {i + 1}
+        </span>
+        <div class="lg:mt-3">
+          <h3 class="pt-1.5 font-medium text-ink lg:pt-0">{step.title}</h3>
+          <p class="mt-1 text-sm leading-relaxed text-ink/70">{step.description}</p>
+        </div>
+      </li>
+    ))
+  }
+</ol>
