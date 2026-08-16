@@ -148,6 +148,7 @@ export interface SiteCopy {
     ctaBook: string;
     ctaTreatments: string;
     availability: string;
+    imageAlt: string;
   };
   credentials: {
     title: string;
@@ -339,6 +340,7 @@ const es: SiteCopy = {
     ctaBook: 'Pedir cita por WhatsApp',
     ctaTreatments: 'Ver tratamientos',
     availability: 'Primera valoración gratuita · Con cita previa · Te responde la propia doctora',
+    imageAlt: 'La Dra. Eugenia Vila en su consulta',
   },
   credentials: {
     title: 'Una trayectoria que habla por sí sola',
@@ -388,7 +390,7 @@ const es: SiteCopy = {
       'Precios orientativos para casos de complejidad baja. La primera valoración es gratuita, y con ella recibes un presupuesto cerrado y por escrito, sin compromiso: el precio acordado es el que pagas.',
     quality: {
       title: 'La misma calidad que ofrezco en Londres',
-      lead: 'Cada tratamiento lo hago yo misma, con calma y sin atajos: los mismos materiales, protocolos y laboratorios que uso en la clínica de implantes de Londres donde ejerzo. No doy un caso por terminado hasta que el resultado es perfecto, y no hace falta que me creas: todo esto se puede comprobar.',
+      lead: 'Cada tratamiento lo hago yo misma, con calma y sin atajos: los mismos materiales, protocolos y laboratorios que uso en la clínica de implantes de Londres donde ejerzo. No doy un caso por terminado hasta que el resultado es perfecto, y no tienes que creerme: todo esto se puede comprobar.',
       points: [
         {
           title: `${CLINIC.years} años de experiencia`,
@@ -780,7 +782,7 @@ const es: SiteCopy = {
         steps: [
           {
             title: 'Escucharte',
-            description: 'Me cuentas qué te gustaría cambiar y te digo con sinceridad qué haría yo y qué no.',
+            description: 'Me cuentas qué te gustaría cambiar y te digo con franqueza qué haría yo y qué no.',
           },
           {
             title: 'Plan y presupuesto cerrado',
@@ -923,7 +925,7 @@ const es: SiteCopy = {
       },
       meta: {
         title: 'Coronas y prótesis en Málaga - Dra. Eugenia Vila',
-        description: `Coronas de zirconio desde ${formatPrice(PRICES.zirconiaCrown, 'es')} y rehabilitación de la mordida en El Palo, Málaga. Los mismos materiales y laboratorios que en su consulta de Londres.`,
+        description: `Coronas de zirconio desde ${formatPrice(PRICES.zirconiaCrown, 'es')} y rehabilitación de la mordida en El Palo, Málaga. Los mismos materiales y laboratorios que en mi consulta de Londres.`,
       },
       title: 'Coronas y prótesis',
       lead: '¿Un diente roto, muy desgastado o que apenas aguanta? Una corona bien hecha le devuelve la forma, la fuerza y el color, y se confunde con los demás.',
@@ -1198,7 +1200,7 @@ const es: SiteCopy = {
   about: {
     eyebrow: 'Sobre mí',
     title: 'Dra. Eugenia Vila',
-    lead: `Soy Eugenia Vila, dentista y médico, y llevo ${CLINIC.years} años cuidando la salud bucal de familias en Málaga. Me formé en Implantología (UIC Barcelona) y en Estética (Universidad de Córdoba), y atiendo cada caso de forma personal y sin prisas, poniendo siempre al paciente por delante.`,
+    lead: `Soy Eugenia Vila, médico odontóloga, y llevo ${CLINIC.years} años cuidando la salud bucal de familias en Málaga. Me formé en Implantología (UIC Barcelona) y en Estética (Universidad de Córdoba), y atiendo cada caso de forma personal y sin prisas, poniendo siempre al paciente por delante.`,
     educationTitle: 'Formación',
     education: [
       { title: 'Máster en Medicina Estética', org: 'Universidad de Córdoba', date: '2008 - 2009' },
@@ -1223,7 +1225,7 @@ const es: SiteCopy = {
         period: '2022 - actualidad',
         bullets: [
           'Tratamientos complejos de implantes y rehabilitaciones completas con flujo de trabajo digital (CBCT y escáner intraoral).',
-          'Galardonada Dentista del Año 2024 por sus resultados y la satisfacción de sus pacientes.',
+          'Galardonada Dentista del Año 2024 por los resultados y la satisfacción de los pacientes.',
         ],
       },
       {
@@ -1442,7 +1444,7 @@ const es: SiteCopy = {
     },
   },
   gallery: {
-    lead: 'Casos reales tratados en mi consulta. Mueve la barra de cada foto y verás cómo estaba la boca antes y cómo quedó después.',
+    lead: 'Casos reales tratados en mi consulta. Mueve la barra de cada foto para ver cómo estaba la boca antes y cómo quedó después.',
     before: 'Antes',
     after: 'Después',
     caseLabel: 'Caso',
@@ -1619,10 +1621,11 @@ const en: SiteCopy = {
   hero: {
     eyebrow: 'Dental clinic in El Palo, Málaga',
     title: 'Your smile, in the best hands',
-    subtitle: `${CLINIC.years} years caring for smiles in Málaga, with warm, honest treatment. You are always seen personally by Dr. Eugenia Vila, with unhurried visits and top-quality materials.`,
+    subtitle: `${CLINIC.years} years caring for smiles in Málaga, with warm, straightforward care. You are always seen personally by Dr. Eugenia Vila, with unhurried visits and top-quality materials.`,
     ctaBook: 'Book on WhatsApp',
     ctaTreatments: 'See treatments',
     availability: 'Free first assessment · By appointment · The doctor replies to you herself',
+    imageAlt: 'Dr. Eugenia Vila at her practice',
   },
   credentials: {
     title: 'A career that speaks for itself',
@@ -1631,7 +1634,7 @@ const en: SiteCopy = {
     reviewsLabel: 'Average rating · based on {count} reviews',
     awardValue: '2024',
     awardLabel: 'Dentist of the Year',
-    note: 'Awarded Dentist of the Year 2024 (Dental Art Implant Clinics, London) · Degrees in Medicine and Surgery, and in Dentistry · GDC reg. 287705 · 5.0 average rating on Google and Trustpilot',
+    note: 'Awarded Dentist of the Year 2024 (Dental Art Implant Clinics, London) · Licensed in Medicine and Surgery, and in Dentistry · GDC reg. 287705 · 5.0 average rating on Google and Trustpilot',
   },
   values: {
     eyebrow: 'Why my patients recommend me',
@@ -1672,7 +1675,7 @@ const en: SiteCopy = {
       'Guide prices for straightforward cases. Your first assessment is free, and with it you receive a fixed, written quote with no obligation: the price we agree is the price you pay.',
     quality: {
       title: 'The same quality I deliver in London',
-      lead: 'I carry out every treatment myself, calmly and without shortcuts: the same materials, protocols and laboratories I use at the London implant clinic where I practise. I do not consider a case finished until the result is perfect, and none of this has to be taken on my word: it can all be checked.',
+      lead: 'I carry out every treatment myself, calmly and without shortcuts: the same materials, protocols and laboratories I use at the London implant clinic where I practise. I do not consider a case finished until the result is perfect, and none of it rests on my word alone: all of it can be checked.',
       points: [
         {
           title: `${CLINIC.years} years of experience`,
@@ -1704,11 +1707,11 @@ const en: SiteCopy = {
       ],
     },
     whyMe: {
-      title: 'Why have me treat you?',
+      title: 'Why choose me?',
       items: [
         {
           title: 'You see me at every visit',
-          description: 'The person who assesses you is the one who treats you and reviews you: me. No staff rotation.',
+          description: 'The person who assesses you is the one who treats you and follows up: me. No staff rotation.',
         },
         {
           title: 'A fixed, written quote',
@@ -1722,7 +1725,7 @@ const en: SiteCopy = {
         },
       ],
     },
-    reviewsTitle: 'Patients who have been through this',
+    reviewsTitle: 'Patients who have been through it',
     faqTitle: 'Guarantees and payment',
     askQuote:
       'Looking for another treatment? Message me, tell me about your case and I will tell you how I would approach it, no obligation.',
@@ -1869,7 +1872,7 @@ const en: SiteCopy = {
           {
             title: 'Wisdom teeth',
             description:
-              'When they cause trouble or have no room, out they come. I always assess them first with an X-ray.',
+              'When they cause trouble or have no room, they need to come out. I always assess them first with an X-ray.',
           },
           {
             title: 'Remnants and difficult extractions',
@@ -1964,7 +1967,7 @@ const en: SiteCopy = {
             description: 'The spaces close gradually and under control, towards an even smile.',
           },
           {
-            title: 'Teeth that have drifted back',
+            title: 'Teeth that have shifted since',
             description:
               'If you had braces years ago and your teeth have moved, aligners can bring them back into place.',
           },
@@ -2030,7 +2033,7 @@ const en: SiteCopy = {
         description: `Teeth whitening from ${formatPrice(PRICES.whitening, 'en')} and composite veneers from ${formatPrice(PRICES.compositeVeneer, 'en')} in El Palo, Málaga. Aesthetics that respect your natural smile.`,
       },
       title: 'Cosmetic dentistry',
-      lead: 'Covering your mouth when you smile because of the colour or shape of your teeth? Small changes done well transform a smile without it stopping looking like you.',
+      lead: 'Covering your mouth when you smile because of the colour or shape of your teeth? Small changes done well transform a smile and still leave it looking like yours.',
       whatIs: {
         title: 'What is cosmetic dentistry?',
         body: [
@@ -2111,14 +2114,14 @@ const en: SiteCopy = {
       card: {
         title: 'General dentistry',
         description:
-          'Cleanings, fillings and unhurried check-ups: everyday care, done calmly and with premium materials.',
+          'Cleanings, fillings and unhurried check-ups: everyday care, done calmly and with top-quality materials.',
       },
       meta: {
         title: 'General dentistry in Málaga - Dr. Eugenia Vila',
         description: `Dental cleaning from ${formatPrice(PRICES.cleaning, 'en')}, fillings from ${formatPrice(PRICES.filling, 'en')} and night guards in El Palo, Málaga. Trusted dentistry for the whole family.`,
       },
       title: 'General dentistry',
-      lead: 'Years since you last saw a dentist, or afraid of what they might find? Come without dread: I tell you plainly how your mouth is doing, and I do not treat anything that does not need it.',
+      lead: 'Been years since you last saw a dentist, or afraid of what they might find? Come anyway: I tell you plainly how your mouth is doing, and I do not treat anything that does not need it.',
       whatIs: {
         title: 'What does general dentistry cover?',
         body: [
@@ -2205,7 +2208,7 @@ const en: SiteCopy = {
       },
       meta: {
         title: 'Crowns & prosthetics in Málaga - Dr. Eugenia Vila',
-        description: `Zirconia crowns from ${formatPrice(PRICES.zirconiaCrown, 'en')} and bite rehabilitation in El Palo, Málaga. The same materials and laboratories as her London practice.`,
+        description: `Zirconia crowns from ${formatPrice(PRICES.zirconiaCrown, 'en')} and bite rehabilitation in El Palo, Málaga. The same materials and laboratories as my London practice.`,
       },
       title: 'Crowns & prosthetics',
       lead: 'A broken tooth, badly worn, or barely holding on? A well-made crown gives it back its shape, strength and colour, and blends in with the rest.',
@@ -2478,7 +2481,7 @@ const en: SiteCopy = {
   about: {
     eyebrow: 'About',
     title: 'Dr. Eugenia Vila',
-    lead: `I’m Eugenia Vila, a dentist and physician, and I’ve spent ${CLINIC.years} years caring for the oral health of families in Málaga. I trained in Implantology (UIC Barcelona) and Aesthetics (University of Córdoba), and I treat every case personally and unhurried, always putting the patient first.`,
+    lead: `I’m Eugenia Vila, a medical doctor and dentist, and I’ve spent ${CLINIC.years} years caring for the oral health of families in Málaga. I trained in Implantology (UIC Barcelona) and Aesthetics (University of Córdoba), and I take every case personally and without rushing, always putting the patient first.`,
     educationTitle: 'Education',
     education: [
       { title: 'Master’s in Aesthetic Medicine', org: 'University of Córdoba', date: '2008 - 2009' },
@@ -2503,7 +2506,7 @@ const en: SiteCopy = {
         period: '2022 - present',
         bullets: [
           'Complex implant treatments and full-mouth rehabilitations with a fully digital workflow (CBCT and intraoral scanning).',
-          'Awarded Dentist of the Year 2024 for her clinical results and patient satisfaction.',
+          'Awarded Dentist of the Year 2024 for clinical results and patient satisfaction.',
         ],
       },
       {
@@ -2730,11 +2733,10 @@ const en: SiteCopy = {
     framingNote:
       'These are close-ups of the mouth, which is where the work shows: neither the pose nor the lighting can dress up the result.',
     comingSoonTitle: 'More cases on the way',
-    comingSoon:
-      'I add new cases little by little. In the meantime, the reviews are where you can read what my patients say.',
+    comingSoon: 'I add new cases little by little. In the meantime, you can read what my patients say in the reviews.',
   },
   contact: {
-    lead: 'Book an appointment or tell me about your case. You’ll be looked after by me, with no middlemen.',
+    lead: 'Book an appointment or tell me about your case. You’ll be seen by me, with no middlemen.',
     whatsappTitle: 'WhatsApp',
     whatsappBody: 'The fastest way to reach me. I reply personally.',
     phoneTitle: 'Phone',
@@ -2766,7 +2768,7 @@ const en: SiteCopy = {
       message: 'Message',
       messagePlaceholder: 'Tell me about your case or question',
       submit: 'Send via WhatsApp',
-      hint: 'Tapping opens WhatsApp with your message already written: you review it and hit send.',
+      hint: 'Tapping opens WhatsApp with the message ready: you check it and send it.',
       greeting: 'Hello, my name is',
       interest: 'I am interested in:',
     },
@@ -2815,7 +2817,7 @@ const en: SiteCopy = {
     whatsapp: 'WhatsApp',
   },
   footer: {
-    tagline: 'Dental clinic in El Palo, Málaga. Warm, honest care since 1994.',
+    tagline: 'Dental clinic in El Palo, Málaga. Warm, straightforward care since 1994.',
     treatmentsTitle: 'Treatments',
     navTitle: 'Navigation',
     contactTitle: 'Contact',
