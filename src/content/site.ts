@@ -1579,7 +1579,7 @@ const en: SiteCopy = {
     },
     about: {
       title: 'About - Dr. Eugenia Vila',
-      description: `Meet Dr. Eugenia Vila: physician and licensed dentist, with master’s degrees in Implantology and Aesthetics, ${CLINIC.years} years of experience and Dentist of the Year 2024.`,
+      description: `Meet Dr. Eugenia Vila: a medical doctor and dentist, with master’s degrees in Implantology and Aesthetics, ${CLINIC.years} years of experience and Dentist of the Year 2024.`,
     },
     treatments: {
       title: 'Treatments & prices - Dr. Eugenia Vila',
