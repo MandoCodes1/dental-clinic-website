@@ -127,6 +127,10 @@ If a dispute cannot be resolved informally, the parties agree to submit to the e
 
 If You are a European Union consumer, you will benefit from any mandatory provisions of the law of the country in which you are resident in.
 
+## Spanish Legal Compliance
+
+You represent and warrant that (i) You are not located in a country that is subject to an embargo by the Spanish government, or that has been designated by the Spanish government as a country that "supports terrorism", and (ii) You are not listed on any Spanish government list of prohibited or restricted parties.
+
 ## Severability and Waiver
 
 ### Severability
