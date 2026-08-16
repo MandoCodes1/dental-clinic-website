@@ -1200,7 +1200,7 @@ const es: SiteCopy = {
   about: {
     eyebrow: 'Sobre mí',
     title: 'Dra. Eugenia Vila',
-    lead: `Soy Eugenia Vila, dentista y médico, y llevo ${CLINIC.years} años cuidando la salud bucal de familias en Málaga. Me formé en Implantología (UIC Barcelona) y en Estética (Universidad de Córdoba), y atiendo cada caso de forma personal y sin prisas, poniendo siempre al paciente por delante.`,
+    lead: `Soy Eugenia Vila, médico odontóloga, y llevo ${CLINIC.years} años cuidando la salud bucal de familias en Málaga. Me formé en Implantología (UIC Barcelona) y en Estética (Universidad de Córdoba), y atiendo cada caso de forma personal y sin prisas, poniendo siempre al paciente por delante.`,
     educationTitle: 'Formación',
     education: [
       { title: 'Máster en Medicina Estética', org: 'Universidad de Córdoba', date: '2008 - 2009' },
@@ -2481,7 +2481,7 @@ const en: SiteCopy = {
   about: {
     eyebrow: 'About',
     title: 'Dr. Eugenia Vila',
-    lead: `I’m Eugenia Vila, a dentist and physician, and I’ve spent ${CLINIC.years} years caring for the oral health of families in Málaga. I trained in Implantology (UIC Barcelona) and Aesthetics (University of Córdoba), and I take every case personally and without rushing, always putting the patient first.`,
+    lead: `I’m Eugenia Vila, a medical doctor and dentist, and I’ve spent ${CLINIC.years} years caring for the oral health of families in Málaga. I trained in Implantology (UIC Barcelona) and Aesthetics (University of Córdoba), and I take every case personally and without rushing, always putting the patient first.`,
     educationTitle: 'Education',
     education: [
       { title: 'Master’s in Aesthetic Medicine', org: 'University of Córdoba', date: '2008 - 2009' },
