@@ -169,6 +169,9 @@ export interface SiteCopy {
     from: string;
     customQuote: string;
     disclaimer: string;
+    // Label for the link from a treatment's price card to its related guide.
+    // The guide's own title follows, so this reads as a lead-in.
+    guidePrompt: string;
     quality: { title: string; lead: string; points: ValueItem[] };
     // The three fixed cards of the per-treatment "why me" block; the fourth
     // comes from each treatment's whyMeExtra.
@@ -388,6 +391,7 @@ const es: SiteCopy = {
     customQuote: 'Presupuesto a medida',
     disclaimer:
       'Precios orientativos para casos de complejidad baja. La primera valoración es gratuita, y con ella recibes un presupuesto cerrado y por escrito, sin compromiso: el precio acordado es el que pagas.',
+    guidePrompt: 'Si quieres entenderlo con calma:',
     quality: {
       title: 'La misma calidad que ofrezco en Londres',
       lead: 'Cada tratamiento lo hago yo misma, con calma y sin atajos: los mismos materiales, protocolos y laboratorios que uso en la clínica de implantes de Londres donde ejerzo. No doy un caso por terminado hasta que el resultado es perfecto, y no tienes que creerme: todo esto se puede comprobar.',
@@ -1673,6 +1677,7 @@ const en: SiteCopy = {
     customQuote: 'Quoted case by case',
     disclaimer:
       'Guide prices for straightforward cases. Your first assessment is free, and with it you receive a fixed, written quote with no obligation: the price we agree is the price you pay.',
+    guidePrompt: 'Want the longer answer?',
     quality: {
       title: 'The same quality I deliver in London',
       lead: 'I carry out every treatment myself, calmly and without shortcuts: the same materials, protocols and laboratories I use at the London implant clinic where I practise. I do not consider a case finished until the result is perfect, and none of it rests on my word alone: all of it can be checked.',
