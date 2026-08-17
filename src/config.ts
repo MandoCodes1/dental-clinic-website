@@ -67,18 +67,6 @@ export const PRICES = {
 
 export type PriceId = keyof typeof PRICES;
 
-// The six treatment categories behind the treatments section: overview cards,
-// the per-treatment pages, the header dropdown and footer deep-links. Copy is
-// per-locale in src/content/site.ts, keyed by the same id.
-export const TREATMENTS = [
-  { id: 'implants', route: 'treatmentImplants', icon: 'tabler:dental' },
-  { id: 'oralSurgery', route: 'treatmentOralSurgery', icon: 'tabler:medical-cross' },
-  { id: 'orthodontics', route: 'treatmentOrthodontics', icon: 'tabler:mood-smile' },
-  { id: 'aesthetics', route: 'treatmentAesthetics', icon: 'tabler:sparkles' },
-  { id: 'general', route: 'treatmentGeneral', icon: 'tabler:dental-broken' },
-  { id: 'crowns', route: 'treatmentCrowns', icon: 'tabler:crown' },
-] as const satisfies readonly { id: string; route: RouteKey; icon: string }[];
-
 // Evergreen guide pages: long-form answers to the questions people actually
 // search for, deliberately undated so they never read as a stale blog.
 export const GUIDES = [
@@ -88,6 +76,22 @@ export const GUIDES = [
 ] as const satisfies readonly { id: string; route: RouteKey; icon: string }[];
 
 export type GuideId = (typeof GUIDES)[number]['id'];
+
+// The six treatment categories behind the treatments section: overview cards,
+// the per-treatment pages, the header dropdown and footer deep-links. Copy is
+// per-locale in src/content/site.ts, keyed by the same id.
+// `guide` is the one guide worth reading next from that treatment's page, so a
+// visitor comparing prices reaches the long-form answer instead of having to
+// find the guides hub. Only treatments with a genuinely relevant guide set it:
+// a forced link is worse than none.
+export const TREATMENTS = [
+  { id: 'implants', route: 'treatmentImplants', icon: 'tabler:dental', guide: 'implantCost' },
+  { id: 'oralSurgery', route: 'treatmentOralSurgery', icon: 'tabler:medical-cross' },
+  { id: 'orthodontics', route: 'treatmentOrthodontics', icon: 'tabler:mood-smile' },
+  { id: 'aesthetics', route: 'treatmentAesthetics', icon: 'tabler:sparkles' },
+  { id: 'general', route: 'treatmentGeneral', icon: 'tabler:dental-broken', guide: 'chooseDentist' },
+  { id: 'crowns', route: 'treatmentCrowns', icon: 'tabler:crown', guide: 'implantCost' },
+] as const satisfies readonly { id: string; route: RouteKey; icon: string; guide?: GuideId }[];
 
 export type TreatmentId = (typeof TREATMENTS)[number]['id'];
 
