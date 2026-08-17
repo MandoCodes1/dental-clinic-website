@@ -1,4 +1,4 @@
-import type { Lang } from '~/i18n';
+import type { Lang, RouteKey } from '~/i18n';
 // The FAQ answers quote figures that also appear in the price table, so they
 // read PRICES rather than repeating the numbers as prose and drifting from it.
 import { CLINIC, PRICES, type GuideId, type PriceId, type TreatmentId } from '~/config';
@@ -47,6 +47,7 @@ export const FAQ_IDS = [
   'guarantee',
   'booking',
   'firstVisit',
+  'englishCare',
   'cbct',
   'whitening',
   'aligners',
@@ -76,6 +77,10 @@ export interface FaqItem {
   id: FaqId;
   question: string;
   answer: string;
+  // Optional "read more" pointer, for answers that summarise a guide. The
+  // answer stays plain text (FaqList renders it as text, not HTML), so the
+  // link is a separate field rather than markup inside the answer.
+  link?: { label: string; route: RouteKey };
 }
 
 export interface ProcessStep {
@@ -1300,6 +1305,13 @@ const es: SiteCopy = {
         question: '¿Cuánto cuesta la primera visita?',
         answer:
           'Nada: la primera valoración es gratuita. Te exploro, escucho qué necesitas y te explico las opciones, y después recibes un presupuesto cerrado y por escrito, sin compromiso. Si tu caso necesita radiografías, te doy un volante para un centro radiológico cercano; si sigues adelante con el tratamiento, lo que pagues por ellas se descuenta del presupuesto.',
+      },
+      {
+        id: 'englishCare',
+        question: '¿Se puede llevar el tratamiento en inglés?',
+        answer:
+          'Sí, y con naturalidad: trabajo la mitad del año en una clínica de implantes de Londres, así que la consulta, el presupuesto y las pautas de cuidados te los puedo dar en inglés o en español, como prefieras. En El Palo hay muchos pacientes británicos y es lo habitual aquí.',
+        link: { label: 'Dentista que habla inglés en Málaga', route: 'guideEnglishDentist' },
       },
       {
         id: 'cbct',
@@ -2582,6 +2594,13 @@ const en: SiteCopy = {
         question: 'What does the first visit cost?',
         answer:
           'Nothing: the first assessment is free. I examine you, listen to what you need and explain your options, and you then receive a fixed, written quote with no obligation. If your case needs X-rays, I give you a referral note for a nearby radiology centre; if you go ahead with treatment, what you pay for them is deducted from the quote.',
+      },
+      {
+        id: 'englishCare',
+        question: 'Will my treatment be explained in English?',
+        answer:
+          'Yes, all of it. I spend half the year at an implant clinic in London, so your consultation, your written quote and your aftercare instructions can all be in English. You will not need to bring anyone to translate, and nothing about your treatment gets lost because of the language.',
+        link: { label: 'English-speaking dentist in Málaga', route: 'guideEnglishDentist' },
       },
       {
         id: 'cbct',

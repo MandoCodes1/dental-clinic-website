@@ -201,7 +201,7 @@ const guideHref = guideId ? ROUTES[GUIDES.find((g) => g.id === guideId)!.route][
     <div class="container-page">
       <h2 class="mx-auto max-w-3xl font-heading text-2xl text-brand-deep">{t.homeFaq.title}</h2>
       <div class="mt-4">
-        <FaqList items={faqItems} />
+        <FaqList lang={lang} items={faqItems} />
       </div>
       <div class="mt-8 text-center">
         <a href={ROUTES.faq[lang]} class="btn-outline">

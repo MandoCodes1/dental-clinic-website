@@ -18,7 +18,7 @@ const f = content[lang].faqPage;
   {/* No bottom padding: the body is cream too, so it would only stack with the CTA's own. */}
   <section class="section bg-cream pb-0">
     <div class="container-page">
-      <FaqList items={f.items} />
+      <FaqList lang={lang} items={f.items} />
     </div>
   </section>
   <ContactCTA lang={lang} page="faq" />
