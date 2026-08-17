@@ -51,7 +51,7 @@ const faqItems = getFaqItems(lang, ['guarantee', 'payment']);
 
       <h2 class="mx-auto mt-10 max-w-3xl font-heading text-2xl text-brand-deep">{p.faqTitle}</h2>
       <div class="mt-4">
-        <FaqList items={faqItems} />
+        <FaqList lang={lang} items={faqItems} />
       </div>
 
       {/* The WhatsApp button lives in the ContactCTA below, so this is text only. */}
