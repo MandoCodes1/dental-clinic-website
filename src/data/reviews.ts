@@ -4,7 +4,7 @@ export default [
     source: 'Google',
     rating: 5,
     text_en:
-      "The best dentist in ALL OF MALAGA.  My family and I have always trusted Eugenia. Not only because of her more than 25 years of experience, but also because of the exceptional quality of the materials she uses. Whenever I've had a problem, she's seen me right away. Super friendly, and her prices are fair. Thank you for everything, Eugenia. See you at my checkup. ❤️",
+      "The best dentist in ALL OF MALAGA.  My family and I have always trusted Eugenia. Not only because of her more than 25 years of experience, but also because of the exceptional quality of the materials she uses. Whenever I've had a problem, she's seen me right away. Super friendly, and her prices are fair. Thank you for everything, Eugenia. See you at my check-up. ❤️",
     text_es:
       'La mejor dentista de TODA MÁLAGA.  Mi familia y yo, hemos siempre confiado en Eugenia. No solamente por los más de 25 años de experiencia que tiene; sino por la grandísima calidad de los materiales que usa. Siempre que he tenido un problema, me ha atendido en seguida. Súper simpática y a buen precio. Gracias por todo Eugenia. Nos vemos en mi revisión. ❤️',
     date: 'Apr 2022',
@@ -18,7 +18,7 @@ export default [
     source: 'Google',
     rating: 5,
     text_en:
-      "I don't know any professional more dedicated to their work and who puts more love into it than Dr. Eugenia Vila. Add to that her years of experience and her holistic approach to each patient's problem, and the result is excellent service. I would recommend Dr. Vila without hesitation!",
+      "I don't know any professional more dedicated to their work and who puts more love into it than Dr Eugenia Vila. Add to that her years of experience and her holistic approach to each patient's problem, and the result is excellent service. I would recommend Dr Vila without hesitation!",
     text_es:
       'No conozco profesional mas dedicada a su trabajo y que le ponga mas amor que la Dra Eugenia Vila, si a eso le sumas todos los años de experiencia que tiene a la espalda mas su visión Olística del problema que presente el paciente, da como resultado un excelente servicio. Recomendaría a la Dra Vila sin dudarlo!',
     date: 'Aug 2025',
@@ -46,7 +46,7 @@ export default [
     source: 'Google',
     rating: 5,
     text_en:
-      'Dr. Eugenia has been, is, and will always be the best dentist...and I say this from experience. Always willing to help anyone who needs it. Her great humanity, her vast experience, and her good prices, which deserve a mention too, make her a truly great professional.',
+      'Dr Eugenia has been, is, and will always be the best dentist...and I say this from experience. Always willing to help anyone who needs it. Her great warmth and kindness, her vast experience, and her good prices, which deserve a mention too, make her a truly great professional.',
     text_es:
       'Eugenia ha sido, es y será la mejor dentista...y lo digo con conocimiento de causa. Siempre dispuesta a ayudar a toda persona que la necesite, su gran humanidad , su gran experiencia y sus buenos precios( que todo hay que decirlo ) la hacen una grandisima profesional',
     date: 'Mar 2022',
@@ -112,7 +112,7 @@ export default [
     source: 'Google',
     rating: 5,
     text_en:
-      'The best dentist in Malaga. After trying several other dentists, she was recommended to me and she finally solved my problems.',
+      'The best dentist in Malaga. After trying several other dentists, someone recommended her to me, and she finally sorted my problems out.',
     text_es:
       'La mejor dentista de Málaga, tras probar varios médicos me la recomendaron y porfin solucionó mis problemas.',
     date: 'Feb 2021',
@@ -168,7 +168,7 @@ export default [
     source: 'Google',
     rating: 5,
     text_en:
-      'Eugenia’s knowledge and dedication put her on another level. She is in love with her profession, and she is a highly qualified, experienced professional.',
+      'Eugenia’s knowledge and dedication put her on another level. She loves her profession, and she is a highly qualified, experienced professional.',
     text_es:
       'Por conocimiento y dedicacion Eugenia esta en otro nivel, enamorada de su profesion , profesional altamente cualificada con experiencia.',
     date: 'Oct 2025',
@@ -542,7 +542,7 @@ export default [
     source: 'Google',
     rating: 5,
     text_en:
-      "My trusted dentist, and that of my entire family. She scheduled my appointment quickly and treated a tooth that was in very poor condition, with impeccable results. She's honest and very thorough.",
+      "My trusted dentist, and my whole family's too. She fitted me in quickly and treated a tooth that was in very poor condition, with impeccable results. She's honest and very thorough.",
     text_es:
       'Mi dentista de confianza y la de toda mi familia. Me dio cita rápidamente, me arreglo un diente en muy mal estado y lo arreglo con un resultado impecable. Honesta y muy detallista.',
     date: 'Jan 2022',
@@ -613,7 +613,7 @@ export default [
     source: 'Google',
     rating: 5,
     text_en:
-      'Excellent dentist. Truly dedicated to her profession. A very good person. She shows empathy and really appreciates people, and she does not forget her patients no matter how much time passes.',
+      'Excellent dentist. Truly dedicated to her profession. A very good person. She shows empathy and really values people, and she does not forget her patients no matter how much time passes.',
     text_es:
       'Excelente odontóloga. Gran vocación. Muy buena persona. Muestra empatía y sabe valorar a los demás. No olvida a sus clientes por mucho que pase el tiempo.',
     date: 'Apr 2020',
@@ -742,7 +742,7 @@ export default [
     name: 'Patricia ponce arrabal',
     source: 'Google',
     rating: 5,
-    text_en: 'Very good professional',
+    text_en: 'A very good professional',
     text_es: 'Muy buena profesional',
     date: 'Feb 2020',
     link: 'https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUNzcWFLcmV3EAE!2m1!1s0x0:0x48544afb3aaf06a4!3m1!1s2@1:CIHM0ogKEICAgICsqaKrew%7CCgwI8obx8QUQkKzgvwI%7C?hl=en',

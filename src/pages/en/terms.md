@@ -3,7 +3,7 @@ title: 'Terms and Conditions'
 layout: '~/layouts/LegalLayout.astro'
 ---
 
-_Last updated_: January 15, 2025
+_Last updated_: 15 January 2025
 
 Please read these terms and conditions carefully before using Our Service.
 
@@ -11,7 +11,7 @@ Please read these terms and conditions carefully before using Our Service.
 
 ### Interpretation
 
-The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.
+The words of which the initial letter is capitalised have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.
 
 ### Definitions
 
@@ -21,9 +21,9 @@ For the purposes of these Terms and Conditions:
 
 - **Country** refers to: Spain
 
-- **Clinic** (referred to as either "the Clinic", "We", "Us" or "Our" in this Agreement) refers to Dr. Eugenia Vila Dental Clinic, Av. Juan Sebastián Elcano, 191, 2ª planta, 29017 Málaga, Spain.
+- **Clinic** (referred to as either "the Clinic", "We", "Us" or "Our" in this Agreement) refers to Dr Eugenia Vila Dental Clinic, Av. Juan Sebastián Elcano, 191, 2ª planta, 29017 Málaga, Spain.
 
-- **Device** means any device that can access the Service such as a computer, a cellphone or a digital tablet.
+- **Device** means any device that can access the Service such as a computer, a mobile phone or a tablet.
 
 - **Service** refers to the Website.
 
@@ -31,7 +31,7 @@ For the purposes of these Terms and Conditions:
 
 - **Third-party Social Media Service** means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the Service.
 
-- **Website** refers to the Dr. Eugenia Vila Dental Clinic website.
+- **Website** refers to the Dr Eugenia Vila Dental Clinic website.
 
 - **You** means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.
 
@@ -45,7 +45,7 @@ By accessing or using the Service You agree to be bound by these Terms and Condi
 
 You represent that you are over the age of 18. The Clinic does not permit those under 18 to use the Service without the consent of a parent or guardian.
 
-Your access to and use of the Service is also conditioned on Your acceptance of and compliance with the Privacy Policy of the Clinic. Our Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your personal information when You use the Application or the Website and tells You about Your privacy rights and how the law protects You. Please read Our Privacy Policy carefully before using Our Service.
+Your access to and use of the Service is also conditioned on Your acceptance of and compliance with the Privacy Policy of the Clinic. Our Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your personal information when You use the Website and tells You about Your privacy rights and how the law protects You. Please read Our Privacy Policy carefully before using Our Service.
 
 ## Dental Services
 
@@ -92,11 +92,11 @@ Upon termination, Your right to use the Service will cease immediately.
 
 ## Limitation of Liability
 
-Notwithstanding any damages that You might incur, the entire liability of the Clinic and any of its suppliers under any provision of this Terms and Your exclusive remedy for all of the foregoing shall be limited to the amount actually paid by You through the Service or 100 EUR if You haven't purchased anything through the Service.
+Notwithstanding any damages that You might incur, the entire liability of the Clinic and any of its suppliers under any provision of these Terms and Your exclusive remedy for all of the foregoing shall be limited to the amount actually paid by You through the Service or 100 EUR if You haven't purchased anything through the Service.
 
-To the maximum extent permitted by applicable law, in no event shall the Clinic or its suppliers be liable for any special, incidental, indirect, or consequential damages whatsoever (including, but not limited to, damages for loss of profits, loss of data or other information, for business interruption, for personal injury, loss of privacy arising out of or in any way related to the use of or inability to use the Service, third-party software and/or third-party hardware used with the Service, or otherwise in connection with any provision of this Terms), even if the Clinic or any supplier has been advised of the possibility of such damages and even if the remedy fails of its essential purpose.
+To the maximum extent permitted by applicable law, in no event shall the Clinic or its suppliers be liable for any special, incidental, indirect, or consequential damages whatsoever (including, but not limited to, damages for loss of profits, loss of data or other information, for business interruption, for personal injury, loss of privacy arising out of or in any way related to the use of or inability to use the Service, third-party software and/or third-party hardware used with the Service, or otherwise in connection with any provision of these Terms), even if the Clinic or any supplier has been advised of the possibility of such damages and even if the remedy fails of its essential purpose.
 
-Some states do not allow the exclusion of implied warranties or limitation of liability for incidental or consequential damages, which means that some of the above limitations may not apply. In these states, each party's liability will be limited to the greatest extent permitted by law.
+Some jurisdictions do not allow the exclusion of implied warranties or limitation of liability for incidental or consequential damages, which means that some of the above limitations may not apply. In those jurisdictions, each party's liability will be limited to the greatest extent permitted by law.
 
 ### Medical Liability Limitation
 
@@ -109,15 +109,15 @@ Some states do not allow the exclusion of implied warranties or limitation of li
 
 The Service is provided to You "AS IS" and "AS AVAILABLE" and with all faults and defects without warranty of any kind. To the maximum extent permitted under applicable law, the Clinic, on its own behalf and on behalf of its Affiliates and its and their respective licensors and service providers, expressly disclaims all warranties, whether express, implied, statutory or otherwise, with respect to the Service, including all implied warranties of merchantability, fitness for a particular purpose, title and non-infringement, and warranties that may arise out of course of dealing, course of performance, usage or trade practice. Without limitation to the foregoing, the Clinic provides no warranty or undertaking, and makes no representation of any kind that the Service will meet Your requirements, achieve any intended results, be compatible or work with any other software, applications, systems or services, operate without interruption, meet any performance or reliability standards or be error free or that any errors or defects can or will be corrected.
 
-Without limiting the foregoing, neither the Clinic nor any of the clinic's provider makes any representation or warranty of any kind, express or implied: (i) as to the operation or availability of the Service, or the information, content, and materials or products included thereon; (ii) that the Service will be uninterrupted or error-free; (iii) as to the accuracy, reliability, or currency of any information or content provided through the Service; or (iv) that the Service, its servers, the content, or e-mails sent from or on behalf of the Clinic are free of viruses, scripts, trojan horses, worms, malware, timebombs or other harmful components.
+Without limiting the foregoing, neither the Clinic nor any of the Clinic's providers makes any representation or warranty of any kind, express or implied: (i) as to the operation or availability of the Service, or the information, content, and materials or products included thereon; (ii) that the Service will be uninterrupted or error-free; (iii) as to the accuracy, reliability, or currency of any information or content provided through the Service; or (iv) that the Service, its servers, the content, or e-mails sent from or on behalf of the Clinic are free of viruses, scripts, trojan horses, worms, malware, timebombs or other harmful components.
 
 Some jurisdictions do not allow the exclusion of certain types of warranties or limitations on applicable statutory rights of a consumer, so some or all of the above exclusions and limitations may not apply to You. But in such a case the exclusions and limitations set forth in this section shall be applied to the greatest extent enforceable under applicable law.
 
 ## Governing Law
 
-The laws of the Country, excluding its conflicts of law rules, shall govern this Terms and Your use of the Service. Your use of the Application may also be subject to other local, state, national, or international laws.
+The laws of the Country, excluding its conflicts of law rules, shall govern these Terms and Your use of the Service. Your use of the Service may also be subject to other local, state, national, or international laws.
 
-## Disputes Resolution
+## Dispute Resolution
 
 If You have any concern or dispute about the Service, You agree to first try to resolve the dispute informally by contacting the Clinic.
 
@@ -125,11 +125,7 @@ If a dispute cannot be resolved informally, the parties agree to submit to the e
 
 ## For European Union (EU) Users
 
-If You are a European Union consumer, you will benefit from any mandatory provisions of the law of the country in which you are resident in.
-
-## Spanish Legal Compliance
-
-You represent and warrant that (i) You are not located in a country that is subject to an embargo by the Spanish government, or that has been designated by the Spanish government as a country that "supports terrorism", and (ii) You are not listed on any Spanish government list of prohibited or restricted parties.
+If You are a European Union consumer, you will benefit from any mandatory provisions of the law of the country in which you are resident.
 
 ## Severability and Waiver
 
@@ -139,11 +135,11 @@ If any provision of these Terms is held to be unenforceable or invalid, such pro
 
 ### Waiver
 
-Except as provided herein, the failure to exercise a right or to require performance of an obligation under these Terms shall not effect a party's ability to exercise such right or require such performance at any time thereafter nor shall the waiver of a breach constitute a waiver of any subsequent breach.
+Except as provided herein, the failure to exercise a right or to require performance of an obligation under these Terms shall not affect a party's ability to exercise such right or require such performance at any time thereafter nor shall the waiver of a breach constitute a waiver of any subsequent breach.
 
 ## Translation Interpretation
 
-These Terms and Conditions may have been translated if We have made them available to You on our Service. You agree that the original English text shall prevail in the case of a dispute.
+These Terms and Conditions may have been translated if We have made them available to You on our Service. You agree that the original Spanish text shall prevail in the case of a dispute.
 
 ## Changes to These Terms and Conditions
 
