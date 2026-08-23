@@ -520,7 +520,7 @@ const es: SiteCopy = {
           {
             title: 'Osteointegración',
             description:
-              'El hueso se une al implante hasta dejarlo tan firme como una raíz propia. Suelen ser de 3 a 4 meses, y de 6 a 8 si tu caso ha necesitado injerto.',
+              'El hueso se une al implante hasta dejarlo tan firme como una raíz propia. Suele tardar de 3 a 4 meses, y de 6 a 8 si tu caso ha necesitado injerto.',
           },
           {
             title: 'Tu corona definitiva',
@@ -540,7 +540,7 @@ const es: SiteCopy = {
           {
             id: 'implantOnly',
             label: 'Implante dental',
-            note: 'La colocación del implante, la raíz artificial sobre la que irá la corona. Si solo quieres esta parte, se puede contratar por su precio',
+            note: 'La colocación del implante, la raíz artificial sobre la que irá la corona. Si de momento solo quieres esta parte, puedes contratarla por separado',
           },
           {
             id: 'zirconiaCrown',
@@ -876,7 +876,7 @@ const es: SiteCopy = {
           {
             title: 'Te sangran las encías',
             description:
-              'Sangrar no es normal: casi siempre es encía inflamada. Si se queda en la superficie, se resuelve con una limpieza y la técnica de higiene adecuada. Si ha bajado hacia la raíz, te hago un raspado y alisado radicular cuadrante a cuadrante para limpiarla por debajo de la encía.',
+              'Sangrar no es normal: casi siempre es encía inflamada. Si se queda en la superficie, se resuelve con una limpieza y la técnica de higiene adecuada. Si ha bajado hacia la raíz, te hago un raspado y alisado radicular cuadrante a cuadrante para limpiar la raíz por debajo de la encía.',
           },
         ],
       },
@@ -917,8 +917,8 @@ const es: SiteCopy = {
           { id: 'reconstruction', label: 'Reconstrucción' },
           {
             id: 'periodontics',
-            label: 'Periodoncia: raspado y alisado radicular',
-            note: 'Tratamiento de encías cuando la inflamación ha pasado por debajo de la encía. Precio por cuadrante',
+            label: 'Periodoncia: raspado y alisado radicular (por cuadrante)',
+            note: 'Tratamiento de encías cuando la inflamación ha bajado por debajo del borde de la encía. Precio por cuadrante',
           },
           {
             id: 'nightGuard',
@@ -1050,8 +1050,8 @@ const es: SiteCopy = {
           title: 'El precio tiene dos partes',
           body: [
             `Un implante no es una pieza única, sino dos: la raíz artificial que se integra en el hueso y el diente visible que va encima. La colocación del implante cuesta desde ${formatPrice(PRICES.implantOnly, 'es')} y la corona de zirconio desde ${formatPrice(PRICES.zirconiaCrown, 'es')}, es decir, desde ${formatPrice(PRICES.implantCrown, 'es')} el tratamiento completo.`,
-            'Las dos partes están separadas de verdad: si en tu caso tiene sentido quedarte de momento solo con la cirugía, puedes contratar la colocación del implante por su precio y dejar la corona para después.',
-            `Y el pilar, la pieza que une el implante con la corona, va incluido en esos ${formatPrice(PRICES.implantCrown, 'es')}. Merece la pena preguntarlo en cualquier clínica, porque el aditamento se factura a veces aparte y ahí es donde un presupuesto que parecía cerrado empieza a crecer.`,
+            'Son dos partes independientes: si en tu caso tiene sentido quedarte de momento solo con la cirugía, puedes contratar la colocación del implante por su precio y dejar la corona para después.',
+            `Y el pilar, la pieza que une el implante con la corona, va incluido en esos ${formatPrice(PRICES.implantCrown, 'es')}.`,
             'Verlo separado ayuda a comparar presupuestos: a veces una cifra que parece baja corresponde solo al implante y la corona se suma después. Pregunta siempre si el precio que te dan incluye ya el diente que se ve.',
           ],
         },
@@ -1074,7 +1074,7 @@ const es: SiteCopy = {
           body: [
             'La primera valoración es gratuita: te exploro, te explico las opciones y sales con un presupuesto por escrito, sin compromiso.',
             'El TAC 3D (CBCT) se hace en un centro radiológico cercano porque el equipo no está en la consulta. Lo leo y lo planifico yo personalmente, y si sigues adelante con el tratamiento, lo que hayas pagado por él se descuenta del presupuesto.',
-            'Después de colocar el implante, la revisión del primer mes y la de los tres meses van incluidas. A partir de ahí el mantenimiento es lo mismo que para cualquier boca: una visita de higiene y revisión cada seis meses, que se cobra como una limpieza normal.',
+            'Después de colocar el implante, la revisión del primer mes y la de los tres meses van incluidas. A partir de ahí, el mantenimiento del implante es una visita de higiene y revisión cada seis meses. Se cobra como cualquier visita de higiene, y el precio lo tienes por escrito antes.',
           ],
         },
         {
@@ -1303,7 +1303,7 @@ const es: SiteCopy = {
         id: 'guarantee',
         question: '¿Los tratamientos tienen garantía?',
         answer:
-          'Todo tratamiento va con un plan y un presupuesto cerrado por escrito. En el caso de un implante, las revisiones del primer mes y de los tres meses están incluidas; después, el mantenimiento es la visita de higiene y revisión cada seis meses, que se cobra como una limpieza. Las condiciones concretas de garantía te las explico en la primera valoración, según tu caso.',
+          'Todo tratamiento va con un plan y un presupuesto cerrado por escrito. En el caso de un implante, las revisiones del primer mes y de los tres meses están incluidas; después, el mantenimiento del implante es una visita de higiene y revisión cada seis meses, que se cobra como cualquier visita de higiene y con el precio por escrito antes. Las condiciones concretas de garantía te las explico en la primera valoración, según tu caso.',
       },
       {
         id: 'booking',
@@ -1380,7 +1380,7 @@ const es: SiteCopy = {
         id: 'crownLifespan',
         question: '¿Cuánto dura una corona de zirconio?',
         answer:
-          'No hay una cifra que sirva para todas las bocas. El zirconio es un material muy resistente y no se oscurece, pero lo que marca la diferencia es el día a día: cepillado e higiene interdental igual que con tus dientes naturales, revisiones regulares, férula de descarga si aprietas por la noche y, si fumas, dejarlo.',
+          'Bien cuidada, muchos años, aunque no hay una cifra que sirva para todas las bocas. El zirconio es un material muy resistente y no se oscurece, y lo que marca la diferencia es el día a día: cepillado e higiene interdental igual que con tus dientes naturales, revisiones regulares, férula de descarga si aprietas por la noche y, si fumas, dejarlo.',
       },
       {
         id: 'implantLifespan',
@@ -1769,7 +1769,7 @@ const en: SiteCopy = {
       },
       meta: {
         title: 'Dental implants in Málaga - Dr. Eugenia Vila',
-        description: `Klockner and Alpha-Bio dental implants in El Palo, Málaga, from ${formatPrice(PRICES.implantOnly, 'en')} plus ${formatPrice(PRICES.zirconiaCrown, 'en')} for the zirconia crown. ${CLINIC.years} years of implantology experience and a fixed written quote.`,
+        description: `Klockner or Alpha-Bio dental implants in El Palo, Málaga, from ${formatPrice(PRICES.implantOnly, 'en')} plus ${formatPrice(PRICES.zirconiaCrown, 'en')} for the zirconia crown. ${CLINIC.years} years of implantology experience and a fixed written quote.`,
       },
       title: 'Dental implants',
       lead: 'Missing a tooth, or several, and no longer eating or smiling with ease? An implant replaces it from the root: fixed, natural and made to last for many years.',
@@ -1844,7 +1844,7 @@ const en: SiteCopy = {
           {
             id: 'implantOnly',
             label: 'Dental implant',
-            note: 'Placement of the implant, the artificial root the crown will sit on. If you only want this part, it can be booked on its own at that price',
+            note: 'Placement of the implant, the artificial root the crown will sit on. If for now you only want this part, you can book it separately',
           },
           {
             id: 'zirconiaCrown',
@@ -2218,7 +2218,7 @@ const en: SiteCopy = {
           { id: 'reconstruction', label: 'Tooth build-up (reconstruction)' },
           {
             id: 'periodontics',
-            label: 'Periodontics: scaling and root planing',
+            label: 'Periodontics: scaling and root planing (per quadrant)',
             note: 'Gum treatment for when the inflammation has gone below the gum line. Price per quadrant',
           },
           {
@@ -2280,7 +2280,7 @@ const en: SiteCopy = {
           {
             title: 'Assessing the tooth',
             description:
-              'I check how it is doing and explain the best way to restore it. If your bite calls for orthodontics before the crown, I say so before anything is cut.',
+              'I check how it is doing and explain the best way to restore it. If your bite calls for orthodontics before the crown, I say so before I prepare a single tooth.',
           },
           {
             title: 'Fixed quote',
@@ -2349,8 +2349,8 @@ const en: SiteCopy = {
           title: 'The price comes in two parts',
           body: [
             `An implant is not a single piece but two: the artificial root that integrates with the bone, and the visible tooth on top. Placing the implant starts from ${formatPrice(PRICES.implantOnly, 'en')} and the zirconia crown from ${formatPrice(PRICES.zirconiaCrown, 'en')}, which is ${formatPrice(PRICES.implantCrown, 'en')} for the complete treatment.`,
-            'The two parts really are separate: if it makes sense in your case to stop at the surgery for now, you can book implant placement on its own at that price and leave the crown for later.',
-            `And the abutment, the piece that joins the implant to the crown, is inside that ${formatPrice(PRICES.implantCrown, 'en')}. It is worth asking about at any clinic, because the abutment is sometimes billed separately, and that is where a quote that looked fixed starts to grow.`,
+            'They are two independent parts: if it makes sense in your case to stop at the surgery for now, you can book implant placement on its own at that price and leave the crown for later.',
+            `And the abutment, the piece that joins the implant to the crown, is inside that ${formatPrice(PRICES.implantCrown, 'en')}.`,
             'Seeing it split helps when comparing quotes: sometimes a low-looking figure covers only the implant and the crown is added later. Always ask whether the price you are given already includes the tooth you can see.',
           ],
         },
@@ -2373,7 +2373,7 @@ const en: SiteCopy = {
           body: [
             'The first assessment is free: I examine you, explain your options and you leave with a written quote, with no obligation.',
             'The 3D scan (CBCT) is taken at a nearby radiology centre because the equipment is not in the practice. I read and plan it personally, and if you go ahead with treatment, what you paid for it is deducted from the quote.',
-            'Once the implant is placed, the check-ups at around one month and around three months are included. After that, maintenance is the same as for any mouth: a hygiene and check-up visit every six months, charged like a normal cleaning.',
+            'Once the implant is placed, the one-month and three-month check-ups are included. After that, maintenance for the implant is a hygiene and check-up visit every six months. It is charged like any hygiene visit, with the price in writing beforehand.',
           ],
         },
         {
@@ -2602,7 +2602,7 @@ const en: SiteCopy = {
         id: 'guarantee',
         question: 'Do treatments come with a guarantee?',
         answer:
-          'Every treatment comes with a written plan and a fixed quote. With an implant, the check-ups at around one month and around three months are included; after that, maintenance is a hygiene and check-up visit every six months, charged like a cleaning. I explain the specific guarantee terms at your first assessment, based on your case.',
+          'Every treatment comes with a written plan and a fixed quote. With an implant, the one-month and three-month check-ups are included; after that, maintenance for the implant is a hygiene and check-up visit every six months, charged like any hygiene visit and with the price in writing beforehand. I explain the specific guarantee terms at your first assessment, based on your case.',
       },
       {
         id: 'booking',
@@ -2679,7 +2679,7 @@ const en: SiteCopy = {
         id: 'crownLifespan',
         question: 'How long does a zirconia crown last?',
         answer:
-          'There is no single figure that holds for every mouth. Zirconia is a very strong material and does not darken, but what makes the difference is the day to day: brushing and interdental cleaning just as with your natural teeth, regular check-ups, a night guard if you clench at night and, if you smoke, giving up.',
+          'Well looked after, many years, though there is no figure that fits every mouth. Zirconia is a very strong material and does not darken, and what makes the difference is the day to day: brushing and interdental cleaning just as with your natural teeth, regular check-ups, a night guard if you clench at night and, if you smoke, giving up.',
       },
       {
         id: 'implantLifespan',
