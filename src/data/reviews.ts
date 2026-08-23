@@ -243,7 +243,7 @@ export default [
     text_en:
       'After my wisdom tooth extraction by Dr Eugenia Vila, I experienced prolonged swelling and pain at the surrounding area for which I received prompt medication. The site itself was healing well! Thankfully, I saw Dr Vila the next day I called for a review. She is experienced and instils confidence particularly for doing extractions. The after pain is now gone. The quality of aftercare truly reflects a good clinic. I am very happy with it. Thanks to Dr Vila and the team.. I would highly recommend this clinic 👍',
     text_es:
-      'Tras la extracción de mi muela del juicio por la Dra. Eugenia Vila, tuve hinchazón y dolor en la zona durante bastantes días, y me dieron medicación de inmediato. ¡La zona en sí estaba cicatrizando bien! Afortunadamente, vi a la Dra. Vila al día siguiente de llamarla para una revisión. Tiene mucha experiencia y transmite mucha confianza, sobre todo al realizar extracciones. El dolor posterior ya ha desaparecido. La calidad de la atención postoperatoria refleja sin duda el buen servicio de la clínica. Estoy muy contenta. Gracias a la Dra. Vila y a todo el equipo. Recomiendo encarecidamente esta clínica. 👍',
+      'Tras la extracción de mi muela del juicio por la Dra. Eugenia Vila, tuve hinchazón y dolor persistentes en la zona, y me dieron medicación de inmediato. ¡La zona en sí estaba cicatrizando bien! Afortunadamente, vi a la Dra. Vila al día siguiente de llamarla para una revisión. Tiene mucha experiencia y transmite mucha confianza, sobre todo al realizar extracciones. El dolor posterior ya ha desaparecido. La calidad de la atención postoperatoria refleja sin duda el buen servicio de la clínica. Estoy muy contenta. Gracias a la Dra. Vila y a todo el equipo. Recomiendo encarecidamente esta clínica. 👍',
     date: 'Mar 2025',
     link: 'https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnTUNJME1pcnhRRRAB!2m1!1s0x0:0x4bdc913940e59a6c!3m1!1s2@1:CIHM0ogKEICAgMCI0MirxQE%7CCgsImOWjvwYQsKOVHQ%7C?hl=en',
     clinic: 'finchley',
@@ -781,8 +781,7 @@ export default [
     source: 'Trustpilot',
     rating: 5,
     text_en: 'Eugenia Vila built a human connection. Made me comfortable and trust her advice.',
-    text_es:
-      'Eugenia Vila conectó conmigo desde el primer momento. Hizo que me sintiera en confianza y que me fiara de sus consejos.',
+    text_es: 'Eugenia Vila conectó conmigo de verdad. Hizo que me sintiera a gusto y que me fiara de sus consejos.',
     date: 'Apr 2025',
     link: 'https://www.trustpilot.com/reviews/67f8d6541efefa3676dbd9e9',
     clinic: 'balham',
