@@ -2677,7 +2677,7 @@ const en: SiteCopy = {
         id: 'cleaningFrequency',
         question: 'How often should I have a dental cleaning?',
         answer:
-          'For most people, once a year; if you build up tartar easily or have gum problems, every six months. At your check-up I tell you how often makes sense in your case, with no unnecessary treatment.',
+          'For most people, once a year; if you build up tartar easily or have gum problems, every six months. At your check-up I tell you how often you should come in, with no unnecessary treatment.',
       },
       {
         id: 'crownLifespan',
@@ -2713,7 +2713,7 @@ const en: SiteCopy = {
         id: 'alignersDuration',
         question: 'How long does aligner treatment take?',
         answer:
-          'It depends on your case: simple corrections can be finished in a few months, while more involved corrections take over a year. With the 3D simulation you will know the estimated length of your plan before starting.',
+          'It depends on your case: simple corrections can be finished in a few months, while more involved ones take over a year. With the 3D simulation you will know the estimated length of your plan before starting.',
       },
       {
         id: 'alignersRetention',
@@ -2791,7 +2791,7 @@ const en: SiteCopy = {
     phoneBody: 'If you would rather talk it through, call me directly.',
     emailTitle: 'Email',
     locationTitle: 'The clinic',
-    hoursTitle: 'Opening hours',
+    hoursTitle: 'Appointments',
     hoursBody:
       'I see patients by appointment. I hold consultations in Málaga at certain times of the year; message me on WhatsApp and we’ll find the best time to see you.',
     directions: 'View the route on Google Maps',
