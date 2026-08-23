@@ -5,11 +5,11 @@ layout: '~/layouts/LegalLayout.astro'
 
 _Última actualización_: 15 de enero de 2025
 
-Esta Política de Privacidad describe nuestras políticas y procedimientos sobre la recopilación, uso y divulgación de su información cuando utiliza nuestro Servicio y le informa sobre sus derechos de privacidad y cómo la ley lo protege.
+Esta Política de Privacidad describe nuestras políticas y procedimientos sobre la recopilación, uso y divulgación de su información cuando utiliza nuestro Servicio y le informa sobre sus derechos de privacidad y cómo la ley le protege.
 
 Utilizamos sus Datos Personales para proporcionar y mejorar el Servicio. Al utilizar el Servicio, usted acepta la recopilación y el uso de información de acuerdo con esta Política de Privacidad.
 
-## Interpretación y Definiciones
+## Interpretación y definiciones
 
 ### Interpretación
 
@@ -21,11 +21,11 @@ A los efectos de esta Política de Privacidad:
 
 - **Clínica** (denominada como "la Clínica", "Nosotros", "Nos" o "Nuestro" en este Acuerdo) se refiere a Clínica Dental Dra. Eugenia Vila, Av. Juan Sebastián Elcano, 191, 2ª planta, 29017 Málaga, España.
 
-- **Cookies** son pequeños archivos que se colocan en su computadora, dispositivo móvil o cualquier otro dispositivo por un sitio web, que contienen los detalles de su historial de navegación en ese sitio web entre sus muchos usos.
+- **Cookies** son pequeños archivos que se colocan en su ordenador, dispositivo móvil o cualquier otro dispositivo por un sitio web, que contienen los detalles de su historial de navegación en ese sitio web entre sus muchos usos.
 
 - **País** se refiere a: España
 
-- **Dispositivo** significa cualquier dispositivo que pueda acceder al Servicio, como una computadora, un teléfono celular o una tableta digital.
+- **Dispositivo** significa cualquier dispositivo que pueda acceder al Servicio, como un ordenador, un teléfono móvil o una tableta.
 
 - **Datos Personales** es cualquier información que se relacione con un individuo identificado o identificable.
 
@@ -41,13 +41,13 @@ A los efectos de esta Política de Privacidad:
 
 - **Usted** significa el individuo que accede o utiliza el Servicio, o la empresa u otra entidad legal en nombre de la cual dicho individuo accede o utiliza el Servicio, según corresponda.
 
-## Recopilación y Uso de sus Datos Personales
+## Recopilación y uso de sus Datos Personales
 
-### Tipos de Datos Recopilados
+### Tipos de datos recopilados
 
 #### Datos Personales
 
-Mientras utiliza nuestro Servicio, podemos pedirle que nos proporcione cierta información de identificación personal que puede usarse para contactarlo o identificarlo. La información de identificación personal puede incluir, entre otros:
+Mientras utiliza nuestro Servicio, podemos pedirle que nos proporcione cierta información de identificación personal que puede usarse para ponernos en contacto con usted o identificarle. La información de identificación personal puede incluir, entre otros:
 
 - Nombre y apellidos
 - Dirección de correo electrónico
@@ -76,7 +76,7 @@ Cuando accede al Servicio por o a través de un dispositivo móvil, podemos reco
 
 También podemos recopilar información que su navegador envía cada vez que visita nuestro Servicio o cuando accede al Servicio por o a través de un dispositivo móvil.
 
-#### Tecnologías de Seguimiento y Cookies
+#### Tecnologías de seguimiento y Cookies
 
 Utilizamos Cookies y tecnologías de seguimiento similares para rastrear la actividad en nuestro Servicio y almacenar cierta información. Las tecnologías de seguimiento utilizadas son balizas, etiquetas y scripts para recopilar y rastrear información y mejorar y analizar nuestro Servicio. Las tecnologías que utilizamos pueden incluir:
 
@@ -84,7 +84,7 @@ Utilizamos Cookies y tecnologías de seguimiento similares para rastrear la acti
 
 - **Balizas Web.** Ciertas secciones de nuestro Servicio y nuestros correos electrónicos pueden contener pequeños archivos electrónicos conocidos como balizas web (también denominados gifs transparentes, etiquetas de píxeles y gifs de un solo píxel) que permiten a la Clínica, por ejemplo, contar usuarios que han visitado esas páginas o abierto un correo electrónico y para otras estadísticas relacionadas con el sitio web (por ejemplo, registrar la popularidad de una cierta sección y verificar la integridad del sistema y del servidor).
 
-Las Cookies pueden ser "Persistentes" o "de Sesión". Las Cookies Persistentes permanecen en su computadora personal o dispositivo móvil cuando se desconecta, mientras que las Cookies de Sesión se eliminan tan pronto como cierra su navegador web.
+Las Cookies pueden ser "Persistentes" o "de Sesión". Las Cookies Persistentes permanecen en su ordenador personal o dispositivo móvil cuando se desconecta, mientras que las Cookies de Sesión se eliminan tan pronto como cierra su navegador web.
 
 Utilizamos tanto Cookies de Sesión como Persistentes para los fines establecidos a continuación:
 
@@ -110,11 +110,11 @@ Utilizamos tanto Cookies de Sesión como Persistentes para los fines establecido
 
   Administradas por: Nosotros
 
-  Propósito: Estas Cookies nos permiten recordar las elecciones que hace cuando utiliza el Sitio Web, como recordar sus detalles de inicio de sesión o preferencia de idioma. El propósito de estas Cookies es proporcionarle una experiencia más personal y evitar que tenga que volver a ingresar sus preferencias cada vez que utiliza el Sitio Web.
+  Propósito: Estas Cookies nos permiten recordar las elecciones que hace cuando utiliza el Sitio Web, como recordar sus detalles de inicio de sesión o preferencia de idioma. El propósito de estas Cookies es proporcionarle una experiencia más personal y evitar que tenga que volver a introducir sus preferencias cada vez que utiliza el Sitio Web.
 
 Para obtener más información sobre las cookies que utilizamos y sus opciones con respecto a las cookies, visite nuestra Política de Cookies o la sección de Cookies de nuestra Política de Privacidad.
 
-#### Medición de Audiencia sin Cookies
+#### Medición de audiencia sin cookies
 
 Para conocer de forma agregada cómo se utiliza el Sitio Web (número de visitas, páginas consultadas y país de origen), utilizamos Umami, una herramienta de analítica respetuosa con la privacidad. Esta herramienta:
 
@@ -129,13 +129,13 @@ Al tratarse de una medición de audiencia estrictamente anónima y limitada al p
 
 La Clínica puede usar Datos Personales para los siguientes propósitos:
 
-- **Para proporcionar y mantener nuestro Servicio**, incluyendo para monitorear el uso de nuestro Servicio.
+- **Para proporcionar y mantener nuestro Servicio**, incluyendo la supervisión del uso de nuestro Servicio.
 
 - **Para gestionar sus consultas y citas:** para procesar sus solicitudes de consultas, programar citas y comunicarnos con usted sobre sus necesidades de tratamiento dental.
 
 - **Para el cumplimiento de una obligación legal:** el desarrollo, cumplimiento y realización de cualquier contrato relacionado con los servicios dentales que haya contratado o de cualquier otro contrato con Nosotros a través del Servicio.
 
-- **Para contactarlo:** Para contactarlo por correo electrónico, llamadas telefónicas, SMS, WhatsApp u otras formas equivalentes de comunicación electrónica, como notificaciones push de una aplicación móvil, con respecto a actualizaciones o comunicaciones informativas relacionadas con las funcionalidades, productos o servicios contratados, incluyendo las actualizaciones de seguridad, cuando sea necesario o razonable para su implementación.
+- **Para ponernos en contacto con usted:** por correo electrónico, llamadas telefónicas, SMS, WhatsApp u otras formas equivalentes de comunicación electrónica, como notificaciones push de una aplicación móvil, con respecto a actualizaciones o comunicaciones informativas relacionadas con las funcionalidades, productos o servicios contratados, incluyendo las actualizaciones de seguridad, cuando sea necesario o razonable para su implementación.
 
 - **Para proporcionarle** noticias, ofertas especiales e información general sobre otros bienes, servicios y eventos que ofrecemos que son similares a los que ya ha comprado o consultado, a menos que haya optado por no recibir dicha información.
 
@@ -147,7 +147,7 @@ La Clínica puede usar Datos Personales para los siguientes propósitos:
 
 Podemos compartir su información personal en las siguientes situaciones:
 
-- **Con Proveedores de Servicios:** Podemos compartir su información personal con Proveedores de Servicios para monitorear y analizar el uso de nuestro Servicio, para contactarlo. Estos proveedores están obligados contractualmente a mantener la confidencialidad de su información.
+- **Con Proveedores de Servicios:** Podemos compartir su información personal con Proveedores de Servicios para supervisar y analizar el uso de nuestro Servicio y para ponernos en contacto con usted. Estos proveedores están obligados contractualmente a mantener la confidencialidad de su información.
 
 - **Para transferencias comerciales:** Podemos compartir o transferir su información personal en relación con, o durante las negociaciones de, cualquier fusión, venta de activos de la Clínica, financiación o adquisición de todo o una porción de nuestro negocio a otra empresa.
 
@@ -165,13 +165,13 @@ La Clínica también retendrá Datos de Uso para fines de análisis interno. Los
 
 ## Transferencia de sus Datos Personales
 
-Su información, incluyendo Datos Personales, se procesa en las oficinas operativas de la Clínica y en cualquier otro lugar donde se encuentren las partes involucradas en el procesamiento. Esto significa que esta información puede transferirse a, y mantenerse en, computadoras ubicadas fuera de su estado, provincia, país u otra jurisdicción gubernamental donde las leyes de protección de datos pueden diferir de las de su jurisdicción.
+Su información, incluyendo Datos Personales, se procesa en las oficinas operativas de la Clínica y en cualquier otro lugar donde se encuentren las partes involucradas en el procesamiento. Esto significa que esta información puede transferirse a, y mantenerse en, ordenadores ubicados fuera de su estado, provincia, país u otra jurisdicción gubernamental donde las leyes de protección de datos pueden diferir de las de su jurisdicción.
 
 Su consentimiento a esta Política de Privacidad seguido de su envío de dicha información representa su acuerdo con esa transferencia.
 
-La Clínica tomará todas las medidas razonablemente necesarias para asegurar que sus datos se traten de manera segura y de acuerdo con esta Política de Privacidad y no se realizará ninguna transferencia de sus Datos Personales a una organización o un país a menos que haya controles adecuados en su lugar, incluyendo la seguridad de sus datos y otra información personal.
+La Clínica tomará todas las medidas razonablemente necesarias para asegurar que sus datos se traten de manera segura y de acuerdo con esta Política de Privacidad y no se realizará ninguna transferencia de sus Datos Personales a una organización o un país a menos que existan controles adecuados, incluyendo la seguridad de sus datos y otra información personal.
 
-## Sus Derechos de Protección de Datos bajo el RGPD
+## Sus derechos de protección de datos bajo el RGPD
 
 Si es residente de la Unión Europea (UE) o del Espacio Económico Europeo (EEE), tiene ciertos derechos de protección de datos. La Clínica tiene la intención de tomar medidas razonables para permitirle corregir, modificar, eliminar o limitar el uso de sus Datos Personales.
 
@@ -183,15 +183,15 @@ En ciertas circunstancias, tiene los siguientes derechos de protección de datos
 
 - **El derecho de rectificación:** Tiene derecho a solicitar que corrijamos cualquier información que crea que es inexacta. También tiene derecho a solicitar que completemos la información que cree que está incompleta.
 
-- **El derecho al borrado:** Tiene derecho a solicitar que eliminemos sus Datos Personales, bajo ciertas condiciones.
+- **El derecho de supresión:** Tiene derecho a solicitar que eliminemos sus Datos Personales, bajo ciertas condiciones.
 
-- **El derecho a restringir el procesamiento:** Tiene derecho a solicitar que restrinjamos el procesamiento de sus Datos Personales, bajo ciertas condiciones.
+- **El derecho a la limitación del tratamiento:** Tiene derecho a solicitar que limitemos el tratamiento de sus Datos Personales, bajo ciertas condiciones.
 
-- **El derecho a oponerse al procesamiento:** Tiene derecho a oponerse al procesamiento de sus Datos Personales, bajo ciertas condiciones.
+- **El derecho de oposición:** Tiene derecho a oponerse al tratamiento de sus Datos Personales, bajo ciertas condiciones.
 
 - **El derecho a la portabilidad de datos:** Tiene derecho a solicitar que transfiramos los datos que hemos recopilado a otra organización, o directamente a usted, bajo ciertas condiciones.
 
-- **El derecho a retirar el consentimiento:** Tiene derecho a retirar su consentimiento en cualquier momento cuando la Clínica se haya basado en su consentimiento para procesar sus Datos Personales.
+- **El derecho a retirar el consentimiento:** Tiene derecho a retirar su consentimiento en cualquier momento cuando la Clínica se haya basado en su consentimiento para tratar sus Datos Personales.
 
 Tenga en cuenta que podemos solicitarle que verifique su identidad antes de responder a tales solicitudes.
 
@@ -205,7 +205,7 @@ Tenga en cuenta, sin embargo, que podemos necesitar retener cierta información 
 
 ## Divulgación de sus Datos Personales
 
-### Transacciones Comerciales
+### Transacciones comerciales
 
 Si la Clínica está involucrada en una fusión, adquisición o venta de activos, sus Datos Personales pueden transferirse. Proporcionaremos aviso antes de que sus Datos Personales se transfieran y queden sujetos a una Política de Privacidad diferente.
 
@@ -231,16 +231,16 @@ Implementamos medidas de seguridad técnicas y organizativas apropiadas para pro
 
 - Cifrado de datos sensibles
 - Acceso restringido a información personal
-- Sistemas de seguridad y monitoreo
-- Capacitación regular del personal sobre protección de datos
+- Sistemas de seguridad y supervisión
+- Formación periódica del personal en protección de datos
 
-## Privacidad de los Niños
+## Privacidad de los niños
 
 Nuestro Servicio no está dirigido a menores de 18 años. No recopilamos a sabiendas información de identificación personal de menores de 18 años. Si es padre o tutor y sabe que su hijo nos ha proporcionado Datos Personales, contáctenos. Si nos damos cuenta de que hemos recopilado Datos Personales de menores de 18 años sin verificación del consentimiento de los padres, tomamos medidas para eliminar esa información de nuestros servidores.
 
 Si necesitamos confiar en el consentimiento como base legal para procesar su información y su país requiere el consentimiento de un padre, podemos requerir el consentimiento de sus padres antes de recopilar y usar esa información.
 
-## Enlaces a Otros Sitios Web
+## Enlaces a otros sitios web
 
 Nuestro Servicio puede contener enlaces a otros sitios web que no son operados por Nosotros. Si hace clic en un enlace de un tercero, será dirigido al sitio de ese tercero. Le recomendamos encarecidamente que revise la Política de Privacidad de cada sitio que visite.
 
@@ -250,7 +250,7 @@ No tenemos control sobre y no asumimos responsabilidad por el contenido, las pol
 
 Podemos actualizar nuestra Política de Privacidad de vez en cuando. Le notificaremos de cualquier cambio publicando la nueva Política de Privacidad en esta página.
 
-Le informaremos por correo electrónico y/o un aviso destacado en nuestro Servicio, antes de que el cambio entre en vigencia y actualizaremos la fecha de "Última actualización" en la parte superior de esta Política de Privacidad.
+Le informaremos por correo electrónico y/o un aviso destacado en nuestro Servicio, antes de que el cambio entre en vigor y actualizaremos la fecha de "Última actualización" en la parte superior de esta Política de Privacidad.
 
 Se le aconseja revisar esta Política de Privacidad periódicamente para cualquier cambio. Los cambios a esta Política de Privacidad son efectivos cuando se publican en esta página.
 
