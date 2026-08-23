@@ -7,7 +7,7 @@ _Última actualización_: 15 de enero de 2025
 
 Por favor, lea estos términos y condiciones cuidadosamente antes de utilizar nuestro Servicio.
 
-## Interpretación y Definiciones
+## Interpretación y definiciones
 
 ### Interpretación
 
@@ -23,7 +23,7 @@ A los efectos de estos Términos y Condiciones:
 
 - **Clínica** (denominada como "la Clínica", "Nosotros", "Nos" o "Nuestro" en este Acuerdo) se refiere a Clínica Dental Dra. Eugenia Vila, Av. Juan Sebastián Elcano, 191, 2ª planta, 29017 Málaga, España.
 
-- **Dispositivo** significa cualquier dispositivo que pueda acceder al Servicio, como una computadora, un teléfono celular o una tableta digital.
+- **Dispositivo** significa cualquier dispositivo que pueda acceder al Servicio, como un ordenador, un teléfono móvil o una tableta.
 
 - **Servicio** se refiere al Sitio Web.
 
@@ -45,38 +45,38 @@ Al acceder o usar el Servicio, usted acepta estar sujeto a estos Términos y Con
 
 Usted declara que tiene más de 18 años. La Clínica no permite que menores de 18 años utilicen el Servicio sin el consentimiento de un padre o tutor.
 
-Su acceso y uso del Servicio también está condicionado a su aceptación y cumplimiento de la Política de Privacidad de la Clínica. Nuestra Política de Privacidad describe nuestras políticas y procedimientos sobre la recopilación, uso y divulgación de su información personal cuando utiliza la Aplicación o el Sitio Web y le informa sobre sus derechos de privacidad y cómo la ley lo protege. Por favor, lea nuestra Política de Privacidad cuidadosamente antes de usar nuestro Servicio.
+Su acceso y uso del Servicio también está condicionado a su aceptación y cumplimiento de la Política de Privacidad de la Clínica. Nuestra Política de Privacidad describe nuestras políticas y procedimientos sobre la recopilación, uso y divulgación de su información personal cuando utiliza el Sitio Web y le informa sobre sus derechos de privacidad y cómo la ley le protege. Por favor, lea nuestra Política de Privacidad cuidadosamente antes de usar nuestro Servicio.
 
-## Servicios Dentales
+## Servicios dentales
 
-### Consultas y Citas
+### Consultas y citas
 
 - Las consultas iniciales pueden estar disponibles sin costo, sujeto a disponibilidad y a discreción de la Clínica.
 - Todas las citas están sujetas a disponibilidad y confirmación por parte de la Clínica.
 - Se requiere confirmación previa de la cita. La Clínica se reserva el derecho de cancelar o reprogramar citas con aviso previo razonable.
 - Los pacientes deben llegar puntualmente a sus citas. Las citas no asistidas o canceladas con menos de 24 horas de anticipación pueden estar sujetas a cargos.
 
-### Tratamientos y Procedimientos
+### Tratamientos y procedimientos
 
 - Todos los tratamientos y procedimientos dentales se realizarán de acuerdo con los estándares profesionales y éticos aplicables.
 - Los tratamientos propuestos se discutirán con el paciente antes de su realización, y se requerirá consentimiento informado cuando sea apropiado.
 - Los resultados de los tratamientos pueden variar según las circunstancias individuales del paciente.
 - La Clínica se reserva el derecho de rechazar proporcionar servicios si considera que no es apropiado o seguro hacerlo.
 
-### Pagos y Facturación
+### Pagos y facturación
 
 - Los pagos deben realizarse según los términos acordados en el momento de la consulta o tratamiento.
 - Los precios están sujetos a cambios sin previo aviso, aunque los precios acordados para tratamientos específicos se mantendrán según lo acordado.
 - Se pueden requerir depósitos o pagos anticipados para ciertos tratamientos.
 - Los métodos de pago aceptados se comunicarán al paciente en el momento de la consulta.
 
-### Cancelaciones y Reembolsos
+### Cancelaciones y reembolsos
 
 - Las políticas de cancelación y reembolso se discutirán con el paciente antes del tratamiento.
 - Los reembolsos, si son aplicables, estarán sujetos a los términos acordados y a las políticas de la Clínica.
 - La Clínica se reserva el derecho de determinar la elegibilidad para reembolsos caso por caso.
 
-## Enlaces a Otros Sitios Web
+## Enlaces a otros sitios web
 
 Nuestro Servicio puede contener enlaces a sitios web o servicios de terceros que no son propiedad de o están controlados por la Clínica.
 
@@ -84,28 +84,28 @@ La Clínica no tiene control sobre, y no asume responsabilidad por, el contenido
 
 Le recomendamos encarecidamente que lea los términos y condiciones y las políticas de privacidad de cualquier sitio web o servicio de terceros que visite.
 
-## Terminación
+## Rescisión
 
-Podemos terminar o suspender su acceso inmediatamente, sin previo aviso o responsabilidad, por cualquier motivo, incluyendo sin limitación si viola estos Términos y Condiciones.
+Podemos rescindir o suspender su acceso inmediatamente, sin previo aviso o responsabilidad, por cualquier motivo, incluyendo sin limitación si viola estos Términos y Condiciones.
 
-Al terminar, su derecho a usar el Servicio cesará inmediatamente.
+Tras la rescisión, su derecho a usar el Servicio cesará inmediatamente.
 
-## Limitación de Responsabilidad
+## Limitación de responsabilidad
 
-No obstante cualquier daño que pueda incurrir, la responsabilidad total de la Clínica y cualquiera de sus proveedores bajo cualquier disposición de estos Términos y su recurso exclusivo para todo lo anterior estará limitado a la cantidad realmente pagada por Usted a través del Servicio o 100 EUR si no ha comprado nada a través del Servicio.
+Con independencia de los daños en que pueda incurrir, la responsabilidad total de la Clínica y cualquiera de sus proveedores bajo cualquier disposición de estos Términos y su recurso exclusivo para todo lo anterior estará limitado a la cantidad realmente pagada por Usted a través del Servicio o 100 EUR si no ha comprado nada a través del Servicio.
 
 En la máxima medida permitida por la ley aplicable, en ningún caso la Clínica o sus proveedores serán responsables de ningún daño especial, incidental, indirecto o consecuente de cualquier tipo (incluyendo, pero no limitado a, daños por pérdida de ganancias, pérdida de datos u otra información, por interrupción del negocio, por lesiones personales, pérdida de privacidad que surja de o de cualquier manera relacionada con el uso o la incapacidad de usar el Servicio, software de terceros y/o hardware de terceros usado con el Servicio, o de otra manera en conexión con cualquier disposición de estos Términos), incluso si la Clínica o cualquier proveedor ha sido advertido de la posibilidad de tales daños e incluso si el recurso falla en su propósito esencial.
 
-Algunos estados no permiten la exclusión de garantías implícitas o la limitación de responsabilidad por daños incidentales o consecuentes, lo que significa que algunas de las limitaciones anteriores pueden no aplicar. En estos estados, la responsabilidad de cada parte estará limitada en la mayor medida permitida por la ley.
+Algunas jurisdicciones no permiten la exclusión de garantías implícitas o la limitación de responsabilidad por daños incidentales o consecuentes, lo que significa que algunas de las limitaciones anteriores pueden no aplicar. En esas jurisdicciones, la responsabilidad de cada parte estará limitada en la mayor medida permitida por la ley.
 
-### Limitación de Responsabilidad Médica
+### Limitación de responsabilidad médica
 
 - La Clínica proporciona servicios dentales profesionales de acuerdo con los estándares de cuidado aplicables.
 - La Clínica no garantiza resultados específicos de ningún tratamiento o procedimiento.
 - Los resultados pueden variar según las circunstancias individuales del paciente.
 - La Clínica no será responsable de complicaciones que puedan surgir de tratamientos cuando se hayan seguido los protocolos estándar de cuidado.
 
-## Descargo de Responsabilidad "TAL CUAL" y "SEGÚN DISPONIBILIDAD"
+## Descargo de responsabilidad "TAL CUAL" y "SEGÚN DISPONIBILIDAD"
 
 El Servicio se le proporciona "TAL CUAL" y "SEGÚN DISPONIBILIDAD" y con todas las fallas y defectos sin garantía de ningún tipo. En la máxima medida permitida bajo la ley aplicable, la Clínica, en su propio nombre y en nombre de sus Afiliados y sus respectivos licenciantes y proveedores de servicios, renuncia expresamente a todas las garantías, ya sean expresas, implícitas, estatutarias o de otro tipo, con respecto al Servicio, incluyendo todas las garantías implícitas de comerciabilidad, idoneidad para un propósito particular, título y no infracción, y garantías que pueden surgir del curso de la negociación, curso del rendimiento, uso o práctica comercial. Sin limitación a lo anterior, la Clínica no proporciona garantía ni compromiso, y no hace ninguna representación de ningún tipo de que el Servicio cumplirá con sus requisitos, logrará los resultados previstos, será compatible o funcionará con cualquier otro software, aplicaciones, sistemas o servicios, operará sin interrupción, cumplirá con cualquier estándar de rendimiento o confiabilidad o estará libre de errores o que cualquier error o defecto puede o será corregido.
 
@@ -113,25 +113,25 @@ Sin limitar lo anterior, ni la Clínica ni ninguno de los proveedores de la clí
 
 Algunas jurisdicciones no permiten la exclusión de ciertos tipos de garantías o limitaciones en los derechos estatutarios aplicables de un consumidor, por lo que algunas o todas las exclusiones y limitaciones anteriores pueden no aplicar a Usted. Pero en tal caso, las exclusiones y limitaciones establecidas en esta sección se aplicarán en la mayor medida exigible bajo la ley aplicable.
 
-## Ley Aplicable
+## Ley aplicable
 
-Las leyes del País, excluyendo sus reglas de conflicto de leyes, regirán estos Términos y su uso del Servicio. Su uso de la Aplicación también puede estar sujeto a otras leyes locales, estatales, nacionales o internacionales.
+Las leyes del País, excluyendo sus reglas de conflicto de leyes, regirán estos Términos y su uso del Servicio. Su uso del Servicio también puede estar sujeto a otras leyes locales, estatales, nacionales o internacionales.
 
-## Resolución de Disputas
+## Resolución de disputas
 
 Si tiene alguna preocupación o disputa sobre el Servicio, acepta intentar primero resolver la disputa de manera informal contactando a la Clínica.
 
 Si no se puede resolver una disputa de manera informal, las partes acuerdan someterse a la jurisdicción exclusiva de los tribunales de Málaga, España, para la resolución de cualquier disputa.
 
-## Para Usuarios de la Unión Europea (UE)
+## Para usuarios de la Unión Europea (UE)
 
 Si es un consumidor de la Unión Europea, se beneficiará de cualquier disposición obligatoria de la ley del país en el que reside.
 
-## Cumplimiento Legal de España
+## Cumplimiento legal en España
 
 Usted declara y garantiza que (i) no está ubicado en un país que esté sujeto a un embargo del gobierno español, o que haya sido designado por el gobierno español como un país que "apoya el terrorismo", y (ii) no está en ninguna lista del gobierno español de partes prohibidas o restringidas.
 
-## Separabilidad y Renuncia
+## Separabilidad y renuncia
 
 ### Separabilidad
 
@@ -141,15 +141,15 @@ Si alguna disposición de estos Términos se considera inaplicable o inválida, 
 
 Excepto según se dispone aquí, la falta de ejercicio de un derecho o de requerir el cumplimiento de una obligación bajo estos Términos no afectará la capacidad de una parte para ejercer tal derecho o requerir tal cumplimiento en cualquier momento posterior, ni la renuncia de una violación constituirá una renuncia de cualquier violación posterior.
 
-## Interpretación de Traducción
+## Idioma y traducción
 
 Estos Términos y Condiciones pueden haber sido traducidos si los hemos puesto a su disposición en nuestro Servicio. Usted acepta que el texto original en español prevalecerá en caso de una disputa.
 
-## Cambios a Estos Términos y Condiciones
+## Cambios a estos Términos y Condiciones
 
-Nos reservamos el derecho, a nuestra sola discreción, de modificar o reemplazar estos Términos en cualquier momento. Si una revisión es material, haremos esfuerzos razonables para proporcionar al menos 30 días de aviso antes de que cualquier término nuevo entre en vigencia. Lo que constituye un cambio material será determinado a nuestra sola discreción.
+Nos reservamos el derecho, a nuestra sola discreción, de modificar o reemplazar estos Términos en cualquier momento. Si una revisión es material, haremos esfuerzos razonables para proporcionar al menos 30 días de aviso antes de que cualquier término nuevo entre en vigor. Lo que constituye un cambio material será determinado a nuestra sola discreción.
 
-Al continuar accediendo o usando nuestro Servicio después de que esas revisiones entren en vigencia, usted acepta estar sujeto a los términos revisados. Si no está de acuerdo con los nuevos términos, en su totalidad o en parte, por favor deje de usar el sitio web y el Servicio.
+Al continuar accediendo o usando nuestro Servicio después de que esas revisiones entren en vigor, usted acepta estar sujeto a los términos revisados. Si no está de acuerdo con los nuevos términos, en su totalidad o en parte, por favor deje de usar el sitio web y el Servicio.
 
 ## Contacto
 

@@ -361,7 +361,7 @@ const es: SiteCopy = {
   },
   values: {
     eyebrow: 'Por qué me recomiendan mis pacientes',
-    title: 'Cuidado de verdad, no de franquicia',
+    title: 'Un trato de verdad, no de franquicia',
     items: [
       {
         title: 'Te atiende siempre la Dra. Vila',
@@ -370,7 +370,7 @@ const es: SiteCopy = {
       {
         title: 'Un plan claro, por escrito',
         description:
-          'Antes de empezar sabes exactamente qué incluye tu tratamiento, paso a paso y sin sorpresas. Todo queda recogido por escrito.',
+          'Antes de empezar sabes exactamente qué incluye el tratamiento, paso a paso y sin sorpresas. Todo queda recogido por escrito.',
       },
       {
         title: 'Materiales de primera calidad',
@@ -421,7 +421,7 @@ const es: SiteCopy = {
         {
           title: 'Presupuesto cerrado por escrito',
           description:
-            'Antes de empezar sabes exactamente qué incluye tu tratamiento y cuánto cuesta. El precio acordado es el que pagas.',
+            'Antes de empezar sabes exactamente qué incluye el tratamiento y cuánto cuesta. El precio acordado es el que pagas.',
         },
         {
           title: 'Transparencia con las pruebas',
@@ -440,7 +440,7 @@ const es: SiteCopy = {
         {
           title: 'Presupuesto cerrado por escrito',
           description:
-            'Antes de empezar sabes qué incluye tu tratamiento y cuánto cuesta. El precio acordado es el que pagas.',
+            'Antes de empezar sabes qué incluye el tratamiento y cuánto cuesta. El precio acordado es el que pagas.',
         },
         {
           title: 'La misma calidad que en Londres',
@@ -560,7 +560,7 @@ const es: SiteCopy = {
         note: `Implante y corona de zirconio juntos: desde ${formatPrice(PRICES.implantCrown, 'es')}, con la corona incluida y con el pilar original de la marca dentro de esa cifra, no facturado aparte. Si prefieres contratar solo la parte quirúrgica, la colocación del implante tiene su propio precio. El injerto y la elevación de seno se hacen solo si tu caso los necesita: el injerto tiene precio de partida y la elevación de seno te la presupuesto a medida, por escrito y antes de empezar. El TAC 3D (CBCT) se realiza en un centro radiológico externo y lo valoro yo personalmente; esa valoración está incluida en tu plan.`,
       },
       cta: {
-        title: '¿Te faltan dientes? Recupera una sonrisa completa y fija.',
+        title: '¿Te faltan dientes? Recupera una sonrisa completa, con dientes fijos.',
         body: 'Escríbeme por WhatsApp, cuéntame tu caso y te explico las opciones que tienes, sin compromiso.',
         message: 'Hola, me gustaría informarme sobre implantes dentales.',
       },
@@ -663,7 +663,7 @@ const es: SiteCopy = {
       card: {
         title: 'Ortodoncia invisible',
         description:
-          'Endereza tu sonrisa con alineadores transparentes, cómodos y casi invisibles, sin brackets metálicos.',
+          'Pon tus dientes en su sitio con alineadores transparentes, cómodos y casi invisibles, sin brackets metálicos.',
       },
       meta: {
         title: 'Ortodoncia invisible en Málaga - Dra. Eugenia Vila',
@@ -1004,7 +1004,7 @@ const es: SiteCopy = {
       },
       whyMeExtra: {
         title: 'Los mismos laboratorios que en Londres',
-        description: 'No doy por buena una corona que no pasaría el listón de mi consulta de Londres.',
+        description: 'No doy por buena una corona que no superaría el listón de mi consulta de Londres.',
       },
       priceGroup: {
         title: 'Precios de coronas y prótesis',
@@ -1027,7 +1027,7 @@ const es: SiteCopy = {
   guidesPage: {
     eyebrow: 'Guías',
     title: 'Guías para decidir con criterio',
-    lead: 'Respuestas largas y claras a las dudas que más me llegan antes de empezar un tratamiento. Sin tecnicismos innecesarios y sin letra pequeña.',
+    lead: 'Respuestas completas y claras a las dudas que más me llegan antes de empezar un tratamiento. Sin tecnicismos innecesarios y sin letra pequeña.',
     readMore: 'Leer la guía',
     backToGuides: 'Ver todas las guías',
   },
@@ -1044,7 +1044,7 @@ const es: SiteCopy = {
         description: `Precio de un implante dental en Málaga: desde ${formatPrice(PRICES.implantOnly, 'es')} el implante y ${formatPrice(PRICES.zirconiaCrown, 'es')} la corona de zirconio. Qué incluye, de qué depende y qué preguntar antes de decidir.`,
       },
       title: '¿Cuánto cuesta un implante dental en Málaga?',
-      lead: `Un implante con su corona cuesta desde ${formatPrice(PRICES.implantCrown, 'es')} en mi consulta de El Palo. Debajo te explico cómo se reparte esa cifra, qué la hace subir en algunos casos y qué deberías preguntar en cualquier clínica antes de decidirte.`,
+      lead: `Un implante con su corona cuesta desde ${formatPrice(PRICES.implantCrown, 'es')} en mi consulta de El Palo. Más abajo te explico cómo se reparte esa cifra, qué la hace subir en algunos casos y qué deberías preguntar en cualquier clínica antes de decidirte.`,
       sections: [
         {
           title: 'El precio tiene dos partes',
@@ -1052,7 +1052,7 @@ const es: SiteCopy = {
             `Un implante no es una pieza única, sino dos: la raíz artificial que se integra en el hueso y el diente visible que va encima. La colocación del implante cuesta desde ${formatPrice(PRICES.implantOnly, 'es')} y la corona de zirconio desde ${formatPrice(PRICES.zirconiaCrown, 'es')}, es decir, desde ${formatPrice(PRICES.implantCrown, 'es')} el tratamiento completo.`,
             'Son dos partes independientes: si en tu caso tiene sentido quedarte de momento solo con la cirugía, puedes contratar la colocación del implante por su precio y dejar la corona para después.',
             `Y el pilar, la pieza que une el implante con la corona, va incluido en esos ${formatPrice(PRICES.implantCrown, 'es')}.`,
-            'Verlo separado ayuda a comparar presupuestos: a veces una cifra que parece baja corresponde solo al implante y la corona se suma después. Pregunta siempre si el precio que te dan incluye ya el diente que se ve.',
+            'Verlo por separado ayuda a comparar presupuestos: a veces una cifra que parece baja corresponde solo al implante y la corona se suma después. Pregunta siempre si el precio que te dan incluye ya el diente que se ve.',
           ],
         },
         {
@@ -1073,7 +1073,7 @@ const es: SiteCopy = {
           title: 'Qué está incluido y qué no',
           body: [
             'La primera valoración es gratuita: te exploro, te explico las opciones y sales con un presupuesto por escrito, sin compromiso.',
-            'El TAC 3D (CBCT) se hace en un centro radiológico cercano porque el equipo no está en la consulta. Lo leo y lo planifico yo personalmente, y si sigues adelante con el tratamiento, lo que hayas pagado por él se descuenta del presupuesto.',
+            'El TAC 3D (CBCT) se hace en un centro radiológico cercano porque el equipo no está en la consulta. Lo leo y lo valoro yo personalmente, y si sigues adelante con el tratamiento, lo que hayas pagado por él se descuenta del presupuesto.',
             'Después de colocar el implante, la revisión del primer mes y la de los tres meses van incluidas. A partir de ahí, el mantenimiento del implante es una visita de higiene y revisión cada seis meses. Se cobra como cualquier visita de higiene, y el precio lo tienes por escrito antes.',
           ],
         },
@@ -1130,7 +1130,7 @@ const es: SiteCopy = {
         {
           title: 'Si estás de visita o vives a caballo entre dos países',
           body: [
-            'Paso consulta en Málaga en periodos concretos del año, así que conviene escribir con algo de antelación para encajar tu tratamiento en tus fechas. Muchos pacientes organizan las visitas alrededor de sus viajes.',
+            'Paso consulta en Málaga en periodos concretos del año, así que conviene escribir con algo de antelación para encajar el tratamiento en tus fechas. Muchos pacientes organizan las visitas alrededor de sus viajes.',
             'Escríbeme por WhatsApp contándome tu caso y tus fechas y te digo con franqueza qué se puede hacer en ese tiempo y qué es mejor no acelerar.',
           ],
         },
@@ -1269,13 +1269,13 @@ const es: SiteCopy = {
     ],
     personalTitle: 'Más allá de la consulta',
     personal:
-      'Fuera de la clínica, mi familia es lo primero: tengo dos hijos con los que me encanta pasar el tiempo. Disfruto del tenis, viajar, cocinar y cuidarme con una vida sana.',
+      'Fuera de la clínica, mi familia es lo primero: tengo dos hijos con los que me encanta pasar el tiempo. Me gusta el tenis, viajar, cocinar y cuidarme con una vida sana.',
   },
   reviewsPage: {
-    lead: 'Reseñas reales de pacientes, sin filtros. Estas son algunas de las personas que han confiado en la Dra. Vila.',
+    lead: 'Reseñas reales de pacientes, sin filtros. Estas son algunas de las personas que han confiado en mí.',
     basedOn: 'basada en {count} reseñas en Google y Trustpilot',
     malagaTitle: 'En Málaga',
-    londonTitle: 'En Londres, donde la Dra. Vila también ejerce',
+    londonTitle: 'En Londres, donde también ejerzo',
     cta: 'Deja tu reseña en Google',
   },
   faqPage: {
@@ -1297,7 +1297,7 @@ const es: SiteCopy = {
         id: 'materials',
         question: '¿Qué materiales utilizas?',
         answer:
-          'Solo materiales de primeras marcas, los mismos que uso en mi consulta de Londres y los que usaría para mi propia familia. Los implantes, por ejemplo, son Klockner o Alpha-Bio según lo que pida tu caso, y en la prótesis monto únicamente componentes originales de esa misma marca, nunca aditamentos compatibles. En tu presupuesto por escrito verás exactamente qué incluye tu tratamiento, y en la consulta te enseño encantada qué sistema y qué laboratorio hay detrás de cada trabajo.',
+          'Solo materiales de primeras marcas, los mismos que uso en mi consulta de Londres y los que usaría para mi propia familia. Los implantes, por ejemplo, son Klockner o Alpha-Bio según lo que pida tu caso, y en la prótesis monto únicamente componentes originales de esa misma marca, nunca aditamentos compatibles. En tu presupuesto por escrito verás exactamente qué incluye el tratamiento, y en la consulta te enseño encantada qué sistema y qué laboratorio hay detrás de cada trabajo.',
       },
       {
         id: 'guarantee',
