@@ -42,19 +42,24 @@ export const CLINIC = {
 // Starting-from treatment prices in euros. Single source for the price tables
 // and every "desde" tag, so the numbers cannot drift.
 // Provisional until Dra. Vila confirms the final list.
+// The sinus lift is deliberately absent: it varies too much between cases to
+// carry a useful starting price, so its row is quoted case by case instead.
 const BASE_PRICES = {
   implantCrown: 1200,
-  boneGraft: 300,
-  sinusLift: 600,
+  boneGraft: 450,
   filling: 50,
   extraction: 50,
-  complexExtraction: 100,
+  complexExtraction: 150,
   reconstruction: 100,
   cleaning: 50,
-  nightGuard: 200,
+  nightGuard: 350,
   zirconiaCrown: 500,
   whitening: 300,
+  // One arch; the two-arch figure is orientative, since the final quote depends
+  // on case complexity and on how many arches actually need moving.
   aligners: 1500,
+  alignersBothArches: 2500,
+  periodontics: 70,
   compositeVeneer: 200,
 } as const;
 

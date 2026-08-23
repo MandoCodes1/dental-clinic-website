@@ -465,7 +465,7 @@ const es: SiteCopy = {
       },
       meta: {
         title: 'Implantes dentales en Málaga - Dra. Eugenia Vila',
-        description: `Implantes dentales Klockner en El Palo, Málaga, desde ${formatPrice(PRICES.implantOnly, 'es')} más ${formatPrice(PRICES.zirconiaCrown, 'es')} la corona de zirconio. ${CLINIC.years} años de experiencia en implantología y presupuesto cerrado por escrito.`,
+        description: `Implantes dentales Klockner o Alpha-Bio en El Palo, Málaga, desde ${formatPrice(PRICES.implantOnly, 'es')} más ${formatPrice(PRICES.zirconiaCrown, 'es')} la corona de zirconio. ${CLINIC.years} años de experiencia en implantología y presupuesto cerrado por escrito.`,
       },
       title: 'Implantes dentales',
       lead: '¿Te falta un diente, o varios, y ya no comes ni sonríes tranquilo? Un implante lo sustituye de raíz: fijo, natural y pensado para durar muchos años.',
@@ -473,7 +473,7 @@ const es: SiteCopy = {
         title: '¿Qué es un implante dental?',
         body: [
           'Un implante es una raíz artificial de titanio que se coloca en el hueso, donde antes estaba la raíz de tu diente. Sobre ella se fija una corona de zirconio del color de tus dientes.',
-          'No se quita ni se pone: queda fijo, y al comer y sonreír se siente como un diente propio. Trabajo con implantes Klockner, planificados sobre un TAC 3D que valoro yo misma.',
+          'No se quita ni se pone: queda fijo, y al comer y sonreír se siente como un diente propio. Trabajo con implantes Klockner o Alpha-Bio, según lo que pida tu caso, planificados sobre un TAC 3D que valoro yo misma.',
         ],
       },
       situations: {
@@ -519,7 +519,8 @@ const es: SiteCopy = {
           },
           {
             title: 'Osteointegración',
-            description: 'Durante unos meses el hueso se une al implante hasta dejarlo tan firme como una raíz propia.',
+            description:
+              'El hueso se une al implante hasta dejarlo tan firme como una raíz propia. Suelen ser de 3 a 4 meses, y de 6 a 8 si tu caso ha necesitado injerto.',
           },
           {
             title: 'Tu corona definitiva',
@@ -529,8 +530,9 @@ const es: SiteCopy = {
         ],
       },
       whyMeExtra: {
-        title: 'Klockner con aditamentos originales',
-        description: 'Nunca copias compatibles: el ajuste es exacto y tu implante queda protegido a largo plazo.',
+        title: 'Klockner o Alpha-Bio, con componentes originales',
+        description:
+          'Elijo la marca según tu caso y monto siempre componentes originales de esa marca, nunca aditamentos compatibles: el ajuste es exacto y tu implante queda protegido a largo plazo.',
       },
       priceGroup: {
         title: 'Precios de implantes',
@@ -538,12 +540,12 @@ const es: SiteCopy = {
           {
             id: 'implantOnly',
             label: 'Implante dental',
-            note: 'La colocación del implante, la raíz artificial sobre la que irá la corona',
+            note: 'La colocación del implante, la raíz artificial sobre la que irá la corona. Si solo quieres esta parte, se puede contratar por su precio',
           },
           {
             id: 'zirconiaCrown',
             label: 'Corona de zirconio sobre el implante',
-            note: 'El diente visible que se fija sobre el implante',
+            note: 'El diente visible que se fija sobre el implante, con su pilar original incluido',
           },
           {
             id: 'boneGraft',
@@ -551,12 +553,11 @@ const es: SiteCopy = {
             note: 'Cuando no hay hueso suficiente donde va el implante. Incluye el biomaterial y la membrana de regeneración',
           },
           {
-            id: 'sinusLift',
             label: 'Elevación de seno maxilar',
-            note: 'Para poder colocar implantes en las muelas de arriba cuando falta altura de hueso',
+            note: 'Para poder colocar implantes en las muelas de arriba cuando falta altura de hueso. Solo si tu caso lo necesita, y con precio cerrado tras la primera valoración',
           },
         ],
-        note: `Implante y corona de zirconio juntos: desde ${formatPrice(PRICES.implantCrown, 'es')}, con la corona incluida. El injerto y la elevación de seno solo se hacen si tu caso los necesita, y siempre dentro del presupuesto cerrado. El TAC 3D (CBCT) se realiza en un centro radiológico externo y lo valoro yo personalmente; esa valoración está incluida en tu plan.`,
+        note: `Implante y corona de zirconio juntos: desde ${formatPrice(PRICES.implantCrown, 'es')}, con la corona incluida y con el pilar original de la marca dentro de esa cifra, no facturado aparte. Si prefieres contratar solo la parte quirúrgica, la colocación del implante tiene su propio precio. El injerto y la elevación de seno se hacen solo si tu caso los necesita: el injerto tiene precio de partida y la elevación de seno te la presupuesto a medida, por escrito y antes de empezar. El TAC 3D (CBCT) se realiza en un centro radiológico externo y lo valoro yo personalmente; esa valoración está incluida en tu plan.`,
       },
       cta: {
         title: '¿Te faltan dientes? Recupera una sonrisa completa y fija.',
@@ -647,7 +648,7 @@ const es: SiteCopy = {
           {
             id: 'complexExtraction',
             label: 'Extracción compleja',
-            note: 'Muelas del juicio, restos radiculares y extracciones que requieren técnica quirúrgica',
+            note: 'Muelas del juicio, restos radiculares y extracciones que requieren técnica quirúrgica. Si el cordal está incluido en hueso, te doy el precio después de ver la radiografía',
           },
         ],
       },
@@ -732,12 +733,14 @@ const es: SiteCopy = {
       priceGroup: {
         title: 'Precios de ortodoncia invisible',
         items: [
+          { id: 'aligners', label: 'Alineadores Ordoline, una arcada' },
           {
-            id: 'aligners',
-            label: 'Ortodoncia con alineadores Ordoline',
-            note: 'Una arcada. El precio final depende de la complejidad del caso y del número de arcadas',
+            id: 'alignersBothArches',
+            label: 'Alineadores Ordoline, las dos arcadas',
+            note: 'Cifra orientativa: muchos casos necesitan mover arriba y abajo para que la mordida acabe encajando',
           },
         ],
+        note: 'El precio final depende de la complejidad del caso y del número de arcadas. Después de la valoración y de ver la simulación 3D recibes la cifra cerrada por escrito.',
       },
       cta: {
         title: '¿Quieres saber si los alineadores son para ti?',
@@ -873,7 +876,7 @@ const es: SiteCopy = {
           {
             title: 'Te sangran las encías',
             description:
-              'Sangrar no es normal: suele ser encía inflamada, y cogido a tiempo se resuelve con una limpieza y la técnica adecuada.',
+              'Sangrar no es normal: casi siempre es encía inflamada. Si se queda en la superficie, se resuelve con una limpieza y la técnica de higiene adecuada. Si ha bajado hacia la raíz, te hago un raspado y alisado radicular cuadrante a cuadrante para limpiarla por debajo de la encía.',
           },
         ],
       },
@@ -913,8 +916,13 @@ const es: SiteCopy = {
           { id: 'filling', label: 'Empaste de composite' },
           { id: 'reconstruction', label: 'Reconstrucción' },
           {
+            id: 'periodontics',
+            label: 'Periodoncia: raspado y alisado radicular',
+            note: 'Tratamiento de encías cuando la inflamación ha pasado por debajo de la encía. Precio por cuadrante',
+          },
+          {
             id: 'nightGuard',
-            label: 'Férula de descarga',
+            label: 'Férula de descarga tipo Michigan',
             note: 'Si aprietas o rechinas los dientes al dormir. Hecha a medida para proteger el esmalte y relajar la mandíbula',
           },
         ],
@@ -971,7 +979,8 @@ const es: SiteCopy = {
         steps: [
           {
             title: 'Valoración del diente',
-            description: 'Compruebo cómo está y te explico la mejor forma de recuperarlo.',
+            description:
+              'Compruebo cómo está y te explico la mejor forma de recuperarlo. Si tu mordida pide ortodoncia antes de la corona, te lo digo antes de tallar nada.',
           },
           {
             title: 'Presupuesto cerrado',
@@ -1041,6 +1050,8 @@ const es: SiteCopy = {
           title: 'El precio tiene dos partes',
           body: [
             `Un implante no es una pieza única, sino dos: la raíz artificial que se integra en el hueso y el diente visible que va encima. La colocación del implante cuesta desde ${formatPrice(PRICES.implantOnly, 'es')} y la corona de zirconio desde ${formatPrice(PRICES.zirconiaCrown, 'es')}, es decir, desde ${formatPrice(PRICES.implantCrown, 'es')} el tratamiento completo.`,
+            'Las dos partes están separadas de verdad: si en tu caso tiene sentido quedarte de momento solo con la cirugía, puedes contratar la colocación del implante por su precio y dejar la corona para después.',
+            `Y el pilar, la pieza que une el implante con la corona, va incluido en esos ${formatPrice(PRICES.implantCrown, 'es')}. Merece la pena preguntarlo en cualquier clínica, porque el aditamento se factura a veces aparte y ahí es donde un presupuesto que parecía cerrado empieza a crecer.`,
             'Verlo separado ayuda a comparar presupuestos: a veces una cifra que parece baja corresponde solo al implante y la corona se suma después. Pregunta siempre si el precio que te dan incluye ya el diente que se ve.',
           ],
         },
@@ -1054,7 +1065,7 @@ const es: SiteCopy = {
         {
           title: 'Cuándo hacen falta injerto o elevación de seno',
           body: [
-            `Cuando falta hueso donde tiene que anclarse el implante. El injerto (desde ${formatPrice(PRICES.boneGraft, 'es')}) aporta el volumen que falta, y la elevación de seno (desde ${formatPrice(PRICES.sinusLift, 'es')}) gana altura en las muelas de arriba, donde el seno maxilar baja con los años.`,
+            `Cuando falta hueso donde tiene que anclarse el implante. El injerto (desde ${formatPrice(PRICES.boneGraft, 'es')}) aporta el volumen que falta, y la elevación de seno gana altura en las muelas de arriba, donde el seno maxilar baja con los años. La elevación de seno no lleva precio de partida porque cambia mucho de un caso a otro: te la presupuesto a medida, por escrito, después de la primera visita.`,
             'No son un extra que se añade por sistema: se hacen solo si tu caso los necesita, se ven en el TAC 3D antes de empezar y entran en el presupuesto cerrado desde el principio, no a mitad del tratamiento.',
           ],
         },
@@ -1063,13 +1074,13 @@ const es: SiteCopy = {
           body: [
             'La primera valoración es gratuita: te exploro, te explico las opciones y sales con un presupuesto por escrito, sin compromiso.',
             'El TAC 3D (CBCT) se hace en un centro radiológico cercano porque el equipo no está en la consulta. Lo leo y lo planifico yo personalmente, y si sigues adelante con el tratamiento, lo que hayas pagado por él se descuenta del presupuesto.',
-            'Las revisiones y el seguimiento posterior forman parte del tratamiento, no se facturan aparte.',
+            'Después de colocar el implante, la revisión del primer mes y la de los tres meses van incluidas. A partir de ahí el mantenimiento es lo mismo que para cualquier boca: una visita de higiene y revisión cada seis meses, que se cobra como una limpieza normal.',
           ],
         },
         {
           title: 'Qué preguntar antes de decidir',
           body: [
-            '¿Qué marca de implante se va a usar y qué aditamentos lleva la prótesis? En mi consulta son implantes Klockner y solo aditamentos originales de la marca, nunca copias compatibles: el ajuste es exacto y el implante queda protegido a largo plazo.',
+            '¿Qué marca de implante se va a usar y qué aditamentos lleva la prótesis? En mi consulta trabajo con Klockner o con Alpha-Bio, según lo que pida tu caso, y siempre con componentes originales de la marca que se haya colocado, nunca aditamentos compatibles: el ajuste es exacto y el implante queda protegido a largo plazo.',
             '¿Quién planifica y quién coloca el implante, y verás a esa misma persona en las revisiones?',
             '¿El presupuesto es cerrado y por escrito antes de empezar? El precio acordado debería ser el que pagas al terminar.',
           ],
@@ -1286,13 +1297,13 @@ const es: SiteCopy = {
         id: 'materials',
         question: '¿Qué materiales utilizas?',
         answer:
-          'Solo materiales de primeras marcas, los mismos que uso en mi consulta de Londres y los que usaría para mi propia familia. Los implantes, por ejemplo, son Klockner, y en la prótesis uso únicamente aditamentos originales de la marca, nunca copias compatibles. En tu presupuesto por escrito verás exactamente qué incluye tu tratamiento, y en la consulta te enseño encantada qué sistema y qué laboratorio hay detrás de cada trabajo.',
+          'Solo materiales de primeras marcas, los mismos que uso en mi consulta de Londres y los que usaría para mi propia familia. Los implantes, por ejemplo, son Klockner o Alpha-Bio según lo que pida tu caso, y en la prótesis monto únicamente componentes originales de esa misma marca, nunca aditamentos compatibles. En tu presupuesto por escrito verás exactamente qué incluye tu tratamiento, y en la consulta te enseño encantada qué sistema y qué laboratorio hay detrás de cada trabajo.',
       },
       {
         id: 'guarantee',
         question: '¿Los tratamientos tienen garantía?',
         answer:
-          'Todo tratamiento va con un plan y un presupuesto cerrado por escrito, y el seguimiento posterior forma parte del tratamiento. Las condiciones concretas de garantía te las explico en la primera valoración, según tu caso.',
+          'Todo tratamiento va con un plan y un presupuesto cerrado por escrito. En el caso de un implante, las revisiones del primer mes y de los tres meses están incluidas; después, el mantenimiento es la visita de higiene y revisión cada seis meses, que se cobra como una limpieza. Las condiciones concretas de garantía te las explico en la primera valoración, según tu caso.',
       },
       {
         id: 'booking',
@@ -1327,7 +1338,7 @@ const es: SiteCopy = {
       {
         id: 'aligners',
         question: '¿Cómo funcionan los alineadores y cuánto cuestan?',
-        answer: `Trabajo con alineadores Ordoline. El tratamiento de una arcada cuesta desde ${formatPrice(PRICES.aligners, 'es')}; el precio final depende de la complejidad del caso y de si necesitas una o las dos arcadas. Tras la valoración te doy la cifra cerrada.`,
+        answer: `Trabajo con alineadores Ordoline. Una arcada cuesta desde ${formatPrice(PRICES.aligners, 'es')} y las dos, de forma orientativa, desde ${formatPrice(PRICES.alignersBothArches, 'es')}. El precio final depende de la complejidad del caso y del número de arcadas; tras la valoración te doy la cifra cerrada.`,
       },
       {
         id: 'payment',
@@ -1369,13 +1380,13 @@ const es: SiteCopy = {
         id: 'crownLifespan',
         question: '¿Cuánto dura una corona de zirconio?',
         answer:
-          'Muchos años: el zirconio es de lo más resistente que existe en odontología y no se oscurece. Con buena higiene y revisiones, una corona bien ajustada puede durar más de una década.',
+          'No hay una cifra que sirva para todas las bocas. El zirconio es un material muy resistente y no se oscurece, pero lo que marca la diferencia es el día a día: cepillado e higiene interdental igual que con tus dientes naturales, revisiones regulares, férula de descarga si aprietas por la noche y, si fumas, dejarlo.',
       },
       {
         id: 'implantLifespan',
         question: '¿Cuánto dura un implante dental?',
         answer:
-          'Bien colocado y bien cuidado, un implante puede durar décadas. Las dos claves están en tus manos y en las mías: una higiene diaria a conciencia y revisiones regulares para que la encía y el hueso de alrededor se mantengan sanos.',
+          'Depende sobre todo de cómo se cuide, y eso está en tus manos y en las mías: higiene diaria a conciencia, igual que con tus dientes naturales, revisiones regulares para vigilar la encía y el hueso de alrededor, férula de descarga si aprietas al dormir y, si fumas, dejarlo. El tabaco es lo que más juega en contra de un implante.',
       },
       {
         id: 'implantSmoking',
@@ -1422,8 +1433,7 @@ const es: SiteCopy = {
       {
         id: 'bleedingGums',
         question: 'Me sangran las encías al cepillarme. ¿Es normal?',
-        answer:
-          'No, sangrar no es normal: suele ser señal de encía inflamada por la placa y el sarro. Se resuelve con una buena limpieza y la técnica de higiene adecuada; dejarlo pasar puede acabar afectando al hueso que sujeta los dientes, así que mejor verlo pronto.',
+        answer: `No, sangrar no es normal: suele ser señal de encía inflamada por la placa y el sarro. Si está en la superficie se resuelve con una buena limpieza y la técnica de higiene adecuada. Si ya ha bajado hacia la raíz, el tratamiento es un raspado y alisado radicular, desde ${formatPrice(PRICES.periodontics, 'es')} por cuadrante. Dejarlo pasar puede acabar afectando al hueso que sujeta los dientes, así que mejor verlo pronto.`,
       },
       {
         id: 'bruxismSigns',
@@ -1759,7 +1769,7 @@ const en: SiteCopy = {
       },
       meta: {
         title: 'Dental implants in Málaga - Dr. Eugenia Vila',
-        description: `Klockner dental implants in El Palo, Málaga, from ${formatPrice(PRICES.implantOnly, 'en')} plus ${formatPrice(PRICES.zirconiaCrown, 'en')} for the zirconia crown. ${CLINIC.years} years of implantology experience and a fixed written quote.`,
+        description: `Klockner and Alpha-Bio dental implants in El Palo, Málaga, from ${formatPrice(PRICES.implantOnly, 'en')} plus ${formatPrice(PRICES.zirconiaCrown, 'en')} for the zirconia crown. ${CLINIC.years} years of implantology experience and a fixed written quote.`,
       },
       title: 'Dental implants',
       lead: 'Missing a tooth, or several, and no longer eating or smiling with ease? An implant replaces it from the root: fixed, natural and made to last for many years.',
@@ -1767,7 +1777,7 @@ const en: SiteCopy = {
         title: 'What is a dental implant?',
         body: [
           'An implant is an artificial titanium root placed in the bone, where the root of your tooth used to be. A zirconia crown matched to the colour of your teeth is fixed on top.',
-          'It does not come in and out: it stays fixed, and when you eat and smile it feels like a tooth of your own. I work with Klockner implants, planned on a 3D scan I assess myself.',
+          'It does not come in and out: it stays fixed, and when you eat and smile it feels like a tooth of your own. I work with Klockner or Alpha-Bio implants, whichever suits your case, planned on a 3D scan I assess myself.',
         ],
       },
       situations: {
@@ -1813,7 +1823,8 @@ const en: SiteCopy = {
           },
           {
             title: 'Osseointegration',
-            description: 'Over a few months the bone bonds to the implant until it is as firm as a natural root.',
+            description:
+              'The bone bonds to the implant until it is as firm as a natural root. That usually takes 3 to 4 months, or 6 to 8 if your case needed a graft.',
           },
           {
             title: 'Your final crown',
@@ -1823,8 +1834,9 @@ const en: SiteCopy = {
         ],
       },
       whyMeExtra: {
-        title: 'Klockner with original components',
-        description: 'Never compatible copies: the fit is exact and your implant stays protected in the long run.',
+        title: 'Klockner or Alpha-Bio, with original components',
+        description:
+          'I choose the brand to suit your case and always fit that brand’s original components, never compatible copies: the fit is exact and your implant stays protected in the long run.',
       },
       priceGroup: {
         title: 'Implant prices',
@@ -1832,12 +1844,12 @@ const en: SiteCopy = {
           {
             id: 'implantOnly',
             label: 'Dental implant',
-            note: 'Placement of the implant, the artificial root the crown will sit on',
+            note: 'Placement of the implant, the artificial root the crown will sit on. If you only want this part, it can be booked on its own at that price',
           },
           {
             id: 'zirconiaCrown',
             label: 'Zirconia crown on the implant',
-            note: 'The visible tooth fixed onto the implant',
+            note: 'The visible tooth fixed onto the implant, with its original abutment included',
           },
           {
             id: 'boneGraft',
@@ -1845,12 +1857,11 @@ const en: SiteCopy = {
             note: 'When there is not enough bone where the implant goes. Includes the biomaterial and the regeneration membrane',
           },
           {
-            id: 'sinusLift',
             label: 'Sinus lift',
-            note: 'So implants can be placed in the upper back teeth when bone height is short',
+            note: 'So implants can be placed in the upper back teeth when bone height is short. Only if your case needs it, and priced for you after the first assessment',
           },
         ],
-        note: `Implant and zirconia crown together: from ${formatPrice(PRICES.implantCrown, 'en')}, crown included. A graft or a sinus lift is only carried out if your case needs one, always within the fixed quote. The 3D scan (CBCT) is taken at an external radiology centre and I assess it personally; that assessment is included in your plan.`,
+        note: `Implant and zirconia crown together: from ${formatPrice(PRICES.implantCrown, 'en')}, crown included, and with the brand’s original abutment inside that figure rather than billed separately. If you would rather book only the surgical part, implant placement has its own price. A graft or a sinus lift is carried out only if your case needs it: the graft has a starting price, and the sinus lift is quoted for you in writing before we start. The 3D scan (CBCT) is taken at an external radiology centre and I assess it personally; that assessment is included in your plan.`,
       },
       cta: {
         title: 'Missing teeth? Get back a complete, fixed smile.',
@@ -1942,7 +1953,7 @@ const en: SiteCopy = {
           {
             id: 'complexExtraction',
             label: 'Complex extraction',
-            note: 'Wisdom teeth, root remnants and extractions that need a surgical approach',
+            note: 'Wisdom teeth, root remnants and extractions that need a surgical approach. If the wisdom tooth is impacted in the bone, I give you the price once I have seen the X-ray',
           },
         ],
       },
@@ -2025,12 +2036,14 @@ const en: SiteCopy = {
       priceGroup: {
         title: 'Invisible orthodontics prices',
         items: [
+          { id: 'aligners', label: 'Ordoline clear aligners, one arch' },
           {
-            id: 'aligners',
-            label: 'Ordoline clear aligners',
-            note: 'One arch. The final price depends on case complexity and the number of arches',
+            id: 'alignersBothArches',
+            label: 'Ordoline clear aligners, both arches',
+            note: 'A guide figure: many cases need the upper and lower teeth moving together for the bite to end up meeting properly',
           },
         ],
+        note: 'The final price depends on case complexity and on the number of arches. After your assessment and the 3D simulation you receive the fixed figure in writing.',
       },
       cta: {
         title: 'Want to know if aligners are right for you?',
@@ -2164,7 +2177,7 @@ const en: SiteCopy = {
           {
             title: 'Your gums bleed',
             description:
-              'Bleeding is not normal: it usually means inflamed gums, and caught early it is solved with a cleaning and the right technique.',
+              'Bleeding is not normal: it almost always means inflamed gums. If it is still on the surface, a cleaning and the right hygiene technique sort it out. If it has gone down towards the root, I do a scaling and root planing quadrant by quadrant to clean it below the gum.',
           },
         ],
       },
@@ -2204,8 +2217,13 @@ const en: SiteCopy = {
           { id: 'filling', label: 'Composite filling' },
           { id: 'reconstruction', label: 'Tooth build-up (reconstruction)' },
           {
+            id: 'periodontics',
+            label: 'Periodontics: scaling and root planing',
+            note: 'Gum treatment for when the inflammation has gone below the gum line. Price per quadrant',
+          },
+          {
             id: 'nightGuard',
-            label: 'Night guard',
+            label: 'Michigan-type night guard',
             note: 'If you clench or grind your teeth in your sleep. Custom-made to protect the enamel and relax the jaw',
           },
         ],
@@ -2261,7 +2279,8 @@ const en: SiteCopy = {
         steps: [
           {
             title: 'Assessing the tooth',
-            description: 'I check how it is doing and explain the best way to restore it.',
+            description:
+              'I check how it is doing and explain the best way to restore it. If your bite calls for orthodontics before the crown, I say so before anything is cut.',
           },
           {
             title: 'Fixed quote',
@@ -2330,6 +2349,8 @@ const en: SiteCopy = {
           title: 'The price comes in two parts',
           body: [
             `An implant is not a single piece but two: the artificial root that integrates with the bone, and the visible tooth on top. Placing the implant starts from ${formatPrice(PRICES.implantOnly, 'en')} and the zirconia crown from ${formatPrice(PRICES.zirconiaCrown, 'en')}, which is ${formatPrice(PRICES.implantCrown, 'en')} for the complete treatment.`,
+            'The two parts really are separate: if it makes sense in your case to stop at the surgery for now, you can book implant placement on its own at that price and leave the crown for later.',
+            `And the abutment, the piece that joins the implant to the crown, is inside that ${formatPrice(PRICES.implantCrown, 'en')}. It is worth asking about at any clinic, because the abutment is sometimes billed separately, and that is where a quote that looked fixed starts to grow.`,
             'Seeing it split helps when comparing quotes: sometimes a low-looking figure covers only the implant and the crown is added later. Always ask whether the price you are given already includes the tooth you can see.',
           ],
         },
@@ -2343,7 +2364,7 @@ const en: SiteCopy = {
         {
           title: 'When a graft or a sinus lift is needed',
           body: [
-            `When there is not enough bone to anchor the implant. A graft (from ${formatPrice(PRICES.boneGraft, 'en')}) adds the missing volume, and a sinus lift (from ${formatPrice(PRICES.sinusLift, 'en')}) gains height in the upper back teeth, where the maxillary sinus drops over the years.`,
+            `When there is not enough bone to anchor the implant. A graft (from ${formatPrice(PRICES.boneGraft, 'en')}) adds the missing volume, and a sinus lift gains height in the upper back teeth, where the maxillary sinus drops over the years. The sinus lift carries no starting price because it varies so much from case to case: I quote it for you in writing after the first visit.`,
             'They are not an extra added as a matter of course: they are only done if your case needs them, they show up on the 3D scan before we start, and they are part of the fixed quote from the outset, not halfway through treatment.',
           ],
         },
@@ -2352,13 +2373,13 @@ const en: SiteCopy = {
           body: [
             'The first assessment is free: I examine you, explain your options and you leave with a written quote, with no obligation.',
             'The 3D scan (CBCT) is taken at a nearby radiology centre because the equipment is not in the practice. I read and plan it personally, and if you go ahead with treatment, what you paid for it is deducted from the quote.',
-            'Check-ups and follow-up are part of the treatment, not billed separately.',
+            'Once the implant is placed, the check-ups at around one month and around three months are included. After that, maintenance is the same as for any mouth: a hygiene and check-up visit every six months, charged like a normal cleaning.',
           ],
         },
         {
           title: 'What to ask before deciding',
           body: [
-            'Which implant brand will be used, and what components will the prosthesis carry? At my practice they are Klockner implants with original Klockner components only, never compatible copies: the fit is exact and the implant stays protected long term.',
+            'Which implant brand will be used, and what components will the prosthesis carry? At my practice I work with Klockner or Alpha-Bio, whichever suits your case, and always with original components from the brand that was placed, never compatible copies: the fit is exact and the implant stays protected long term.',
             'Who plans and who places the implant, and will you see that same person at your check-ups?',
             'Is the quote fixed and in writing before starting? The price agreed should be the price you pay at the end.',
           ],
@@ -2575,13 +2596,13 @@ const en: SiteCopy = {
         id: 'materials',
         question: 'Which materials do you use?',
         answer:
-          'Only leading-brand materials, the same ones I use in my London practice and the ones I would choose for my own family. The implants, for example, are Klockner, and in the prosthesis I use only the brand’s original components, never compatible copies. Your written quote shows exactly what your treatment includes, and at the clinic I will gladly show you which system and which laboratory are behind each piece of work.',
+          'Only leading-brand materials, the same ones I use in my London practice and the ones I would choose for my own family. The implants, for example, are Klockner or Alpha-Bio depending on your case, and in the prosthesis I fit only that same brand’s original components, never compatible copies. Your written quote shows exactly what your treatment includes, and at the clinic I will gladly show you which system and which laboratory are behind each piece of work.',
       },
       {
         id: 'guarantee',
         question: 'Do treatments come with a guarantee?',
         answer:
-          'Every treatment comes with a written plan and a fixed quote, and follow-up care is part of the treatment. I explain the specific guarantee terms at your first assessment, based on your case.',
+          'Every treatment comes with a written plan and a fixed quote. With an implant, the check-ups at around one month and around three months are included; after that, maintenance is a hygiene and check-up visit every six months, charged like a cleaning. I explain the specific guarantee terms at your first assessment, based on your case.',
       },
       {
         id: 'booking',
@@ -2616,7 +2637,7 @@ const en: SiteCopy = {
       {
         id: 'aligners',
         question: 'How do aligners work and what do they cost?',
-        answer: `I work with Ordoline aligners. Treatment for one arch costs from ${formatPrice(PRICES.aligners, 'en')}; the final price depends on case complexity and on whether you need one or both arches. After your assessment I give you the fixed figure.`,
+        answer: `I work with Ordoline aligners. One arch costs from ${formatPrice(PRICES.aligners, 'en')}, and both arches from ${formatPrice(PRICES.alignersBothArches, 'en')} as a guide figure. The final price depends on case complexity and on the number of arches; after your assessment I give you the fixed figure.`,
       },
       {
         id: 'payment',
@@ -2658,13 +2679,13 @@ const en: SiteCopy = {
         id: 'crownLifespan',
         question: 'How long does a zirconia crown last?',
         answer:
-          'Many years: zirconia is among the strongest materials in dentistry and does not darken. With good hygiene and check-ups, a well-fitted crown can last more than a decade.',
+          'There is no single figure that holds for every mouth. Zirconia is a very strong material and does not darken, but what makes the difference is the day to day: brushing and interdental cleaning just as with your natural teeth, regular check-ups, a night guard if you clench at night and, if you smoke, giving up.',
       },
       {
         id: 'implantLifespan',
         question: 'How long does a dental implant last?',
         answer:
-          'Well placed and well cared for, an implant can last for decades. The two keys are in your hands and mine: thorough daily hygiene and regular check-ups so the gum and bone around it stay healthy.',
+          'It depends above all on how it is looked after, and that is in your hands and mine: thorough daily hygiene, just as with your natural teeth, regular check-ups so the gum and bone around it stay healthy, a night guard if you clench in your sleep and, if you smoke, giving up. Tobacco is what works hardest against an implant.',
       },
       {
         id: 'implantSmoking',
@@ -2711,8 +2732,7 @@ const en: SiteCopy = {
       {
         id: 'bleedingGums',
         question: 'My gums bleed when I brush. Is that normal?',
-        answer:
-          'No, bleeding is not normal: it is usually a sign of gum inflammation caused by plaque and tartar. A good cleaning and the right hygiene technique resolve it; left alone it can end up affecting the bone that holds your teeth, so it is best seen early.',
+        answer: `No, bleeding is not normal: it is usually a sign of gum inflammation caused by plaque and tartar. If it is on the surface, a good cleaning and the right hygiene technique resolve it. If it has already gone down towards the root, the treatment is scaling and root planing, from ${formatPrice(PRICES.periodontics, 'en')} per quadrant. Left alone it can end up affecting the bone that holds your teeth, so it is best seen early.`,
       },
       {
         id: 'bruxismSigns',
