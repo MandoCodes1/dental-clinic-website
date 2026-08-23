@@ -1600,45 +1600,45 @@ const en: SiteCopy = {
   },
   meta: {
     home: {
-      title: 'Dr. Eugenia Vila - Dental Clinic in El Palo, Málaga',
-      description: `Dental clinic in El Palo, Málaga. ${CLINIC.years} years of experience in implants, oral surgery, aligners and cosmetic dentistry. Warm, personal care and top-quality materials, always with Dr. Eugenia Vila herself.`,
+      title: 'Dr Eugenia Vila - Dental Clinic in El Palo, Málaga',
+      description: `Dental clinic in El Palo, Málaga. ${CLINIC.years} years of experience in implants, oral surgery, aligners and cosmetic dentistry. Warm, personal care and top-quality materials, always with Dr Eugenia Vila herself.`,
     },
     about: {
-      title: 'About - Dr. Eugenia Vila',
-      description: `Meet Dr. Eugenia Vila: a medical doctor and dentist, with master’s degrees in Implantology and Aesthetics, ${CLINIC.years} years of experience and Dentist of the Year 2024.`,
+      title: 'About - Dr Eugenia Vila',
+      description: `Meet Dr Eugenia Vila: a medical doctor and dentist, with master’s degrees in Implantology and Aesthetics, ${CLINIC.years} years of experience and Dentist of the Year 2024.`,
     },
     treatments: {
-      title: 'Treatments & prices - Dr. Eugenia Vila',
+      title: 'Treatments & prices - Dr Eugenia Vila',
       description:
-        'All treatments at Dr. Eugenia Vila’s clinic in El Palo, Málaga: implants, invisible orthodontics, cosmetic dentistry, crowns and more, with details and starting prices for each one.',
+        'All treatments at Dr Eugenia Vila’s clinic in El Palo, Málaga: implants, invisible orthodontics, cosmetic dentistry, crowns and more, with details and starting prices for each one.',
     },
     gallery: {
-      title: 'Before & after - Dr. Eugenia Vila',
+      title: 'Before & after - Dr Eugenia Vila',
       description:
-        'Real patient cases treated by Dr. Eugenia Vila: implants, full-mouth rehabilitations and cosmetic dentistry.',
+        'Real patient cases treated by Dr Eugenia Vila: implants, full-mouth rehabilitations and cosmetic dentistry.',
     },
     reviews: {
-      title: 'Reviews - Dr. Eugenia Vila',
+      title: 'Reviews - Dr Eugenia Vila',
       description:
-        'A 5.0 average rating on Google and Trustpilot: real reviews from Dr. Eugenia Vila’s patients in Málaga and London.',
+        'A 5.0 average rating on Google and Trustpilot: real reviews from Dr Eugenia Vila’s patients in Málaga and London.',
     },
     contact: {
-      title: 'Contact - Dr. Eugenia Vila',
+      title: 'Contact - Dr Eugenia Vila',
       description:
-        'Book an appointment at Dr. Eugenia Vila’s dental clinic in El Palo, Málaga. WhatsApp +34 679 975 580.',
+        'Book an appointment at Dr Eugenia Vila’s dental clinic in El Palo, Málaga. WhatsApp +34 679 975 580.',
     },
     products: {
-      title: 'Recommended products - Dr. Eugenia Vila',
+      title: 'Recommended products - Dr Eugenia Vila',
       description:
-        'Oral-care products recommended by Dr. Eugenia Vila: brushing, interdental cleaning and more, chosen on clinical grounds.',
+        'Oral-care products recommended by Dr Eugenia Vila: brushing, interdental cleaning and more, chosen on clinical grounds.',
     },
     faq: {
-      title: 'FAQ - Dr. Eugenia Vila',
+      title: 'FAQ - Dr Eugenia Vila',
       description:
         'Clear answers about dental implants in El Palo, Málaga: prices and what they include, materials, guarantees, your first visit and how to book.',
     },
     guides: {
-      title: 'Dental guides - Dr. Eugenia Vila',
+      title: 'Dental guides - Dr Eugenia Vila',
       description:
         'Clear guides to help you decide: how much a dental implant costs in Málaga, how to choose a dentist, and English-speaking dental care in El Palo.',
     },
@@ -1647,11 +1647,11 @@ const en: SiteCopy = {
   hero: {
     eyebrow: 'Dental clinic in El Palo, Málaga',
     title: 'Your smile, in the best hands',
-    subtitle: `${CLINIC.years} years caring for smiles in Málaga, with warm, straightforward care. You are always seen personally by Dr. Eugenia Vila, with unhurried visits and top-quality materials.`,
+    subtitle: `${CLINIC.years} years caring for smiles in Málaga, with warm, straightforward care. You are always seen personally by Dr Eugenia Vila, with unhurried visits and top-quality materials.`,
     ctaBook: 'Book on WhatsApp',
     ctaTreatments: 'See treatments',
     availability: 'Free first assessment · By appointment · The doctor replies to you herself',
-    imageAlt: 'Dr. Eugenia Vila at her practice',
+    imageAlt: 'Dr Eugenia Vila at her practice',
   },
   credentials: {
     title: 'A career that speaks for itself',
@@ -1667,8 +1667,9 @@ const en: SiteCopy = {
     title: 'Real care, not a franchise',
     items: [
       {
-        title: 'Always treated by Dr. Vila herself',
-        description: 'One dentist who knows you and follows your care at every visit, with no staff rotation.',
+        title: 'Always treated by Dr Vila herself',
+        description:
+          'One dentist who knows you and sees your care through at every visit; you are never passed from one clinician to another.',
       },
       {
         title: 'A clear plan, in writing',
@@ -1706,7 +1707,7 @@ const en: SiteCopy = {
       points: [
         {
           title: `${CLINIC.years} years of experience`,
-          description: 'Since 1994 I have treated more than 20,000 patients between Málaga and London.',
+          description: 'Since 1994 I have treated more than 20,000 patients in Málaga and London.',
         },
         {
           title: 'Dentist of the Year 2024',
@@ -1738,7 +1739,8 @@ const en: SiteCopy = {
       items: [
         {
           title: 'You see me at every visit',
-          description: 'The person who assesses you is the one who treats you and follows up: me. No staff rotation.',
+          description:
+            'The person who assesses you is the one who treats you and follows up: me. You are never passed from one clinician to another.',
         },
         {
           title: 'A fixed, written quote',
@@ -1768,7 +1770,7 @@ const en: SiteCopy = {
           'Replace missing teeth with fixed implants that look and feel natural, planned and placed by the doctor herself.',
       },
       meta: {
-        title: 'Dental implants in Málaga - Dr. Eugenia Vila',
+        title: 'Dental implants in Málaga - Dr Eugenia Vila',
         description: `Klockner or Alpha-Bio dental implants in El Palo, Málaga, from ${formatPrice(PRICES.implantOnly, 'en')} plus ${formatPrice(PRICES.zirconiaCrown, 'en')} for the zirconia crown. ${CLINIC.years} years of implantology experience and a fixed written quote.`,
       },
       title: 'Dental implants',
@@ -1799,7 +1801,7 @@ const en: SiteCopy = {
           {
             title: 'You have been told you lack bone',
             description:
-              'A graft or a sinus lift prepares the area when the bone is not enough. Only if your case needs it.',
+              'A graft or a sinus lift prepares the area when there is not enough bone. Only if your case needs it.',
           },
         ],
       },
@@ -1829,7 +1831,7 @@ const en: SiteCopy = {
           {
             title: 'Your final crown',
             description:
-              'I fit the zirconia crown and adjust shape and colour until it is simply one more tooth. Then we look after it together at your check-ups.',
+              'I fit the zirconia crown and adjust shape and colour until it is just another one of your own teeth. Then we look after it together at your check-ups.',
           },
         ],
       },
@@ -1844,7 +1846,7 @@ const en: SiteCopy = {
           {
             id: 'implantOnly',
             label: 'Dental implant',
-            note: 'Placement of the implant, the artificial root the crown will sit on. If for now you only want this part, you can book it separately',
+            note: 'Placement of the implant, the artificial root the crown will sit on. If you only want this part for now, you can book it separately',
           },
           {
             id: 'zirconiaCrown',
@@ -1858,13 +1860,13 @@ const en: SiteCopy = {
           },
           {
             label: 'Sinus lift',
-            note: 'So implants can be placed in the upper back teeth when bone height is short. Only if your case needs it, and priced for you after the first assessment',
+            note: 'So implants can be placed in the upper back teeth where bone height is lacking. Only if your case needs it, and priced for you after the first assessment',
           },
         ],
-        note: `Implant and zirconia crown together: from ${formatPrice(PRICES.implantCrown, 'en')}, crown included, and with the brand’s original abutment inside that figure rather than billed separately. If you would rather book only the surgical part, implant placement has its own price. A graft or a sinus lift is carried out only if your case needs it: the graft has a starting price, and the sinus lift is quoted for you in writing before we start. The 3D scan (CBCT) is taken at an external radiology centre and I assess it personally; that assessment is included in your plan.`,
+        note: `Implant and zirconia crown together: from ${formatPrice(PRICES.implantCrown, 'en')}, crown included, and with the brand’s original abutment included in that figure rather than billed separately. If you would rather book only the surgical part, implant placement has its own price. A graft or a sinus lift is carried out only if your case needs it: the graft has a starting price, and the sinus lift is quoted for you in writing before we start. The 3D scan (CBCT) is taken at an external radiology centre and I assess it personally; that assessment is included in your plan.`,
       },
       cta: {
-        title: 'Missing teeth? Get back a complete, fixed smile.',
+        title: 'Missing teeth? Get your full smile back, fixed in place.',
         body: 'Message me on WhatsApp, tell me about your case and I will explain the options you have, with no obligation.',
         message: 'Hello, I would like to find out about dental implants.',
       },
@@ -1877,7 +1879,7 @@ const en: SiteCopy = {
           'Extractions and surgery with careful, minimally invasive technique, for a quick and comfortable recovery.',
       },
       meta: {
-        title: 'Oral surgery in Málaga - Dr. Eugenia Vila',
+        title: 'Oral surgery in Málaga - Dr Eugenia Vila',
         description: `Simple and complex extractions, grafts and minimally invasive surgery in El Palo, Málaga. ${CLINIC.years} years of surgical experience.`,
       },
       title: 'Oral surgery',
@@ -1886,7 +1888,7 @@ const en: SiteCopy = {
         title: 'What is oral surgery?',
         body: [
           'It is the part of dentistry that deals with extractions and minor procedures in the mouth: from removing a damaged tooth to preparing the bone for an implant.',
-          `After ${CLINIC.years} years of surgery, my priority is still the same: respect the healthy tissue so recovery is quick and comfortable.`,
+          `After ${CLINIC.years} years of surgery, my priority is still the same: protect the healthy tissue so recovery is quick and comfortable.`,
         ],
       },
       situations: {
@@ -1895,7 +1897,7 @@ const en: SiteCopy = {
           {
             title: 'A tooth that cannot be saved',
             description:
-              'If a tooth is too far gone, I remove it carefully and then we look calmly at how to replace it.',
+              'If a tooth is too far gone, I remove it carefully and then we look at how to replace it, without any rush.',
           },
           {
             title: 'Wisdom teeth',
@@ -1905,7 +1907,7 @@ const en: SiteCopy = {
           {
             title: 'Remnants and difficult extractions',
             description:
-              'Root remnants and tricky teeth call for a surgical approach. I handle them unhurried and with a careful hand.',
+              'Root remnants and tricky teeth call for a surgical approach. I take my time over them, with a careful, steady hand.',
           },
           {
             title: 'Preparing the mouth for implants',
@@ -1930,7 +1932,7 @@ const en: SiteCopy = {
           {
             title: 'The procedure',
             description:
-              'With local anaesthetic it does not hurt: you will feel pressure, nothing more. A careful technique that respects bone and gum.',
+              'With local anaesthetic it does not hurt: you will feel pressure, nothing more. A careful technique that preserves bone and gum.',
           },
           {
             title: 'Aftercare at home',
@@ -1970,7 +1972,7 @@ const en: SiteCopy = {
         description: 'Straighten your smile with clear, comfortable, nearly invisible aligners, with no metal braces.',
       },
       meta: {
-        title: 'Invisible orthodontics in Málaga - Dr. Eugenia Vila',
+        title: 'Invisible orthodontics in Málaga - Dr Eugenia Vila',
         description: `Invisible orthodontics with Ordoline aligners in El Palo, Málaga, from ${formatPrice(PRICES.aligners, 'en')} per arch. A tailored plan and check-ups with the doctor herself.`,
       },
       title: 'Invisible orthodontics',
@@ -1992,10 +1994,10 @@ const en: SiteCopy = {
           },
           {
             title: 'Gaps between teeth',
-            description: 'The spaces close gradually and under control, towards an even smile.',
+            description: 'The gaps close gradually, in a controlled way, until the smile is even.',
           },
           {
-            title: 'Teeth that have shifted since',
+            title: 'Teeth that have moved since braces',
             description:
               'If you had braces years ago and your teeth have moved, aligners can bring them back into place.',
           },
@@ -2021,7 +2023,7 @@ const en: SiteCopy = {
           {
             title: 'Check-ups with me',
             description:
-              'I check myself that everything follows the simulation, and correct in time if anything drifts.',
+              'I personally check that everything is tracking the simulation, and step in early if anything drifts.',
           },
           {
             title: 'Retention',
@@ -2040,7 +2042,7 @@ const en: SiteCopy = {
           {
             id: 'alignersBothArches',
             label: 'Ordoline clear aligners, both arches',
-            note: 'A guide figure: many cases need the upper and lower teeth moving together for the bite to end up meeting properly',
+            note: 'A guide figure: many cases need the upper and lower teeth moving together so the bite ends up meeting properly',
           },
         ],
         note: 'The final price depends on case complexity and on the number of arches. After your assessment and the 3D simulation you receive the fixed figure in writing.',
@@ -2059,7 +2061,7 @@ const en: SiteCopy = {
           'Professional whitening and veneers that improve your smile while always respecting your natural look.',
       },
       meta: {
-        title: 'Cosmetic dentistry in Málaga - Dr. Eugenia Vila',
+        title: 'Cosmetic dentistry in Málaga - Dr Eugenia Vila',
         description: `Teeth whitening from ${formatPrice(PRICES.whitening, 'en')} and composite veneers from ${formatPrice(PRICES.compositeVeneer, 'en')} in El Palo, Málaga. Aesthetics that respect your natural smile.`,
       },
       title: 'Cosmetic dentistry',
@@ -2076,7 +2078,7 @@ const en: SiteCopy = {
         items: [
           {
             title: 'The colour',
-            description: 'Professional whitening with custom trays lightens your teeth safely and under control.',
+            description: 'Professional whitening with custom trays lightens your teeth safely, in a controlled way.',
           },
           {
             title: 'The shape or the edges',
@@ -2096,7 +2098,7 @@ const en: SiteCopy = {
           {
             title: 'Listening',
             description:
-              'You tell me what you would like to change and I tell you sincerely what I would do and what I would not.',
+              'You tell me what you would like to change and I tell you frankly what I would do and what I would not.',
           },
           {
             title: 'Plan and fixed quote',
@@ -2104,7 +2106,8 @@ const en: SiteCopy = {
           },
           {
             title: 'Whitening, if it is part of your plan',
-            description: 'Custom trays and joint follow-up until we reach a natural white, without overdoing it.',
+            description:
+              'Custom trays, and we track the progress together until we reach a natural white, without overdoing it.',
           },
           {
             title: 'Composite veneers',
@@ -2113,14 +2116,14 @@ const en: SiteCopy = {
           },
           {
             title: 'Review and touch-ups',
-            description: 'A few days later I review the result calmly and make any final adjustments.',
+            description: 'A few days later I go over the result in detail and make any final adjustments.',
           },
         ],
       },
       whyMeExtra: {
         title: 'Specific training in aesthetics',
         description:
-          'Trained in aesthetics at the University of Córdoba, working the composite layer by layer, unhurried.',
+          'Trained in aesthetics at the University of Córdoba, working the composite layer by layer, taking the time it needs.',
       },
       priceGroup: {
         title: 'Cosmetic dentistry prices',
@@ -2147,7 +2150,7 @@ const en: SiteCopy = {
           'Cleanings, fillings and unhurried check-ups: everyday care, done calmly and with top-quality materials.',
       },
       meta: {
-        title: 'General dentistry in Málaga - Dr. Eugenia Vila',
+        title: 'General dentistry in Málaga - Dr Eugenia Vila',
         description: `Dental cleaning from ${formatPrice(PRICES.cleaning, 'en')}, fillings from ${formatPrice(PRICES.filling, 'en')} and night guards in El Palo, Málaga. Trusted dentistry for the whole family.`,
       },
       title: 'General dentistry',
@@ -2164,7 +2167,7 @@ const en: SiteCopy = {
         items: [
           {
             title: 'A check-up and a cleaning',
-            description: 'I examine teeth and gums, remove the tartar and tell you how everything is, in plain words.',
+            description: 'I examine teeth and gums, remove the tartar and tell you how everything is, in plain terms.',
           },
           {
             title: 'A cavity or a broken tooth',
@@ -2184,7 +2187,7 @@ const en: SiteCopy = {
       process: {
         title: 'A check-up, step by step',
         intro:
-          'Whether it is your first visit or your yearly check-up, the goal is that you leave knowing how your mouth is and what it needs, if anything.',
+          'Whether it is your first visit or your yearly check-up, the aim is for you to leave knowing how your mouth is and what it needs, if anything.',
         steps: [
           {
             title: 'An unhurried check-up',
@@ -2194,11 +2197,12 @@ const en: SiteCopy = {
           {
             title: 'A careful cleaning',
             description:
-              'I remove tartar and staining while respecting the enamel, and show you the hygiene habits for your mouth.',
+              'I remove tartar and staining while protecting the enamel, and show you the hygiene habits for your mouth.',
           },
           {
             title: 'Treatment by priority',
-            description: 'If something needs treating, we order the plan and you receive your fixed written quote.',
+            description:
+              'If something needs treating, we plan the work in order of priority and you receive your fixed written quote.',
           },
           {
             title: 'Maintenance at your pace',
@@ -2239,10 +2243,10 @@ const en: SiteCopy = {
       card: {
         title: 'Crowns & prosthetics',
         description:
-          'Zirconia crowns and rehabilitation of worn teeth to give your mouth back its function and its looks.',
+          'Zirconia crowns and rehabilitation of worn teeth to give your mouth back its function and its appearance.',
       },
       meta: {
-        title: 'Crowns & prosthetics in Málaga - Dr. Eugenia Vila',
+        title: 'Crowns & prosthetics in Málaga - Dr Eugenia Vila',
         description: `Zirconia crowns from ${formatPrice(PRICES.zirconiaCrown, 'en')} and bite rehabilitation in El Palo, Málaga. The same materials and laboratories as my London practice.`,
       },
       title: 'Crowns & prosthetics',
@@ -2269,7 +2273,7 @@ const en: SiteCopy = {
           {
             title: 'A worn-down bite',
             description:
-              'If wear has shortened your teeth, a full rehabilitation gives them back their height, their function and their looks.',
+              'If wear has shortened your teeth, a full rehabilitation gives them back their height, their function and their appearance.',
           },
         ],
       },
@@ -2312,7 +2316,7 @@ const en: SiteCopy = {
           { id: 'zirconiaCrown', label: 'Zirconia crown' },
           {
             label: 'Restoring heavily worn teeth',
-            note: 'When wear has shortened the teeth and lowered the height of the bite, the teeth are given back their shape, their function and their looks',
+            note: 'When wear has shortened the teeth and lowered the height of the bite, the teeth are given back their shape, their function and their appearance',
           },
         ],
         note: 'Every worn bite is different, so bite rehabilitation has no useful starting price: it depends on how many teeth need rebuilding and on the state of the bite. I study your case and give you a fixed quote before anything is touched.',
@@ -2336,10 +2340,10 @@ const en: SiteCopy = {
       navLabel: 'Dental implant cost',
       card: {
         title: 'How much does a dental implant cost in Málaga?',
-        description: 'Exactly what you pay for, what makes the final price change and what to ask before you decide.',
+        description: 'Exactly what you pay for, what changes the final price and what to ask before you decide.',
       },
       meta: {
-        title: 'How much does a dental implant cost in Málaga? - Dr. Eugenia Vila',
+        title: 'How much does a dental implant cost in Málaga? - Dr Eugenia Vila',
         description: `Dental implant prices in Málaga: from ${formatPrice(PRICES.implantOnly, 'en')} for the implant and ${formatPrice(PRICES.zirconiaCrown, 'en')} for the zirconia crown. What is included, what changes the price and what to ask before deciding.`,
       },
       title: 'How much does a dental implant cost in Málaga?',
@@ -2348,17 +2352,17 @@ const en: SiteCopy = {
         {
           title: 'The price comes in two parts',
           body: [
-            `An implant is not a single piece but two: the artificial root that integrates with the bone, and the visible tooth on top. Placing the implant starts from ${formatPrice(PRICES.implantOnly, 'en')} and the zirconia crown from ${formatPrice(PRICES.zirconiaCrown, 'en')}, which is ${formatPrice(PRICES.implantCrown, 'en')} for the complete treatment.`,
-            'They are two independent parts: if it makes sense in your case to stop at the surgery for now, you can book implant placement on its own at that price and leave the crown for later.',
-            `And the abutment, the piece that joins the implant to the crown, is inside that ${formatPrice(PRICES.implantCrown, 'en')}.`,
-            'Seeing it split helps when comparing quotes: sometimes a low-looking figure covers only the implant and the crown is added later. Always ask whether the price you are given already includes the tooth you can see.',
+            `An implant is not a single piece but two: the artificial root that integrates with the bone, and the visible tooth on top. Placing the implant starts from ${formatPrice(PRICES.implantOnly, 'en')} and the zirconia crown from ${formatPrice(PRICES.zirconiaCrown, 'en')}, which comes to ${formatPrice(PRICES.implantCrown, 'en')} for the complete treatment.`,
+            'They are two independent parts: if it makes sense in your case to stop after the surgical stage for now, you can book implant placement on its own at that price and leave the crown for later.',
+            `And the abutment, the piece that joins the implant to the crown, is already included in that ${formatPrice(PRICES.implantCrown, 'en')}.`,
+            'Seeing it split helps when comparing quotes: sometimes a figure that looks low covers only the implant and the crown is added later. Always ask whether the price you are given already includes the tooth you can see.',
           ],
         },
         {
           title: 'What the final price depends on',
           body: [
             'On how many teeth are missing and on the state of the bone where the implant goes. A single implant in healthy bone is the simplest case; several teeth, or bone that has lost volume after years without a tooth, need more planning and sometimes extra steps.',
-            'The rest of the mouth matters too. If there are inflamed gums or active decay, those are treated first: an implant goes into a healthy mouth, never alongside a fire being put out next door.',
+            'The rest of the mouth matters too. If there are inflamed gums or active decay, those are treated first: an implant goes into a healthy mouth, not one where there is still a fire to put out.',
           ],
         },
         {
@@ -2398,9 +2402,9 @@ const en: SiteCopy = {
         description: 'Care in English and Spanish, from a dentist also registered in the United Kingdom.',
       },
       meta: {
-        title: 'English-speaking dentist in Málaga - Dr. Eugenia Vila',
+        title: 'English-speaking dentist in Málaga - Dr Eugenia Vila',
         description:
-          'Bilingual dentist in El Palo, Málaga: Dr. Eugenia Vila treats patients in English and Spanish, practises at a London implant clinic and is registered with the UK GDC.',
+          'Bilingual dentist in El Palo, Málaga: Dr Eugenia Vila treats patients in English and Spanish, practises at a London implant clinic and is registered with the UK GDC.',
       },
       title: 'English-speaking dentist in Málaga',
       lead: 'If you live in Málaga or spend part of the year here and would rather have your treatment explained in English, that comes naturally at my practice in El Palo: I spend half the year working at an implant clinic in London.',
@@ -2408,7 +2412,7 @@ const en: SiteCopy = {
         {
           title: 'Appointments in English and Spanish',
           body: [
-            'I see you myself, in whichever language you prefer, with no interpreters and no misunderstandings. In a dental appointment that matters: properly understanding what is being proposed, why, and what the alternatives are is what lets you decide calmly.',
+            'I see you myself, in whichever language you prefer, with no interpreters and no misunderstandings. In a dental appointment that matters: properly understanding what is being proposed, why, and what the alternatives are is what lets you decide with peace of mind.',
             'Quotes and aftercare instructions can be given to you in English too.',
           ],
         },
@@ -2429,7 +2433,7 @@ const en: SiteCopy = {
         {
           title: 'If you are visiting or living between two countries',
           body: [
-            'I hold consultations in Málaga during specific periods of the year, so it is worth writing a little in advance to fit your treatment around your dates. Many patients plan their visits around their trips.',
+            'I hold consultations in Málaga at certain times of the year, so it is worth getting in touch a little in advance to fit your treatment around your dates. Many patients plan their visits around their trips.',
             'Message me on WhatsApp with your case and your dates and I will tell you frankly what can be done in that time and what is better not to rush.',
           ],
         },
@@ -2447,7 +2451,7 @@ const en: SiteCopy = {
         description: 'Six simple questions that tell you far more about a clinic than its advertising does.',
       },
       meta: {
-        title: 'How to choose a dentist in Málaga - Dr. Eugenia Vila',
+        title: 'How to choose a dentist in Málaga - Dr Eugenia Vila',
         description:
           'Six questions for choosing a dental clinic in Málaga: who treats you, which materials are used, whether the quote is fixed, and what happens after treatment.',
       },
@@ -2457,7 +2461,7 @@ const en: SiteCopy = {
         {
           title: '1. Who will treat you at each visit?',
           body: [
-            'At many clinics one person assesses you, another treats you and a third does your check-up. It does not have to go wrong, but details get lost along the way and you end up telling your story three times.',
+            'At many clinics one person assesses you, another treats you and a third does your check-up. That can turn out fine, but details get lost along the way and you end up telling your story three times.',
             'Ask whether you will always see the same professional, and whether whoever makes the diagnosis will be the one carrying out the treatment.',
           ],
         },
@@ -2478,7 +2482,7 @@ const en: SiteCopy = {
         {
           title: '4. How much time is given to your case?',
           body: [
-            'Time is the part of the work that does not show up in the price, and it is where the difference lies between a correct treatment and a well-finished one: adjusting a crown, polishing a veneer or checking a bite takes patience.',
+            'Time is the part of the work that does not show up in the price, and it is where the difference lies between a treatment that is merely done and one that is properly finished: adjusting a crown, polishing a veneer or checking a bite takes patience.',
             'A five-minute first visit rarely allows anyone to understand a whole case.',
           ],
         },
@@ -2486,7 +2490,7 @@ const en: SiteCopy = {
           title: '5. Can you see real reviews and cases?',
           body: [
             'Reviews with a name and detail are worth far more than an average score. Look for opinions that say which treatment was done and how the follow-up went.',
-            'If you see before-and-after photos, check whether the framing and lighting match in both. An after photo that is better lit and better groomed exaggerates the change: comparable close-ups are what really show the work.',
+            'If you see before-and-after photos, check whether the framing and lighting match in both. An ‘after’ photo taken with better lighting and grooming exaggerates the change: comparable close-ups are what really show the work.',
           ],
         },
         {
@@ -2505,7 +2509,7 @@ const en: SiteCopy = {
     },
   },
   featuredReviews: {
-    eyebrow: 'Real opinions',
+    eyebrow: 'Real reviews',
     title: 'What my patients say',
     subtitle: 'Verified reviews from Google and Trustpilot.',
     viewAll: 'Read all reviews',
@@ -2518,7 +2522,7 @@ const en: SiteCopy = {
   },
   about: {
     eyebrow: 'About',
-    title: 'Dr. Eugenia Vila',
+    title: 'Dr Eugenia Vila',
     lead: `I’m Eugenia Vila, a medical doctor and dentist, and I’ve spent ${CLINIC.years} years caring for the oral health of families in Málaga. I trained in Implantology (UIC Barcelona) and Aesthetics (University of Córdoba), and I take every case personally and without rushing, always putting the patient first.`,
     educationTitle: 'Education',
     education: [
@@ -2571,10 +2575,10 @@ const en: SiteCopy = {
       'Outside the clinic, my family comes first: I have two sons I love spending time with. I enjoy tennis, travelling, cooking and staying active.',
   },
   reviewsPage: {
-    lead: 'Real patient reviews, unfiltered. Here are some of the people who have trusted Dr. Vila with their care.',
+    lead: 'Real patient reviews, unfiltered. Here are some of the people who have trusted Dr Vila with their care.',
     basedOn: 'based on {count} reviews on Google and Trustpilot',
     malagaTitle: 'In Málaga',
-    londonTitle: 'In London, where Dr. Vila also practises',
+    londonTitle: 'In London, where Dr Vila also practises',
     cta: 'Leave your review on Google',
   },
   faqPage: {
@@ -2608,7 +2612,7 @@ const en: SiteCopy = {
         id: 'booking',
         question: 'How do I book if the doctor is not in Málaga all year?',
         answer:
-          'I hold consultations in Málaga during specific periods of the year. Message me on WhatsApp, tell me about your case and we will find the best date together; I reply personally, not a call centre.',
+          'I hold consultations in Málaga at certain times of the year. Message me on WhatsApp, tell me about your case and we will find the best date together; I reply personally, not a call centre.',
       },
       {
         id: 'firstVisit',
@@ -2649,7 +2653,7 @@ const en: SiteCopy = {
         id: 'implantPain',
         question: 'Does getting an implant hurt?',
         answer:
-          'Placement is done under local anaesthetic and does not hurt; most of my patients are surprised by how manageable it is. Any discomfort in the first days is well controlled with the written instructions I give you, and I am one WhatsApp message away for any question.',
+          'Placement is done under local anaesthetic and does not hurt; most of my patients are surprised by how manageable it is. Any discomfort over the first few days is easily managed by following the written instructions I give you, and I am one WhatsApp message away for any question.',
       },
       {
         id: 'extractionAftercare',
@@ -2673,19 +2677,19 @@ const en: SiteCopy = {
         id: 'cleaningFrequency',
         question: 'How often should I have a dental cleaning?',
         answer:
-          'For most people, once a year; if you build up tartar easily or have gum problems, every six months. At your check-up I tell you what rhythm makes sense in your case, with no unnecessary treatment.',
+          'For most people, once a year; if you build up tartar easily or have gum problems, every six months. At your check-up I tell you how often makes sense in your case, with no unnecessary treatment.',
       },
       {
         id: 'crownLifespan',
         question: 'How long does a zirconia crown last?',
         answer:
-          'Well looked after, many years, though there is no figure that fits every mouth. Zirconia is a very strong material and does not darken, and what makes the difference is the day to day: brushing and interdental cleaning just as with your natural teeth, regular check-ups, a night guard if you clench at night and, if you smoke, giving up.',
+          'Well looked after, many years, though there is no figure that fits every mouth. Zirconia is a very strong material and does not darken, and what makes the difference is the day-to-day care: brushing and interdental cleaning just as with your natural teeth, regular check-ups, a night guard if you clench at night and, if you smoke, giving up.',
       },
       {
         id: 'implantLifespan',
         question: 'How long does a dental implant last?',
         answer:
-          'It depends above all on how it is looked after, and that is in your hands and mine: thorough daily hygiene, just as with your natural teeth, regular check-ups so the gum and bone around it stay healthy, a night guard if you clench in your sleep and, if you smoke, giving up. Tobacco is what works hardest against an implant.',
+          'It depends above all on how it is looked after, and that is in your hands and mine: thorough daily hygiene, just as with your natural teeth, regular check-ups so the gum and bone around it stay healthy, a night guard if you clench in your sleep and, if you smoke, giving up. Smoking is an implant’s worst enemy.',
       },
       {
         id: 'implantSmoking',
@@ -2703,13 +2707,13 @@ const en: SiteCopy = {
         id: 'wisdomTeeth',
         question: 'Do wisdom teeth always have to come out?',
         answer:
-          'No. They are only worth removing when they cause problems or are about to: decay that cannot be properly treated, repeated infections, damage to the neighbouring molar or lack of room. It is assessed with an examination and an X-ray, not as a routine.',
+          'No. They are only worth removing when they cause problems or are about to: decay that cannot be properly treated, repeated infections, damage to the neighbouring molar or lack of room. It is assessed with an examination and an X-ray, not as a matter of routine.',
       },
       {
         id: 'alignersDuration',
         question: 'How long does aligner treatment take?',
         answer:
-          'It depends on your case: simple corrections can be finished in a few months, while more complete ones take over a year. With the 3D simulation you will know the estimated length of your plan before starting.',
+          'It depends on your case: simple corrections can be finished in a few months, while more involved corrections take over a year. With the 3D simulation you will know the estimated length of your plan before starting.',
       },
       {
         id: 'alignersRetention',
@@ -2721,18 +2725,18 @@ const en: SiteCopy = {
         id: 'whiteningEnamel',
         question: 'Does whitening damage the enamel?',
         answer:
-          'Done with professional products and proper follow-up, it does not damage the enamel. It can cause some passing sensitivity in the first days; that is why we set the pace together and adjust it if needed.',
+          'Done with professional products and proper follow-up, it does not damage the enamel. It can cause some passing sensitivity in the first few days; that is why we set the pace together and adjust it if needed.',
       },
       {
         id: 'veneersCare',
         question: 'How do I look after composite veneers?',
         answer:
-          'The same way you look after your teeth: good brushing, interdental cleaning and check-ups. Avoid biting hard things with your front teeth (ice, shells, opening packets), and at your check-ups we polish them so they keep their shine.',
+          'The same way you look after your teeth: good brushing, interdental cleaning and check-ups. Avoid biting hard things with your front teeth (ice, nutshells, opening packets with your teeth), and at your check-ups we polish them so they keep their shine.',
       },
       {
         id: 'bleedingGums',
         question: 'My gums bleed when I brush. Is that normal?',
-        answer: `No, bleeding is not normal: it is usually a sign of gum inflammation caused by plaque and tartar. If it is on the surface, a good cleaning and the right hygiene technique resolve it. If it has already gone down towards the root, the treatment is scaling and root planing, from ${formatPrice(PRICES.periodontics, 'en')} per quadrant. Left alone it can end up affecting the bone that holds your teeth, so it is best seen early.`,
+        answer: `No, bleeding is not normal: it is usually a sign of gum inflammation caused by plaque and tartar. If it is on the surface, a good cleaning and the right hygiene technique resolve it. If it has already gone down towards the root, the treatment is scaling and root planing, from ${formatPrice(PRICES.periodontics, 'en')} per quadrant. Left alone it can end up affecting the bone that holds your teeth, so it is best caught early.`,
       },
       {
         id: 'bruxismSigns',
@@ -2744,20 +2748,20 @@ const en: SiteCopy = {
         id: 'crownWhen',
         question: 'When is a crown needed rather than a filling?',
         answer:
-          'When little healthy tooth is left: large cavities, fractures, or teeth that are heavily worn or root-canal treated. A filling repairs, but does not hold the tooth together; a crown covers it completely and spreads the chewing force, which is what stops it breaking.',
+          'When little healthy tooth is left: large cavities, fractures, or teeth that are heavily worn or root-canal treated. A filling repairs the damage, but does not hold the tooth together; a crown covers it completely and spreads the chewing force, which is what stops it breaking.',
       },
       {
         id: 'crownCare',
         question: 'Does a crown need special care?',
         answer:
-          'The usual care, done well: brushing, interdental cleaning and check-ups. The crown itself cannot decay, but the tooth underneath can at the joint line, and that is what your daily hygiene and my check-ups take care of.',
+          'The usual care, done well: brushing, interdental cleaning and check-ups. The crown itself cannot decay, but the tooth underneath can, right where the crown meets it, and that is what your daily hygiene and my check-ups take care of.',
       },
     ],
   },
   productsPage: {
     eyebrow: 'Recommendations',
     title: 'Products I recommend',
-    lead: 'These are some of the oral-care products I recommend to my patients. I choose them on clinical grounds; it is up to you whether they suit you.',
+    lead: 'These are some of the oral-care products I recommend to my patients. I choose them on clinical grounds; whether you buy them is entirely up to you.',
     disclosure:
       'Some links on this page are Amazon affiliate links: if you buy through them, I receive a small commission at no extra cost to you. I recommend these products for their clinical usefulness, not for the commission.',
     amazonStatement: 'As an Amazon Associate I earn from qualifying purchases.',
@@ -2780,16 +2784,16 @@ const en: SiteCopy = {
     comingSoon: 'I add new cases little by little. In the meantime, you can read what my patients say in the reviews.',
   },
   contact: {
-    lead: 'Book an appointment or tell me about your case. You’ll be seen by me, with no middlemen.',
+    lead: 'Book an appointment or tell me about your case. You’ll be seen by me, with no one in between.',
     whatsappTitle: 'WhatsApp',
     whatsappBody: 'The fastest way to reach me. I reply personally.',
     phoneTitle: 'Phone',
     phoneBody: 'If you would rather talk it through, call me directly.',
     emailTitle: 'Email',
     locationTitle: 'The clinic',
-    hoursTitle: 'Hours & appointments',
+    hoursTitle: 'Opening hours',
     hoursBody:
-      'I see patients by appointment. I hold consultations in Málaga during specific periods of the year; message me on WhatsApp and we’ll find the best time to see you.',
+      'I see patients by appointment. I hold consultations in Málaga at certain times of the year; message me on WhatsApp and we’ll find the best time to see you.',
     directions: 'View the route on Google Maps',
     mapCta: 'View the map',
     gettingHereTitle: 'Getting here',
@@ -2812,23 +2816,23 @@ const en: SiteCopy = {
       message: 'Message',
       messagePlaceholder: 'Tell me about your case or question',
       submit: 'Send via WhatsApp',
-      hint: 'Tapping opens WhatsApp with the message ready: you check it and send it.',
+      hint: 'Tapping opens WhatsApp with the message ready: check it over and send it yourself.',
       greeting: 'Hello, my name is',
       interest: 'I am interested in:',
     },
   },
   contactCta: {
     button: 'Message on WhatsApp',
-    defaultMessage: 'Hello, I would like to book an appointment with Dr. Vila.',
+    defaultMessage: 'Hello, I would like to book an appointment with Dr Vila.',
     home: {
       title: 'Shall we talk about your smile?',
       body: 'Message me on WhatsApp and I’ll reply personally, with no obligation.',
-      message: 'Hello, I would like to book a first visit with Dr. Vila.',
+      message: 'Hello, I would like to book a first visit with Dr Vila.',
     },
     about: {
       title: 'Now that you know me a little, let’s talk.',
       body: 'Message me on WhatsApp and I’ll reply personally, just as I would in the clinic.',
-      message: 'Hello, I would like to book an appointment with Dr. Vila.',
+      message: 'Hello, I would like to book an appointment with Dr Vila.',
     },
     treatments: {
       title: 'Not sure which treatment you need?',
