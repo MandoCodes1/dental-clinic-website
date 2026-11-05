@@ -130,6 +130,16 @@ const fieldClass =
     if (!(form instanceof HTMLFormElement)) return;
     form.addEventListener('submit', (e) => {
       e.preventDefault();
+      // `required` accepts a field of only spaces, which would open WhatsApp with
+      // "Hola, soy ." and an empty body. Clearing such fields lets the browser's
+      // own required-field message explain what is missing.
+      const fields = form.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>(
+        'input[required], textarea[required]'
+      );
+      fields.forEach((field) => {
+        if (field.value.trim() === '') field.value = '';
+      });
+      if (!form.reportValidity()) return;
       const data = new FormData(form);
       const name = String(data.get('name') ?? '').trim();
       const treatment = String(data.get('treatment') ?? '');
