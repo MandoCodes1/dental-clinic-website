@@ -12,7 +12,11 @@ const t = content[lang];
 const year = new Date().getFullYear();
 ---
 
-<footer class="bg-brand-deep text-cream/90">
+{
+  /* From sm up the fixed WhatsApp button (h-14 at bottom-5) would sit on the
+    legal links at the end of the page, so reserve that space. */
+}
+<footer class="bg-brand-deep text-cream/90 sm:pb-20">
   <div class="container-page grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
     <div>
       <p class="font-heading text-xl text-white">Dra. Eugenia Vila</p>
