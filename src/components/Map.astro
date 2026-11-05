@@ -50,5 +50,8 @@ const t = content[lang].contact;
     iframe.referrerPolicy = 'no-referrer-when-downgrade';
     iframe.allowFullscreen = true;
     btn.replaceWith(iframe);
+    // The button that had focus is gone; without this, keyboard focus falls back
+    // to the top of the document.
+    iframe.focus();
   });
 </script>
