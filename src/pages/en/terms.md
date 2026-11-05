@@ -1,5 +1,6 @@
 ---
 title: 'Terms and Conditions'
+description: 'Terms of use for the website of Dr Eugenia Vila’s dental clinic in El Palo, Málaga.'
 layout: '~/layouts/LegalLayout.astro'
 ---
 

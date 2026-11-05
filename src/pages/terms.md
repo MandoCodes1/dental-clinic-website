@@ -1,5 +1,6 @@
 ---
 title: 'Términos y Condiciones'
+description: 'Condiciones de uso de la web de la Clínica Dental Dra. Eugenia Vila en El Palo, Málaga.'
 layout: '~/layouts/LegalLayout.astro'
 ---
 

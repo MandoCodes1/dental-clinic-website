@@ -1,5 +1,6 @@
 ---
 title: 'Privacy Policy'
+description: 'How Dr Eugenia Vila’s dental clinic handles the personal data collected through this website, and how to exercise your data protection rights.'
 layout: '~/layouts/LegalLayout.astro'
 ---
 

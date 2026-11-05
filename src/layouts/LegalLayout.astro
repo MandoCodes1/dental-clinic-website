@@ -8,14 +8,11 @@ interface Props {
 const { frontmatter } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const page: RouteKey = Astro.url.pathname.includes('terms') ? 'terms' : 'privacy';
+// Matches the honorific the other page titles use in each language.
+const name = lang === 'es' ? 'Dra. Eugenia Vila' : 'Dr Eugenia Vila';
 ---
 
-<BaseLayout
-  lang={lang}
-  page={page}
-  title={`${frontmatter.title} - Dra. Eugenia Vila`}
-  description={frontmatter.description}
->
+<BaseLayout lang={lang} page={page} title={`${frontmatter.title} - ${name}`} description={frontmatter.description}>
   <section class="section">
     <div class="container-page max-w-3xl">
       <h1 class="font-heading text-3xl text-brand-deep sm:text-4xl">{frontmatter.title}</h1>

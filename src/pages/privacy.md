@@ -1,5 +1,6 @@
 ---
 title: 'Política de Privacidad'
+description: 'Cómo trata la Clínica Dental Dra. Eugenia Vila los datos personales recogidos a través de esta web y cómo ejercer los derechos de protección de datos.'
 layout: '~/layouts/LegalLayout.astro'
 ---
 
