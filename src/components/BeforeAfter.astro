@@ -29,7 +29,9 @@ const frameRatio = (c: CaseItem) => Math.max(c.before.width / c.before.height, c
 <div class="grid gap-6 sm:grid-cols-2">
   {
     cases.map((c) => (
-      <figure class="card overflow-hidden p-0">
+      <figure class="card overflow-hidden p-0 has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-brand-blue">
+        {/* The range input that drives the slider is transparent, so its own focus
+            ring never shows; the figure draws it instead, outside its own clipping. */}
         <div
           class="relative select-none overflow-hidden bg-brand-light"
           data-compare
