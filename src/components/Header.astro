@@ -189,6 +189,8 @@ const treatmentLinks = TREATMENTS.map((tr) => ({
         aria-expanded="false"
         aria-controls="mobile-menu"
         aria-label={t.a11y.openMenu}
+        data-label-open={t.a11y.openMenu}
+        data-label-close={t.a11y.closeMenu}
       >
         <Icon name="tabler:menu-2" class="h-6 w-6" />
       </button>
@@ -288,13 +290,21 @@ const treatmentLinks = TREATMENTS.map((tr) => ({
 </header>
 
 <script>
+  // The label has to follow the state: a screen reader user hearing "Abrir menú"
+  // on an open menu has no way to tell that the same button closes it.
+  function setMobileMenu(btn: HTMLElement, menu: HTMLElement, open: boolean) {
+    menu.classList.toggle('hidden', !open);
+    btn.setAttribute('aria-expanded', String(open));
+    const label = open ? btn.dataset.labelClose : btn.dataset.labelOpen;
+    if (label) btn.setAttribute('aria-label', label);
+  }
+
   function initMenu() {
     const btn = document.getElementById('menu-toggle');
     const menu = document.getElementById('mobile-menu');
     if (!btn || !menu) return;
     btn.addEventListener('click', () => {
-      const isOpen = menu.classList.toggle('hidden') === false;
-      btn.setAttribute('aria-expanded', String(isOpen));
+      setMobileMenu(btn, menu, menu.classList.contains('hidden'));
     });
   }
   document.addEventListener('astro:page-load', initMenu);
@@ -397,6 +407,12 @@ const treatmentLinks = TREATMENTS.map((tr) => ({
     if (event.key !== 'Escape') return;
     for (const btn of dropdownToggles()) {
       if (closeDropdown(btn)) btn.focus();
+    }
+    const menuBtn = document.getElementById('menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+    if (menuBtn && menu && !menu.classList.contains('hidden')) {
+      setMobileMenu(menuBtn, menu, false);
+      menuBtn.focus();
     }
   });
 </script>
