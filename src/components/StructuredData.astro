@@ -1,6 +1,7 @@
 ---
 import { SITE, CLINIC } from '~/config';
 import type { FaqItem } from '~/content/site';
+import type { Lang } from '~/i18n';
 
 // LocalBusiness/Dentist structured data for the practice and the dentist.
 // Intentionally omits aggregateRating/review (Google restricts that markup to
@@ -9,10 +10,20 @@ import type { FaqItem } from '~/content/site';
 // Treatment pages pass `offers` ("desde" figures, hence minPrice) and the FAQ
 // page passes `faq`; both extend the same single @graph.
 interface Props {
+  lang: Lang;
   offers?: { name: string; price: number }[];
   faq?: FaqItem[];
 }
-const { offers, faq } = Astro.props;
+const { lang, offers, faq } = Astro.props;
+
+// The few free-text values in the graph follow the page language, like the
+// offer names and FAQ text they sit next to.
+const labels = {
+  es: { jobTitle: 'Dentista', catalog: 'Tratamientos' },
+  en: { jobTitle: 'Dentist', catalog: 'Treatments' },
+}[lang];
+// Being seen in Spanish or English is a main reason people choose the clinic.
+const languages = ['es', 'en'];
 
 const clinicId = `${SITE.domain}/#clinic`;
 const personId = `${SITE.domain}/#dentist`;
@@ -39,12 +50,16 @@ const schema = {
       },
       geo: { '@type': 'GeoCoordinates', latitude: CLINIC.geo.latitude, longitude: CLINIC.geo.longitude },
       areaServed: { '@type': 'City', name: 'Málaga' },
-      sameAs: [CLINIC.gbpUrl, CLINIC.mapsPlaceUrl],
+      // sameAs is for profiles of this business; the Maps search link is not one,
+      // so it goes in hasMap instead.
+      sameAs: [CLINIC.gbpUrl],
+      hasMap: CLINIC.mapsPlaceUrl,
+      knowsLanguage: languages,
       founder: { '@id': personId },
       ...(offers?.length && {
         hasOfferCatalog: {
           '@type': 'OfferCatalog',
-          name: 'Tratamientos',
+          name: labels.catalog,
           itemListElement: offers.map((o) => ({
             '@type': 'Offer',
             itemOffered: { '@type': 'Service', name: o.name },
@@ -58,7 +73,8 @@ const schema = {
       '@type': 'Person',
       '@id': personId,
       name: 'Dra. Eugenia Vila',
-      jobTitle: 'Dentista',
+      jobTitle: labels.jobTitle,
+      knowsLanguage: languages,
       worksFor: { '@id': clinicId },
       url: SITE.domain,
       sameAs: [CLINIC.linkedin, CLINIC.doctoralia],
