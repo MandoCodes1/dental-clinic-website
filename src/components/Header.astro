@@ -60,7 +60,7 @@ const treatmentLinks = TREATMENTS.map((tr) => ({
         {about.label}
       </a>
 
-      <div class="group relative">
+      <div class="relative" data-dropdown>
         <button
           type="button"
           data-dropdown-toggle
@@ -75,13 +75,13 @@ const treatmentLinks = TREATMENTS.map((tr) => ({
           <Icon name="tabler:chevron-down" class="h-4 w-4" />
         </button>
         {
-          /* group-hover opens on hover too (the click toggle stays for touch and
-          keyboard); the before: strip bridges the mt-3 gap so the pointer can
-          travel from the trigger into the menu without it closing. */
+          /* Hover opens the menu too (see the script below; the click toggle stays
+          for touch and keyboard). The before: strip bridges the mt-3 gap so the
+          pointer can travel from the trigger into the menu without it closing. */
         }
         <div
           id="treatments-menu"
-          class="absolute left-0 top-full mt-3 hidden w-64 rounded-xl border border-brand-blue/10 bg-cream p-2 shadow-lg before:absolute before:inset-x-0 before:-top-3 before:h-3 before:content-[''] group-hover:block"
+          class="absolute left-0 top-full mt-3 hidden w-64 rounded-xl border border-brand-blue/10 bg-cream p-2 shadow-lg before:absolute before:inset-x-0 before:-top-3 before:h-3 before:content-['']"
         >
           <a
             href={ROUTES.treatments[lang]}
@@ -122,7 +122,7 @@ const treatmentLinks = TREATMENTS.map((tr) => ({
         {reviews.label}
       </a>
 
-      <div class="group relative">
+      <div class="relative" data-dropdown>
         <button
           type="button"
           data-dropdown-toggle
@@ -138,7 +138,7 @@ const treatmentLinks = TREATMENTS.map((tr) => ({
         </button>
         <div
           id="more-menu"
-          class="absolute right-0 top-full mt-3 hidden w-60 rounded-xl border border-brand-blue/10 bg-cream p-2 shadow-lg before:absolute before:inset-x-0 before:-top-3 before:h-3 before:content-[''] group-hover:block"
+          class="absolute right-0 top-full mt-3 hidden w-60 rounded-xl border border-brand-blue/10 bg-cream p-2 shadow-lg before:absolute before:inset-x-0 before:-top-3 before:h-3 before:content-['']"
         >
           {
             navMore.map((item) => (
@@ -309,13 +309,53 @@ const treatmentLinks = TREATMENTS.map((tr) => ({
     return document.getElementById(btn.getAttribute('aria-controls') ?? '');
   }
 
+  // Every way of opening or closing a menu goes through here, so aria-expanded
+  // always matches what is on screen.
+  function setDropdown(btn: HTMLElement, open: boolean) {
+    const menu = menuFor(btn);
+    if (!menu) return;
+    menu.classList.toggle('hidden', !open);
+    btn.setAttribute('aria-expanded', String(open));
+    if (!open) delete btn.dataset.hoverOpen;
+  }
+
   function closeDropdown(btn: HTMLElement): boolean {
     const menu = menuFor(btn);
     if (!menu || menu.classList.contains('hidden')) return false;
-    menu.classList.add('hidden');
-    btn.setAttribute('aria-expanded', 'false');
+    setDropdown(btn, false);
     return true;
   }
+
+  function toggleIn(el: EventTarget | null): HTMLElement | null {
+    const wrap = el instanceof Element ? el.closest('[data-dropdown]') : null;
+    return wrap?.querySelector<HTMLElement>('[data-dropdown-toggle]') ?? null;
+  }
+
+  // Mouse hover only: touch taps also fire pointer events and must stay on the
+  // click toggle.
+  document.addEventListener('pointerover', (event) => {
+    if (event.pointerType !== 'mouse') return;
+    const btn = toggleIn(event.target);
+    if (!btn || btn.getAttribute('aria-expanded') === 'true') return;
+    setDropdown(btn, true);
+    btn.dataset.hoverOpen = 'true';
+  });
+
+  document.addEventListener('pointerout', (event) => {
+    if (event.pointerType !== 'mouse') return;
+    const btn = toggleIn(event.target);
+    if (!btn || btn.dataset.hoverOpen !== 'true') return;
+    if (toggleIn(event.relatedTarget) === btn) return;
+    setDropdown(btn, false);
+  });
+
+  // Tabbing past the last link (or anywhere outside) closes the menu, so it does
+  // not stay open over the page with nothing focused inside it.
+  document.addEventListener('focusout', (event) => {
+    const btn = toggleIn(event.target);
+    if (!btn || toggleIn(event.relatedTarget) === btn) return;
+    closeDropdown(btn);
+  });
 
   document.addEventListener('click', (event) => {
     const target = event.target instanceof Element ? event.target : null;
@@ -330,11 +370,13 @@ const treatmentLinks = TREATMENTS.map((tr) => ({
       }
     }
     if (clicked) {
-      const menu = menuFor(clicked);
-      if (menu) {
-        const isOpen = menu.classList.toggle('hidden') === false;
-        clicked.setAttribute('aria-expanded', String(isOpen));
+      // A click on a menu that hover has just opened keeps it open (and pinned
+      // once the pointer leaves) instead of closing it under the cursor.
+      if (clicked.dataset.hoverOpen === 'true') {
+        delete clicked.dataset.hoverOpen;
+        return;
       }
+      setDropdown(clicked, clicked.getAttribute('aria-expanded') !== 'true');
     }
   });
 
