@@ -37,7 +37,7 @@ const treatmentLinks = TREATMENTS.map((tr) => ({
       <span class="font-heading text-lg font-semibold text-brand-deep">Dra. Eugenia Vila</span>
     </a>
 
-    <nav class="hidden items-center gap-5 lg:flex xl:gap-6" aria-label={t.nav.home}>
+    <nav class="hidden items-center gap-5 lg:flex xl:gap-6" aria-label={t.a11y.mainNav}>
       <a
         href={home.href}
         class:list={[
@@ -202,7 +202,7 @@ const treatmentLinks = TREATMENTS.map((tr) => ({
       behind an extra tap for less tech-confident visitors. */
   }
   <div id="mobile-menu" class="hidden border-t border-brand-blue/10 bg-cream lg:hidden">
-    <nav class="container-page flex flex-col divide-y divide-brand-blue/10 py-2" aria-label={t.nav.home}>
+    <nav class="container-page flex flex-col divide-y divide-brand-blue/10 py-2" aria-label={t.a11y.mainNav}>
       <a
         href={home.href}
         class:list={['px-2 py-3 text-base font-medium', home.active ? 'text-brand-blue' : 'text-ink/80']}

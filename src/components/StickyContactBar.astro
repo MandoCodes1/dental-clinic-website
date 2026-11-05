@@ -15,9 +15,11 @@ const t = content[lang];
   /* Phone-only bottom bar: many patients scroll without ever opening the nav, so
     calling and WhatsApp stay one tap away. Above sm the WhatsApp FAB takes over.
     Static markup, so there is nothing to re-init across view transitions. The
-    matching body padding lives in global.css. */
+    matching body padding lives in global.css. It is an aside so screen reader
+    users can find it as a landmark rather than as loose content after the footer. */
 }
-<div
+<aside
+  aria-label={t.footer.contactTitle}
   class="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 border-t border-brand-blue/10 bg-cream/95 backdrop-blur sm:hidden"
   style="padding-bottom: env(safe-area-inset-bottom)"
 >
@@ -41,4 +43,4 @@ const t = content[lang];
     <Icon name="tabler:brand-whatsapp" class="h-5 w-5" />
     {t.stickyBar.whatsapp}
   </a>
-</div>
+</aside>

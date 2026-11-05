@@ -13,16 +13,19 @@ const t = content[lang];
 
 {
   /* Floating WhatsApp button for sm and up; below sm the sticky contact bar
-    already carries a full-width WhatsApp target. */
+    already carries a full-width WhatsApp target. The aside gives it a landmark and
+    is hidden below sm too, so phones do not announce an empty one. */
 }
-<a
-  href={waLink(t.contactCta.defaultMessage)}
-  target="_blank"
-  rel="noopener"
-  class="fixed bottom-5 right-5 z-40 hidden h-14 w-14 items-center justify-center rounded-full bg-whatsapp text-white shadow-lg transition hover:brightness-95 sm:flex"
-  aria-label={t.contactCta.button}
-  data-umami-event="whatsapp"
-  data-umami-event-location="fab"
->
-  <Icon name="tabler:brand-whatsapp" class="h-7 w-7" />
-</a>
+<aside aria-label={t.footer.contactTitle} class="hidden sm:block">
+  <a
+    href={waLink(t.contactCta.defaultMessage)}
+    target="_blank"
+    rel="noopener"
+    class="fixed bottom-5 right-5 z-40 hidden h-14 w-14 items-center justify-center rounded-full bg-whatsapp text-white shadow-lg transition hover:brightness-95 sm:flex"
+    aria-label={t.contactCta.button}
+    data-umami-event="whatsapp"
+    data-umami-event-location="fab"
+  >
+    <Icon name="tabler:brand-whatsapp" class="h-7 w-7" />
+  </a>
+</aside>

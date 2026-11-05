@@ -145,7 +145,7 @@ export interface SiteCopy {
     'home' | 'about' | 'treatments' | 'gallery' | 'reviews' | 'contact' | 'products' | 'faq' | 'guides',
     MetaEntry
   >;
-  a11y: { skip: string; openMenu: string; closeMenu: string; switchLang: string };
+  a11y: { skip: string; openMenu: string; closeMenu: string; switchLang: string; mainNav: string };
   hero: {
     eyebrow: string;
     title: string;
@@ -340,7 +340,13 @@ const es: SiteCopy = {
         'Guías claras para decidir con criterio: cuánto cuesta un implante dental en Málaga, cómo elegir dentista y atención en inglés en El Palo.',
     },
   },
-  a11y: { skip: 'Saltar al contenido', openMenu: 'Abrir menú', closeMenu: 'Cerrar menú', switchLang: 'Ver en inglés' },
+  a11y: {
+    skip: 'Saltar al contenido',
+    openMenu: 'Abrir menú',
+    closeMenu: 'Cerrar menú',
+    switchLang: 'Ver en inglés',
+    mainNav: 'Menú principal',
+  },
   hero: {
     eyebrow: 'Clínica dental en El Palo, Málaga',
     title: 'Tu sonrisa, en las mejores manos',
@@ -1643,7 +1649,13 @@ const en: SiteCopy = {
         'Clear guides to help you decide: how much a dental implant costs in Málaga, how to choose a dentist, and English-speaking dental care in El Palo.',
     },
   },
-  a11y: { skip: 'Skip to content', openMenu: 'Open menu', closeMenu: 'Close menu', switchLang: 'View in Spanish' },
+  a11y: {
+    skip: 'Skip to content',
+    openMenu: 'Open menu',
+    closeMenu: 'Close menu',
+    switchLang: 'View in Spanish',
+    mainNav: 'Main menu',
+  },
   hero: {
     eyebrow: 'Dental clinic in El Palo, Málaga',
     title: 'Your smile, in the best hands',
