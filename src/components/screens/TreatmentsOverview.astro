@@ -41,7 +41,7 @@ const faqItems = getFaqItems(lang, ['guarantee', 'payment']);
                 <Icon name="tabler:shield-check" class="mt-0.5 h-5 w-5 shrink-0 text-brand-blue" />
                 <div>
                   <p class="font-medium text-ink">{point.title}</p>
-                  <p class="mt-0.5 text-sm leading-relaxed text-ink/60">{point.description}</p>
+                  <p class="mt-0.5 text-sm leading-relaxed text-ink/70">{point.description}</p>
                 </div>
               </li>
             ))
@@ -56,7 +56,7 @@ const faqItems = getFaqItems(lang, ['guarantee', 'payment']);
 
       {/* The WhatsApp button lives in the ContactCTA below, so this is text only. */}
       <p class="mx-auto mt-10 max-w-3xl text-center text-ink/75">{p.askQuote}</p>
-      <p class="mx-auto mt-2 max-w-3xl text-center text-sm text-ink/60">
+      <p class="mx-auto mt-2 max-w-3xl text-center text-sm text-ink/70">
         {p.faqPrompt}
         <a href={ROUTES.faq[lang]} class="link-quiet ml-1">{p.faqLink}</a>
       </p>

@@ -139,12 +139,12 @@ const guideHref = guideId ? ROUTES[GUIDES.find((g) => g.id === guideId)!.route][
               <div class="flex items-baseline justify-between gap-4 py-3 sm:gap-6">
                 <dt>
                   <span class="font-medium text-ink">{item.label}</span>
-                  {item.note && <span class="mt-0.5 block text-sm text-ink/60">{item.note}</span>}
+                  {item.note && <span class="mt-0.5 block text-sm text-ink/70">{item.note}</span>}
                 </dt>
                 <dd class="text-right">
                   {item.id ? (
                     <span class="whitespace-nowrap">
-                      <span class="text-sm text-ink/60">{p.from}</span>
+                      <span class="text-sm text-ink/70">{p.from}</span>
                       <span class="ml-1 font-heading text-xl font-semibold text-brand-deep">
                         {formatPrice(PRICES[item.id], lang)}
                       </span>
@@ -159,12 +159,12 @@ const guideHref = guideId ? ROUTES[GUIDES.find((g) => g.id === guideId)!.route][
         </dl>
         {
           c.priceGroup.note && (
-            <p class="mt-2 border-t border-brand-blue/10 pt-4 text-sm leading-relaxed text-ink/60">
+            <p class="mt-2 border-t border-brand-blue/10 pt-4 text-sm leading-relaxed text-ink/70">
               {c.priceGroup.note}
             </p>
           )
         }
-        <p class="mt-4 text-sm leading-relaxed text-ink/60">{p.disclaimer}</p>
+        <p class="mt-4 text-sm leading-relaxed text-ink/70">{p.disclaimer}</p>
         {
           guide && guideHref && (
             <p class="mt-4 text-sm leading-relaxed text-ink/70">
