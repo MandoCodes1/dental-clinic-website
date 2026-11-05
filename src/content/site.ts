@@ -145,6 +145,8 @@ export interface SiteCopy {
     'home' | 'about' | 'treatments' | 'gallery' | 'reviews' | 'contact' | 'products' | 'faq' | 'guides',
     MetaEntry
   >;
+  // Alt text for the shared /og.jpg card (Dra. Vila seated in her surgery).
+  ogImageAlt: string;
   a11y: { skip: string; openMenu: string; closeMenu: string; switchLang: string; mainNav: string };
   hero: {
     eyebrow: string;
@@ -347,6 +349,7 @@ const es: SiteCopy = {
     switchLang: 'Ver en inglés',
     mainNav: 'Menú principal',
   },
+  ogImageAlt: 'La Dra. Eugenia Vila en su consulta',
   hero: {
     eyebrow: 'Clínica dental en El Palo, Málaga',
     title: 'Tu sonrisa, en las mejores manos',
@@ -1656,6 +1659,7 @@ const en: SiteCopy = {
     switchLang: 'View in Spanish',
     mainNav: 'Main menu',
   },
+  ogImageAlt: 'Dr Eugenia Vila at her practice',
   hero: {
     eyebrow: 'Dental clinic in El Palo, Málaga',
     title: 'Your smile, in the best hands',

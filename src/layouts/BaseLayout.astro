@@ -88,7 +88,8 @@ const alternates = [
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1600" />
     <meta property="og:image:height" content="900" />
-    <meta property="og:image:alt" content={pageTitle} />
+    {/* Only the default card has known alt text; a page-specific image falls back to the title. */}
+    <meta property="og:image:alt" content={image ? pageTitle : t.ogImageAlt} />
     <meta name="twitter:card" content="summary_large_image" />
 
     <link rel="sitemap" href="/sitemap-index.xml" />
