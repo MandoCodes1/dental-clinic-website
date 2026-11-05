@@ -14,6 +14,11 @@ import { content, type FaqItem } from '~/content/site';
 import { ANALYTICS, SITE } from '~/config';
 import { ROUTES, LANG_META, type Lang, type RouteKey } from '~/i18n';
 
+// Both pages and copy only use the Latin subset, so those two files are always
+// needed. Preloading them lets the download start with the HTML instead of after
+// the stylesheet is parsed, which shortens the fallback-font swap.
+import interLatin from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
+import frauncesLatin from '@fontsource-variable/fraunces/files/fraunces-latin-wght-normal.woff2?url';
 import faviconSvg from '~/assets/favicons/favicon.svg';
 import faviconIco from '~/assets/favicons/favicon.ico';
 import faviconPng32 from '~/assets/favicons/favicon32x32.png';
@@ -58,6 +63,8 @@ const alternates = [
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>{pageTitle}</title>
     <meta name="description" content={pageDesc} />
+    <link rel="preload" href={interLatin} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={frauncesLatin} as="font" type="font/woff2" crossorigin />
     <link rel="canonical" href={canonical} />
     {alternates.map((a) => <link rel="alternate" hreflang={a.hreflang} href={a.href} />)}
     <meta name="generator" content={Astro.generator} />
