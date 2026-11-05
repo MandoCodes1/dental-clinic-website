@@ -20,6 +20,12 @@ const labels: Record<string, string> = {
 const location = labels[review.clinic] ?? '';
 const avatar = getAvatarDisplay(review.avatar);
 const sourceIcon = review.source === 'Trustpilot' ? 'tabler:star' : 'tabler:brand-google';
+// Each review link is unique, so a hash of it gives the quote a stable id for
+// the expand button to point at. The Google links share long common parts, so
+// a slice of the URL itself is not enough.
+let hash = 5381;
+for (const ch of review.link) hash = ((hash * 33) ^ ch.charCodeAt(0)) >>> 0;
+const textId = `review-${hash.toString(36)}`;
 ---
 
 <figure class="card flex h-full flex-col">
@@ -51,7 +57,26 @@ const sourceIcon = review.source === 'Trustpilot' ? 'tabler:star' : 'tabler:bran
     {Array.from({ length: 5 }).map(() => <Icon name="tabler:star-filled" class="h-4 w-4" />)}
   </div>
 
-  <blockquote class="mt-3 line-clamp-6 grow text-sm leading-relaxed text-ink/80">{text}</blockquote>
+  <div class="mt-3 grow">
+    <blockquote id={textId} data-review-text class="line-clamp-6 text-sm leading-relaxed text-ink/80">
+      {text}
+    </blockquote>
+    {
+      /* Hidden until the script finds the quote actually clipped, so short
+        reviews do not get a button that does nothing. */
+    }
+    <button
+      type="button"
+      data-review-toggle
+      aria-expanded="false"
+      aria-controls={textId}
+      data-label-more={t.common.readMore}
+      data-label-less={t.common.readLess}
+      class="mt-1 hidden text-sm font-medium text-brand-blue underline underline-offset-4 hover:decoration-2"
+    >
+      {t.common.readMore}
+    </button>
+  </div>
 
   <a
     href={review.link}
@@ -63,3 +88,25 @@ const sourceIcon = review.source === 'Trustpilot' ? 'tabler:star' : 'tabler:bran
     {t.common.viewReview}
   </a>
 </figure>
+
+<script>
+  function revealReviewToggles() {
+    document.querySelectorAll<HTMLElement>('[data-review-toggle]').forEach((btn) => {
+      const quote = document.getElementById(btn.getAttribute('aria-controls') ?? '');
+      if (quote && quote.scrollHeight > quote.clientHeight + 1) btn.classList.remove('hidden');
+    });
+  }
+  document.addEventListener('astro:page-load', revealReviewToggles);
+
+  // Delegated off document so it binds once and survives view transitions.
+  document.addEventListener('click', (event) => {
+    const target = event.target instanceof Element ? event.target : null;
+    const btn = target?.closest<HTMLElement>('[data-review-toggle]');
+    if (!btn) return;
+    const quote = document.getElementById(btn.getAttribute('aria-controls') ?? '');
+    if (!quote) return;
+    const expanded = quote.classList.toggle('line-clamp-6') === false;
+    btn.setAttribute('aria-expanded', String(expanded));
+    btn.textContent = (expanded ? btn.dataset.labelLess : btn.dataset.labelMore) ?? '';
+  });
+</script>
