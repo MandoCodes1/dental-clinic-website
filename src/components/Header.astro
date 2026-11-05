@@ -33,7 +33,12 @@ const treatmentLinks = TREATMENTS.map((tr) => ({
 <header class="sticky top-0 z-40 border-b border-brand-blue/10 bg-cream/90 backdrop-blur">
   <div class="container-page flex h-16 items-center justify-between gap-4">
     <a href={homeHref} class="flex items-center gap-2.5" aria-label="Dra. Eugenia Vila">
-      <Image src={logo} alt="" width={435} height={316} class="h-9 w-auto" />
+      {
+        /* Shown at h-9 (36px tall, about 50px wide), so it ships at that size and
+          its retina multiples rather than the 435px source; above the fold on
+          every page, so it is not lazy-loaded. */
+      }
+      <Image src={logo} alt="" width={50} densities={[1, 2, 3]} loading="eager" class="h-9 w-auto" />
       <span class="font-heading text-lg font-semibold text-brand-deep">Dra. Eugenia Vila</span>
     </a>
 
