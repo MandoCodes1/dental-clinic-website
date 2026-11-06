@@ -35,3 +35,7 @@ docs/
 
 # raw review scrapes (local working material, not for the public repo)
 src/data/source/products/
+
+# Playwright
+test-results/
+playwright-report/
