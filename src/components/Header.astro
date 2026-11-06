@@ -364,11 +364,14 @@ const treatmentLinks = TREATMENTS.map((tr) => ({
     setDropdown(btn, false);
   });
 
-  // Tabbing past the last link (or anywhere outside) closes the menu, so it does
-  // not stay open over the page with nothing focused inside it.
+  // Tabbing past the last link closes the menu, so it does not stay open over
+  // the page with nothing focused inside it. Only a move to another focusable
+  // element counts: a click on the menu's padding or divider also blurs the
+  // button, but with no relatedTarget, and must leave the menu open. Clicks
+  // that land outside are closed by the click handler below.
   document.addEventListener('focusout', (event) => {
     const btn = toggleIn(event.target);
-    if (!btn || toggleIn(event.relatedTarget) === btn) return;
+    if (!btn || !event.relatedTarget || toggleIn(event.relatedTarget) === btn) return;
     closeDropdown(btn);
   });
 

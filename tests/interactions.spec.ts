@@ -21,6 +21,23 @@ test.describe('desktop dropdowns', () => {
     await expectMenu(page, 'more-menu', false);
   });
 
+  test('clicking inside an open menu, off its links, keeps it open', async ({ page }) => {
+    await page.goto('/');
+    const button = page.locator('button[aria-controls="treatments-menu"]');
+    await button.click();
+    await expectMenu(page, 'treatments-menu', true);
+    // The menu's padding and the divider are not focusable, so focus leaves the
+    // button for nowhere in particular; that must not read as leaving the menu.
+    const box = (await page.locator('#treatments-menu').boundingBox())!;
+    await page.mouse.click(box.x + 3, box.y + 3);
+    await expectMenu(page, 'treatments-menu', true);
+    await page.locator('#treatments-menu div.border-t').click({ force: true });
+    await expectMenu(page, 'treatments-menu', true);
+    // A click outside still closes it.
+    await page.mouse.click(5, 700);
+    await expectMenu(page, 'treatments-menu', false);
+  });
+
   test('tabbing past the last link closes a keyboard-opened menu', async ({ page }) => {
     await page.goto('/');
     await page.locator('button[aria-controls="treatments-menu"]').focus();
