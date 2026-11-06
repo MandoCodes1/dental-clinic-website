@@ -100,3 +100,59 @@ test.describe('home WhatsApp form', () => {
     expect(text).toContain('Quería una revisión');
   });
 });
+
+// For every review card: is the quote clipped, and is its "Leer más" button
+// shown? A collapsed quote must have a button exactly when it is clipped.
+async function reviewToggleMismatches(page: Page) {
+  return page.evaluate(() => {
+    const out: string[] = [];
+    document.querySelectorAll<HTMLElement>('[data-review-toggle]').forEach((button) => {
+      if (button.getAttribute('aria-expanded') === 'true') return;
+      const quote = document.getElementById(button.getAttribute('aria-controls') ?? '')!;
+      const clipped = quote.scrollHeight > quote.clientHeight + 1;
+      const shown = !button.classList.contains('hidden');
+      if (clipped !== shown) out.push(`${quote.id}: clipped=${clipped} shown=${shown}`);
+    });
+    return out;
+  });
+}
+
+test.describe('review "Leer más" toggles', () => {
+  for (const [from, to] of [
+    [768, 1024],
+    [1024, 768],
+    [390, 1280],
+  ]) {
+    test(`stay matched to clipping after resizing from ${from}px to ${to}px`, async ({ page }) => {
+      await page.setViewportSize({ width: from, height: 900 });
+      await page.goto('/resenas');
+      await expect.poll(() => reviewToggleMismatches(page)).toEqual([]);
+      await page.setViewportSize({ width: to, height: 900 });
+      await expect.poll(() => reviewToggleMismatches(page)).toEqual([]);
+    });
+  }
+
+  test('stay matched after a view-transition navigation', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 900 });
+    await page.goto('/');
+    await page.locator('a[href="/resenas"].btn-outline').click();
+    await page.waitForURL('**/resenas');
+    await expect.poll(() => reviewToggleMismatches(page)).toEqual([]);
+    await page.setViewportSize({ width: 768, height: 900 });
+    await expect.poll(() => reviewToggleMismatches(page)).toEqual([]);
+  });
+
+  test('expand a clipped review and collapse it again', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto('/resenas');
+    const button = page.locator('[data-review-toggle]:not(.hidden)').first();
+    const quote = page.locator(`#${await button.getAttribute('aria-controls')}`);
+    await button.click();
+    await expect(button).toHaveAttribute('aria-expanded', 'true');
+    await expect(button).toHaveText('Leer menos');
+    expect(await quote.evaluate((q) => q.scrollHeight <= q.clientHeight + 1)).toBe(true);
+    await button.click();
+    await expect(button).toHaveAttribute('aria-expanded', 'false');
+    await expect(button).toHaveText('Leer más');
+  });
+});

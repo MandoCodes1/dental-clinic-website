@@ -90,13 +90,32 @@ const textId = `review-${hash.toString(36)}`;
 </figure>
 
 <script>
-  function revealReviewToggles() {
+  // Whether a quote is clipped depends on the card width and on the font, so it
+  // is not settled at page load: rotating a tablet or the web font arriving
+  // after the fallback can clip a quote that fitted, or free one that did not.
+  // An expanded quote keeps its button so it can be collapsed again.
+  function syncReviewToggles() {
     document.querySelectorAll<HTMLElement>('[data-review-toggle]').forEach((btn) => {
+      if (btn.getAttribute('aria-expanded') === 'true') return;
       const quote = document.getElementById(btn.getAttribute('aria-controls') ?? '');
-      if (quote && quote.scrollHeight > quote.clientHeight + 1) btn.classList.remove('hidden');
+      if (!quote) return;
+      btn.classList.toggle('hidden', quote.scrollHeight <= quote.clientHeight + 1);
     });
   }
-  document.addEventListener('astro:page-load', revealReviewToggles);
+
+  let reviewObserver: ResizeObserver | undefined;
+
+  function watchReviewToggles() {
+    // The previous page's quotes are gone after a view transition.
+    reviewObserver?.disconnect();
+    const quotes = document.querySelectorAll<HTMLElement>('[data-review-text]');
+    if (quotes.length === 0) return;
+    // Observing also runs the callback once straight away, which covers load.
+    reviewObserver = new ResizeObserver(syncReviewToggles);
+    quotes.forEach((quote) => reviewObserver!.observe(quote));
+    document.fonts.ready.then(syncReviewToggles);
+  }
+  document.addEventListener('astro:page-load', watchReviewToggles);
 
   // Delegated off document so it binds once and survives view transitions.
   document.addEventListener('click', (event) => {
